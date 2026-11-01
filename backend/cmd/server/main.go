@@ -6,6 +6,7 @@ import (
 	"eemath/internal/httpapi"
 	"eemath/internal/legacy"
 	"eemath/internal/storage"
+	"eemath/internal/studycontent"
 	"flag"
 	"log"
 	"net/http"
@@ -52,6 +53,9 @@ func main() {
 		log.Printf("Imported %d questions, %d image links, %d AI explanations", report.Questions, report.Images, report.Explanations)
 	}
 	var provider ai.Provider
+	if err := studycontent.SeedExplanations(db); err != nil {
+		log.Fatal(err)
+	}
 	key, model := os.Getenv("GEMINI_API_KEY"), os.Getenv("GEMINI_MODEL")
 	if key != "" && model != "" {
 		level := strings.ToLower(strings.TrimSpace(os.Getenv("GEMINI_THINKING_LEVEL")))

@@ -240,7 +240,7 @@ paths:
                         required: [bodyHtml, reviewStatus, origin]
                         properties:
                           bodyHtml: {type: string, description: Sanitize before browser rendering}
-                          reviewStatus: {type: string, enum: [unreviewed, reviewed]}
+                          reviewStatus: {type: string, enum: [unreviewed, reviewed, ai_checked, needs_clarification], description: 'AI checks are distinct from human review; needs_clarification flags inconsistent problem data.'}
                           origin: {type: string, const: imported_ai}
         '404': {$ref: '#/components/responses/Error'}
   /session:

@@ -495,7 +495,12 @@ export function QuestionCard({
                     คำอธิบายจาก AI ·{" "}
                     {result.data.aiExplanation.reviewStatus === "reviewed"
                       ? "ตรวจทานแล้ว"
-                      : "ยังไม่ได้ตรวจทาน"}
+                      : result.data.aiExplanation.reviewStatus === "ai_checked"
+                        ? "ตรวจด้วย AI และคำนวณซ้ำแล้ว"
+                        : result.data.aiExplanation.reviewStatus ===
+                            "needs_clarification"
+                          ? "พบเงื่อนไขโจทย์ขัดแย้ง · ต้องสอบถามผู้สอน"
+                          : "ยังไม่ได้ตรวจทาน"}
                   </div>
                   <StepExplanation
                     questionId={q.id}

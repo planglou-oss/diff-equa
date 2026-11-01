@@ -81,3 +81,24 @@
 - ตรวจ KaTeX parse ของตัวเลือก 40 รายการและสูตรใน prompt/feedback/explanation ผ่าน
 - Frontend tests 8 ข้อและ production build ผ่าน; Go test/vet ผ่าน (Windows sandbox บล็อก rename ภาพใน temp ของ importer จึงรันทดสอบนอก sandbox สำเร็จ)
 - ภาพผลคะแนนและตัวเลือก: `docs/choice-practice.png`; ตรวจขนาด radio หลังแก้ CSS เป็น 17.6px และไม่มี console errors/warnings
+
+## คำอธิบาย Laplace ครบหัวข้อ
+
+- อ่านภาพเฉลยของข้อที่เหลือและเพิ่มคำอธิบาย AI อีก 46 ข้อ รวมเนื้อหาใหม่ใน JSON 66 ข้อกับคำอธิบายเดิม 5 ข้อ เป็น 71/71 ข้อในหัวข้อ 7
+- บันทึกลงฐานข้อมูลเครื่องปัจจุบันแล้ว ตรวจ query ว่าไม่มีข้อขาด; สำรองฐานข้อมูลก่อนเพิ่มไว้ใน .tools/before-laplace-complete.db
+- ทุกเนื้อหาใหม่คงสถานะ unreviewed และระบุข้อพิมพ์ผิดที่พบ เช่น เครื่องหมายในข้อ 16, 18, 42 รวมถึงข้อ 58, 65, 71 ที่ทำก่อนหน้า
+- ตรวจ KaTeX ของเนื้อหาใหม่รวม 329 สูตรผ่าน และ Go build ผ่าน
+- Focused integration test ผ่าน: seed ซ้ำได้ ไม่ทับเฉลยเดิม มีคำอธิบายครบ 71 ข้อ และ API ส่งเนื้อหาข้อเก่า/ใหม่พร้อมสถานะ unreviewed
+- เนื้อหาถูกจัดทำโดย AI ตามภาพเอกสาร ไม่ได้ผ่านการรับรองของอาจารย์หรือผู้ตรวจอิสระ
+
+## ตรวจทาน Laplace ด้วย AI และ SymPy
+
+- ตรวจภาพโจทย์ครบ 71 ข้อ แยกข้อมูลโจทย์ออกจากภาพเฉลยก่อนคำนวณ; symbolic checks ผ่าน 323 รายการ ครอบคลุม 71 ข้อ
+- แก้เครื่องหมาย t exp(-t) cos(t) ในข้อ 11/59/62, ตำแหน่งพจน์ x/2 ในข้อ 71, หมายเหตุที่กล่าวหาค่า -7/36 ในข้อ 18, ค่าคงที่ทั่วไปในข้อ 13/24 และเติมรูปแบ่งช่วง/เงื่อนไขโดเมนตามรายงาน
+- ข้อ 65 ทั้ง a/b มีเงื่อนไขเริ่มต้นขัดกับสมการลำดับหนึ่ง จึงติด needs_clarification และแสดงคำตอบที่แก้ x′(0)=1 เป็นกรณีสมมติเท่านั้น
+- สถานะฐานข้อมูล 70 ai_checked + 1 needs_clarification ผูกกับ body hash และทั้ง question/solution image hashes; แยก AI checks จาก human review
+- Focused Go integration tests ผ่าน: known-content upgrades, custom/human edit preservation, stale content/source invalidation, complete coverage และ API labels; Go build และ frontend production build ผ่าน
+- Browser QA ข้อ 65 แสดงป้ายต้องสอบถามผู้สอนและสมการขัดแย้งครบ; ข้อ 11 แสดงป้ายตรวจ AI และสูตรแก้แล้ว โดยไม่มี KaTeX errors
+- รายงานเต็ม: docs/LAPLACE_REVIEW.md และ docs/laplace-review.json; คำนวณซ้ำด้วย scripts/verify_laplace.py
+- เป็นการตรวจด้วย AI และคำนวณเชิงสัญลักษณ์ ไม่ใช่การรับรองจากอาจารย์ ข้อความที่ถอดจากภาพอาจยังมีความผิดพลาดที่การตรวจนี้ไม่พบ
+- ตรวจสูตร KaTeX แบบ strict ผ่าน 498 สูตร; ภาพหน้าจอป้ายข้อ 65: docs/laplace-review-q65.png
