@@ -1,0 +1,252 @@
+[
+  {
+    "questionId": "ee201-t01-q001",
+    "prompt": "เลือกผลเฉลยทั่วไป โดย C เป็นค่าคงที่อิสระ",
+    "sourceMediaId": "d6bbed0d07bad8d105130cbc2c13d4bcf3ee943b8c1311b9a6a83627125d7fb2",
+    "correctIndex": 0,
+    "options": [
+      {
+        "latex": "xy^3-\\frac45y^5=C",
+        "feedback": "ตรงกับเฉลยต้นฉบับ"
+      },
+      {
+        "latex": "xy^3+\\frac45y^5=C",
+        "feedback": "เครื่องหมายหน้าพจน์กำลังห้าต้องเป็นลบ"
+      },
+      {
+        "latex": "xy^3-\\frac54y^5=C",
+        "feedback": "อินทิเกรต $4y^4$ ได้ $\\frac45y^5$ ไม่ใช่ $\\frac54y^5$"
+      },
+      {
+        "latex": "xy^2-\\frac45y^5=C",
+        "feedback": "กำลังของ y ในพจน์แรกต้องเป็น 3 หลังคูณ integrating factor"
+      }
+    ],
+    "explanation": "คูณสมการด้วย $y$ แล้วได้ $d(xy^3-\\frac45y^5)=0$ ตามภาพเฉลยต้นฉบับ"
+  },
+  {
+    "questionId": "ee201-t01-q002",
+    "prompt": "กำหนด $u$ เป็น unit step และ $g(x)=\\frac15(1-e^{-5x/4})$ เลือกผลเฉลยทั่วไป (เทียบกันนอกจุดสวิตช์ และใช้ความต่อเนื่องที่จุดสวิตช์)",
+    "sourceMediaId": "ac14c3726ec83ac4ce0de0dae5af4fd9b024f68ff222f99490f9e6e8b1a242f7",
+    "correctIndex": 0,
+    "options": [
+      {
+        "latex": "y=Ce^{-5x/4}+u(x)g(x)-u(x-\\pi)g(x-\\pi)",
+        "feedback": "ตรงกับเฉลยต้นฉบับ"
+      },
+      {
+        "latex": "y=Ce^{-5x/4}+u(x)g(x)+u(x-\\pi)g(x-\\pi)",
+        "feedback": "เมื่อปิดแรงบังคับที่ $\\pi$ ต้องลบการตอบสนองที่เลื่อนเวลา"
+      },
+      {
+        "latex": "y=Ce^{-5x/4}-u(x)g(x)+u(x-\\pi)g(x-\\pi)",
+        "feedback": "เครื่องหมายช่วงเปิดแรงบังคับกลับด้าน"
+      },
+      {
+        "latex": "y=Ce^{-5x/4}+2u(x)g(x)-2u(x-\\pi)g(x-\\pi)",
+        "feedback": "ขนาดการตอบสนองถูกคูณ 2 ทำให้แรงบังคับไม่เท่ากับ 1"
+      }
+    ],
+    "explanation": "เฉลยต้นฉบับเป็น 3 ช่วง เขียนย่อด้วย unit step ได้โดยเปิดการตอบสนองที่ 0 และลบการตอบสนองที่เลื่อนไปเริ่ม ณ $\\pi$; $g(0)=0$ จึงต่อเนื่อง"
+  },
+  {
+    "questionId": "ee201-t02-q001",
+    "prompt": "กำหนด $y_h=e^{-2x}(C_1\\cos x+C_2\\sin x)$, $g(x)=\\frac15[1-e^{-2x}(\\cos x+2\\sin x)]$ และ $u$ เป็น unit step เลือกผลเฉลยทั่วไป",
+    "sourceMediaId": "d33ff16a30d4cab955fbc1f47697cd9cb4572b946e729c1b01d128f6fac0f807",
+    "correctIndex": 0,
+    "options": [
+      {
+        "latex": "y=y_h+u(x)g(x)-u(x-\\pi)g(x-\\pi)",
+        "feedback": "ตรงกับเฉลยต้นฉบับ"
+      },
+      {
+        "latex": "y=y_h+u(x)g(x)+u(x-\\pi)g(x-\\pi)",
+        "feedback": "ปิดแรงบังคับที่ $\\pi$ ต้องลบ ไม่ใช่บวก"
+      },
+      {
+        "latex": "y=y_h-u(x)g(x)+u(x-\\pi)g(x-\\pi)",
+        "feedback": "ช่วงแรงบังคับเป็นบวกจึงต้องบวก g(x)"
+      },
+      {
+        "latex": "y=y_h+5u(x)g(x)-5u(x-\\pi)g(x-\\pi)",
+        "feedback": "ขนาดผลตอบสนองคูณเกินไป 5 เท่า"
+      }
+    ],
+    "explanation": "ย่อเฉลย 3 ช่วงในต้นฉบับด้วยผลตอบสนองต่อ step $g$; เมื่อ $x\\ge\\pi$ ต้องลบ $g(x-\\pi)$ โดยพจน์ homogeneous ยังคงอยู่"
+  },
+  {
+    "questionId": "ee201-t03-q001",
+    "prompt": "กำหนด $y_h=C_1\\cos x+C_2\\sin x+e^{\\sqrt3x/2}(C_3\\cos\\frac x2+C_4\\sin\\frac x2)+e^{-\\sqrt3x/2}(C_5\\cos\\frac x2+C_6\\sin\\frac x2)$ เลือกผลเฉลย $y=y_h+y_p$ ที่ตรงกับต้นฉบับ",
+    "sourceMediaId": "5b503dc536849a0dcc80075ac46405d2e24784ddaebca0aa4c1fa6738c094611",
+    "correctIndex": 0,
+    "options": [
+      {
+        "latex": "y=y_h+\\frac{x}{6}\\sin x",
+        "feedback": "ตรงกับเฉลยต้นฉบับ"
+      },
+      {
+        "latex": "y=y_h-\\frac{x}{6}\\sin x",
+        "feedback": "เครื่องหมายของ particular solution กลับด้าน"
+      },
+      {
+        "latex": "y=y_h+\\frac{x}{6}\\cos x",
+        "feedback": "พจน์ particular ต้องเป็น x sin x"
+      },
+      {
+        "latex": "y=y_h+\\frac{x}{3}\\sin x",
+        "feedback": "สัมประสิทธิ์ต้องเป็น 1/6 ไม่ใช่ 1/3"
+      }
+    ],
+    "explanation": "ตามต้นฉบับเกิด resonance ที่ $m=\\pm j$ และได้ $y_p=\\frac16x\\sin x$; ส่วน homogeneous เป็นตามที่กำหนด"
+  },
+  {
+    "questionId": "ee201-t04-q001",
+    "prompt": "เลือกผลเฉลยทั่วไปของสมการผลต่าง โดย C₁ และ C₂ เป็นค่าคงที่อิสระ",
+    "sourceMediaId": "beaea0d5d8e23684c436c69042cfa1d464d307d427556a1e1c825a5bc5bee218",
+    "correctIndex": 0,
+    "options": [
+      {
+        "latex": "y[n]=C_1+(C_2+\\frac n2)2^n+\\frac43\\,2^{-n}",
+        "feedback": "ตรงกับเฉลยต้นฉบับ"
+      },
+      {
+        "latex": "y[n]=C_1+(C_2-\\frac n2)2^n+\\frac43\\,2^{-n}",
+        "feedback": "พจน์ n2^n มีสัมประสิทธิ์บวก 1/2"
+      },
+      {
+        "latex": "y[n]=C_1+(C_2+\\frac n2)2^n-\\frac43\\,2^{-n}",
+        "feedback": "พจน์ 2^{-n} ต้องเป็นบวก"
+      },
+      {
+        "latex": "y[n]=C_1+(C_2+\\frac n2)2^n+\\frac34\\,2^{-n}",
+        "feedback": "สัมประสิทธิ์ต้องเป็น 4/3 ไม่ใช่ 3/4"
+      }
+    ],
+    "explanation": "ต้นฉบับให้ราก 1,2 และ particular solution $\\frac n2\\,2^n+\\frac43\\,2^{-n}$"
+  },
+  {
+    "questionId": "ee201-t05-q001",
+    "prompt": "เลือกอนุกรม Fourier ที่ตรงกับต้นฉบับ (คาบ T=3)",
+    "sourceMediaId": "5b3363f5ab88ddc6f37628f886fa81185c1ab4bf4e710f1ddb0f5aebb6a55bf1",
+    "correctIndex": 0,
+    "options": [
+      {
+        "latex": "f(t)=1+\\frac9{\\pi^2}\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}}{n^2}\\sin\\frac{n\\pi}{3}\\sin\\frac{2n\\pi t}{3}",
+        "feedback": "ตรงกับเฉลยต้นฉบับ"
+      },
+      {
+        "latex": "f(t)=1-\\frac9{\\pi^2}\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}}{n^2}\\sin\\frac{n\\pi}{3}\\sin\\frac{2n\\pi t}{3}",
+        "feedback": "เครื่องหมายของสัมประสิทธิ์ sine กลับด้าน"
+      },
+      {
+        "latex": "f(t)=2+\\frac9{\\pi^2}\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}}{n^2}\\sin\\frac{n\\pi}{3}\\sin\\frac{2n\\pi t}{3}",
+        "feedback": "ค่าเฉลี่ยคือ a₀/2=1 ไม่ใช่ a₀=2"
+      },
+      {
+        "latex": "f(t)=1+\\frac9{\\pi^2}\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}}{n}\\sin\\frac{n\\pi}{3}\\sin\\frac{2n\\pi t}{3}",
+        "feedback": "สัมประสิทธิ์ลดลงตาม 1/n² ไม่ใช่ 1/n"
+      }
+    ],
+    "explanation": "ต้นฉบับได้ $a_0=2$, $a_n=0$ และ $b_n=\\frac{9(-1)^{n+1}}{n^2\\pi^2}\\sin\\frac{n\\pi}{3}$ จึงมีค่าเฉลี่ย $a_0/2=1$"
+  },
+  {
+    "questionId": "ee201-t06-q001",
+    "prompt": "สำหรับข้อนี้ฝึกเฉพาะข้อย่อย (b): เลือก Fourier transform $F(\\omega)$ ตาม convention ในเฉลยต้นฉบับ (ไม่รวมคะแนนข้อย่อย a)",
+    "sourceMediaId": "f092e07f89d4bac1ba0242cb3b4ed626438ad90299f34d487f55e8a9c0d30422",
+    "correctIndex": 0,
+    "options": [
+      {
+        "latex": "F(\\omega)=\\frac\\pi4[u(\\omega-15)-3u(\\omega-5)+3u(\\omega+5)-u(\\omega+15)]",
+        "feedback": "ตรงกับเฉลยต้นฉบับ"
+      },
+      {
+        "latex": "F(\\omega)=-\\frac\\pi4[u(\\omega-15)-3u(\\omega-5)+3u(\\omega+5)-u(\\omega+15)]",
+        "feedback": "เครื่องหมายของผลแปลงกลับด้าน"
+      },
+      {
+        "latex": "F(\\omega)=\\frac\\pi2[u(\\omega-15)-3u(\\omega-5)+3u(\\omega+5)-u(\\omega+15)]",
+        "feedback": "ตัวคูณเกินไป 2 เท่า"
+      },
+      {
+        "latex": "F(\\omega)=\\frac\\pi4[u(\\omega-15)-u(\\omega-5)+u(\\omega+5)-u(\\omega+15)]",
+        "feedback": "สัมประสิทธิ์ของ step ที่ ±5 ต้องมีขนาด 3"
+      }
+    ],
+    "explanation": "ข้อย่อย (b) ในต้นฉบับให้ F(ω) ตาม unit step ในตัวเลือกถูก ซึ่งเท่ากับ π/2 เมื่อ |ω|<5, −π/4 เมื่อ 5<|ω|<15 และ 0 เมื่อ |ω|>15 (ค่าที่รอยต่อขึ้นกับ convention)"
+  },
+  {
+    "questionId": "ee201-t07-q001",
+    "prompt": "เลือกคู่คำตอบของข้อย่อย (a) และ (b) ตามลำดับ ตามนิยามในเฉลยต้นฉบับ",
+    "sourceMediaId": "e1ca040de140f3434cdfadced685bcf11698bdea2e99dfe98b261d4595261e19",
+    "correctIndex": 0,
+    "options": [
+      {
+        "latex": "\\text{(a) }F(s)=\\cot^{-1}\\frac{s+a}{b}\\qquad\\text{(b) }f(t)=\\frac14e^t-\\frac14e^{-t}-\\frac16te^{-t}-\\frac2{3\\sqrt3}e^{t/2}\\sin\\frac{\\sqrt3t}{2}",
+        "feedback": "ตรงกับเฉลยต้นฉบับ"
+      },
+      {
+        "latex": "\\text{(a) }F(s)=\\cot^{-1}\\frac{s-a}{b}\\qquad\\text{(b) }f(t)=\\frac14e^t-\\frac14e^{-t}-\\frac16te^{-t}-\\frac2{3\\sqrt3}e^{t/2}\\sin\\frac{\\sqrt3t}{2}",
+        "feedback": "การเลื่อน s ต้องเป็น s+a ตามต้นฉบับ"
+      },
+      {
+        "latex": "\\text{(a) }F(s)=\\cot^{-1}\\frac{s+a}{b}\\qquad\\text{(b) }f(t)=\\frac14e^t-\\frac14e^{-t}+\\frac16te^{-t}-\\frac2{3\\sqrt3}e^{t/2}\\sin\\frac{\\sqrt3t}{2}",
+        "feedback": "พจน์ te^{-t} ต้องมีเครื่องหมายลบ"
+      },
+      {
+        "latex": "\\text{(a) }F(s)=\\cot^{-1}\\frac{s+a}{b}\\qquad\\text{(b) }f(t)=\\frac14e^t-\\frac14e^{-t}-\\frac16te^{-t}+\\frac2{3\\sqrt3}e^{t/2}\\sin\\frac{\\sqrt3t}{2}",
+        "feedback": "พจน์ sine สุดท้ายต้องมีเครื่องหมายลบ"
+      }
+    ],
+    "explanation": "ใช้ frequency shift เป็น s+a ในข้อ (a); ข้อ (b) ต้นฉบับมีพจน์ $-\\frac16te^{-t}$ และพจน์ sine ติดลบ"
+  },
+  {
+    "questionId": "ee201-t08-q001",
+    "prompt": "เลือกคู่คำตอบข้อย่อย (a) และ (b) ตามลำดับ โดยใช้ unilateral Z-transform และเงื่อนไขในโจทย์",
+    "sourceMediaId": "0a7e826e46580d1b7c8403ba785ac491ff3d443c39d871d30ee51f173d672829",
+    "correctIndex": 0,
+    "options": [
+      {
+        "latex": "\\text{(a) }x[n]=n^3u[n]\\qquad\\text{(b) }y[n]=(-\\frac5{27}-\\frac{2n}{9}-\\frac{n^2}{3}+\\frac5{27}4^n)u[n]",
+        "feedback": "ตรงกับเฉลยต้นฉบับ"
+      },
+      {
+        "latex": "\\text{(a) }x[n]=n^2u[n]\\qquad\\text{(b) }y[n]=(-\\frac5{27}-\\frac{2n}{9}-\\frac{n^2}{3}+\\frac5{27}4^n)u[n]",
+        "feedback": "ข้อ (a) ต้องได้กำลัง 3 ไม่ใช่กำลัง 2"
+      },
+      {
+        "latex": "\\text{(a) }x[n]=n^3u[n]\\qquad\\text{(b) }y[n]=(-\\frac5{27}-\\frac{2n}{9}+\\frac{n^2}{3}+\\frac5{27}4^n)u[n]",
+        "feedback": "พจน์ n²/3 ต้องมีเครื่องหมายลบ"
+      },
+      {
+        "latex": "\\text{(a) }x[n]=n^3u[n]\\qquad\\text{(b) }y[n]=(-\\frac5{27}-\\frac{2n}{9}-\\frac{n^2}{3}-\\frac5{27}4^n)u[n]",
+        "feedback": "พจน์ 4^n ต้องมีสัมประสิทธิ์บวก 5/27"
+      }
+    ],
+    "explanation": "ต้นฉบับใช้ $n^3a^nu[n]\\leftrightarrow az(z^2+4az+a^2)/(z-a)^4$ ที่ a=1 และแยก partial fractions เพื่อได้ y[n] ตามตัวเลือกถูก"
+  },
+  {
+    "questionId": "ee201-t09-q001",
+    "prompt": "เลือกผลเฉลย y(x,t) ที่สอดคล้องกับเงื่อนไขเริ่มต้นและขอบเขตในโจทย์",
+    "sourceMediaId": "e5ef3b134b837fc4ff4459821427b05f91b7ae67cde1b7da562d496dc0348761",
+    "correctIndex": 0,
+    "options": [
+      {
+        "latex": "y(x,t)=\\frac{225}{2\\pi c}\\sin\\frac{\\pi ct}{50}\\sin\\frac{\\pi x}{50}-\\frac{25}{2\\pi c}\\sin\\frac{3\\pi ct}{50}\\sin\\frac{3\\pi x}{50}",
+        "feedback": "ตรงกับเฉลยต้นฉบับ"
+      },
+      {
+        "latex": "y(x,t)=\\frac{225}{2\\pi c}\\sin\\frac{\\pi ct}{50}\\sin\\frac{\\pi x}{50}+\\frac{25}{2\\pi c}\\sin\\frac{3\\pi ct}{50}\\sin\\frac{3\\pi x}{50}",
+        "feedback": "โหมดที่ 3 ต้องมีสัมประสิทธิ์ลบ"
+      },
+      {
+        "latex": "y(x,t)=\\frac{225}{2\\pi c}\\sin\\frac{\\pi ct}{50}\\sin\\frac{\\pi x}{50}-\\frac{75}{2\\pi c}\\sin\\frac{3\\pi ct}{50}\\sin\\frac{3\\pi x}{50}",
+        "feedback": "สัมประสิทธิ์โหมดที่ 3 ต้องหารด้วยความถี่ 3 จึงได้ 25 ไม่ใช่ 75"
+      },
+      {
+        "latex": "y(x,t)=\\frac{225}{2\\pi c}\\cos\\frac{\\pi ct}{50}\\sin\\frac{\\pi x}{50}-\\frac{25}{2\\pi c}\\sin\\frac{3\\pi ct}{50}\\sin\\frac{3\\pi x}{50}",
+        "feedback": "ใช้ cos ในเวลาทำให้ y(x,0) ไม่เป็นศูนย์"
+      }
+    ],
+    "explanation": "ตามต้นฉบับ Cₙ=0, D₁=225/(2πc), D₃=−25/(2πc) และสัมประสิทธิ์อื่นเป็นศูนย์; แทน t=0 ได้ y(x,0)=0 และหาอนุพันธ์เวลาเพื่อตรวจความเร็วต้น"
+  }
+]

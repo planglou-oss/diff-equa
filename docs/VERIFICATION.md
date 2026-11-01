@@ -1,0 +1,83 @@
+# ผลตรวจ implementation
+
+ตรวจเมื่อ 31 ตุลาคม 2026
+
+## Build และ automated tests
+
+- React: `tsc -b && vite build` ผ่าน ไม่มี chunk-size warning หลังแยกโหลด tutor และ KaTeX ตามการใช้งาน
+- Go: `go test ./...` ผ่านทั้ง importer, HTTP API และ Gemini adapter; `go vet ./...` ผ่าน
+- ตัวเปิดแอป: รัน `scripts/start.ps1` ที่ `run.bat` ใช้แล้ว build สำเร็จ เปิด server ได้; ตรวจหน้า React HTTP 200 และ catalog รวม 427 ข้อ
+- Importer: ตรวจข้อมูลจริงครบ 10 topics, 427 questions, 854 image relationships, 10 imported AI explanations ภาพที่อ่านกลับตรงกับ bytes ต้นฉบับครบทุกภาพ
+- Import ซ้ำ: จำนวนข้อมูลและ stable IDs ไม่เปลี่ยน; orphan explanation ทำให้ rollback ข้อมูลในฐานข้อมูล
+- HTTP API: ตรวจ filter แบบ AND, search, pagination, image cache, missing question และคำอธิบาย AI ที่ไม่มี
+- Chat: ทดสอบด้วย mock provider ทั้ง SSE, history, แยกโจทย์, session เจ้าของคนละตัว, idempotency, โควตา, upstream error และ disconnect/cancel
+- Gemini adapter: ตรวจรูปแบบ multimodal payload, API key ผ่าน header, การอ่าน delta และการไม่ส่ง thought/error ภายในให้ผู้ใช้ โดยใช้ mock HTTP transport
+
+## Browser checks
+
+เปิด React production build ผ่าน Go บน localhost แล้วตรวจ:
+
+- หน้าเริ่มต้น: สีส้ม/เขียว มาสคอต sidebar และการ์ดตาม HTML เดิม
+- กรองปี/ประเภท/หัวข้อร่วมกัน ค้นหา และสถานะไม่พบข้อมูล
+- เปิดภาพเฉลยต้นฉบับและคำอธิบาย AI; สูตร render ด้วย KaTeX
+- เปิดหน้าโจทย์รายข้อและกลับรายการพร้อมตัวกรองเดิม
+- เปลี่ยนหน้าจาก 1 ไป 2 แล้วยืนยันว่าแสดงโจทย์เริ่มที่ข้อ 21
+- ขยายรูปด้วย dialog และปิดกลับรายการได้
+- ตรวจ responsive ที่ 390 × 844 แล้ว reset viewport กลับ
+- AI ที่ยังไม่มี server configuration แสดงสถานะ unavailable และไม่ให้ส่งข้อความ
+- console ไม่พบ error/warning ระหว่างการตรวจหน้าเว็บ
+
+ภาพตัวอย่างอยู่ที่ `docs/react-preview.png` HTML ต้นทางยังมีขนาด 6,615,983 bytes
+
+## ข้อจำกัดการตรวจ
+
+ยังไม่ได้เรียก Gemini จริงเพราะไม่มี API key และ model ตั้งไว้ ไม่มีการทดสอบโหลดหลายผู้ใช้จริงหรือการ deploy ผ่าน reverse proxy และไม่ได้ทดสอบบนอุปกรณ์มือถือจริง การตรวจ UI แชตครั้งนี้ตรวจสถานะปิดใช้ AI; เส้นทาง streaming ใช้ automated backend/provider tests
+
+## อัปเดต 1 พฤศจิกายน 2026 — AI latency และ font CSP
+
+- แก้ `font-src` ให้รองรับฟอนต์แบบ data URL โดยยังจำกัด script เป็น same-origin
+- Gemini 3 ใช้ thinking LOW โดยค่าเริ่มต้นและปรับได้; เพิ่ม output budget เป็น 8,192 tokens พร้อมลดคำตอบปกติให้กระชับ
+- แยก error codes สำหรับ quota, access/model/config, timeout, empty response, output limit และ stream ที่ปิดก่อนยืนยัน STOP; บันทึกเวลาถึงข้อความแรกและเวลารวมโดยไม่ log เนื้อหาหรือ key
+- SSE keepalive ระหว่างโมเดลยังไม่ส่งข้อความ และตัวนับเวลารอใน chatbot
+- `go test ./...`, `go vet ./...`, Go build และ React production build ผ่านหลังแก้
+- ทดสอบ provider จริงด้วยข้อความสั้น `Reply only OK.` กับ gemini-3.6-flash และ thinking LOW: เริ่มรับข้อความประมาณ 2.77 วินาที จบประมาณ 2.78 วินาทีและ finishReason STOP ค่านี้เป็นคำถามสั้น ไม่ใช่ benchmark ของโจทย์คณิตศาสตร์
+- คำขอเก่าที่ error มีเพียง AI_GENERATION_FAILED จึงไม่สามารถระบุย้อนหลังว่าล้มเหลวเพราะ quota/network/empty output ได้
+- ไม่ได้หยุดหรือแทนที่ server ที่ผู้ใช้กำลังเปิดอยู่ ต้อง restart ผ่าน run.bat เพื่อใช้ backend ที่แก้แล้ว
+
+## อัปเดต 1 พฤศจิกายน 2026 — text-only question context
+
+- เปลี่ยน Gemini input จากภาพโจทย์/เฉลยเป็นข้อความโจทย์ที่แก้ไขได้ Prompt สั้นและระบุให้ตอบเฉพาะคำถามล่าสุด
+- ทดสอบ HTTP payload ว่ามีข้อความของข้อที่เลือกและไม่มี inline image attachments
+- จำกัดประวัติที่ส่งไม่เกิน 2 รอบ (4 ข้อความ) ภายในงบ 4,000 ตัวอักษร ลด output ceiling จาก 8,192 เป็น 4,096 tokens
+- ตรวจ API ข้อความโจทย์, 404, การแก้ข้อความ, การรักษา questionId และการเลือกประวัติ 2 รอบล่าสุด
+- เพิ่ม tests สำหรับการตัด metadata/solution markers โดยไม่เดาสัญลักษณ์คณิตศาสตร์ ข้อความ 2 ข้อแรกของหัวข้อ 1 ตรวจจากภาพแล้ว ข้ออื่นยังเป็น OCR draft และมีข้อจำกัดตาม README
+- Go tests, go vet, Go build และ React build ผ่าน
+- Browser QA กับ Gemini จริงบน server/ฐานข้อมูลทดสอบแยก: “kawaii แปลว่าอะไร” → “น่ารัก”; “สัมประสิทธิ์ของ y' ในข้อนี้คือเท่าไร” → “4”
+- เมื่อแก้ context เป็น `7y'+5y=0` บทสนทนาเริ่มใหม่และตอบสัมประสิทธิ์ “7”; console ไม่พบ error/warning
+- ภาพหน้าจอ: `docs/text-chat-preview.png` ตัวอย่างเหล่านี้เป็นการตรวจพฤติกรรมเฉพาะกรณี ไม่ใช่การรับประกันคำตอบทั้งหมดของโมเดล
+
+## อัปเดต 1 พฤศจิกายน 2026 — ชุดเครื่องมือช่วยเรียน
+
+- เพิ่มชุดฝึกสุ่มตามหัวข้อ จำนวนข้อ เวลา ตัวกรองข้อที่ยังไม่เข้าใจ/รายการโปรด และเก็บคำตอบกับประวัติ 10 ชุดล่าสุดในเครื่อง
+- ระหว่างทำชุดฝึก UI ไม่แสดงเฉลย ข้อความ OCR คำใบ้ และแชต; ตรวจ browser ว่าไม่มีปุ่มเฉลยและ floating AI ในหน้าชุดฝึกที่ยังไม่จบ
+- ตรวจใน browser: พิมพ์คำตอบ รีเฟรชแล้วคำตอบยังอยู่และ timer เดินต่อ; จบชุดฝึกแล้วเปิดเฉลยได้และมีรายการในประวัติ
+- เพิ่มสถานะ รายการโปรด โน้ต คำตอบร่าง checklist และตำแหน่งการเรียนต่อ; ทดสอบบันทึกและรีโหลดจริง รวมระดับคำใบ้และขั้นเฉลย
+- มีสูตร/แนวทาง 9 หัวข้อ, คำใบ้เฉพาะข้อที่ตรวจจากภาพ 2 ข้อ, แบ่งคำอธิบาย AI เดิม 10 ข้อเป็นขั้น ๆ และเปิดข้อความร่างเพื่อขอ AI ตรวจคำตอบ/อธิบายต่อ โดยไม่ได้ส่งคำขอ AI อัตโนมัติ
+- ตรวจฟอร์มรายงานผ่านหน้าเว็บจริง ได้ receipt และบันทึกใน DB ทดสอบแยก; review status ของคำอธิบายไม่ถูกแก้โดยอัตโนมัติ
+- Go tests ครอบคลุม random uniqueness, topic/include/exclude intersections, empty favorites, input limits, Thai search aliases, report session/validation/rate limit และการเก็บรายงาน; `go test ./...` และ `go vet ./...` ผ่าน
+- Frontend model tests 7 ข้อผ่าน: persistence, timer/deadline, history bounds, filters, corrupt data, view-state persistence และการจำกัดค่า; React/TypeScript production build ผ่าน
+- ตรวจหน้า Laplace formulas บนมือถือ 390×844 มี 3 formula cards และไม่พบ KaTeX errors; reset viewport กลับหลังตรวจ
+- ภาพหน้าจอชุดฝึก: `docs/study-practice.png`
+- ขอบเขต: การตรวจคำตอบเป็น checklist และ AI assistance พร้อม self assessment ไม่ใช่ symbolic grading; ยังมีคำอธิบาย AI ที่เตรียมไว้ 10 ข้อและ OCR draft ที่ต้องตรวจตาม README
+
+## อัปเดต 1 พฤศจิกายน 2026 — 4-choice grading
+
+- เปลี่ยนช่องคำตอบทั้งสองจุดเป็น radio 4 ตัวเลือก; โน้ตและแชตยังพิมพ์ได้ตามเดิม
+- จัดทำ answer keys 10 ข้อจากภาพเฉลยต้นฉบับ (ไม่ได้ครอบคลุมทั้ง 427 ข้อ) ครบ 9 หัวข้อ; Fourier Transforms ข้อ 1 ระบุฝึกเฉพาะข้อย่อย b
+- ตรวจ API ว่ามี 4 ตัวเลือกที่ ID/order คงที่ ไม่ส่ง correctIndex/feedback/explanation ก่อนตรวจ; ส่งคำตอบถูกทั้ง 10 ข้อได้ 10 คะแนน และแยกผิด/ไม่ตอบ/คำตอบเก่า/เฉลยเปลี่ยน/ข้อที่ไม่พร้อมอย่างถูกต้อง
+- ตรวจภาพ source hash เพื่อไม่ใช้ key เดิมเมื่อเปลี่ยนภาพ; ปฏิเสธตัวเลือกปลอมและข้อซ้ำ; fake AI provider ไม่ถูกเรียกแม้แต่ครั้งเดียว
+- ชุดฝึกใหม่และตัวกรองคลังใช้ pool ที่พร้อมตรวจเหมือนกัน
+- Browser QA: ตอบผิดและถูกจากแผงช่วยเรียน, reload ยังคงตัวเลือก, ฝึก 2 ข้อจบได้คะแนน 1/2 พร้อมเหตุผลและภาพต้นฉบับ; ระหว่างจับเวลาไม่มีปุ่มตรวจ/feedback/floating AI
+- ตรวจ KaTeX parse ของตัวเลือก 40 รายการและสูตรใน prompt/feedback/explanation ผ่าน
+- Frontend tests 8 ข้อและ production build ผ่าน; Go test/vet ผ่าน (Windows sandbox บล็อก rename ภาพใน temp ของ importer จึงรันทดสอบนอก sandbox สำเร็จ)
+- ภาพผลคะแนนและตัวเลือก: `docs/choice-practice.png`; ตรวจขนาด radio หลังแก้ CSS เป็น 17.6px และไม่มี console errors/warnings
