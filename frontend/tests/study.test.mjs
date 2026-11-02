@@ -14,3 +14,15 @@ test('timer expires by timestamp even after the page has been closed',()=>{const
 test('manual finish stores elapsed time and keeps at most ten unique attempts',()=>{let s=emptyStudy();for(let i=0;i<12;i++){s.practice={...session(),id:'session-'+i};s=finishPractice(s,120000)}assert.equal(s.practice.finishedAt,120000);assert.equal(s.history.length,10);assert.equal(s.history[0].id,'session-11');assert.equal(s.history[9].id,'session-2')});
 test('unseen includes untouched questions and favorite filters intersect with status',()=>{const records={'ee201-t01-q001':{...defaultRecord(),status:'understood',favorite:true},'ee201-t01-q002':{...defaultRecord(),status:'reviewing',favorite:true},'ee201-t01-q003':{...defaultRecord(),favorite:true}};assert.deepEqual(studyIDs(records,'unseen',false),{excludeIds:['ee201-t01-q001','ee201-t01-q002']});assert.deepEqual(studyIDs(records,'unseen',true),{ids:['ee201-t01-q003']});assert.deepEqual(studyIDs(records,'reviewing',true),{ids:['ee201-t01-q002']});assert.deepEqual(studyIDs({},'understood',false),{ids:[]})});
 test('corrupt local data is ignored and external resume URLs are rejected',()=>{assert.deepEqual(parseStudy('bad JSON'),emptyStudy());assert.equal(safeListURL('//external.example'),'/questions');assert.equal(safeListURL('/questions/../private'),'/questions');const s=emptyStudy();s.practice={...session(),questions:[{...question,questionImage:{...question.questionImage,url:'https://external.example/image.png'}}]};assert.equal(parseStudy(JSON.stringify(s)).practice,null);const dirty=parseStudy(JSON.stringify({version:1,records:{bad:{status:'understood'},[question.id]:{status:'fake',note:'x'.repeat(5000)}},lastList:{url:'https://external.example',y:-3}}));assert.equal(dirty.records[question.id].status,'unseen');assert.equal(dirty.records[question.id].note.length,4000);assert.deepEqual(dirty.lastList,{url:'/questions',y:0})});
+
+test('static practice questions survive reload while external image URLs stay rejected',()=>{
+ const s=emptyStudy();
+ s.practice={...session(),questions:[{...question,questionImage:{...question.questionImage,url:'/study'+question.questionImage.url}}]};
+ assert.deepEqual(parseStudy(JSON.stringify(s)).practice,s.practice);
+ s.history=[{...s.practice,finishedAt:120000}];
+ assert.equal(parseStudy(JSON.stringify(s)).history.length,1);
+ for(const url of ['/study/media/not-a-hash.png','/study/../media/'+ 'a'.repeat(64)+'.png','https://external.example/media/'+ 'a'.repeat(64)+'.png']){
+  const bad={...s,practice:{...s.practice,questions:[{...question,questionImage:{...question.questionImage,url}}]}};
+  assert.equal(parseStudy(JSON.stringify(bad)).practice,null);
+ }
+});

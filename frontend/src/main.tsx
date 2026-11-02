@@ -1,3 +1,4 @@
+import { IS_STATIC } from "./lib/mode";
 import { StrictMode, Suspense, lazy, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
@@ -35,11 +36,13 @@ const client = new QueryClient({
     },
   },
 });
-const Tutor = lazy(() =>
-  import("./features/tutor/Tutor").then((module) => ({
-    default: module.Tutor,
-  })),
-);
+const Tutor = IS_STATIC
+  ? null
+  : lazy(() =>
+      import("./features/tutor/Tutor").then((module) => ({
+        default: module.Tutor,
+      })),
+    );
 const PracticePage = lazy(() =>
   import("./features/study/PracticePage").then((m) => ({
     default: m.PracticePage,
@@ -107,15 +110,25 @@ function App() {
               />
               <Route
                 path="/questions"
-                element={<QuestionList catalog={catalog.data} onAsk={ask} />}
+                element={
+                  <QuestionList
+                    catalog={catalog.data}
+                    onAsk={IS_STATIC ? undefined : ask}
+                  />
+                }
               />
               <Route
                 path="/questions/:id"
-                element={<QuestionDetail onAsk={ask} />}
+                element={<QuestionDetail onAsk={IS_STATIC ? undefined : ask} />}
               />
               <Route
                 path="/practice"
-                element={<PracticePage catalog={catalog.data} onAsk={ask} />}
+                element={
+                  <PracticePage
+                    catalog={catalog.data}
+                    onAsk={IS_STATIC ? undefined : ask}
+                  />
+                }
               />
               <Route path="/formulas" element={<FormulaPage />} />
               <Route
@@ -138,11 +151,12 @@ function App() {
         Yotsuba’s EE Math I ✿ ค่อย ๆ ฝึก แล้วจะเข้าใจมากขึ้น
         <br />
         <small>
-          โจทย์และสูตรไม่ใช้โควตา AI · แชต AI ต้องใช้อินเทอร์เน็ต · API key
-          เก็บที่เซิร์ฟเวอร์
+          {IS_STATIC
+            ? "โจทย์และเฉลยพร้อมอ่าน · ความคืบหน้าและโน้ตบันทึกในเบราว์เซอร์นี้"
+            : "โจทย์และสูตรไม่ใช้โควตา AI · แชต AI ต้องใช้อินเทอร์เน็ต · API key เก็บที่เซิร์ฟเวอร์"}
         </small>
       </footer>
-      {!practiceLocked && (
+      {!IS_STATIC && !practiceLocked && (
         <button
           id="fab"
           title="Yotsuba AI"
@@ -154,7 +168,7 @@ function App() {
           <Mascot className="fab-avatar" />
         </button>
       )}
-      {open && !practiceLocked && (
+      {Tutor && open && !practiceLocked && (
         <Suspense
           fallback={
             <div id="chat" className="empty" role="status">

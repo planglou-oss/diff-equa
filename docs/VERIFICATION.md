@@ -126,3 +126,29 @@
 - รายงานและ hash: docs/BVP_REVIEW.md และ docs/bvp-review.json; รันซ้ำด้วย python scripts/verify_bvp.py (ต้องมี SymPy ในเครื่องพัฒนา)
 - การตรวจเป็น AI-assisted audit ไม่ใช่การรับรองจากอาจารย์ สคริปต์ตรวจสูตรที่ถอดจากภาพ ไม่ได้ parse สูตรทั้งหมดใน HTML อัตโนมัติ
 - ชุดทดสอบ backend ทั้งหมดผ่าน go test ./... รวม coverage/status ของ BVP ทุกข้อ การ seed ซ้ำ source-image guards และการรักษา custom/human-reviewed explanations
+## แพ็กเกจ Windows แบบพร้อมใช้
+
+- เพิ่ม scripts/package-windows.ps1 สำหรับ build React + Go Windows/amd64 แบบ CGO_ENABLED=0 และสร้าง ZIP/SHA-256 ใน release/ (ignore ใน Git)
+- ZIP มี EE-Math.exe, START.bat, PowerShell launcher, frontend/dist รวมฟอนต์, source HTML สำหรับ import, .env.example ที่ไม่มี key และรายงานตรวจเฉลย
+- ใช้รายการไฟล์ที่อนุญาต ไม่คัดลอก .env, data/, ประวัติแชต, node_modules หรือเครื่องมือ .tools
+- เพิ่ม scripts/test-portable.ps1: แตก ZIP ใหม่ใน path ที่มีช่องว่าง เปิดผ่าน START.bat/Windows PowerShell 5.1 เมื่อไม่มี node/npm/go บน PATH และไม่มี Gemini key
+- ตรวจ first-run import ผ่าน: 427 โจทย์, 123 คำอธิบายที่เพิ่มไว้ (71 Laplace + 27 Z-transform + 25 BVP) พร้อม body/status ตรงกับ source, assets/fonts/PNG/mascot พร้อมใช้ และสร้างฐานข้อมูลใหม่ได้
+- ทดสอบเปิดซ้ำพอร์ตเดิม: แจ้ง already in use โดยไม่หยุดแอปแรก; หยุดเฉพาะ process ของ smoke test เมื่อจบ
+- ตรวจ ZIP ไม่รวม key ปัจจุบัน/ฐานข้อมูลส่วนตัว และตรวจ SHA-256 กับ source HTML ที่เหมือนต้นฉบับทุก byte ผ่าน
+- Node frontend production build และ Go stripped Windows build ผ่าน; ไม่เปลี่ยน Go application logic หรือ frontend design
+- แพ็กเกจที่ทดสอบ: release/EE-Math-Windows-x64-20261102-194913.zip; พร้อม README.txt และคู่มือสร้างรุ่นใหม่ใน README.md
+## โหมด static สำหรับ Vercel (ไม่มี chatbot)
+
+- เพิ่ม vercel.json ที่ root: npm ci --prefix frontend, npm run build:static --prefix frontend, output frontend/dist พร้อม SPA rewrites ของทุก route และ security/cache headers
+- เพิ่ม backend/cmd/export-static สร้างฐานข้อมูลชั่วคราวจาก source แล้ว seed คำอธิบาย ไม่อ่าน .env หรือ data/ ส่วนตัว; ส่งออก frontend/public/study/ ที่ commit ได้ โดย Vercel ไม่ต้องใช้ Go
+- Snapshot มีโจทย์ 427 ข้อ รูป PNG 854 รูป มาสคอต สูตร ข้อความ OCR คำอธิบายล่าสุดครบ 123 ข้อ และ choice keys ที่ตรวจแล้ว 10 ข้อ พร้อม SHA-256 manifest
+- เพิ่ม browser adapter สำหรับค้นหา กรอง เรียงปีก่อนแบ่งหน้า สุ่มชุดฝึก และตรวจ choice แบบใช้ key/version เดิม จัด legacy/stale/unavailable เป็น ungraded
+- Static build ไม่มีปุ่ม chatbot/ถาม AI และไม่มี Tutor bundle; บันทึกข้อผิดพลาดเก็บใน browser เท่านั้น ระบุว่ายังไม่ส่งผู้ดูแลและดาวน์โหลด JSON ได้
+- ตรวจ snapshot/PNG hashes, จำนวน/แท็กหัวข้อ, ความครบของคำอธิบาย และ grading keys ก่อน build; แก้ exporter ให้ decode แต่ละหน้าเป็น slice ใหม่เพื่อไม่ให้ tags ของต่างหน้าทับกัน
+- แก้ renderer ให้ escape เครื่องหมาย <, > และ & ใน LaTeX ก่อน HTML parsing โดยไม่ double-escape entities ทำให้เงื่อนไขในสูตรไม่ถูกตัด
+- แก้การ restore ชุดฝึกให้ยอมรับ /study/media/<hash>.png แบบจำกัดรูปแบบ พร้อมคงการปฏิเสธ external/traversal URLs
+- ชุดทดสอบ frontend ผ่าน 17 รายการ ครอบคลุมทุก 40 ตัวเลือก การเรียงทั้งหมดก่อน pagination ตัวกรองผสม การสุ่มไม่ซ้ำ สถานะคำตอบเก่า local reports และ reload/history
+- Production builds ผ่านทั้งโหมด Go ปกติและ build:static; artifact static ไม่มี .env, API key ปัจจุบัน, SQLite, executable หรือ Tutor bundle
+- Chrome headless เปิด static production build โดยไม่มี Go ภายใต้ CSP จาก vercel.json ผ่าน: deep link, year sort, tags, full LaTeX, โน้ต/สถานะ/รายการโปรดหลัง reload, ดาวน์โหลด local report, ตรวจคำตอบ, ทำ practice ต่อหลัง reload/จบและแสดงคะแนน, formulas และมือถือ 390x844 ไม่มี page errors/HTTP errors/API requests หรือหน้าล้นแนวนอน
+- ภาพ QA: docs/vercel-static-preview.png และ docs/vercel-static-mobile.png; คู่มือ deploy/export อยู่ใน docs/VERCEL.md
+- ยังไม่ได้ publish ขึ้น Vercel หรือ push GitHub ในงานนี้ ต้องนำโค้ดรวม public snapshot ขึ้น repo แล้ว Import โดยตั้ง Root Directory เป็น root ของ repo

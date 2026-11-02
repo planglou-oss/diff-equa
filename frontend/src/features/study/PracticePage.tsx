@@ -19,7 +19,7 @@ export function PracticePage({
   onAsk,
 }: {
   catalog: Catalog;
-  onAsk: AskTutor;
+  onAsk?: AskTutor;
 }) {
   const s = useStudy();
   const p = s.practice;

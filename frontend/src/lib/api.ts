@@ -1,3 +1,5 @@
+import { staticApi } from "./staticClient";
+import { IS_STATIC } from "./mode";
 export type Image = { url: string; width: number; height: number };
 export type Question = {
   id: string;
@@ -68,6 +70,9 @@ export async function api<T>(
   path: string,
   options: RequestInit = {},
 ): Promise<T> {
+  if (IS_STATIC) {
+    return (await staticApi(path, options)) as T;
+  }
   const res = await fetch("/api/v1" + path, {
     ...options,
     credentials: "same-origin",

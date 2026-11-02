@@ -24,7 +24,7 @@ import {
   QuestionImage,
 } from "../../components/Content";
 
-type Props = { catalog: Catalog; onAsk: AskTutor };
+type Props = { catalog: Catalog; onAsk?: AskTutor };
 export function Header({ catalog }: { catalog?: Catalog }) {
   const saved = useStudy();
   const header = useRef<HTMLElement>(null);
@@ -358,7 +358,7 @@ export function QuestionCard({
   hideAnswer = false,
 }: {
   question: Question;
-  onAsk: AskTutor;
+  onAsk?: AskTutor;
   detail?: boolean;
   locked?: boolean;
   hideAnswer?: boolean;
@@ -462,9 +462,11 @@ export function QuestionCard({
               )}
             </div>
           )}
-          <button className="btn ask" onClick={() => onAsk(q)}>
-            <Mascot /> ถาม AI เรื่องข้อนี้
-          </button>
+          {onAsk && (
+            <button className="btn ask" onClick={() => onAsk(q)}>
+              <Mascot /> ถาม AI เรื่องข้อนี้
+            </button>
+          )}
           <button
             className="btn ai"
             aria-expanded={explanation}
@@ -510,7 +512,9 @@ export function QuestionCard({
               ) : (
                 <div className="aib">
                   ยังไม่มีคำอธิบาย AI สำหรับข้อนี้
-                  สามารถอ่านเฉลยต้นฉบับหรือกดถาม AI ได้ครับ
+                  {onAsk
+                    ? "สามารถอ่านเฉลยต้นฉบับหรือกดถาม AI ได้ครับ"
+                    : "สามารถเปิดภาพเฉลยต้นฉบับเพื่อทบทวนได้ครับ"}
                 </div>
               )}
             </div>
@@ -521,7 +525,7 @@ export function QuestionCard({
     </article>
   );
 }
-export function QuestionDetail({ onAsk }: { onAsk: AskTutor }) {
+export function QuestionDetail({ onAsk }: { onAsk?: AskTutor }) {
   const { id } = useParams();
   const location = useLocation();
   const navigate = useNavigate();

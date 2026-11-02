@@ -1,3 +1,5 @@
+import { IS_STATIC } from "../../lib/mode";
+import { saveLocalReport, readLocalReports } from "../../lib/staticClient";
 import { ChoiceAnswer } from "./ChoiceAnswer";
 import { useEffect, useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -97,7 +99,9 @@ function ReportForm({ question: q }: { question: Question }) {
   const [saved, setSaved] = useState("");
   return (
     <details className="report-panel">
-      <summary>แจ้งข้อผิดพลาด</summary>
+      <summary>
+        {IS_STATIC ? "บันทึกข้อผิดพลาดส่วนตัว" : "แจ้งข้อผิดพลาด"}
+      </summary>
       <form
         onSubmit={async (e) => {
           e.preventDefault();
@@ -105,6 +109,12 @@ function ReportForm({ question: q }: { question: Question }) {
           setError(null);
           setSaved("");
           try {
+            if (IS_STATIC) {
+              saveLocalReport(localStorage, q.id, kind, description);
+              setSaved("บันทึกในเบราว์เซอร์นี้แล้ว · ยังไม่ได้ส่งให้ผู้ดูแล");
+              setDescription("");
+              return;
+            }
             await api("/session", { method: "POST" });
             const result = await api<{ id: string }>(
               `/questions/${q.id}/reports`,
@@ -119,6 +129,12 @@ function ReportForm({ question: q }: { question: Question }) {
           }
         }}
       >
+        {IS_STATIC && (
+          <p className="info">
+            บันทึกเฉพาะในเบราว์เซอร์นี้ ไม่ส่งให้ผู้ดูแล เก็บ 100 รายการล่าสุด
+            ดาวน์โหลดเพื่อนำไปแจ้งได้
+          </p>
+        )}
         <label>
           ส่วนที่พบปัญหา
           <select value={kind} onChange={(e) => setKind(e.target.value)}>
@@ -142,6 +158,31 @@ function ReportForm({ question: q }: { question: Question }) {
         <button className="chip" disabled={busy}>
           {busy ? "กำลังบันทึก…" : "บันทึกแจ้งข้อผิดพลาด"}
         </button>
+        {IS_STATIC && (
+          <button
+            type="button"
+            className="chip"
+            onClick={() => {
+              try {
+                const url = URL.createObjectURL(
+                  new Blob(
+                    [JSON.stringify(readLocalReports(localStorage), null, 2)],
+                    { type: "application/json" },
+                  ),
+                );
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = "ee-math-reports.json";
+                link.click();
+                setTimeout(() => URL.revokeObjectURL(url), 1000);
+              } catch (e) {
+                setError(e);
+              }
+            }}
+          >
+            ดาวน์โหลดบันทึกข้อผิดพลาด
+          </button>
+        )}
         {saved && <p role="status">{saved}</p>}
         {error !== null && <ErrorNotice error={error} />}
       </form>
@@ -189,7 +230,7 @@ export function QuestionHelp({
   showAnswer = true,
 }: {
   question: Question;
-  onAsk: AskTutor;
+  onAsk?: AskTutor;
   showAnswer?: boolean;
 }) {
   const s = useStudy();
@@ -289,19 +330,21 @@ export function QuestionHelp({
                     onChange={(answer) => study.record(q.id, { answer })}
                   />
                 )}
-                <div className="tool-actions">
-                  <button
-                    className="chip"
-                    onClick={() =>
-                      onAsk(
-                        q,
-                        "ช่วยอธิบายวิธีทำข้อนี้ทีละขั้น เริ่มจากขั้นแรกก่อนและรอให้ฉันถามต่อ",
-                      )
-                    }
-                  >
-                    ถาม AI อธิบายทีละขั้น
-                  </button>
-                </div>
+                {onAsk && (
+                  <div className="tool-actions">
+                    <button
+                      className="chip"
+                      onClick={() =>
+                        onAsk(
+                          q,
+                          "ช่วยอธิบายวิธีทำข้อนี้ทีละขั้น เริ่มจากขั้นแรกก่อนและรอให้ฉันถามต่อ",
+                        )
+                      }
+                    >
+                      ถาม AI อธิบายทีละขั้น
+                    </button>
+                  </div>
+                )}
                 <small>AI อาจผิดพลาด ควรตรวจการแทนกลับด้วยตัวเอง</small>
                 <p>
                   <Link to={"/formulas?topicId=" + q.topicId}>

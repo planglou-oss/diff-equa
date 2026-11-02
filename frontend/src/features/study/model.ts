@@ -102,7 +102,7 @@ function readPractice(v: unknown): Practice | null {
       finite(q.displayNumber) &&
       object(q.questionImage) &&
       typeof q.questionImage.url === "string" &&
-      /^\/media\/[a-f0-9]{64}\.png$/.test(q.questionImage.url) &&
+      /^\/(?:study\/)?media\/[a-f0-9]{64}\.png$/.test(q.questionImage.url) &&
       finite(q.questionImage.width) &&
       finite(q.questionImage.height),
   ) as Question[];

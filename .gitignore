@@ -8,3 +8,4 @@ data/
 backend/.cache/
 test-results/
 *.tsbuildinfo
+release/

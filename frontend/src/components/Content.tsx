@@ -1,3 +1,5 @@
+import { protectMathMarkup } from "../lib/mathMarkup";
+import { IS_STATIC } from "../lib/mode";
 import { useEffect, useRef, useState } from "react";
 import DOMPurify from "dompurify";
 import type { Image } from "../lib/api";
@@ -7,7 +9,7 @@ export function MathHTML({ html }: { html: string }) {
   useEffect(() => {
     let active = true;
     if (!ref.current) return;
-    ref.current.innerHTML = DOMPurify.sanitize(html, {
+    ref.current.innerHTML = DOMPurify.sanitize(protectMathMarkup(html), {
       ALLOWED_TAGS: [
         "p",
         "h4",
@@ -43,7 +45,7 @@ export function MathHTML({ html }: { html: string }) {
   return <div className="aib" ref={ref} />;
 }
 export function safeStudyHTML(html: string) {
-  return DOMPurify.sanitize(html, {
+  return DOMPurify.sanitize(protectMathMarkup(html), {
     ALLOWED_TAGS: [
       "p",
       "h4",
@@ -64,7 +66,7 @@ export function Mascot({ className = "ic" }: { className?: string }) {
   return (
     <img
       className={className}
-      src="/mascot.png"
+      src={IS_STATIC ? "/study/mascot.png" : "/mascot.png"}
       alt=""
       width={className === "av" ? 44 : 24}
       height={className === "av" ? 44 : 24}
