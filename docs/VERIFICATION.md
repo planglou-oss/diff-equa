@@ -102,3 +102,27 @@
 - รายงานเต็ม: docs/LAPLACE_REVIEW.md และ docs/laplace-review.json; คำนวณซ้ำด้วย scripts/verify_laplace.py
 - เป็นการตรวจด้วย AI และคำนวณเชิงสัญลักษณ์ ไม่ใช่การรับรองจากอาจารย์ ข้อความที่ถอดจากภาพอาจยังมีความผิดพลาดที่การตรวจนี้ไม่พบ
 - ตรวจสูตร KaTeX แบบ strict ผ่าน 498 สูตร; ภาพหน้าจอป้ายข้อ 65: docs/laplace-review-q65.png
+## คำอธิบาย Z-transform ครบหัวข้อ
+
+- เพิ่ม 27/27 ข้อ รวมทุกข้อย่อย (1997–2026) พร้อมขั้นตอน Z-transform ค่าเริ่มต้น ROC และตรวจกลับ
+- ตรวจภาพโจทย์และเฉลยต้นฉบับครบทั้ง 27 ข้อ ใช้ SymPy ตรวจสมการเชิงสัญลักษณ์ ฟังก์ชันตรรกยะ อินทิกรัล และสัมประสิทธิ์ Laurent แบบ exact ผ่าน 422/422 รายการ
+- ตรวจสูตร KaTeX แบบ strict ผ่าน 374 สูตร ไม่มีการเปลี่ยน frontend design
+- สถานะ ai_checked 27 ข้อ; ผลตรวจโดย AI ไม่ใช่การรับรองจากอาจารย์ ขอบเขตและ hash ของเนื้อหาอยู่ใน docs/Z_TRANSFORM_REVIEW.md และ docs/z-transform-review.json
+- Integration tests ตรวจ API ทุกข้อ การ seed ซ้ำ การจับคู่ภาพโจทย์/ภาพเฉลย และการรักษา custom edits/human-reviewed explanations ผ่าน รวมถึงชุดทดสอบ Laplace เดิม
+- Go backend build ผ่าน; ตรวจ live API ที่ port 8082 ครบ 27 ข้อ ได้ body/status/hash ตรงกับ source แล้วปิด preview server
+- บันทึกลงฐานข้อมูลเครื่องนี้แล้ว; สำรองก่อนแก้ไว้ที่ .tools/before-z-transform.db; สถานะ Laplace เดิมยังคง 70 ai_checked + 1 needs_clarification
+- คำนวณซ้ำได้ด้วย python scripts/verify_z_transform.py (ต้องติดตั้ง SymPy ในเครื่องพัฒนา); ข้อมูล review ผูกกับสูตรที่ถอดจากภาพ ไม่ได้ parse สมการทุกตัวจาก HTML อัตโนมัติ
+- ชุดทดสอบ backend ทั้งหมดผ่าน: go test ./... (AI, HTTP API, legacy import และ questiontext)
+## คำอธิบาย Boundary-Value Problems ครบหัวข้อ
+
+- เพิ่มคำอธิบาย 25/25 ข้อ รวมทุกข้อย่อย (1998–2026) ใน backend/internal/studycontent/bvp_explanations.json
+- ตรวจภาพโจทย์/เฉลยทุกข้อ และคำนวณซ้ำด้วย SymPy ผ่าน 293/293 รายการ ครอบคลุม PDE residuals, boundary traces, modal initial values, Fourier integrals และพยานความขัดแย้ง
+- ตรวจสูตร KaTeX แบบ strict ผ่าน 392 สูตร ไม่มีการเปลี่ยน frontend design
+- แก้คำตอบจากภาพข้อ 14 (สัมประสิทธิ์ความเร็ว +5/4), ข้อ 15 (ความถี่ 2 omega² และพจน์ sine สำหรับ zero initial velocity) และข้อ 18 (โหมดค่าเฉลี่ย 2/pi)
+- สถานะ 23 ai_checked + 2 needs_clarification: ข้อ 15 ต้องระบุ generalized L² interpretation เพราะข้อมูลไม่เข้ากับขอบเขตอนุพันธ์ที่มุมเริ่มต้น และข้อ 22 มี boundary trace ขัดกับ anti-periodicity ของ eigenmodes
+- ระบุข้อจำกัดเรื่อง corner compatibility และการหาอนุพันธ์อนุกรมของข้อ 2,3,15,17,18 ในเนื้อหา ไม่อ้างว่าผลรวมแบบ finite ตรวจ initial function ได้ตรงทุกจุด
+- Backend build ผ่าน; live API port 8082 ตอบ body/status/hash ตรง source ครบ 25 ข้อ แล้วปิด preview server ที่ใช้ตรวจ
+- บันทึกลงฐานข้อมูลเครื่องนี้แล้วและสำรองก่อนแก้ไว้ที่ .tools/before-bvp-explanations.db; Laplace ยังคง 70 checked + 1 clarification และ Z-transform ยังคง 27 checked
+- รายงานและ hash: docs/BVP_REVIEW.md และ docs/bvp-review.json; รันซ้ำด้วย python scripts/verify_bvp.py (ต้องมี SymPy ในเครื่องพัฒนา)
+- การตรวจเป็น AI-assisted audit ไม่ใช่การรับรองจากอาจารย์ สคริปต์ตรวจสูตรที่ถอดจากภาพ ไม่ได้ parse สูตรทั้งหมดใน HTML อัตโนมัติ
+- ชุดทดสอบ backend ทั้งหมดผ่าน go test ./... รวม coverage/status ของ BVP ทุกข้อ การ seed ซ้ำ source-image guards และการรักษา custom/human-reviewed explanations

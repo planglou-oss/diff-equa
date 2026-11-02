@@ -1,0 +1,245 @@
+[
+  {
+    "questionId": "ee201-t08-q001",
+    "sourceMediaId": "0a7e826e46580d1b7c8403ba785ac491ff3d443c39d871d30ee51f173d672829",
+    "questionMediaId": "75ca75b5c0ca3948a6e0b3cfdc73f767106dbc1b84278431e6ba1d28200d58a2",
+    "bodyHtml": "<h4>1. เลือกนิยามและสูตร</h4><p>ใช้ Z-transform แบบด้านเดียว $Y(z)=\\sum_{n=0}^{\\infty}y[n]z^{-n}$ โดย $n\\ge0$ และ $u[0]=1$ สูตรเลื่อนคือ $\\mathcal Z\\{y[n+1]\\}=zY-zy[0]$ และ $\\mathcal Z\\{y[n+2]\\}=z^2Y-z^2y[0]-zy[1]$</p><h4>2. ข้อ (a): ใช้สมบัติอนุพันธ์</h4><p>จาก $\\mathcal Z\\{1\\}=z/(z-1)$ และ $\\mathcal Z\\{nf[n]\\}=-zF\\prime(z)$ ทำซ้ำสามครั้งได้ $$\\mathcal Z\\{n^3\\}=\\frac{z(z^2+4z+1)}{(z-1)^4}.$$ ดังนั้น $f[n]=n^3$ สำหรับ $n\\ge0$; ROC คือ $|z|>1$</p><h4>3. ข้อ (b): แปลงและแยกเศษส่วน</h4><p>$y[n+1]-4y[n]=n^2$, $y[0]=0$ ให้ $$(z-4)Y=\\frac{z(z+1)}{(z-1)^3}.$$ แยกได้ $$\\frac{Y}{z}=-\\frac{5}{27(z-1)}-\\frac{5}{9(z-1)^2}-\\frac{2}{3(z-1)^3}+\\frac{5}{27(z-4)}.$$ ใช้ $z/(z-a)^2\\leftrightarrow na^{n-1}$ และ $z/(z-a)^3\\leftrightarrow n(n-1)a^{n-2}/2$</p><h4>4. คำตอบและตรวจกลับ</h4><p>$$y[n]=\\frac5{27}4^n-\\frac{n^2}{3}-\\frac{2n}{9}-\\frac5{27}.$$ ตรวจ $y[0]=0$, $y[1]=0$, $y[2]=1$ และแทนกลับได้ $y[n+1]-4y[n]=n^2$; ROC $|z|>4$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "c5a16beafb1063cb71dfbe733140b3bb4b129225ffe50136b99c20355caa5884"
+  },
+  {
+    "questionId": "ee201-t08-q002",
+    "sourceMediaId": "21165524603a8f7c75429a8c5ee945f558d746438e75c1fc6fccdc125ba01176",
+    "questionMediaId": "761e84d44078b70a470f9162df5ade68ce19d67edcbde7de59b1685065918526",
+    "bodyHtml": "<h4>1. สูตรที่ใช้</h4><p>ใช้ Z-transform แบบด้านเดียว $Y(z)=\\sum_{n=0}^{\\infty}y[n]z^{-n}$ โดย $n\\ge0$ และ $u[0]=1$ สูตรเลื่อนคือ $\\mathcal Z\\{y[n+1]\\}=zY-zy[0]$ และ $\\mathcal Z\\{y[n+2]\\}=z^2Y-z^2y[0]-zy[1]$</p><h4>2. ข้อ (a): แปลงทีละพจน์</h4><p>จาก $\\mathcal Z\\{n^3\\}=z(z^2+4z+1)/(z-1)^4$ และ $\\mathcal Z\\{n^2\\}=z(z+1)/(z-1)^3$ ได้ $$\\mathcal Z\\{n^3+n^2\\}=\\frac{2z^2(z+2)}{(z-1)^4},\\quad |z|>1.$$</p><h4>3. ข้อ (b): ใส่ค่าเริ่มต้นก่อนจัดรูป</h4><p>$$[z^2Y-z^2-2z]-[zY-z]-6Y=\\frac z{z+2}.$$ ดังนั้น $$Y=\\frac{z(z+1)}{(z+2)(z-3)}+\\frac z{(z+2)^2(z-3)}.$$ แยก $$\\frac Yz=\\frac4{25(z+2)}-\\frac1{5(z+2)^2}+\\frac{21}{25(z-3)}.$$</p><h4>4. แปลงกลับและตรวจ</h4><p>$$y[n]=\\left(\\frac4{25}+\\frac n{10}\\right)(-2)^n+\\frac{21}{25}3^n.$$ พจน์ $z/(z+2)^2$ ต้องแปลงเป็น $n(-2)^{n-1}$ จึงได้เครื่องหมายบวกเมื่อจัดรูป ตรวจได้ $y[0]=1$, $y[1]=2$, $y[2]=9$ และสมการเดิม; ROC $|z|>3$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "3c00c989b056d730e7a7dbe442e118df2b84e462e3a6c06a057cdd62e8bfe37c"
+  },
+  {
+    "questionId": "ee201-t08-q003",
+    "sourceMediaId": "cde3ed6ee20da3e976ca799f600cc8552fc778860abc253f91420a1458d01f77",
+    "questionMediaId": "4be5f5356f1dd013fd2785e4a0cef005a8ebe0714f023c5c66e9b0a550f743a0",
+    "bodyHtml": "<h4>1. เลื่อนดัชนีให้เริ่มที่ศูนย์</h4><p>โจทย์ให้ $a_n=2a_{n-1}+3a_{n-2}+n-2+3\\cdot2^{n-1}$ สำหรับ $n\\ge2$ เปลี่ยน $n\\mapsto n+2$ เป็น $$a_{n+2}-2a_{n+1}-3a_n=n+6\\cdot2^n,\\quad n\\ge0.$$</p><h4>2. ทำ Z-transform</h4><p>ใช้ $a_0=0,a_1=1$ ได้ $$[z^2A-z]-2zA-3A=\\frac z{(z-1)^2}+\\frac{6z}{z-2}.$$ ตัวประกอบของฝั่งซ้ายคือ $(z-3)(z+1)$</p><h4>3. แยกเศษส่วนแล้วแปลงกลับ</h4><p>$$\\frac Az=\\frac{29}{16(z-3)}-\\frac2{z-2}-\\frac1{4(z-1)^2}+\\frac3{16(z+1)}.$$ จึงได้ $$a_n=\\frac{29}{16}3^n-2^{n+1}-\\frac n4+\\frac3{16}(-1)^n,\\quad n\\ge0.$$</p><h4>4. ตรวจคำตอบ</h4><p>ตรวจ $a_0=0$, $a_1=1$ และคำนวณได้ $a_2=8,a_3=32$ ตรงสมการเดิม การเลื่อน $3\\cdot2^{n-1}$ ต้องเป็น $6\\cdot2^n$; ROC $|z|>3$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "92272815c57ffa9d1690325885a15df71b55c3de8f2fbd63ff42cf0e475e0155"
+  },
+  {
+    "questionId": "ee201-t08-q004",
+    "sourceMediaId": "4260cc88c51d4582cca734bb731d50dc3cd05e056b1e76976c42a9a0f358d0f9",
+    "questionMediaId": "34fb4cede20b5b787bfa60db3bce530b56cb654c0c89096150c80129f354d70e",
+    "bodyHtml": "<h4>1. คำนวณค่าเริ่มต้นจากอินทิกรัล</h4><p>มองจุดที่เศษและส่วนเป็นศูนย์พร้อมกันด้วยการต่อเนื่องของอัตราส่วน สำหรับ $n$ จำนวนเต็มไม่ลบได้ $I_0=0$, $I_1=\\pi$ และ $$I_2=\\int_0^\\pi2(\\cos t+\\cos\\lambda)\\,dt=2\\pi\\cos\\lambda.$$</p><h4>2. หาค่า A และยืนยันสมการ</h4><p>เอกลักษณ์ $\\cos((n+2)t)-2\\cos\\lambda\\cos((n+1)t)+\\cos(nt)=2(\\cos t-\\cos\\lambda)\\cos((n+1)t)$ ทำให้ $I_{n+2}-2\\cos\\lambda I_{n+1}+I_n=0$ หลังอินทิเกรต เพราะ $\\int_0^\\pi\\cos((n+1)t)\\,dt=0$ ดังนั้นเลือก $A=-2$ ซึ่งใช้ได้ทุก $\\lambda$; หาก $\\cos\\lambda=0$ สมการไม่ขึ้นกับ $A$ จึงระบุ $A$ ได้ไม่เอกฐาน</p><h4>3. ทำ Z-transform</h4><p>$$[z^2I-\\pi z]-2\\cos\\lambda\\,zI+I=0\\quad\\Rightarrow\\quad I(z)=\\frac{\\pi z}{z^2-2z\\cos\\lambda+1}.$$ จับคู่กับ $\\mathcal Z\\{\\sin(n\\lambda)\\}=z\\sin\\lambda/(z^2-2z\\cos\\lambda+1)$</p><h4>4. คำตอบรวมกรณีขอบ</h4><p>$$I_n=\\pi\\frac{\\sin(n\\lambda)}{\\sin\\lambda}\\quad(\\sin\\lambda\\ne0).$$ เมื่อ $\\lambda=k\\pi$ ให้ใช้ลิมิต $$I_n=\\pi n(-1)^{k(n-1)}.$$ ตรวจ $I_0=0,I_1=\\pi,I_2=2\\pi\\cos\\lambda$; ROC $|z|>1$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "25ef3099cb2ede5f5d04f2ebeaaf1e54ebf848638ce63b799705884e1df4fb9f"
+  },
+  {
+    "questionId": "ee201-t08-q005",
+    "sourceMediaId": "76b465d00462d6f2f9a4f78d6a127031d69a6492f1aabbe9d23ebbe0d9dcbfdf",
+    "questionMediaId": "9b93aaa5c3851f324bd4eb36aafff471a8a50fa19dc3b3738b84527c1dd863ae",
+    "bodyHtml": "<h4>1. แปลงระบบสมการ</h4><p>ให้ $A=\\mathcal Z\\{a_n\\},B=\\mathcal Z\\{b_n\\}$ และใช้ $a_0=b_0=0$ จะได้ $$(z-4)A-B=\\frac z{(z-1)^2},\\qquad 2A+(z-1)B=\\frac z{z-1}.$$</p><h4>2. แก้ระบบในโดเมน z</h4><p>ดีเทอร์มิแนนต์คือ $(z-4)(z-1)+2=(z-2)(z-3)$ จึงได้ $$A=\\frac{2z}{(z-1)(z-2)(z-3)},\\quad B=\\frac{z(z^2-5z+2)}{(z-1)^2(z-2)(z-3)}.$$</p><h4>3. แยกเศษส่วนและแปลงกลับ</h4><p>$$A=\\frac z{z-1}-\\frac{2z}{z-2}+\\frac z{z-3},\\quad B=-\\frac{3z}{z-1}-\\frac z{(z-1)^2}+\\frac{4z}{z-2}-\\frac z{z-3}.$$ ดังนั้น $$a_n=1-2^{n+1}+3^n,\\qquad b_n=-3-n+2^{n+2}-3^n.$$</p><h4>4. ตรวจพร้อมกันทั้งสองสมการ</h4><p>แทน $n=0$ ได้ศูนย์ทั้งคู่ และ $a_1=0,b_1=1$ จากนั้นแทนสูตรกลับจะได้ $a_{n+1}-4a_n-b_n=n$ กับ $b_{n+1}+2a_n-b_n=1$ สำหรับทุก $n\\ge0$; ROC $|z|>3$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "b2f5729ccecae3a3b6fd4f3dd30f1cd8a3254567acbfd164b8ffec27f48a3651"
+  },
+  {
+    "questionId": "ee201-t08-q006",
+    "sourceMediaId": "6a7d049b88198fb114d45b1a8785e8f055df64c424bc6d519fce2deb7fcec8f7",
+    "questionMediaId": "d428cf30f209043332e46d4f618095be0a1cdd30be4dc2c0be6fe73fabca6fa7",
+    "bodyHtml": "<h4>1. เขียนอนุกรมด้วยเลขเชิงซ้อน</h4><p>ให้ $a_n=2^{-n}e^{i(2n+1)x}$ จะได้ $f(x)=\\operatorname{Re}\\sum_{n=0}^{\\infty}a_n$ อัตราส่วนมีขนาด $1/2$ จึงลู่เข้าสำหรับทุก $x$ จริง</p><h4>2. ทำ Z-transform ของลำดับ</h4><p>$$A(z)=e^{ix}\\sum_{n=0}^{\\infty}\\left(\\frac{e^{2ix}}{2z}\\right)^n=\\frac{e^{ix}z}{z-e^{2ix}/2},\\quad |z|>\\frac12.$$ ผลรวมลำดับคือ $A(1)$ เพราะ $z=1$ อยู่ใน ROC</p><h4>3. หาส่วนจริง</h4><p>$$f(x)=\\operatorname{Re}\\frac{2e^{ix}}{2-e^{2ix}}=\\operatorname{Re}\\frac{2e^{ix}(2-e^{-2ix})}{5-4\\cos2x}=\\frac{2\\cos x}{5-4\\cos2x}.$$</p><h4>4. ตรวจและข้อควรระวัง</h4><p>เมื่อ $x=0$ ผลรวมคือ $1+1/2+1/4+\\cdots=2$ และสูตรให้ $2$ เช่นกัน ตัวส่วนมีค่าอย่างน้อย $1$ จึงไม่เกิดจุดเอกฐานบนแกน $x$ จริง</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "2f1937de00226a0b205fa16cb1c94b7b8b56e69f17002b87a507b10e9a41fc2f"
+  },
+  {
+    "questionId": "ee201-t08-q007",
+    "sourceMediaId": "bcd1ac85f84e8a70a2fc6279ca8cb29b48bc77c593b9330339d37181a6e9d8cc",
+    "questionMediaId": "68289dc24ff14fce9625982e1b79ad7c64f5b30efd45b253f8e0ae5a936de65f",
+    "bodyHtml": "<h4>1. เปลี่ยนเป็นลำดับที่จุดสุ่ม</h4><p>ให้ $f_n=f(nT)$, $T=\\pi/6$ จะได้ $$f_{n+2}-f_{n+1}+f_n=\\sin\\frac{n\\pi}{3},\\quad f_0=1,f_1=2.$$ คำตอบจาก Z-transform จะระบุค่าที่ $t=nT$ ก่อน</p><h4>2. ทำ Z-transform</h4><p>ให้ $D=z^2-z+1$ และใช้ $\\mathcal Z\\{\\sin(n\\pi/3)\\}=\\sqrt3z/(2D)$ จะได้ $$D F=z^2+z+\\frac{\\sqrt3z}{2D},\\qquad F=\\frac{z(z+1)}D+\\frac{\\sqrt3z}{2D^2}.$$ โพลซ้ำเกิดจากความถี่แรงกระตุ้นตรงกับโหมดธรรมชาติ</p><h4>3. แปลงกลับ</h4><p>ใช้สูตรไซน์/โคไซน์และ $\\mathcal Z\\{nf_n\\}=-zF\\prime$ ได้ $$f_n=\\left(1-\\frac n{2\\sqrt3}\\right)\\cos\\frac{n\\pi}{3}+\\left(\\sqrt3+\\frac23-\\frac n2\\right)\\sin\\frac{n\\pi}{3}.$$</p><h4>4. ตรวจและขอบเขตคำตอบ</h4><p>ตรวจ $f_0=1,f_1=2$ และ $f_{n+2}-f_{n+1}+f_n=\\sin(n\\pi/3)$; ROC $|z|>1$ การแทน $n=6t/\\pi$ ให้ฟังก์ชันต่อเนื่องตัวอย่าง $$f(t)=\\left(1-\\frac{\\sqrt3t}{\\pi}\\right)\\cos2t+\\left(\\sqrt3+\\frac23-\\frac{3t}{\\pi}\\right)\\sin2t.$$ ค่าเริ่มต้นสองจุดเพียงอย่างเดียวไม่กำหนดค่าระหว่างจุดสุ่มได้เอกฐาน จึงไม่ควรอ้างว่าฟังก์ชันต่อเนื่องนี้เป็นคำตอบเดียว</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "c8b2294bb5416cf5078e0db194b0c20d874e998997cbf6cd01f23b824dfc83a1"
+  },
+  {
+    "questionId": "ee201-t08-q008",
+    "sourceMediaId": "fdff99335fad9e289111fd62641f01b574589b133a3b590675b36cedcbd94337",
+    "questionMediaId": "ed0b070ccd429431737df9dfb3f4b118b8b8cd84fd633e5fd3ab003ed786e4c0",
+    "bodyHtml": "<h4>1. แยกตัวประกอบ</h4><p>$z^3-9z^2+27z-27=(z-3)^3$ สำหรับคำตอบด้านเดียวหรือ causal ใช้ ROC $|z|>3$</p><h4>2. แยกเศษส่วนของ F/z</h4><p>$$\\frac Fz=\\frac{z^2+z+1}{(z-3)^3}=\\frac1{z-3}+\\frac7{(z-3)^2}+\\frac{13}{(z-3)^3}.$$ ตรวจโดยคูณกลับด้วย $(z-3)^3$</p><h4>3. แปลงกลับทีละพจน์</h4><p>$$f[n]=3^n+7n3^{n-1}+\\frac{13}{2}n(n-1)3^{n-2}=3^n\\left(1+\\frac{29}{18}n+\\frac{13}{18}n^2\\right),\\quad n\\ge0.$$</p><h4>4. ตรวจคำตอบ</h4><p>ขยาย $F(z)$ รอบ $z=\\infty$ ได้ $1+10z^{-1}+64z^{-2}+\\cdots$ ตรงกับ $f[0]=1,f[1]=10,f[2]=64$ ระวังพจน์โพลอันดับสามมีตัวประกอบ $1/2$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "cdaff9c0b43f1172195c4df0d49678e7ba943a56608919addbc22abaff9e4411"
+  },
+  {
+    "questionId": "ee201-t08-q009",
+    "sourceMediaId": "106e1747a795d4eb39279f31c3170d13d6026a33d5eabc1370eaaac082b4d8d5",
+    "questionMediaId": "7ffca3fc9ceb6330b235c0014003e1668f6cdb37df85bbf349e16706666cd8b3",
+    "bodyHtml": "<h4>1. เริ่มจากลำดับที่ไม่มี n</h4><p>ให้ $g[n]=2^{-n}\\cos(n\\pi/4)$ ใช้สูตร $\\mathcal Z\\{r^n\\cos n\\theta\\}=z(z-r\\cos\\theta)/(z^2-2r\\cos\\theta z+r^2)$ จึงได้ $$G(z)=\\frac{z(z-\\sqrt2/4)}{z^2-z/\\sqrt2+1/4}.$$</p><h4>2. คูณ n ด้วยอนุพันธ์</h4><p>$f[n]=ng[n]$ ดังนั้น $$F(z)=-z\\frac{dG}{dz}.$$ วิธีนี้ให้คำตอบเป็นฟังก์ชันตรรกยะสัมประสิทธิ์จริงของ $z$ โดยตรง ไม่ต้องตีความส่วนจริงเมื่อ $z$ เป็นเชิงซ้อน</p><h4>3. คำตอบ</h4><p>$$F(z)=\\frac{\\sqrt2z(4z^2-4\\sqrt2z+1)}{(4z^2-2\\sqrt2z+1)^2},\\qquad |z|>\\frac12.$$</p><h4>4. ตรวจด้วยสัมประสิทธิ์</h4><p>ลำดับเริ่มด้วย $f[0]=0,f[1]=\\sqrt2/4,f[2]=0,f[3]=-3\\sqrt2/16$ ซึ่งต้องตรงกับสัมประสิทธิ์ $z^0,z^{-1},z^{-2},z^{-3}$ ของ $F$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "5d2faadd9183dca31c40e5cf363bbb964a8ebc82b115fe9c876bf6289f218505"
+  },
+  {
+    "questionId": "ee201-t08-q010",
+    "sourceMediaId": "a5e027ef027c547a4519b47fb9896d3a1f3b57494d85ad91c6eb394fd0bae161",
+    "questionMediaId": "e67011fd153898e4cc403ff3ce496b39595a4f8496437c779ea3dc9b82a2f835",
+    "bodyHtml": "<h4>1. แปลงส่วนเอ็กซ์โพเนนเชียลและโคไซน์</h4><p>ให้ $g[n]=2^n\\cos(n\\pi/3)$ จะได้ $$G(z)=\\frac{z(z-1)}{z^2-2z+4},\\qquad |z|>2.$$</p><h4>2. ใช้อนุพันธ์สองรอบ</h4><p>นิยาม $\\mathcal D=-z\\,d/dz$ แล้ว $\\mathcal Z\\{n^2g[n]\\}=\\mathcal D^2G=z\\,\\frac d{dz}\\left(z\\frac{dG}{dz}\\right)$ ต้องทำอนุพันธ์กับตัวประกอบ $z$ ที่อยู่ข้างหน้าด้วย</p><h4>3. คำตอบ</h4><p>$$F(z)=\\frac{z(z^4-14z^3+56z-16)}{(z^2-2z+4)^3},\\qquad |z|>2.$$</p><h4>4. ตรวจพจน์ต้น</h4><p>$f[0]=0,f[1]=1,f[2]=-8,f[3]=-72$ สอดคล้องกับ Laurent series ของ $F$ การคูณด้วย $n^2$ เพิ่มอันดับโพลแต่ไม่เปลี่ยนรัศมี ROC</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "ed9610497e1a3be64486d11aff62bf8376ca460f9f9a228b7bc41886341a12c5"
+  },
+  {
+    "questionId": "ee201-t08-q011",
+    "sourceMediaId": "852426e9581b79355078005892ade2fc34431ccd0b36264397420f01bb32802c",
+    "questionMediaId": "14b89e806f8bd57d9bd451d7c76c26869aaf9e15111667f18adf8b41ee95e26b",
+    "bodyHtml": "<h4>1. หาแรงกระตุ้นก่อนแปลง</h4><p>จาก $x[0]=1,x[1]=-1$ และศูนย์ที่อื่น ได้ $v[n]=3x[n]+x[n+1]=2\\delta[n]-3\\delta[n-1]$ สำหรับ $n\\ge0$ จึงมี $V(z)=2-3z^{-1}$</p><h4>2. ใส่ค่าเริ่มต้น</h4><p>$$[z^2Y-z^2+z]+[zY-z]-6Y=2-3z^{-1}.$$ ดังนั้น $$Y(z)=\\frac{z^2+2-3z^{-1}}{(z+3)(z-2)}.$$</p><h4>3. แยกเศษส่วนและแปลงกลับ</h4><p>$$Y=-\\frac14+\\frac12z^{-1}+\\frac45\\frac z{z+3}+\\frac9{20}\\frac z{z-2}.$$ ดังนั้น $$y[n]=-\\frac14\\delta[n]+\\frac12\\delta[n-1]+\\frac45(-3)^n+\\frac9{20}2^n.$$ หรือ $y[0]=1,y[1]=-1$ และ $y[n]=\\frac45(-3)^n+\\frac9{20}2^n$ สำหรับ $n\\ge2$</p><h4>4. ตรวจคำตอบ</h4><p>ตรวจได้ $y[2]=9,y[3]=-18$ โดยสมการที่ $n=0,1$ มีแรงกระตุ้น $2,-3$ ตามลำดับ หลังจากนั้นเป็นสมการ homogeneous; ROC $|z|>3$ ห้ามตัดพจน์เดลตาทิ้งหากจะใช้สูตรเดียวตั้งแต่ $n=0$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "0dc72e0edc5d0322511a10bf1f89067cf17fc9ac5077a281a8cbdd5b52bf121f"
+  },
+  {
+    "questionId": "ee201-t08-q012",
+    "sourceMediaId": "fd9e06bb7033cc0264ebbe40d96ce8391efb5927f427b7b82911fa5ec09a4ecf",
+    "questionMediaId": "0edcf1f031dbe7c0d148a8bcf7ba3c3a5484fe34eec6019f58004b7069d763ab",
+    "bodyHtml": "<h4>1. ใช้นิยาม Z-transform</h4><p>$$F(z)=\\sum_{n=0}^{\\infty}\\frac{a^n}{n!}z^{-n}=\\sum_{n=0}^{\\infty}\\frac{(a/z)^n}{n!}=e^{a/z}.$$ สำหรับ $a\\ne0$ ลู่เข้าทุก $z\\ne0$; หาก $a=0$ จะเป็น $F=1$</p><h4>2. เชื่อมกับอนุกรมที่ถาม</h4><p>$$g(x)=\\operatorname{Re}\\sum_{n=0}^{\\infty}\\frac{(2e^{ix})^n}{n!}=\\operatorname{Re}e^{2e^{ix}}.$$ จะมองเป็น $F(1)$ เมื่อ $a=2e^{ix}$ ก็ได้</p><h4>3. แยกส่วนจริง</h4><p>จาก $2e^{ix}=2\\cos x+i2\\sin x$ ได้ $$g(x)=e^{2\\cos x}\\cos(2\\sin x).$$</p><h4>4. ตรวจและเงื่อนไขลู่เข้า</h4><p>เมื่อ $x=0$ ได้ $g(0)=e^2$ ตรงกับ $\\sum2^n/n!$; เมื่อ $x=\\pi$ ได้ $e^{-2}$ อนุกรมลู่เข้าแบบสัมบูรณ์ทุก $x$ จริงเพราะเทียบได้กับ $\\sum2^n/n!$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "f9b4f6e101e586561097911c50bc7ff655953c712405eeb72e9b683ffe6d3d46"
+  },
+  {
+    "questionId": "ee201-t08-q013",
+    "sourceMediaId": "d26aa260c2fc42fa662ca25f9fadef5849edf255f1a314b89d3f4e6673b06738",
+    "questionMediaId": "4ddb1fbfe6e4c51e6c9347ca2f11b0a1556e5eac3aa3fb0f33c8ed2923cdbc2b",
+    "bodyHtml": "<h4>1. หาแรงกระตุ้นก่อนแปลง</h4><p>จาก $x[0]=1,x[1]=-1$ และศูนย์ที่อื่น ได้ $v[n]=3x[n]+x[n+1]=2\\delta[n]-3\\delta[n-1]$ สำหรับ $n\\ge0$ จึงมี $V(z)=2-3z^{-1}$</p><h4>2. ใส่ค่าเริ่มต้น</h4><p>$$[z^2Y-z^2+z]+[zY-z]-6Y=2-3z^{-1}.$$ ดังนั้น $$Y(z)=\\frac{z^2+2-3z^{-1}}{(z+3)(z-2)}.$$</p><h4>3. แยกเศษส่วนและแปลงกลับ</h4><p>$$Y=-\\frac14+\\frac12z^{-1}+\\frac45\\frac z{z+3}+\\frac9{20}\\frac z{z-2}.$$ ดังนั้น $$y[n]=-\\frac14\\delta[n]+\\frac12\\delta[n-1]+\\frac45(-3)^n+\\frac9{20}2^n.$$ หรือ $y[0]=1,y[1]=-1$ และ $y[n]=\\frac45(-3)^n+\\frac9{20}2^n$ สำหรับ $n\\ge2$</p><h4>4. ตรวจคำตอบ</h4><p>ตรวจได้ $y[2]=9,y[3]=-18$ โดยสมการที่ $n=0,1$ มีแรงกระตุ้น $2,-3$ ตามลำดับ หลังจากนั้นเป็นสมการ homogeneous; ROC $|z|>3$ ห้ามตัดพจน์เดลตาทิ้งหากจะใช้สูตรเดียวตั้งแต่ $n=0$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "0dc72e0edc5d0322511a10bf1f89067cf17fc9ac5077a281a8cbdd5b52bf121f"
+  },
+  {
+    "questionId": "ee201-t08-q014",
+    "sourceMediaId": "c06be11f42830496f19319724ba53e925c18599df42d68714622b5879ba6ddd6",
+    "questionMediaId": "8cef1cb11e04f66cb898c37977e8a173fee6d7cd7df4f4e96fefb6667b0eea8e",
+    "bodyHtml": "<h4>1. ลดรูปแรงกระตุ้น</h4><p>ใช้ $\\sin^4\\theta+\\cos^4\\theta=3/4+\\cos(4\\theta)/4$ จะได้ $$v[n]=\\frac34+\\frac14(-1)^n,\\quad V=\\frac{3z}{4(z-1)}+\\frac z{4(z+1)}.$$</p><h4>2. ทำ Z-transform พร้อมค่าเริ่มต้น</h4><p>$y[0]=c_1,y[1]=-c_1-c_2$ ให้ $$(z+1)^2Y=c_1z^2+(c_1-c_2)z+\\frac{3z}{4(z-1)}+\\frac z{4(z+1)}.$$</p><h4>3. แปลงกลับ</h4><p>$$y[n]=\\frac3{16}+\\left[c_1-\\frac3{16}+\\left(c_2+\\frac14\\right)n+\\frac{n^2}{8}\\right](-1)^n.$$ โพล $z=-1$ ซ้ำอันดับสามเกิดจากแรงกระตุ้น $(-1)^n$ จึงมีพจน์ $n^2(-1)^n$</p><h4>4. ตรวจค่าเริ่มต้นและสมการ</h4><p>แทน $n=0,1$ ได้ $c_1,-c_1-c_2$ ตามโจทย์ และ $y[n+2]+2y[n+1]+y[n]=3/4+(-1)^n/4$; ROC $|z|>1$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "0b31c75b8ee40a53ec917702b8b4ee3d099c6ab9ac6d6b7d8b4c585121f16bc5"
+  },
+  {
+    "questionId": "ee201-t08-q015",
+    "sourceMediaId": "2e237d0fcb28f2637045f0bf3b76e22c0b9d4c6ea955b770a71f2c3315291092",
+    "questionMediaId": "3d11dc463a9d97fe21ff24b16874a2f32ca98dad596fcb5cc0b3df7ecf4698db",
+    "bodyHtml": "<h4>1. ใช้สูตรเลื่อนสี่ตำแหน่ง</h4><p>จาก $x[0]=x[1]=x[2]=0,x[3]=4$ ได้ $\\mathcal Z\\{x[n+4]\\}=z^4X-4z$ ดังนั้น $$(z^4-1)X=4z+\\frac{4z}{z-1}.$$</p><h4>2. แยกเศษส่วน</h4><p>$$\\frac Xz=\\frac4{z^4-1}+\\frac4{(z-1)(z^4-1)}=-\\frac1{2(z-1)}-\\frac1{2(z+1)}+\\frac1{(z-1)^2}+\\frac{z-1}{z^2+1}.$$</p><h4>3. แปลงกลับ</h4><p>$$x[n]=n-\\frac12-\\frac12(-1)^n+\\cos\\frac{n\\pi}{2}-\\sin\\frac{n\\pi}{2},\\quad n\\ge0.$$ ใช้ $\\cos((n-1)\\pi/2)=\\sin(n\\pi/2)$ หากเทียบกับรูปในเฉลยต้นฉบับ</p><h4>4. ตรวจ</h4><p>สูตรให้ $x[0],x[1],x[2],x[3]=0,0,0,4$ และส่วนคาบสี่หักล้างกันใน $x[n+4]-x[n]$ เหลือ $4$ ซึ่งตรงกับ $4u[n]$ สำหรับ $n\\ge0$; ROC $|z|>1$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "8bd7a431b34d3003ec4cb39af1ca2774c0281cf5a1dfdb782a2d0e87ed9143c8"
+  },
+  {
+    "questionId": "ee201-t08-q016",
+    "sourceMediaId": "3482e82f4837bd9add2c5781a16db3beebdc00ef0fd063083e533359a8c33ec7",
+    "questionMediaId": "57ff1b21efcedbdd6b2fee03f28a64fb401b61a7733f0a05695be04cc5e494d7",
+    "bodyHtml": "<h4>1. แปลงแรงกระตุ้น</h4><p>ให้ $D=z^2-2z+2$ และ $r=\\sqrt2$ มี $$\\mathcal Z\\{r^{n+2}\\sin((n+2)\\pi/4)\\}=\\frac{2z(z-1)}D,\\quad \\mathcal Z\\{5\\cos(n\\pi/2)\\}=\\frac{5z^2}{z^2+1}.$$</p><h4>2. ใส่ค่าเริ่มต้นแล้วจัดรูป</h4><p>$y[0]=A,y[1]=0$ ให้ $$D Y=A z(z-2)+\\frac{2z(z-1)}D+\\frac{5z^2}{z^2+1}.$$ ดังนั้น $$\\frac Yz=\\frac{A(z-2)}D+\\frac{2(z-1)}{D^2}+\\frac{5z}{(z^2+1)D}.$$</p><h4>3. แปลงกลับ</h4><p>$$y[n]=(\\sqrt2)^n\\left[\\left(A-1-\\frac n2\\right)\\cos\\frac{n\\pi}{4}+\\left(3-A+\\frac n2\\right)\\sin\\frac{n\\pi}{4}\\right]+\\cos\\frac{n\\pi}{2}-2\\sin\\frac{n\\pi}{2}.$$ ใช้อนุพันธ์ของคู่แปลงไซน์/โคไซน์สำหรับส่วน $D^{-2}$</p><h4>4. ตรวจ</h4><p>ตรวจได้ $y[0]=A,y[1]=0$ และเมื่อ $n=0$ สมการบังคับ $y[2]+2A=7$ ซึ่งตรงสูตร แทนกลับทั้งลำดับได้แรงกระตุ้นเดิม; ROC $|z|>\\sqrt2$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "d41c0419d917868109eba923d896917ab0014877488d0e878e837084909df2c2"
+  },
+  {
+    "questionId": "ee201-t08-q017",
+    "sourceMediaId": "bbcc0b978153a83411a8a5bc67dc18df72a089403c04cb62e8210dc51b1bd4b4",
+    "questionMediaId": "c5557f62b9b1badea3b52b374c69c6208c08a89f39ee5584989474d1e597f7e4",
+    "bodyHtml": "<h4>1. แยกตัวประกอบของตัวดำเนินการ</h4><p>$$P(z)=z^3-\\frac{23}{12}z^2+\\frac{29}{24}z-\\frac14=\\left(z-\\frac12\\right)\\left(z-\\frac23\\right)\\left(z-\\frac34\\right).$$</p><h4>2. ทำ Z-transform</h4><p>จาก $y[0]=y[1]=0,y[2]=1$ ได้ $$P(z)Y=z+\\frac{z}{2(z-1)^2},\\quad \\frac Yz=\\frac{z^2-2z+3/2}{(z-1)^2(z-1/2)(z-2/3)(z-3/4)}.$$</p><h4>3. แยกเศษส่วนและแปลงกลับ</h4><p>$$\\frac Yz=\\frac{12}{(z-1)^2}-\\frac{108}{z-1}+\\frac{72}{z-1/2}-\\frac{396}{z-2/3}+\\frac{432}{z-3/4}.$$ ดังนั้น $$y[n]=12n-108+72\\left(\\frac12\\right)^n-396\\left(\\frac23\\right)^n+432\\left(\\frac34\\right)^n.$$</p><h4>4. ตรวจ</h4><p>ตรวจ $y[0]=0,y[1]=0,y[2]=1$ และแทนกลับได้แรงกระตุ้น $n/2$ การแยกเศษส่วนใกล้รากกันควรใช้เศษส่วนแทนทศนิยม; ROC $|z|>1$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "a083836488c9f3fbd6bb2c4bf825d2aa7ca66ed0406468a0223c440e292960ed"
+  },
+  {
+    "questionId": "ee201-t08-q018",
+    "sourceMediaId": "498c612ce2feb2cd32ccabf75a88a478141a3adc1daddb2a44ca88b802a65139",
+    "questionMediaId": "c41822f26571e66556a46250c9914e88f491dd29451382eae23ab198ce904935",
+    "bodyHtml": "<h4>1. แยกตัวประกอบ</h4><p>$$P(z)=z^3-\\frac7{12}z^2-\\frac{11}{24}z+\\frac14=\\left(z-\\frac12\\right)\\left(z+\\frac23\\right)\\left(z-\\frac34\\right).$$ ระวังรากตัวกลางเป็น $-2/3$</p><h4>2. ทำ Z-transform</h4><p>ใช้ค่าเริ่มต้น $0,0,1$ จะได้ $$P(z)Y=z+\\frac z{z-1}=\\frac{z^2}{z-1},\\quad \\frac Yz=\\frac z{(z-1)(z-1/2)(z+2/3)(z-3/4)}.$$</p><h4>3. แปลงกลับจากเศษส่วนย่อย</h4><p>$$\\frac Yz=\\frac{24/7}{z-1/2}+\\frac{144/595}{z+2/3}-\\frac{144/17}{z-3/4}+\\frac{24/5}{z-1}.$$ ดังนั้น $$y[n]=\\frac{24}{7}\\left(\\frac12\\right)^n+\\frac{144}{595}\\left(-\\frac23\\right)^n-\\frac{144}{17}\\left(\\frac34\\right)^n+\\frac{24}{5}.$$</p><h4>4. ตรวจ</h4><p>ค่าเริ่มต้นเป็น $0,0,1$ และแทนสมการได้ $1$ ทุก $n\\ge0$ อีกทั้งลำดับเข้าใกล้ $24/5$ ตรงกับคำตอบคงที่ของสมการ; ROC $|z|>1$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "885628df13765414de7b8b0c9653deec0938e54ef81a1bea888ed13473cb0079"
+  },
+  {
+    "questionId": "ee201-t08-q019",
+    "sourceMediaId": "5c5a51d040e586796161fd851316abc6245c4db5764a39cb1088bee936541fd2",
+    "questionMediaId": "dfc2ff41a83cfc3cd2bc2563de2368e8ad7133a4fdf24e9808eea346936384a6",
+    "bodyHtml": "<h4>1. ข้อ (a): แยก F/z</h4><p>$$\\frac Fz=\\frac{(z+1)^2}{(z^2+1)(z-1)^2}=\\frac2{(z-1)^2}-\\frac1{z^2+1}.$$ จึงได้ $$f[n]=2n-\\sin\\frac{n\\pi}{2},\\quad |z|>1.$$ พจน์ต้นคือ $f[0],\\ldots,f[4]=0,1,4,7,8$</p><h4>2. ข้อ (b): คูณอนุกรมของ cos</h4><p>$$\\cos\\frac1z=1-\\frac1{2z^2}+\\frac1{24z^4}-\\cdots.$$ สัมประสิทธิ์ $z^{-4}$ ของ $F(z)\\cos(1/z)$ คือ $$g[4]=f[4]-\\frac12f[2]+\\frac1{24}f[0]=8-2=6.$$</p><h4>3. ข้อ (c): คูณอนุกรมของ sin</h4><p>$$\\sin\\frac1z=z^{-1}-\\frac1{6z^3}+\\frac1{120z^5}-\\cdots.$$ จึงได้ $$h[5]=f[4]-\\frac16f[2]+\\frac1{120}f[0]=8-\\frac23=\\frac{22}{3}.$$</p><h4>4. วิธีตรวจและจุดพลาด</h4><p>การคูณในโดเมน $z$ เป็น convolution ของสัมประสิทธิ์ ต้องเลื่อนดัชนีตามกำลัง $z^{-k}$ ไม่ใช่คูณ $f[4]$ ด้วย $\\cos4$ หรือคูณ $f[5]$ ด้วย $\\sin5$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "adda2495731f43512c28616117237df8de36ee8623e45c1c971ea7741e4bfbd4"
+  },
+  {
+    "questionId": "ee201-t08-q020",
+    "sourceMediaId": "21ee8aac077ba5443451f9fb5d6b17c61817a6f82ffde561ec7b169894074bcd",
+    "questionMediaId": "60a1268bebf128ba5db7016f3f2496e8c20fa851bace8babca3e3f723833951f",
+    "bodyHtml": "<h4>1. ใช้ค่าเริ่มต้นที่ n=-1 ให้ถูก</h4><p>ให้ $Y=\\sum_{n\\ge0}y_nz^{-n}$ แล้ว $\\mathcal Z\\{y_{n-1}\\}=y_{-1}+z^{-1}Y$ ดังนั้นสำหรับ $y_{n+1}+a y_n+b y_{n-1}=v_n$ มี $$(z+a+bz^{-1})Y=V+zy_0-by_{-1}.$$ ในโจทย์ทุกข้อ $y_{-1}=0$</p><h4>2. แปลงทั้งสี่ข้อ</h4><p>$$\\begin{aligned}(a)\\quad &(z-1-2/z)Y=\\frac z{z-2}+\\frac z2,\\\\(b)\\quad &(z-1-2/z)Y=\\frac z{z+1}-z,\\\\(c)\\quad &(z+1-2/z)Y=\\frac{2z}{z+2}-z,\\\\(d)\\quad &(z-1/z)Y=\\frac z{z+1}-z.\\end{aligned}$$</p><h4>3. แยกเศษส่วนและคำตอบ</h4><p>ใช้ $z/(z-r)^2\\leftrightarrow nr^{n-1}$ ได้ $$\\begin{aligned}(a)\\quad y_n&=\\frac1{18}(-1)^n+\\left(\\frac49+\\frac n3\\right)2^n,\\\\(b)\\quad y_n&=-\\left(\\frac59+\\frac n3\\right)(-1)^n-\\frac49\\,2^n,\\\\(c)\\quad y_n&=-\\frac19-\\left(\\frac89+\\frac{2n}3\\right)(-2)^n,\\\\(d)\\quad y_n&=-\\frac14-\\left(\\frac34+\\frac n2\\right)(-1)^n.\\end{aligned}$$</p><h4>4. ตรวจข้อมูลและขอบเขต</h4><p>ค่าที่ $n=0$ เป็น $1/2,-1,-1,-1$ ตามลำดับ และสมการที่ $n=0$ ให้ $y_1=3/2,0,3,1$ ซึ่งตรงสูตร การตรวจสมการเริ่มที่ $n=0$ ต้องใช้ $y_{-1}=0$ จากโจทย์ ไม่ใช่ขยายสูตรสำหรับ $n\\ge0$ ย้อนหลังไปแทน $n=-1$; ROC ของ (a)–(c) คือ $|z|>2$ และ (d) คือ $|z|>1$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "68a0564aeb35c00707e29fd63d2487b9d3b0e68de3ad099a5cc1e7a8e34391bb"
+  },
+  {
+    "questionId": "ee201-t08-q021",
+    "sourceMediaId": "a8843510fc89e55fd16dc9a29bccfc8f3c9e938275391f8bfba6f4162dbea57d",
+    "questionMediaId": "a1afc2db6b125783b46a89d174bbc952c0045d14221955a0326ae242cc99eccc",
+    "bodyHtml": "<h4>1. ข้อ (a): เปลี่ยนเป็นอนุกรมกำลัง z ผกผัน</h4><p>ให้ $w=z^{-1}$ จะได้ $$G(z)=\\frac{w^2+w^4+2w^5}{1+aw^3+w^5}=w^2+w^4+(2-a)w^5+\\cdots.$$ ดังนั้น $g_2=1,g_4=1$ ไม่ขึ้นกับ $a$ เพราะ $a$ เริ่มส่งผลที่กำลังห้า</p><h4>2. ข้อ (b): จับคู่อนุพันธ์ของโคไซน์</h4><p>ให้ $g[n]=2^{-n}\\cos(n\\pi/3)$ มี $$G(z)=\\frac{z(z-1/4)}{z^2-z/2+1/4}.$$ คำนวณ $$-zG\\prime(z)=\\frac{z(4z^2-8z+1)}{(4z^2-2z+1)^2}=F(z).$$</p><h4>3. คำตอบแปลงกลับ</h4><p>$$f[n]=\\frac n{2^n}\\cos\\frac{n\\pi}{3},\\quad n\\ge0,\\qquad |z|>\\frac12.$$ โดยถือคำตอบด้านเดียว; หากเป็น bilateral transform ต้องกำหนด ROC เพิ่มเพื่อเลือกลำดับ</p><h4>4. ตรวจ</h4><p>พจน์ต้น $f[0]=0,f[1]=1/4,f[2]=-1/4,f[3]=-3/8$ ต้องตรง Laurent series ของ $F$ ส่วน (a) การอ่าน $g_2,g_4$ ต้องอ่านสัมประสิทธิ์ $z^{-2},z^{-4}$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "18aa42a1542923c0430e77919e87002fcee28edf452b96b43a95fd80dd8583d7"
+  },
+  {
+    "questionId": "ee201-t08-q022",
+    "sourceMediaId": "3fe48687de8ff8314d34f742788dc73de8db5bec2a1a9060e7c3a6baca23cb51",
+    "questionMediaId": "9f30a6bedbd4a4aac6cdcd66f46db1ab6943534b8572afed6954e001a87189b7",
+    "bodyHtml": "<h4>1. อ่าน E เป็นตัวเลื่อน</h4><p>$Ey[n]=y[n+1]$ ดังนั้นสมการคือ $$y[n+2]-2y[n+1]+4y[n]=\\frac1{\\sqrt2}\\left(\\cos\\frac{n\\pi}{2}-\\sin\\frac{n\\pi}{2}\\right).$$ ให้ $y_0=c_1+1/(13\\sqrt2)$ และ $y_1=c_1+\\sqrt3c_2-5/(13\\sqrt2)$</p><h4>2. ทำ Z-transform</h4><p>ฝั่งขวามีแปลง $(z^2-z)/(\\sqrt2(z^2+1))$ จึงได้ $$Y=\\frac{y_0z^2+(y_1-2y_0)z}{z^2-2z+4}+\\frac{z^2-z}{\\sqrt2(z^2+1)(z^2-2z+4)}.$$</p><h4>3. แปลงกลับเป็นฟังก์ชันจริง</h4><p>ราก homogeneous คือ $1\\pm i\\sqrt3=2e^{\\pm i\\pi/3}$ เมื่อแยกเศษส่วนและแทน $y_0,y_1$ ได้ $$y[n]=2^n\\left(c_1\\cos\\frac{n\\pi}{3}+c_2\\sin\\frac{n\\pi}{3}\\right)+\\frac1{13\\sqrt2}\\left(\\cos\\frac{n\\pi}{2}-5\\sin\\frac{n\\pi}{2}\\right).$$</p><h4>4. ตรวจ</h4><p>พจน์ particular ให้ค่า $1/(13\\sqrt2),-5/(13\\sqrt2)$ ที่ $n=0,1$ ตรงข้อมูล และแทนกลับได้ $\\cos((2n+1)\\pi/4)$; ROC โดยทั่วไป $|z|>2$ หาก $c_1=c_2=0$ เหลือ $|z|>1$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "499db59e05559eaa11d929a23828a55b93fdb71ea210ee9dc19596ddad661ac3"
+  },
+  {
+    "questionId": "ee201-t08-q023",
+    "sourceMediaId": "58f3c49c422d8151e1fa669a90f57a888276d012b09c1ed504940e50ac886475",
+    "questionMediaId": "4d7a2fe35b98f249212010ab717f8959fa4389247aac8ea0e45c6cee86389f6c",
+    "bodyHtml": "<h4>1. ค่าเริ่มต้นไม่ได้กำหนด</h4><p>ให้ $y[0]=a_0,\\ldots,y[3]=a_3$ เป็นค่าทั่วไป และ $$P(z)=z^4-3\\sqrt2z^3+\\frac{13}{2}z^2-3\\sqrt2z+1=(z-\\sqrt2)^2(z-1/\\sqrt2)^2.$$</p><h4>2. ทำ Z-transform</h4><p>$$P(z)Y=p(z)+\\frac{z^2}{z^2+1},$$ โดย $$\\begin{aligned}p(z)={}&a_0z^4+(a_1-3\\sqrt2a_0)z^3\\\\&+(a_2-3\\sqrt2a_1+13a_0/2)z^2\\\\&+(a_3-3\\sqrt2a_2+13a_1/2-3\\sqrt2a_0)z.\\end{aligned}$$</p><h4>3. แปลงกลับและคำตอบทั่วไป</h4><p>โพลซ้ำที่ $\\sqrt2$ และ $1/\\sqrt2$ ให้พจน์เชิงเส้นคูณเอ็กซ์โพเนนเชียล ส่วนไซน์/โคไซน์ได้จาก $z^2+1$ จึงได้ $$y[n]=(C_1+C_2n)(\\sqrt2)^n+(C_3+C_4n)(1/\\sqrt2)^n-\\frac29\\cos\\frac{n\\pi}{2}.$$ ค่าคงที่ทั้งสี่เป็นอิสระ เพราะโจทย์ไม่มีค่าเริ่มต้น</p><h4>4. ตรวจและเงื่อนไข</h4><p>$P(i)=-9/2$ จึงมี $P(E)[-2\\cos(n\\pi/2)/9]=\\cos(n\\pi/2)$ และพจน์ homogeneous ทั้งสี่ถูก $P(E)$ ทำให้เป็นศูนย์ ROC โดยทั่วไป $|z|>\\sqrt2$ อาจขยายได้เมื่อสัมประสิทธิ์โพลบางตัวเป็นศูนย์</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "af46d2a73f7ef8c507293a80b39b70f64f3a7cf78f03d2b3370a278ff25e7f1f"
+  },
+  {
+    "questionId": "ee201-t08-q024",
+    "sourceMediaId": "787ede5a700c4946fc374b86b6b560c3716587047f58860b7c19753a1aca89ee",
+    "questionMediaId": "f15019cf1543806dd8a09c53cb7945ccdf8e113a8a61d07dd0d1f587acd725aa",
+    "bodyHtml": "<h4>1. ตั้งลำดับฐาน</h4><p>ให้ $g[n]=2^{-n}\\sin(n\\pi/2)$ จะได้ $$G(z)=\\frac{2z}{4z^2+1},\\quad |z|>\\frac12.$$ โจทย์คือ $f[n]=(n^2-n+1)g[n]$</p><h4>2. ใช้ D=-z d/dz</h4><p>$$\\mathcal DG=\\frac{2z(4z^2-1)}{(4z^2+1)^2},\\qquad \\mathcal D^2G=\\frac{z(32z^4-48z^2+2)}{(4z^2+1)^3}.$$ ระวังเครื่องหมายของพจน์ $-n$ เมื่อรวมผล</p><h4>3. รวมคำตอบ</h4><p>$$F=\\mathcal D^2G-\\mathcal DG+G=\\frac{2z(4z^2-1)(4z^2-3)}{(4z^2+1)^3},\\qquad |z|>\\frac12.$$</p><h4>4. ตรวจพจน์ต้น</h4><p>$f[0]=0,f[1]=1/2,f[2]=0,f[3]=-7/8,f[4]=0$ จึงต้องมีเฉพาะกำลังคี่ใน Laurent series ของ $F$ การคูณด้วยพหุนาม $n^2-n+1$ ไม่เปลี่ยนรัศมี ROC</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "c5cff50388246e10739fa6cd39878f9030cd672bc58838eee53ed0194208968b"
+  },
+  {
+    "questionId": "ee201-t08-q025",
+    "sourceMediaId": "50fd5c013af99841baab3af9512054c42844666175665c0c746a9c725df67891",
+    "questionMediaId": "51c5f01ed38794dc976d84ba6e62647b1dc6084b3cec253390f94365ad533015",
+    "bodyHtml": "<h4>1. รวมทั้งสามข้อด้วยพารามิเตอร์</h4><p>พิจารณา $$y[n+4]+(b^2-a^2)y[n+2]-a^2b^2y[n]=b^n\\cos\\frac{n\\pi}{2}.$$ ข้อ (a),(b),(c) ใช้ $(a,b)=(3,2),(2,3),(2,4)$ ตามลำดับ โจทย์ไม่ระบุค่าเริ่มต้น จึงต้องมีค่าคงที่สี่ตัว</p><h4>2. ทำ Z-transform และดูโพลซ้ำ</h4><p>ให้ $y_j=y[j]$ จะได้ $$(z^2-a^2)(z^2+b^2)Y=p(z)+\\frac{z^2}{z^2+b^2},$$ $$p(z)=y_0z^4+y_1z^3+y_2z^2+y_3z+(b^2-a^2)(y_0z^2+y_1z).$$ โพล $z=\\pm ib$ ของแรงกระตุ้นตรงกับโพลระบบ จึงเกิดเรโซแนนซ์</p><h4>3. แปลงกลับ: คำตอบทั่วไป</h4><p>ส่วน homogeneous คือ $C_1a^n+C_2(-a)^n+b^n[C_3\\cos(n\\pi/2)+C_4\\sin(n\\pi/2)]$ และ particular คือ $nb^n\\cos(n\\pi/2)/[2b^2(a^2+b^2)]$ ดังนั้น $$\\begin{aligned}(a)\\quad y[n]={}&C_13^n+C_2(-3)^n+2^n\\left[\\left(C_3+\\frac n{104}\\right)\\cos\\frac{n\\pi}{2}+C_4\\sin\\frac{n\\pi}{2}\\right],\\\\(b)\\quad y[n]={}&C_12^n+C_2(-2)^n+3^n\\left[\\left(C_3+\\frac n{234}\\right)\\cos\\frac{n\\pi}{2}+C_4\\sin\\frac{n\\pi}{2}\\right],\\\\(c)\\quad y[n]={}&C_12^n+C_2(-2)^n+4^n\\left[\\left(C_3+\\frac n{640}\\right)\\cos\\frac{n\\pi}{2}+C_4\\sin\\frac{n\\pi}{2}\\right].\\end{aligned}$$ ค่าคงที่แต่ละข้อเป็นคนละชุด</p><h4>4. ตรวจสัมประสิทธิ์เรโซแนนซ์</h4><p>หาก $P(r)=(r^2-a^2)(r^2+b^2)$ แล้ว $P(E)(nr^n)=rP\\prime(r)r^n$ สำหรับ $r=ib$ มี $rP\\prime(r)=2b^2(a^2+b^2)$ จึงตรวจ particular ได้ตรงแรงกระตุ้น ระวังลืม $n$ เมื่อโพลซ้ำ; ROC ทั่วไป $|z|>\\max(a,b)$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "e38ff9eb2d4434bb5ed3eb01c5bb2bd5e833a268313eeb49cf9545aae907b2aa"
+  },
+  {
+    "questionId": "ee201-t08-q026",
+    "sourceMediaId": "5389f8524d37378d89c46e14abcd57a2034ceaf06bdfc16b1ffdf074ee468283",
+    "questionMediaId": "3d8e2a0548df91853370a376448187f5e34d981ca739f1b196776efc98da3fd0",
+    "bodyHtml": "<h4>1. เลื่อนดัชนีสองตำแหน่ง</h4><p>จาก $y_{n+2}-y_{n-2}=8n+4\\cos(n\\pi/4)$ เปลี่ยน $n\\mapsto n+2$ ได้ $$y_{n+4}-y_n=8n+16-4\\sin\\frac{n\\pi}{4},\\quad n\\ge0.$$ หากตีความสมการเดิมตั้งแต่ $n=0$ ให้ขยายสูตรคำตอบไปดัชนีลบที่เกี่ยวข้องด้วย</p><h4>2. ทำ Z-transform</h4><p>ให้ $a_j=y_j$ สำหรับ $j=0,1,2,3$ แล้ว $$(z^4-1)Y=a_0z^4+a_1z^3+a_2z^2+a_3z+\\frac{8z}{(z-1)^2}+\\frac{16z}{z-1}-\\frac{2\\sqrt2z}{z^2-\\sqrt2z+1}.$$</p><h4>3. แปลงกลับ</h4><p>$z^4-1$ มีราก $1,-1,i,-i$ จึงให้ส่วนคาบสี่ และส่วน particular หลังแยกเศษส่วนคือ $n^2+2\\sin(n\\pi/4)$ ดังนั้น $$y_n=C_1+C_2(-1)^n+C_3\\cos\\frac{n\\pi}{2}+C_4\\sin\\frac{n\\pi}{2}+n^2+2\\sin\\frac{n\\pi}{4}.$$ โจทย์ไม่ให้ค่าเริ่มต้น จึงคงค่าคงที่ทั้งสี่ไว้</p><h4>4. ตรวจในสมการเดิม</h4><p>ส่วนคาบสี่ให้ผลต่างศูนย์, $(n+2)^2-(n-2)^2=8n$ และ $2[\\sin((n+2)\\pi/4)-\\sin((n-2)\\pi/4)]=4\\cos(n\\pi/4)$ จึงตรงสมการเดิมทุกพจน์; ROC $|z|>1$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "2bacd1d8a01f45b911f2deedc9fa81394798258d3937604dacdfca6af20d458a"
+  },
+  {
+    "questionId": "ee201-t08-q027",
+    "sourceMediaId": "7d2bc83c75e8577c200688a684c41a29f0d35c304c8d85bb71ac07ac227da3cd",
+    "questionMediaId": "97242d95b7c35f8754b3c3a56659dab3e93bd5cddb4e2fe01e11850a15847ce9",
+    "bodyHtml": "<h4>1. รวมทั้งสี่ข้อด้วย k</h4><p>เขียน $x[n+2]=x[n+1]+kx[n]$, $x[0]=x[1]=1$ โดย (a),(b),(c),(d) มี $k=1/2,3/2,5/2,7/2$ ตามลำดับ</p><h4>2. ทำ Z-transform พร้อมค่าเริ่มต้น</h4><p>$$[z^2X-z^2-z]-[zX-z]-kX=0\\quad\\Rightarrow\\quad X(z)=\\frac{z^2}{z^2-z-k}.$$ ให้ $d=\\sqrt{1+4k}$ และ $r_\\pm=(1\\pm d)/2$</p><h4>3. แยกเศษส่วนและคำตอบทุกข้อ</h4><p>$$X=\\frac{r_+}{d}\\frac z{z-r_+}-\\frac{r_-}{d}\\frac z{z-r_-},\\qquad x[n]=\\frac{r_+^{n+1}-r_-^{n+1}}d.$$ ดังนั้น $$\\begin{aligned}(a)\\quad x[n]&=\\frac1{\\sqrt3}\\left[\\left(\\frac{1+\\sqrt3}{2}\\right)^{n+1}-\\left(\\frac{1-\\sqrt3}{2}\\right)^{n+1}\\right],\\\\(b)\\quad x[n]&=\\frac1{\\sqrt7}\\left[\\left(\\frac{1+\\sqrt7}{2}\\right)^{n+1}-\\left(\\frac{1-\\sqrt7}{2}\\right)^{n+1}\\right],\\\\(c)\\quad x[n]&=\\frac1{\\sqrt{11}}\\left[\\left(\\frac{1+\\sqrt{11}}{2}\\right)^{n+1}-\\left(\\frac{1-\\sqrt{11}}{2}\\right)^{n+1}\\right],\\\\(d)\\quad x[n]&=\\frac1{\\sqrt{15}}\\left[\\left(\\frac{1+\\sqrt{15}}{2}\\right)^{n+1}-\\left(\\frac{1-\\sqrt{15}}{2}\\right)^{n+1}\\right].\\end{aligned}$$</p><h4>4. ตรวจ</h4><p>$x[0]=(r_+-r_-)/d=1$ และ $x[1]=(r_+^2-r_-^2)/d=r_++r_-=1$ แต่ละรากมี $r^2-r-k=0$ จึงตรวจสมการได้ทุก $n$; ROC $|z|>r_+$ อย่าลืมกำลัง $n+1$ ในรูปคำตอบนี้</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "97469ebd1e181072fc074c8ce71f0674428eb98fe68e150d6c5462f00fcd93cc"
+  }
+]

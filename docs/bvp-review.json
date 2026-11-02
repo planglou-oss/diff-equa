@@ -1,0 +1,2001 @@
+{
+  "reviewedAt": "2026-11-02T11:14:05.861757+00:00",
+  "reviewer": "AI-assisted mathematical audit",
+  "humanReviewed": false,
+  "questionCount": 25,
+  "symbolicCheckCount": 293,
+  "katexFormulaCount": 392,
+  "verificationScript": "scripts/verify_bvp.py",
+  "verificationScriptSHA256": "ffeb9746a1ca26cd80f9ee280b99f6763f7aa8692e1191b4ebc6419083b6cf03",
+  "limitations": [
+    "AI transcribed the original images and independent checking expressions; this is not instructor certification.",
+    "Each modal residual and boundary trace is checked symbolically. Polynomial sine coefficient identities are checked for every positive n; other coefficients have the exact finite-index integral checks listed.",
+    "Checks do not establish arbitrary termwise differentiation or pointwise regularity of infinite series. Corner incompatibilities and generalized solution interpretations are stated in the explanations.",
+    "The script does not parse all HTML math. Content hashes bind the reviewed explanations."
+  ],
+  "items": [
+    {
+      "questionId": "ee201-t09-q001",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "bfd2b39e47ba5782483cf73c1277ec481e0f442095dda6216ed6dabb0b6f8b0b",
+      "questionMediaId": "671a23332ed08e142543932abce052f52acafd0a790a36fb22871f84ab5a910b",
+      "sourceMediaId": "e5ef3b134b837fc4ff4459821427b05f91b7ae67cde1b7da562d496dc0348761",
+      "checks": [
+        {
+          "question": 1,
+          "check": "wave PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "wave left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "wave right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "wave initial displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "wave initial velocity",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q002",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "9360e073ba11204fe79bc92ae443d57e383cdf7897bd734d653c953ea3b28708",
+      "questionMediaId": "23360173bffe490e4859312d663247fc3a4c421ad97676c5cea3c32eafbaf7f4",
+      "sourceMediaId": "57b2429ce3d6ae027af9b10ba2782ceb0cd560afd28ad141a05c9f972fe02d28",
+      "checks": [
+        {
+          "question": 2,
+          "check": "steady PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "steady left value",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "steady right value",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "heat PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "heat left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "heat right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "sine coefficient identity for all positive n",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "sine exact coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "sine exact coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "sine exact coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "sine exact coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "sine exact coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "sine exact coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "sine exact coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "sine exact coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "left corner incompatibility witness",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q003",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "927826dabe201be5a0729b4bf3af50708cb49faa610d8432f14e9b7d137d793f",
+      "questionMediaId": "9eeba17c32064ba2abc316a05514d9bbe8428980738cf6146e0982c3187c90c7",
+      "sourceMediaId": "05976e666974d917456db061dd35b71c12ba98cb4499c9e616c4e6d14c8b344e",
+      "checks": [
+        {
+          "question": 3,
+          "check": "beam PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "displacement boundary x=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "moment boundary x=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "displacement boundary x=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "moment boundary x=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "modal initial velocity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "sine coefficient identity for all positive n",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "sine exact coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "sine exact coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "sine exact coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "sine exact coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "sine exact coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "sine exact coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "sine exact coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "sine exact coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "initial moment corner witness",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q004",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "3a8698e172f698810f8da4ecf0304027e4abe566c55541fbb8aa4a58c7a38cec",
+      "questionMediaId": "893a72f5524f60c398c6bf941b2397984ea34962acdb6e372125d824fc1d7085",
+      "sourceMediaId": "1fd6e434701567769e8a25347b090b148ed127c09e2cdca2924ecd02c0bbc606",
+      "checks": [
+        {
+          "question": 4,
+          "check": "alpha=0 mode PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "alpha=0 mode left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "alpha=0 mode right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "alpha=0 mode initial velocity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "sine coefficient identity for all positive n",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "sine exact coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "sine exact coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "sine exact coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "sine exact coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "sine exact coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "sine exact coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "sine exact coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "sine exact coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "alpha=1 PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "alpha=1 initial displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "alpha=1 initial velocity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "alpha=1 both left traces",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q005",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "2b9a40fbbd8c805238a9480751da23607501cbf80509b9b4362b9b260926879c",
+      "questionMediaId": "ea92e24f4a73a72d633cf6d43f030efb504b6277598042496959eb2eaee6be2c",
+      "sourceMediaId": "8e015e23a9b8f223bab3e0c4746f4284ee825e218878a06a89d8ea7301fbc94e",
+      "checks": [
+        {
+          "question": 5,
+          "check": "mode PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "mode left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "mode right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "mode initial velocity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "sine coefficient identity for all positive n",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "sine exact coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "sine exact coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "sine exact coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "sine exact coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "sine exact coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "sine exact coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "sine exact coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "sine exact coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q006",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "80d14da737d9638ae7b658a4f3e089bd9fdb54e95d2fe870b41967c82bd826d2",
+      "questionMediaId": "0d46d1a78f159a36f6215208f407c8f928028934f0fd21bcbe5653303192d093",
+      "sourceMediaId": "27503ab16cceac4f2e48f7f9d47db4154bba103d651d75ac4f5c738c851946b3",
+      "checks": [
+        {
+          "question": 6,
+          "check": "general L mode PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 6,
+          "check": "general L mode left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 6,
+          "check": "general L mode right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 6,
+          "check": "general L mode initial velocity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 6,
+          "check": "sine coefficient identity for all positive n",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 6,
+          "check": "sine exact coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 6,
+          "check": "sine exact coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 6,
+          "check": "sine exact coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 6,
+          "check": "sine exact coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 6,
+          "check": "sine exact coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 6,
+          "check": "sine exact coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 6,
+          "check": "sine exact coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 6,
+          "check": "sine exact coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q007",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "ccf5ed52c09ed87046451912ef5802d3e7f246070d8a226a0267c33f903996c8",
+      "questionMediaId": "4e1b000d27b214a1bfec7dd9c14eb69da9aaa0960abaeb1922154228c96d04fc",
+      "sourceMediaId": "af63e03d8668c00b93d6555bed2087a0d4625db98069e9b821f93c8f6003044a",
+      "checks": [
+        {
+          "question": 7,
+          "check": "Laplace PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "left",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "right",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "bottom",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "top",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q008",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "0c014483bd4afc269b80538ef489bf4f4a0534262162ab0ba018d88ae58f40ff",
+      "questionMediaId": "b0e97fe3b8da96bf0fae136b1995b5981423c96c89bf3fbe2c95368579ddb264",
+      "sourceMediaId": "e9a1808c7bad3f9eca1f5ad965fe10cd44c7645d7596275f9eeb4624d2cc0b8d",
+      "checks": [
+        {
+          "question": 8,
+          "check": "wave PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "wave left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "wave right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "wave initial displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "wave initial velocity",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q009",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "f2ddec32ed0adb3c66fde394a73088129ae0d3f921a6110952fdc8e1e2317d4e",
+      "questionMediaId": "8d0f147b0cfc2dd6134042b78f809fa31c2edd5d00fdb7c1b6d77a9e200dcf5b",
+      "sourceMediaId": "e6fca5611eadd793481b65c986a6100d77a3fa644a2386f9d99337492db0daf8",
+      "checks": [
+        {
+          "question": 9,
+          "check": "wave PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "wave left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "wave right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "wave initial displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "wave initial velocity",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q010",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "c164684293896172616c7cd553d5bf085e3a80eca2d8bca478d1ab275bdab3ea",
+      "questionMediaId": "2fea0379fd6061f2859248065ab6fd1916db0b59d018f2c887377e114ee3df47",
+      "sourceMediaId": "78139fb188656cbdbb38b11b9b00ddb7c3b9fe0203e734f8560804ba4ad0f72a",
+      "checks": [
+        {
+          "question": 10,
+          "check": "wave PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "wave left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "wave right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "wave initial displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "wave initial velocity",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q011",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "b8d53a94bd978404e27d8d52c075d1901f6f3bfec7ac2092e6b876e3d26b75aa",
+      "questionMediaId": "bfb813fdb704f05b9dae6cbb14c1ece29449aecb24196d8daf731a476b4fcf51",
+      "sourceMediaId": "e99e982661cf6877f1d627787093c23fc8883f145811e9a392819475fb924f02",
+      "checks": [
+        {
+          "question": 11,
+          "check": "wave PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "wave left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "wave right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "wave initial displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "wave initial velocity",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q012",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "f2ddec32ed0adb3c66fde394a73088129ae0d3f921a6110952fdc8e1e2317d4e",
+      "questionMediaId": "5f9a20e0bf5ced16b7d3dc75184124b155dd3cb906666361d5d1c0778e622532",
+      "sourceMediaId": "2eb439be6eb844ec9881bc67c57a127f0b36a2e869bbbb8f9085f652495fc58f",
+      "checks": [
+        {
+          "question": 12,
+          "check": "wave PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 12,
+          "check": "wave left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 12,
+          "check": "wave right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 12,
+          "check": "wave initial displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 12,
+          "check": "wave initial velocity",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q013",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "688df633e8962c5792c862360041859700874294dc70393cd976e34b7beac72f",
+      "questionMediaId": "1696d8072cf5c61d09ed7646527b901127d06d8bd55d0a18e90b18094b84d658",
+      "sourceMediaId": "ab159c3d3fe6fc29b3d089f231830ecfc1eb146af9dae25ec8ebf575ab95e1a4",
+      "checks": [
+        {
+          "question": 13,
+          "check": "homogeneous heat PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "left homogeneous boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "right insulated boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "exact mixed coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "exact mixed coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "exact mixed coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "exact mixed coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "exact mixed coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "exact mixed coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "exact mixed coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "exact mixed coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "initial left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "initial right derivative",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q014",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "470371224a6dcf464f37adc5d5cfedd57dfd2ef1f247cae5afaba7b4b56c7a03",
+      "questionMediaId": "c662f1099e869bab932655a5edd1e97ba590db8dd21501f91ae7ebfbdcd7835a",
+      "sourceMediaId": "b63d283d59fd83d252dec76a8b1079793d4e8f89cf3d03276869f040d4fa9ed8",
+      "checks": [
+        {
+          "question": 14,
+          "check": "wave PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "wave left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "wave right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "wave initial displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "wave initial velocity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "printed initial velocity error witness",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q015",
+      "reviewStatus": "needs_clarification",
+      "bodySHA256": "57f19ffe5d78abf5a952a6b5ef59e5bd89b34c037cbbd1e5609cba433ba40f9f",
+      "questionMediaId": "8a853a7b7079627f3ca67889e13aad3238a75397feefa45162b02410ebeaabcb",
+      "sourceMediaId": "3516908712baab69ea6775328cd149d1c5b936585b888aaa5ee7c7caea2ef3af",
+      "checks": [
+        {
+          "question": 15,
+          "check": "corrected damped beam PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "mode boundary x=0 derivative=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "mode boundary x=0 derivative=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "mode boundary x=1 derivative=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "mode boundary x=1 derivative=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "modal displacement at zero",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "modal velocity at zero",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "exact cosine coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "exact cosine coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "exact cosine coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "exact cosine coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "exact cosine coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "exact cosine coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "exact cosine coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "exact cosine coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "initial slope contradiction witness",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "initial curvature contradiction witness",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q016",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "fbeaecf42be84b59035497476cb937673c3c1008b8bb315b12335f1971bc2dde",
+      "questionMediaId": "d6bb1fc638bef5e743dabf77d8bc2e4a889ca8bdc1d0b1102e0bab359fc9158c",
+      "sourceMediaId": "f538a70fec3aa98dea13f4055ca543599dc7fb88292df235a011d8f9a218eb12",
+      "checks": [
+        {
+          "question": 16,
+          "check": "wave PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "wave left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "wave right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "wave initial displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "wave initial velocity",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q017",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "cef9fb913dc71ae2ebb56a35f54918c3986e7291d47355669d95321f19ace506",
+      "questionMediaId": "f21404323bd2e03f4f2545c64bdb78cc656be35a267b9ec3768b4e590cf8c0c6",
+      "sourceMediaId": "834014a98726dbeea1df559fbf19de98298b46f61ec5c1ae6e6a0d50af9ab180",
+      "checks": [
+        {
+          "question": 17,
+          "check": "drift mode PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "drift mode left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "drift mode right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "exact piecewise coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "exact piecewise coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "exact piecewise coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "exact piecewise coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "exact piecewise coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "exact piecewise coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "exact piecewise coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "exact piecewise coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "initial left value",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "initial right value",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q018",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "811a4b5a20d6928c3e28871cd358f3b28d51cdb60b50c255fb33327d48f631c4",
+      "questionMediaId": "38a30b1d3c6d28843a3ad033acb8dc24b931a7a552c91d6a2f71ddd808976499",
+      "sourceMediaId": "453d652de9bc97a17b118e2ea9a11bd591d2ba2c4aa36fe5ca0d484ff0518454",
+      "checks": [
+        {
+          "question": 18,
+          "check": "cos exact conserved mean",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "cos exact cosine coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "cos exact cosine coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "cos exact cosine coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "cos exact cosine coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "cos exact cosine coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "cos exact cosine coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "cos exact cosine coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "cos exact cosine coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "sin exact conserved mean",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "sin exact cosine coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "sin exact cosine coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "sin exact cosine coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "sin exact cosine coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "sin exact cosine coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "sin exact cosine coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "sin exact cosine coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "sin exact cosine coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "a heat PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "a left derivative",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "a right derivative",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "b heat PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "b left derivative",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "b right derivative",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "c heat PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "c left derivative",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "c right derivative",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "d heat PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "d left derivative",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "d right derivative",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "constant mode PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "cos initial derivative corner",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "sin initial derivative corner",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q019",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "8c2892946897e9144d7131e50371ef5c37b639745e773994cbd67e5d9df84229",
+      "questionMediaId": "f336403c262cb54b7bb831484e60200cb7df5a4a83a14b48f635d4163a56c22f",
+      "sourceMediaId": "07818d842748e767b0bae6fc209ae5d338e445f2a07f9eac1d8a26855c79f8ef",
+      "checks": [
+        {
+          "question": 19,
+          "check": "wave PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "wave left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "wave right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "wave initial displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "wave initial velocity",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q020",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "501c993258cd179b8c420fb09f3fe000c045c0e491a94cfb2b771a7d28d68324",
+      "questionMediaId": "6f82e365c7b7ab98cac1fa477e11f1f7166d93049873ae1a1aa6c7e69f806062",
+      "sourceMediaId": "afdceeb7f7423e6f5a5ad38868f4e5f690ffbfddf32ed4f1e8679145055d7b5b",
+      "checks": [
+        {
+          "question": 20,
+          "check": "heat PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "heat left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "heat right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "sine coefficient identity for all positive n",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "sine exact coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "sine exact coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "sine exact coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "sine exact coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "sine exact coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "sine exact coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "sine exact coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "sine exact coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q021",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "62db7e44ec51019b065dca11a46b3ce055e15dc626cb1867dc231fe2878f6572",
+      "questionMediaId": "a5d189149486430e7c6f0a8f7931bb4b7723c97d5fb04b365a269207b690007d",
+      "sourceMediaId": "c3cfd793b90f1f8d3713cb60f46376e324ed0ae32efb77ce8aa6394e912168d6",
+      "checks": [
+        {
+          "question": 21,
+          "check": "drift mode PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "drift mode left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "drift mode right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "sine coefficient identity for all positive n",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "sine exact coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "sine exact coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "sine exact coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "sine exact coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "sine exact coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "sine exact coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "sine exact coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "sine exact coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q022",
+      "reviewStatus": "needs_clarification",
+      "bodySHA256": "5bce44cced86db426f9f02f21fe2a646fa6828cd3b2b55cf8f9575606efb3f81",
+      "questionMediaId": "5761bf06f45a9415edaced98ba451b5acd748640d2de7f6fca5922ba7f5a1db4",
+      "sourceMediaId": "6b7d1b069d86d3e5255e440965a2eb2192b7744c069034cd426689de1e21ca1d",
+      "checks": [
+        {
+          "question": 22,
+          "check": "allowed mode PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "allowed mode left",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "allowed mode right derivative",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "allowed mode initial velocity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "necessary anti-periodicity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "prescribed trace violates anti-periodicity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "nonzero contradiction at t=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "conditional corrected PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "conditional left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "conditional initial velocity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "conditional right derivative",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "conditional right value",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q023",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "3ff01417df9dd49e52df2a6c796eb7cdb7892b79093cb5a13e0efee1409f9c1c",
+      "questionMediaId": "b5470574da352538bc913d9ad13c2613074f34ac979a826a6137738bf9707362",
+      "sourceMediaId": "4b90b5e878739c5139fc2fefeaa7aae1b1e3082122605b389105aafda7c9a30c",
+      "checks": [
+        {
+          "question": 23,
+          "check": "L=2 mode PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=2 mode left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=2 mode right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=2 sine coefficient identity for all positive n",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=2 sine exact coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=2 sine exact coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=2 sine exact coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=2 sine exact coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=2 sine exact coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=2 sine exact coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=2 sine exact coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=2 sine exact coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=3 mode PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=3 mode left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=3 mode right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=3 sine coefficient identity for all positive n",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=3 sine exact coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=3 sine exact coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=3 sine exact coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=3 sine exact coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=3 sine exact coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=3 sine exact coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=3 sine exact coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=3 sine exact coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=4 mode PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=4 mode left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=4 mode right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=4 sine coefficient identity for all positive n",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=4 sine exact coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=4 sine exact coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=4 sine exact coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=4 sine exact coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=4 sine exact coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=4 sine exact coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=4 sine exact coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "L=4 sine exact coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q024",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "4d6df1da681571ace4e886ec9547b84ae0e4b683d9b6ff77f0d5acf61a423856",
+      "questionMediaId": "9cd382a0adc66406a37d818018e0ace360efbedf77bc0e4513a2655bfae6e81a",
+      "sourceMediaId": "eef606419a7b2f7401a5dfc77b47a044b29162e36462541a18f477eb162ea07c",
+      "checks": [
+        {
+          "question": 24,
+          "check": "mode PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "mode left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "mode right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "mode initial velocity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "exact initial sine coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "exact initial sine coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "exact initial sine coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "exact initial sine coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "exact initial sine coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "exact initial sine coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "exact initial sine coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "exact initial sine coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "exact initial sine coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "exact initial sine coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t09-q025",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "8c2892946897e9144d7131e50371ef5c37b639745e773994cbd67e5d9df84229",
+      "questionMediaId": "730be6c16e73b293e085cfe3d066055b418371b45b2e0d62d5fdc0b7aa1ccea0",
+      "sourceMediaId": "8ec4410c8c15c3cacb98e010e6eedfd9dbdd2db0f3d92623822fc726cf803fab",
+      "checks": [
+        {
+          "question": 25,
+          "check": "wave PDE",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 25,
+          "check": "wave left boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 25,
+          "check": "wave right boundary",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 25,
+          "check": "wave initial displacement",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 25,
+          "check": "wave initial velocity",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    }
+  ]
+}

@@ -12,11 +12,17 @@ import (
 //go:embed laplace_explanations.json
 var laplaceExplanations []byte
 
+//go:embed z_transform_explanations.json
+var zTransformExplanations []byte
+
+//go:embed bvp_explanations.json
+var bvpExplanations []byte
+
 // SeedExplanations applies source-matched authored content. A revision may replace
 // only a known previous body; custom edits and human-reviewed bodies are retained.
 // AI review status is valid only for the exact body and both original images.
 func SeedExplanations(db *sql.DB) error {
-	var items []struct {
+	type authoredExplanation struct {
 		QuestionID         string   `json:"questionId"`
 		SourceMediaID      string   `json:"sourceMediaId"`
 		BodyHTML           string   `json:"bodyHtml"`
@@ -25,8 +31,13 @@ func SeedExplanations(db *sql.DB) error {
 		ReviewedBodySHA256 string   `json:"reviewedBodySHA256"`
 		ReviewStatus       string   `json:"reviewStatus"`
 	}
-	if err := json.Unmarshal(laplaceExplanations, &items); err != nil {
-		return err
+	var items []authoredExplanation
+	for _, content := range [][]byte{laplaceExplanations, zTransformExplanations, bvpExplanations} {
+		var batch []authoredExplanation
+		if err := json.Unmarshal(content, &batch); err != nil {
+			return err
+		}
+		items = append(items, batch...)
 	}
 	tx, err := db.Begin()
 	if err != nil {

@@ -132,3 +132,17 @@ API ส่งเฉพาะตัวเลือกก่อนตอบ แล
 ผลตรวจและรายการแก้อยู่ใน `docs/LAPLACE_REVIEW.md` และ `docs/laplace-review.json` รันตรวจคำนวณซ้ำได้ด้วย `python scripts/verify_laplace.py` (ต้องมี SymPy เฉพาะในเครื่องพัฒนา)
 
 Go ใช้ hash ของเนื้อหา ภาพโจทย์ และภาพเฉลยเพื่อผูกสถานะการตรวจ ปรับรุ่นคำอธิบายเก่าที่รู้จักได้เมื่อเปิด server แต่เก็บ custom edits และ human-reviewed bodies ไว้ หากเนื้อหาหรือ source เปลี่ยน ป้ายตรวจ AI จะถูกยกเลิกเมื่อ sync ผ่าน startup ข้อมูลที่ตรวจแล้วบันทึกในฐานข้อมูลเครื่องปัจจุบันแล้ว เปิด `run.bat` ใหม่และ refresh หน้าเพื่อใช้ป้ายสถานะรุ่นใหม่
+
+## คำอธิบาย Z-transform
+
+เพิ่มคำอธิบาย AI ครบ 27 ข้อ (ทุกข้อย่อย ตั้งแต่ 1997–2026) ใน `backend/internal/studycontent/z_transform_explanations.json` พร้อมขั้นตอน ค่าเริ่มต้น ROC และการตรวจกลับ ผ่านการตรวจคำนวณ 422 รายการด้วย SymPy และตรวจการแสดงสูตร KaTeX 374 สูตร ใช้ป้าย “ตรวจด้วย AI และคำนวณซ้ำแล้ว” ไม่ใช่การรับรองจากอาจารย์
+
+อ่านผลตรวจที่ [docs/Z_TRANSFORM_REVIEW.md](docs/Z_TRANSFORM_REVIEW.md) และรันซ้ำด้วย `python scripts/verify_z_transform.py` (ต้องมี SymPy ในเครื่องพัฒนา) Go จะนำเข้าเมื่อเปิด server โดยตรวจ hash ภาพโจทย์ ภาพเฉลย และเนื้อหา เก็บ custom edits และเฉลยที่มนุษย์ตรวจแล้วไว้ เปิด `run.bat` ใหม่ แล้ว refresh เพื่อใช้ข้อมูลรุ่นล่าสุด
+
+## คำอธิบาย Boundary-Value Problems
+
+เพิ่มคำอธิบาย AI ครบ 25 ข้อ รวมทุกข้อย่อย (1998–2026) ใน `backend/internal/studycontent/bvp_explanations.json` มีวิธีแยกตัวแปร Fourier coefficients และตรวจ PDE/เงื่อนไข ผ่านการตรวจ SymPy 293 รายการและ KaTeX 392 สูตร เป็นการตรวจด้วย AI ไม่ใช่การรับรองจากอาจารย์
+
+แก้เฉลยภาพข้อ 14, 15 และ 18; ข้อ 15 มีปัญหาความเข้ากันได้ที่มุมเริ่มต้นและข้อ 22 มีเงื่อนไขขัดกันสำหรับทุกเวลา จึงตั้ง `needs_clarification` ทั้งสองข้อ อีก 23 ข้อเป็น `ai_checked` พร้อมระบุขอบเขตการใช้อนุกรมและ initial limits ดู [docs/BVP_REVIEW.md](docs/BVP_REVIEW.md) และรันตรวจซ้ำด้วย `python scripts/verify_bvp.py` (ต้องมี SymPy)
+
+เปิด `run.bat` ใหม่เพื่อ sync คำอธิบาย แล้ว refresh หน้า Go ตรวจ hash ของเนื้อหา/ภาพทั้งสองและเก็บ custom edits กับเฉลยที่มนุษย์ตรวจแล้วไว้ตามเดิม

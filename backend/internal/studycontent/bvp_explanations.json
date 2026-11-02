@@ -1,0 +1,227 @@
+[
+  {
+    "questionId": "ee201-t09-q001",
+    "sourceMediaId": "e5ef3b134b837fc4ff4459821427b05f91b7ae67cde1b7da562d496dc0348761",
+    "questionMediaId": "671a23332ed08e142543932abce052f52acafd0a790a36fb22871f84ab5a910b",
+    "bodyHtml": "<h4>1. เลือกโหมดของเชือกปลายตรึง</h4><p>โจทย์ให้ $L=50$ cm, $y(x,0)=0$ และ $y_t(x,0)=3\\sin^3(\\pi x/50)$ ใช้หน่วย $x,L,c$ ให้สอดคล้องกัน โดยถือ $c>0$</p><h4>2. แยกตัวแปรและความเร็วเริ่มต้น</h4><p>สำหรับ $z_{tt}=c^2z_{xx}$ บน $0<x<L$ และปลายตรึง ใช้ $X_n=\\sin(n\\pi x/L)$, $\\omega_n=cn\\pi/L$ และ $$z(x,t)=\\sum_{n=1}^{\\infty}[A_n\\cos\\omega_nt+B_n\\sin\\omega_nt]\\sin\\frac{n\\pi x}{L}.$$ หาก $z(x,0)=f(x),z_t(x,0)=g(x)$ จะมี $A_n=\\frac2L\\int_0^Lf(x)\\sin(n\\pi x/L)\\,dx$ และ $\\omega_nB_n=\\frac2L\\int_0^Lg(x)\\sin(n\\pi x/L)\\,dx$ ในข้อนี้ $A_n=0$ และใช้ $$3\\sin^3\\theta=\\frac94\\sin\\theta-\\frac34\\sin3\\theta.$$ จึงมีเฉพาะโหมด $n=1,3$</p><h4>3. หาสัมประสิทธิ์และคำตอบ</h4><p>$\\omega_1B_1=9/4$, $\\omega_3B_3=-3/4$ ทำให้ $B_1=225/(2\\pi c)$ และ $B_3=-25/(2\\pi c)$ ดังนั้น $$y(x,t)=\\frac{225}{2\\pi c}\\sin\\frac{\\pi x}{50}\\sin\\frac{\\pi ct}{50}-\\frac{25}{2\\pi c}\\sin\\frac{3\\pi x}{50}\\sin\\frac{3\\pi ct}{50}.$$</p><h4>4. ตรวจคำตอบ</h4><p>แต่ละโหมดให้ $y_{tt}-c^2y_{xx}=0$ และเป็นศูนย์ที่ $x=0,50$ เมื่อ $t=0$ การกระจัดเป็นศูนย์ ส่วนอนุพันธ์เวลาได้ $9\\sin(\\pi x/50)/4-3\\sin(3\\pi x/50)/4$ ตรงโจทย์ จุดที่มักพลาดคือไม่หารสัมประสิทธิ์ความเร็วด้วย $\\omega_n$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "bfd2b39e47ba5782483cf73c1277ec481e0f442095dda6216ed6dabb0b6f8b0b"
+  },
+  {
+    "questionId": "ee201-t09-q002",
+    "sourceMediaId": "57b2429ce3d6ae027af9b10ba2782ceb0cd560afd28ad141a05c9f972fe02d28",
+    "questionMediaId": "23360173bffe490e4859312d663247fc3a4c421ad97676c5cea3c32eafbaf7f4",
+    "bodyHtml": "<h4>1. แยกอุณหภูมิคงตัวก่อน</h4><p>เงื่อนไขสำหรับ $t>0$ คือ $u(0,t)=0,u(1,t)=100$ แก้ $s\\prime\\prime=0$ ได้ $s(x)=100x$ ให้ $v=u-100x$ จะมี $v_t=v_{xx}$ และ $v(0,t)=v(1,t)=0$</p><h4>2. แยกตัวแปร</h4><p>$$v(x,t)=\\sum_{n=1}^{\\infty}B_ne^{-n^2\\pi^2t}\\sin(n\\pi x),\\qquad v(x,0)=100(1-x).$$</p><h4>3. คำนวณสัมประสิทธิ์</h4><p>$$B_n=2\\int_0^1100(1-x)\\sin(n\\pi x)\\,dx=\\frac{200}{n\\pi}.$$ ดังนั้น $$u(x,t)=100x+\\frac{200}{\\pi}\\sum_{n=1}^{\\infty}\\frac1n e^{-n^2\\pi^2t}\\sin(n\\pi x).$$</p><h4>4. ตรวจและความหมายที่มุมเริ่มต้น</h4><p>สำหรับ $t>0$ แต่ละพจน์ผ่าน heat equation และปลายทั้งสองถูกต้อง เมื่อ $t\\to0^+$ อนุกรมคืนค่า $100$ สำหรับ $0<x<1$; จุด $(0,0)$ มีการเปลี่ยนอุณหภูมิฉับพลันตามโจทย์ จึงไม่เรียกร้องความต่อเนื่องที่มุมนั้น เมื่อ $t\\to\\infty$ เหลือ $100x$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "9360e073ba11204fe79bc92ae443d57e383cdf7897bd734d653c953ea3b28708"
+  },
+  {
+    "questionId": "ee201-t09-q003",
+    "sourceMediaId": "05976e666974d917456db061dd35b71c12ba98cb4499c9e616c4e6d14c8b344e",
+    "questionMediaId": "9eeba17c32064ba2abc316a05514d9bbe8428980738cf6146e0982c3187c90c7",
+    "bodyHtml": "<h4>1. แยกตัวแปรของคาน</h4><p>เมื่อ $c=L=1$ มี $u_{tt}+u_{xxxx}=0$ และ simply supported: $u=u_{xx}=0$ ที่ปลายทั้งสอง ให้ $u=XT$ จะได้ $X^{(4)}=\\lambda^4X$ และ $T\\prime\\prime+\\lambda^4T=0$</p><h4>2. เลือก eigenfunctions</h4><p>เงื่อนไขปลายทำให้ $X_n=\\sin(n\\pi x)$ และความถี่เวลาเป็น $\\omega_n=n^2\\pi^2$ ดังนั้น $$u=\\sum_{n\\ge1}[A_n\\cos(n^2\\pi^2t)+B_n\\sin(n^2\\pi^2t)]\\sin(n\\pi x).$$ จาก $u_t(x,0)=0$ ได้ $B_n=0$</p><h4>3. ขยายรูปเริ่มต้น</h4><p>$$A_n=2\\int_0^1x(1-x)\\sin(n\\pi x)\\,dx=\\frac{4[1-(-1)^n]}{n^3\\pi^3}.$$ จึงได้ $$u(x,t)=\\frac8{\\pi^3}\\sum_{m=1}^{\\infty}\\frac{\\sin((2m-1)\\pi x)\\cos((2m-1)^2\\pi^2t)}{(2m-1)^3}.$$</p><h4>4. ตรวจและขอบเขตของอนุกรม</h4><p>แต่ละโหมดผ่าน PDE และเงื่อนไข $u=u_{xx}=0$ ที่ปลาย อนุกรมของการกระจัดคืนค่า $x(1-x)$ และความเร็วเริ่มต้นศูนย์ในความหมาย modal/energy solution ไม่ควรหาอนุพันธ์อันดับสูงของอนุกรมที่ $t=0$ โดยไม่ตรวจการลู่เข้า เพราะรูปเริ่มต้นมี $u_{xx}=-2$ ที่ปลาย ต่างจากเงื่อนไขโมเมนต์สำหรับเวลาต่อมา</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "927826dabe201be5a0729b4bf3af50708cb49faa610d8432f14e9b7d137d793f"
+  },
+  {
+    "questionId": "ee201-t09-q004",
+    "sourceMediaId": "1fd6e434701567769e8a25347b090b148ed127c09e2cdca2924ecd02c0bbc606",
+    "questionMediaId": "893a72f5524f60c398c6bf941b2397984ea34962acdb6e372125d824fc1d7085",
+    "bodyHtml": "<h4>1. แทนพารามิเตอร์ก่อนแยกตัวแปร</h4><p>สมการคือ $z_{tt}=z_{xx}-\\alpha z_{xt}$ เงื่อนไข $z(0,t)=0$, $\\alpha z_x(0,t)+(1-\\alpha)z(1,t)=0$ และ $z(x,0)=x(1-\\alpha)(1-x)$ ต้องพิจารณา $\\alpha=0,1$ แยกกัน</p><h4>2. ข้อ (a): alpha=0</h4><p>ได้ wave equation $z_{tt}=z_{xx}$, ปลายตรึง $0,1$ และรูปเริ่มต้น $x(1-x)$ ความเร็วศูนย์ ใช้ $\\sin(n\\pi x)\\cos(n\\pi t)$ และ $$A_n=2\\int_0^1x(1-x)\\sin(n\\pi x)\\,dx=\\frac{4[1-(-1)^n]}{n^3\\pi^3}.$$</p><h4>3. ข้อ (a): คำตอบ</h4><p>$$z(x,t)=\\frac8{\\pi^3}\\sum_{m=1}^{\\infty}\\frac{\\sin((2m-1)\\pi x)\\cos((2m-1)\\pi t)}{(2m-1)^3}.$$ ตรวจแต่ละโหมดและ Fourier coefficients ได้ครบ เงื่อนไขความเร็วเริ่มต้นทำให้ไม่มีพจน์ไซน์ของเวลา</p><h4>4. ข้อ (b): alpha=1</h4><p>ข้อมูลเริ่มต้นทั้ง $z(x,0)$ และ $z_t(x,0)$ เป็นศูนย์ และขอบเขตกลายเป็น $z(0,t)=z_x(0,t)=0$ ดังนั้น $$z(x,t)=0$$ เป็นคำตอบที่ผ่าน PDE รวมพจน์ผสม $z_{xt}$ และทุกเงื่อนไข ห้ามนำสูตร eigenfunctions ปลายตรึงของข้อ (a) มาใช้กับข้อ (b) โดยไม่แทนเงื่อนไขใหม่</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "3a8698e172f698810f8da4ecf0304027e4abe566c55541fbb8aa4a58c7a38cec"
+  },
+  {
+    "questionId": "ee201-t09-q005",
+    "sourceMediaId": "8e015e23a9b8f223bab3e0c4746f4284ee825e218878a06a89d8ea7301fbc94e",
+    "questionMediaId": "ea92e24f4a73a72d633cf6d43f030efb504b6277598042496959eb2eaee6be2c",
+    "bodyHtml": "<h4>1. เลือกรูปคำตอบ</h4><p>สำหรับ $z_{tt}=c^2z_{xx}$ บน $0<x<L$ และปลายตรึง ใช้ $X_n=\\sin(n\\pi x/L)$, $\\omega_n=cn\\pi/L$ และ $$z(x,t)=\\sum_{n=1}^{\\infty}[A_n\\cos\\omega_nt+B_n\\sin\\omega_nt]\\sin\\frac{n\\pi x}{L}.$$ หาก $z(x,0)=f(x),z_t(x,0)=g(x)$ จะมี $A_n=\\frac2L\\int_0^Lf(x)\\sin(n\\pi x/L)\\,dx$ และ $\\omega_nB_n=\\frac2L\\int_0^Lg(x)\\sin(n\\pi x/L)\\,dx$ ในข้อนี้ $L=1$, $f=2x(1-x)$ และ $g=0$ จึงมี $B_n=0$</p><h4>2. คำนวณ Fourier sine coefficients</h4><p>$$A_n=2\\int_0^12x(1-x)\\sin(n\\pi x)\\,dx=\\frac{8[1-(-1)^n]}{n^3\\pi^3}.$$ โหมดคู่เป็นศูนย์ ส่วนโหมดคี่มี $A_n=16/(n^3\\pi^3)$</p><h4>3. คำตอบ</h4><p>$$z(x,t)=\\frac{16}{\\pi^3}\\sum_{m=1}^{\\infty}\\frac{\\sin((2m-1)\\pi x)\\cos((2m-1)\\pi ct)}{(2m-1)^3}.$$</p><h4>4. ตรวจ</h4><p>แต่ละโหมดผ่าน $z_{tt}=c^2z_{xx}$ และปลายตรึง เมื่อ $t=0$ สัมประสิทธิ์ตรงรูป $2x(1-x)$ ส่วน $z_t(x,0)=0$ เพราะพจน์เวลาเป็น cosine ระวังตัวประกอบ $2$ ในรูปเริ่มต้นซึ่งทำให้สัมประสิทธิ์ต่างจากกรณี $x(1-x)$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "2b9a40fbbd8c805238a9480751da23607501cbf80509b9b4362b9b260926879c"
+  },
+  {
+    "questionId": "ee201-t09-q006",
+    "sourceMediaId": "27503ab16cceac4f2e48f7f9d47db4154bba103d651d75ac4f5c738c851946b3",
+    "questionMediaId": "0d46d1a78f159a36f6215208f407c8f928028934f0fd21bcbe5653303192d093",
+    "bodyHtml": "<h4>1. เก็บความยาว L ในความถี่</h4><p>สำหรับ $z_{tt}=c^2z_{xx}$ บน $0<x<L$ และปลายตรึง ใช้ $X_n=\\sin(n\\pi x/L)$, $\\omega_n=cn\\pi/L$ และ $$z(x,t)=\\sum_{n=1}^{\\infty}[A_n\\cos\\omega_nt+B_n\\sin\\omega_nt]\\sin\\frac{n\\pi x}{L}.$$ หาก $z(x,0)=f(x),z_t(x,0)=g(x)$ จะมี $A_n=\\frac2L\\int_0^Lf(x)\\sin(n\\pi x/L)\\,dx$ และ $\\omega_nB_n=\\frac2L\\int_0^Lg(x)\\sin(n\\pi x/L)\\,dx$ ให้ $f=kx(L-x)$, $g=0$, $L>0,c>0$ จึงเหลือ cosine ของเวลาเท่านั้น</p><h4>2. คำนวณสัมประสิทธิ์</h4><p>เปลี่ยนตัวแปร $x=L\\xi$ หรืออินทิเกรตโดยส่วนได้ $$A_n=\\frac2L\\int_0^Lkx(L-x)\\sin\\frac{n\\pi x}L\\,dx=\\frac{4kL^2[1-(-1)^n]}{n^3\\pi^3}.$$</p><h4>3. คำตอบ</h4><p>$$z(x,t)=\\frac{8kL^2}{\\pi^3}\\sum_{m=1}^{\\infty}\\frac{\\sin((2m-1)\\pi x/L)\\cos((2m-1)\\pi ct/L)}{(2m-1)^3}.$$</p><h4>4. ตรวจ</h4><p>ตัวประกอบ $L^2$ มาจากขนาดรูปเริ่มต้น ส่วนความถี่ต้องหารด้วย $L$ ทั้งใน space และ time แต่ละโหมดผ่าน PDE/ปลายตรึง และ Fourier coefficients คืน $kx(L-x)$ ความเร็วเริ่มต้นเป็นศูนย์</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "80d14da737d9638ae7b658a4f3e089bd9fdb54e95d2fe870b41967c82bd826d2"
+  },
+  {
+    "questionId": "ee201-t09-q007",
+    "sourceMediaId": "af63e03d8668c00b93d6555bed2087a0d4625db98069e9b821f93c8f6003044a",
+    "questionMediaId": "4e1b000d27b214a1bfec7dd9c14eb69da9aaa0960abaeb1922154228c96d04fc",
+    "bodyHtml": "<h4>1. แบ่งปัญหาด้วย superposition</h4><p>แก้ Laplace equation บน $0<x<\\pi$, $0<y<2\\pi$ ให้ $u=u_1+u_2$ โดย $u_1$ รับข้อมูลด้านขวา $\\sin y$ และด้านอื่นศูนย์ ส่วน $u_2$ รับข้อมูลด้านบน $\\sin3x$ และด้านอื่นศูนย์</p><h4>2. คำตอบจากด้านขวา</h4><p>เลือก $u_1=X(x)\\sin y$ จึงมี $X\\prime\\prime-X=0$, $X(0)=0,X(\\pi)=1$ ได้ $$u_1=\\frac{\\sinh x}{\\sinh\\pi}\\sin y.$$</p><h4>3. คำตอบจากด้านบนแล้วรวม</h4><p>เลือก $u_2=\\sin3x\\,Y(y)$ จึงมี $Y\\prime\\prime-9Y=0$, $Y(0)=0,Y(2\\pi)=1$ ได้ $$u(x,y)=\\frac{\\sinh x}{\\sinh\\pi}\\sin y+\\frac{\\sinh3y}{\\sinh6\\pi}\\sin3x.$$</p><h4>4. ตรวจทั้งสี่ด้าน</h4><p>$u_{xx}+u_{yy}=0$ ในแต่ละพจน์ ที่ $x=\\pi$ เหลือ $\\sin y$, ที่ $y=2\\pi$ เหลือ $\\sin3x$ และด้าน $x=0,y=0$ เป็นศูนย์ ระวังตัวส่วนของพจน์ที่สองเป็น $\\sinh(3\\cdot2\\pi)=\\sinh6\\pi$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "ccf5ed52c09ed87046451912ef5802d3e7f246070d8a226a0267c33f903996c8"
+  },
+  {
+    "questionId": "ee201-t09-q008",
+    "sourceMediaId": "e9a1808c7bad3f9eca1f5ad965fe10cd44c7645d7596275f9eeb4624d2cc0b8d",
+    "questionMediaId": "b0e97fe3b8da96bf0fae136b1995b5981423c96c89bf3fbe2c95368579ddb264",
+    "bodyHtml": "<h4>1. โหมดของเส้นเชือก</h4><p>$L=5,c=1$ จึงมี $z=\\sum A_n\\sin(n\\pi x/5)\\cos(n\\pi t/5)$ เพราะความเร็วเริ่มต้นศูนย์</p><h4>2. ลดรูป sin ยกกำลังสาม</h4><p>$$\\sin^3\\theta=\\frac34\\sin\\theta-\\frac14\\sin3\\theta.$$ รูปเริ่มต้นจึงมี $A_1=3/4,A_3=-1/4$ และค่าอื่นศูนย์</p><h4>3. คำตอบ</h4><p>$$z(x,t)=\\frac34\\sin\\frac{\\pi x}5\\cos\\frac{\\pi t}5-\\frac14\\sin\\frac{3\\pi x}5\\cos\\frac{3\\pi t}5.$$</p><h4>4. ตรวจ</h4><p>แทน $t=0$ ได้รูปเริ่มต้นด้วยเอกลักษณ์ข้างต้น อนุพันธ์เวลาเป็นศูนย์ที่ $t=0$ และทั้งสองโหมดผ่าน PDE กับเงื่อนไข $x=0,5$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "0c014483bd4afc269b80538ef489bf4f4a0534262162ab0ba018d88ae58f40ff"
+  },
+  {
+    "questionId": "ee201-t09-q009",
+    "sourceMediaId": "e6fca5611eadd793481b65c986a6100d77a3fa644a2386f9d99337492db0daf8",
+    "questionMediaId": "8d0f147b0cfc2dd6134042b78f809fa31c2edd5d00fdb7c1b6d77a9e200dcf5b",
+    "bodyHtml": "<h4>1. โหมดและข้อมูลเริ่มต้น</h4><p>$z_{tt}=4z_{xx}$ บน $0<x<\\pi$ มี $\\omega_n=2n$ เขียน $z=\\sum[A_n\\cos2nt+B_n\\sin2nt]\\sin nx$ จาก $z(x,0)=\\sin2x$ ได้ $A_2=1$ และ $A_n=0$ เมื่อ $n\\ne2$</p><h4>2. หาสัมประสิทธิ์ความเร็ว</h4><p>$\\sin^3x=3\\sin x/4-\\sin3x/4$ ดังนั้น $$2B_1=\\frac34,\\qquad 6B_3=-\\frac14,$$ ได้ $B_1=3/8,B_3=-1/24$</p><h4>3. คำตอบ</h4><p>$$z(x,t)=\\sin2x\\cos4t+\\frac38\\sin x\\sin2t-\\frac1{24}\\sin3x\\sin6t.$$</p><h4>4. ตรวจ</h4><p>แทน $t=0$ ได้ $\\sin2x$ และอนุพันธ์เวลาได้ $3\\sin x/4-\\sin3x/4=\\sin^3x$ แต่ละพจน์ผ่าน PDE และปลายตรึง ระวัง $\\sin^3x$ ต่างจาก $\\sin3x$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "f2ddec32ed0adb3c66fde394a73088129ae0d3f921a6110952fdc8e1e2317d4e"
+  },
+  {
+    "questionId": "ee201-t09-q010",
+    "sourceMediaId": "78139fb188656cbdbb38b11b9b00ddb7c3b9fe0203e734f8560804ba4ad0f72a",
+    "questionMediaId": "2fea0379fd6061f2859248065ab6fd1916db0b59d018f2c887377e114ee3df47",
+    "bodyHtml": "<h4>1. เลือก eigenfunctions</h4><p>$L=1,c=3$ ให้ $z=\\sum[A_n\\cos(3n\\pi t)+B_n\\sin(3n\\pi t)]\\sin(n\\pi x)$</p><h4>2. กระจัดและความเร็วเริ่มต้น</h4><p>ใช้ $(1+\\cos\\pi x)\\sin\\pi x=\\sin\\pi x+\\frac12\\sin2\\pi x$ ได้ $A_1=1,A_2=1/2$ ส่วนความเร็วเป็น $\\sin3\\pi x$ จึงมี $9\\pi B_3=1$ หรือ $B_3=1/(9\\pi)$</p><h4>3. คำตอบ</h4><p>$$z(x,t)=\\sin\\pi x\\cos3\\pi t+\\frac12\\sin2\\pi x\\cos6\\pi t+\\frac1{9\\pi}\\sin3\\pi x\\sin9\\pi t.$$</p><h4>4. ตรวจ</h4><p>อนุพันธ์เวลาเทอมสุดท้ายให้ $\\sin3\\pi x$ ที่ $t=0$ ส่วนสองเทอมแรกให้ศูนย์ การกระจัดเริ่มต้นถูกต้องและทุกโหมดผ่าน PDE/ปลายตรึง ระวังความถี่เป็น $3n\\pi$ ไม่ใช่ $3n$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "c164684293896172616c7cd553d5bf085e3a80eca2d8bca478d1ab275bdab3ea"
+  },
+  {
+    "questionId": "ee201-t09-q011",
+    "sourceMediaId": "e99e982661cf6877f1d627787093c23fc8883f145811e9a392819475fb924f02",
+    "questionMediaId": "bfb813fdb704f05b9dae6cbb14c1ece29449aecb24196d8daf731a476b4fcf51",
+    "bodyHtml": "<h4>1. เลือกโหมด</h4><p>บน $0<x<\\pi$ และ $c=2$ ใช้ $z=\\sum[A_n\\cos2nt+B_n\\sin2nt]\\sin nx$</p><h4>2. ขยายข้อมูลเริ่มต้น</h4><p>$(1+2\\cos x)\\sin x=\\sin x+\\sin2x$ ทำให้ $A_1=A_2=1$ ส่วน $z_t(x,0)=\\sin3x$ ให้ $6B_3=1$ และ $B_3=1/6$</p><h4>3. คำตอบ</h4><p>$$z(x,t)=\\sin x\\cos2t+\\sin2x\\cos4t+\\frac16\\sin3x\\sin6t.$$</p><h4>4. ตรวจ</h4><p>แทน $t=0$ แล้วใช้ $2\\sin x\\cos x=\\sin2x$ จะได้ข้อมูลกระจัดเดิม อนุพันธ์เวลาที่ศูนย์ให้ $\\sin3x$ และปลาย/สมการผ่านทุกพจน์</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "b8d53a94bd978404e27d8d52c075d1901f6f3bfec7ac2092e6b876e3d26b75aa"
+  },
+  {
+    "questionId": "ee201-t09-q012",
+    "sourceMediaId": "2eb439be6eb844ec9881bc67c57a127f0b36a2e869bbbb8f9085f652495fc58f",
+    "questionMediaId": "5f9a20e0bf5ced16b7d3dc75184124b155dd3cb906666361d5d1c0778e622532",
+    "bodyHtml": "<h4>1. โหมดและข้อมูลเริ่มต้น</h4><p>$z_{tt}=4z_{xx}$ บน $0<x<\\pi$ มี $\\omega_n=2n$ เขียน $z=\\sum[A_n\\cos2nt+B_n\\sin2nt]\\sin nx$ จาก $z(x,0)=\\sin2x$ ได้ $A_2=1$ และ $A_n=0$ เมื่อ $n\\ne2$</p><h4>2. หาสัมประสิทธิ์ความเร็ว</h4><p>$\\sin^3x=3\\sin x/4-\\sin3x/4$ ดังนั้น $$2B_1=\\frac34,\\qquad 6B_3=-\\frac14,$$ ได้ $B_1=3/8,B_3=-1/24$</p><h4>3. คำตอบ</h4><p>$$z(x,t)=\\sin2x\\cos4t+\\frac38\\sin x\\sin2t-\\frac1{24}\\sin3x\\sin6t.$$</p><h4>4. ตรวจ</h4><p>แทน $t=0$ ได้ $\\sin2x$ และอนุพันธ์เวลาได้ $3\\sin x/4-\\sin3x/4=\\sin^3x$ แต่ละพจน์ผ่าน PDE และปลายตรึง ระวัง $\\sin^3x$ ต่างจาก $\\sin3x$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "f2ddec32ed0adb3c66fde394a73088129ae0d3f921a6110952fdc8e1e2317d4e"
+  },
+  {
+    "questionId": "ee201-t09-q013",
+    "sourceMediaId": "ab159c3d3fe6fc29b3d089f231830ecfc1eb146af9dae25ec8ebf575ab95e1a4",
+    "questionMediaId": "1696d8072cf5c61d09ed7646527b901127d06d8bd55d0a18e90b18094b84d658",
+    "bodyHtml": "<h4>1. ทำขอบเขตให้เป็นศูนย์</h4><p>ให้ $v=u-10$ จะได้ $v_t=v_{xx}$, $v(0,t)=0$, $v_x(\\pi/2,t)=0$ และ $v(x,0)=10\\cos^2x-10=-10\\sin^2x$</p><h4>2. เลือก eigenfunctions แบบ Dirichlet–Neumann</h4><p>$X(0)=0$ ให้ $X=\\sin\\lambda x$ และ $X\\prime(\\pi/2)=0$ ให้ $\\lambda=2n-1$, $n\\ge1$ ดังนั้น $v=\\sum D_ne^{-(2n-1)^2t}\\sin((2n-1)x)$</p><h4>3. คำนวณสัมประสิทธิ์และคำตอบ</h4><p>ให้ $q=2n-1$ แล้ว $$D_n=\\frac4\\pi\\int_0^{\\pi/2}(-10\\sin^2x)\\sin(qx)\\,dx=\\frac{80}{\\pi q(q^2-4)}.$$ จึงได้ $$u(x,t)=10+\\frac{80}{\\pi}\\sum_{n=1}^{\\infty}\\frac{e^{-(2n-1)^2t}\\sin((2n-1)x)}{(2n-1)[(2n-1)^2-4]}.$$</p><h4>4. ตรวจ</h4><p>แต่ละโหมดผ่าน heat equation, มีค่าเป็นศูนย์ที่ $x=0$ และอนุพันธ์ศูนย์ที่ $x=\\pi/2$ จึงได้ขอบเขตเดิมเมื่อบวก $10$ อนุกรมที่ $t=0$ คืน $10\\cos^2x$ และระยะยาวเหลืออุณหภูมิคงตัว $10$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "688df633e8962c5792c862360041859700874294dc70393cd976e34b7beac72f"
+  },
+  {
+    "questionId": "ee201-t09-q014",
+    "sourceMediaId": "b63d283d59fd83d252dec76a8b1079793d4e8f89cf3d03276869f040d4fa9ed8",
+    "questionMediaId": "c662f1099e869bab932655a5edd1e97ba590db8dd21501f91ae7ebfbdcd7835a",
+    "bodyHtml": "<h4>1. ลดรูปข้อมูลเริ่มต้น</h4><p>$c=2,L=\\pi$ และ $$f(x)=\\sin^3x=\\frac34\\sin x-\\frac14\\sin3x,$$ $$g(x)=2\\sin x(1+\\cos^2x)=\\frac52\\sin x+\\frac12\\sin3x.$$</p><h4>2. คำนวณสัมประสิทธิ์โหมด</h4><p>ใช้ $z=\\sum[A_n\\cos2nt+B_n\\sin2nt]\\sin nx$ ได้ $A_1=3/4,A_3=-1/4$ และ $2B_1=5/2$, $6B_3=1/2$ จึงมี $B_1=5/4,B_3=1/12$</p><h4>3. คำตอบที่แก้จากเฉลยเดิม</h4><p>$$z(x,t)=\\sin x\\left(\\frac34\\cos2t+\\frac54\\sin2t\\right)+\\sin3x\\left(-\\frac14\\cos6t+\\frac1{12}\\sin6t\\right).$$ ภาพเฉลยเดิมเขียนสัมประสิทธิ์ $\\sin x\\sin2t$ เป็น $-1/4$ ซึ่งไม่ผ่านความเร็วเริ่มต้น ค่าที่ถูกคือ $+5/4$</p><h4>4. ตรวจกลับ</h4><p>อนุพันธ์เวลาที่ศูนย์ของคำตอบนี้เป็น $5\\sin x/2+\\sin3x/2=2\\sin x(1+\\cos^2x)$ ส่วนการกระจัดและ PDE/ปลายตรึงถูกต้องทุกพจน์</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "470371224a6dcf464f37adc5d5cfedd57dfd2ef1f247cae5afaba7b4b56c7a03"
+  },
+  {
+    "questionId": "ee201-t09-q015",
+    "sourceMediaId": "3516908712baab69ea6775328cd149d1c5b936585b888aaa5ee7c7caea2ef3af",
+    "questionMediaId": "8a853a7b7079627f3ca67889e13aad3238a75397feefa45162b02410ebeaabcb",
+    "bodyHtml": "<h4>1. แปลงเพื่อตัด damping</h4><p>ให้ $z=e^{-ct}v$ แล้ว $v_{tt}+4v_{xxxx}=0$ เงื่อนไขขอบเขตยังเป็น $v_x(0,t)=v_{xxx}(0,t)=v(1,t)=v_{xx}(1,t)=0$ แต่ข้อมูลเวลาเปลี่ยนเป็น $$v(x,0)=f(x)=x(1-x),\\qquad v_t(x,0)=cf(x).$$</p><h4>2. โหมดและความถี่ที่ถูกต้อง</h4><p>เลือก $X_n=\\cos(\\omega_nx)$ โดย $\\omega_n=(n-1/2)\\pi$ จะผ่านขอบเขตทั้งสี่ และได้ $$T_n\\prime\\prime+4\\omega_n^4T_n=0,\\qquad \\nu_n=2\\omega_n^2.$$ ไม่ใช่ความถี่ $\\omega_n^2$ ตามบรรทัดท้ายของภาพเฉลย</p><h4>3. คำตอบแบบอนุกรม generalized</h4><p>$$A_n=2\\int_0^1x(1-x)\\cos(\\omega_nx)\\,dx=\\frac{4(-1)^{n+1}}{\\omega_n^3}-\\frac2{\\omega_n^2}.$$ ดังนั้น $$z(x,t)=e^{-ct}\\sum_{n=1}^{\\infty}A_n\\left[\\cos(2\\omega_n^2t)+\\frac{c}{2\\omega_n^2}\\sin(2\\omega_n^2t)\\right]\\cos(\\omega_nx).$$ พจน์ไซน์จำเป็น เพราะอนุพันธ์ของ $e^{-ct}$ ต้องถูกหักล้างเพื่อให้ $z_t(x,0)=0$</p><h4>4. ตรวจและข้อจำกัดของข้อมูลต้นฉบับ</h4><p>แต่ละโหมดผ่าน PDE และขอบเขต และมี initial modal displacement $A_n$ กับ initial modal velocity ศูนย์ แต่ $f\\prime(0)=1\\ne0$ และ $f\\prime\\prime(1)=-2\\ne0$ ขัดกับการเรียกร้องขอบเขตแบบอนุพันธ์ที่ $t=0$ จึงไม่มีคำตอบ classical ที่เรียบและต่อเนื่องถึงมุมเริ่มต้นตามเงื่อนไขทุกตัว สูตรข้างต้นเป็น generalized solution ใน $L^2$; อย่าอ้างว่าอนุพันธ์เชิงจุดของผลรวมทุกอันดับมีอยู่หรือผ่านขอบเขตที่มุมนั้น หากต้องการคำตอบ classical ต้องสอบถาม/ปรับข้อมูลเริ่มต้นกับผู้สอน</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "needs_clarification",
+    "reviewedBodySHA256": "57f19ffe5d78abf5a952a6b5ef59e5bd89b34c037cbbd1e5609cba433ba40f9f"
+  },
+  {
+    "questionId": "ee201-t09-q016",
+    "sourceMediaId": "f538a70fec3aa98dea13f4055ca543599dc7fb88292df235a011d8f9a218eb12",
+    "questionMediaId": "d6bb1fc638bef5e743dabf77d8bc2e4a889ca8bdc1d0b1102e0bab359fc9158c",
+    "bodyHtml": "<h4>1. โหมดปลายตรึง</h4><p>สมการ $z_{tt}=4z_{xx}$ บน $0<x<\\pi$ ให้โหมด $\\sin nx$ และความถี่ $2n$</p><h4>2. ขยายรูปเริ่มต้น</h4><p>$$f(x)=(3+2\\cos x)\\sin x=3\\sin x+\\sin2x.$$ ดังนั้น $A_1=3,A_2=1$ และจาก $g(x)=\\sin3x$ ได้ $B_3=1/6$</p><h4>3. คำตอบ</h4><p>$$z(x,t)=3\\sin x\\cos2t+\\sin2x\\cos4t+\\frac16\\sin3x\\sin6t.$$</p><h4>4. ตรวจ</h4><p>การกระจัดเริ่มต้นคืน $3\\sin x+\\sin2x$ และความเร็วคืน $\\sin3x$ ทุกโหมดผ่าน PDE และขอบเขต ระวังสัมประสิทธิ์ตัวแรกเป็น $3$ ต่างจากข้อที่ให้ $(1+2\\cos x)\\sin x$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "fbeaecf42be84b59035497476cb937673c3c1008b8bb315b12335f1971bc2dde"
+  },
+  {
+    "questionId": "ee201-t09-q017",
+    "sourceMediaId": "834014a98726dbeea1df559fbf19de98298b46f61ec5c1ae6e6a0d50af9ab180",
+    "questionMediaId": "f21404323bd2e03f4f2545c64bdb78cc656be35a267b9ec3768b4e590cf8c0c6",
+    "bodyHtml": "<h4>1. ตัดอนุพันธ์อันดับหนึ่ง</h4><p>ให้ $z=e^{-\\alpha x}v$ จะได้ $$v_t=v_{xx}-\\alpha^2v,\\quad v(0,t)=v(\\pi,t)=0,\\quad v(x,0)=|x-\\pi/2|.$$</p><h4>2. แยกตัวแปรและ Fourier coefficients</h4><p>$$v=\\sum_{n\\ge1}C_ne^{-(n^2+\\alpha^2)t}\\sin nx,$$ $$C_n=\\frac2\\pi\\left[\\int_0^{\\pi/2}(\\pi/2-x)\\sin nx\\,dx+\\int_{\\pi/2}^{\\pi}(x-\\pi/2)\\sin nx\\,dx\\right]=\\frac{1-(-1)^n}{n}-\\frac4{\\pi n^2}\\sin\\frac{n\\pi}{2}.$$</p><h4>3. คำตอบ</h4><p>$$z(x,t)=e^{-\\alpha x}\\sum_{n=1}^{\\infty}\\left[\\frac{1-(-1)^n}{n}-\\frac4{\\pi n^2}\\sin\\frac{n\\pi}{2}\\right]e^{-(n^2+\\alpha^2)t}\\sin nx.$$</p><h4>4. ตรวจและความเข้ากันได้</h4><p>คำนวณ $z_{xx}+2\\alpha z_x=e^{-\\alpha x}(v_{xx}-\\alpha^2v)=z_t$ แต่ละโหมดผ่านปลายศูนย์สำหรับ $t>0$ อนุกรมคืนข้อมูลเริ่มต้นในช่วงเปิดและใน $L^2$ อย่างไรก็ตามข้อมูลที่ปลายเมื่อ $t=0$ เป็น $\\pi/2$ และ $e^{-\\alpha\\pi}\\pi/2$ ต่างจากศูนย์ จึงไม่ต่อเนื่องที่มุมเริ่มต้นทั้งสอง หากยืนยันเงื่อนไขที่ปลายรวม $t=0$ ทุกจุด ต้องปรับข้อมูลกับผู้สอนก่อนอ้างคำตอบ classical</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "cef9fb913dc71ae2ebb56a35f54918c3986e7291d47355669d95321f19ace506"
+  },
+  {
+    "questionId": "ee201-t09-q018",
+    "sourceMediaId": "453d652de9bc97a17b118e2ea9a11bd591d2ba2c4aa36fe5ca0d484ff0518454",
+    "questionMediaId": "38a30b1d3c6d28843a3ad033acb8dc24b931a7a552c91d6a2f71ddd808976499",
+    "bodyHtml": "<h4>1. ใช้ cosine series และแยกค่าคงที่</h4><p>ปลายทั้งสองเป็นฉนวน: $u_x(0,t)=u_x(1,t)=0$ สำหรับ $u_t=\\kappa u_{xx}$ ใช้ $$u(x,t)=a_0+\\sum_{n=1}^{\\infty}a_ne^{-\\kappa n^2\\pi^2t}\\cos(n\\pi x),$$ $$a_0=\\int_0^1f(x)\\,dx,\\qquad a_n=2\\int_0^1f(x)\\cos(n\\pi x)\\,dx\\ (n\\ge1).$$ ค่าเฉลี่ยใช้ normalization ต่างจากพจน์อื่น</p><h4>2. สัมประสิทธิ์สำหรับรูปเริ่มต้นทั้งสอง</h4><p>สำหรับ $f_C=\\cos(\\pi x/2)$ มี $$a_0=\\frac2\\pi,\\quad a_n=\\frac{4(-1)^{n+1}}{\\pi(4n^2-1)}.$$ สำหรับ $f_S=\\sin(\\pi x/2)$ มี $$a_0=\\frac2\\pi,\\quad a_n=-\\frac4{\\pi(4n^2-1)}.$$</p><h4>3. คำตอบทุกข้อย่อย</h4><p>นิยาม $$U_C(x,t;\\kappa)=\\frac2\\pi+\\frac4\\pi\\sum_{n\\ge1}\\frac{(-1)^{n+1}e^{-\\kappa n^2\\pi^2t}}{4n^2-1}\\cos(n\\pi x),$$ $$U_S(x,t;\\kappa)=\\frac2\\pi-\\frac4\\pi\\sum_{n\\ge1}\\frac{e^{-\\kappa n^2\\pi^2t}}{4n^2-1}\\cos(n\\pi x).$$ คำตอบคือ (a) $U_C(x,t;4)$, (b) $U_S(x,t;4)$, (c) $U_C(x,t;1/4)$ และ (d) $U_S(x,t;1/4)$ ดังนั้นรูปที่โจทย์ขอมี $c_n=n\\pi,b_n=-\\kappa n^2\\pi^2$</p><h4>4. ตรวจและแก้จากเฉลยภาพ</h4><p>เมื่อ $t\\to\\infty$ ทุกข้อให้ $2/\\pi$ ซึ่งเท่าค่าเฉลี่ยเริ่มต้นและคงอยู่เพราะปลายฉนวน ภาพเฉลยเริ่มผลรวมที่ $n=0$ แต่ใช้สูตร $2\\int f\\cos(n\\pi x)$ ทุกพจน์ ทำให้ค่าคงที่ผิดเป็น $4/\\pi$ ต้องแยก $a_0$ ตามข้างต้น ข้อมูลเริ่มต้นมีอนุพันธ์ไม่เข้ากับฉนวนที่ปลายหนึ่ง จึงตีความเงื่อนไขอนุพันธ์สำหรับ $t>0$ และ initial limit ของอุณหภูมิ ไม่อ้างความเรียบของอนุพันธ์ที่มุมเริ่มต้น</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "811a4b5a20d6928c3e28871cd358f3b28d51cdb60b50c255fb33327d48f631c4"
+  },
+  {
+    "questionId": "ee201-t09-q019",
+    "sourceMediaId": "07818d842748e767b0bae6fc209ae5d338e445f2a07f9eac1d8a26855c79f8ef",
+    "questionMediaId": "f336403c262cb54b7bb831484e60200cb7df5a4a83a14b48f635d4163a56c22f",
+    "bodyHtml": "<h4>1. อ่านค่าความเร็วคลื่น</h4><p>$z_{xx}=z_{tt}/4$ เท่ากับ $z_{tt}=4z_{xx}$ ดังนั้น $c=2$ บน $0<x<\\pi$ มีความถี่ $2n$</p><h4>2. ลดรูปข้อมูลเริ่มต้น</h4><p>$$\\sin^2x\\sin2x=\\frac12\\sin2x-\\frac14\\sin4x.$$ จากความเร็วเริ่มต้นศูนย์ พจน์เวลาเป็น cosine ทั้งหมด จึงมีเฉพาะ $A_2=1/2,A_4=-1/4$</p><h4>3. คำตอบ</h4><p>$$z(x,t)=\\frac12\\sin2x\\cos4t-\\frac14\\sin4x\\cos8t.$$</p><h4>4. ตรวจ</h4><p>แต่ละโหมดผ่าน $z_{tt}-4z_{xx}=0$ และขอบเขตปลายตรึง ที่ $t=0$ คืน $\\sin^2x\\sin2x$ และอนุพันธ์เวลาเป็นศูนย์ ระวังอ่าน PDE กลับด้านแล้วใช้ $c=1/2$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "8c2892946897e9144d7131e50371ef5c37b639745e773994cbd67e5d9df84229"
+  },
+  {
+    "questionId": "ee201-t09-q020",
+    "sourceMediaId": "afdceeb7f7423e6f5a5ad38868f4e5f690ffbfddf32ed4f1e8679145055d7b5b",
+    "questionMediaId": "6f82e365c7b7ab98cac1fa477e11f1f7166d93049873ae1a1aa6c7e69f806062",
+    "bodyHtml": "<h4>1. เลือกโหมด heat equation</h4><p>$z_t=z_{xx}$ บน $0<x<1$ และปลายศูนย์ มีคำตอบ $$z(x,t)=\\sum_{n\\ge1}B_ne^{-n^2\\pi^2t}\\sin(n\\pi x).$$</p><h4>2. คำนวณสัมประสิทธิ์จากรูปเริ่มต้น</h4><p>$$B_n=2\\int_0^1(x-x^3)\\sin(n\\pi x)\\,dx=\\frac{12(-1)^{n+1}}{n^3\\pi^3}.$$ อินทิเกรตโดยส่วนจนเหลือพหุนามค่าคงที่ โดยใช้ $\\sin n\\pi=0$, $\\cos n\\pi=(-1)^n$</p><h4>3. คำตอบ</h4><p>$$z(x,t)=\\frac{12}{\\pi^3}\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}}{n^3}e^{-n^2\\pi^2t}\\sin(n\\pi x).$$</p><h4>4. ตรวจ</h4><p>แต่ละโหมดผ่าน PDE และปลายศูนย์ สัมประสิทธิ์ให้ Fourier sine series ของ $x-x^3$ ที่ $t=0$ และทุกพจน์ลดลงสู่ศูนย์เมื่อ $t\\to\\infty$ ต่างจากปัญหาปลายฉนวนที่มีโหมดค่าคงที่</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "501c993258cd179b8c420fb09f3fe000c045c0e491a94cfb2b771a7d28d68324"
+  },
+  {
+    "questionId": "ee201-t09-q021",
+    "sourceMediaId": "c3cfd793b90f1f8d3713cb60f46376e324ed0ae32efb77ce8aa6394e912168d6",
+    "questionMediaId": "a5d189149486430e7c6f0a8f7931bb4b7723c97d5fb04b365a269207b690007d",
+    "bodyHtml": "<h4>1. ตัดพจน์ convection</h4><p>ให้ $z=e^{-x}v$ จะมี $$z_{xx}+2z_x=e^{-x}(v_{xx}-v),\\quad v_t=v_{xx}-v.$$ ขอบเขตของ $v$ เป็นศูนย์ที่ $0,1$ และ $v(x,0)=x(1-x)$</p><h4>2. เลือกโหมดและสัมประสิทธิ์</h4><p>$$v(x,t)=\\sum_{n\\ge1}B_ne^{-(1+n^2\\pi^2)t}\\sin(n\\pi x),$$ $$B_n=2\\int_0^1x(1-x)\\sin(n\\pi x)\\,dx=\\frac{4[1-(-1)^n]}{n^3\\pi^3}.$$</p><h4>3. คำตอบ</h4><p>$$z(x,t)=\\frac{8e^{-x}}{\\pi^3}\\sum_{m=1}^{\\infty}\\frac{e^{-[1+(2m-1)^2\\pi^2]t}\\sin((2m-1)\\pi x)}{(2m-1)^3}.$$</p><h4>4. ตรวจ</h4><p>แทน $t=0$ แล้วใช้ sine coefficients จะคืน $x(1-x)e^{-x}$ และทั้งสองปลายเป็นศูนย์ ตรวจ PDE ผ่านการแทน $z=e^{-x}v$ ระวังลืมตัวประกอบ decay เพิ่ม $e^{-t}$ ที่เกิดจากพจน์ $-v$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "62db7e44ec51019b065dca11a46b3ce055e15dc626cb1867dc231fe2878f6572"
+  },
+  {
+    "questionId": "ee201-t09-q022",
+    "sourceMediaId": "6b7d1b069d86d3e5255e440965a2eb2192b7744c069034cd426689de1e21ca1d",
+    "questionMediaId": "5761bf06f45a9415edaced98ba451b5acd748640d2de7f6fca5922ba7f5a1db4",
+    "bodyHtml": "<h4>1. ตรวจว่าขอบเขตทุกตัวสอดคล้องกันหรือไม่</h4><p>โจทย์ให้ $y_{tt}=y_{xx}$ บน $0<x<1/2$, $y_t(x,0)=0$, $y(0,t)=0$, $y_x(1/2,t)=0$ และยังบังคับ $y(1/2,t)=\\cos2\\pi t$ สำหรับทุก $t\\ge0$ เงื่อนไขสุดท้ายเป็นข้อมูลเพิ่มที่ต้องตรวจ ไม่ใช่ใช้แทนเงื่อนไข Neumann โดยอัตโนมัติ</p><h4>2. ความถี่ที่สองขอบเขตแรกอนุญาต</h4><p>$X(0)=0$ และ $X\\prime(1/2)=0$ ให้ $$X_n=\\sin((2n-1)\\pi x),\\quad \\omega_n=(2n-1)\\pi.$$ เพราะ initial velocity ศูนย์ ทุกโหมดเวลาจึงเป็น $\\cos((2n-1)\\pi t)$ และทุกผลรวมที่มี trace ถูกต้องต้องมี $$y(1/2,t+1)=-y(1/2,t).$$</p><h4>3. พบความขัดแย้งและปัญหาในเฉลยเดิม</h4><p>แต่ $\\cos(2\\pi(t+1))=\\cos2\\pi t$ ไม่เป็น anti-periodic ตามเงื่อนไขข้างต้น เช่น ข้อมูลบังคับ $y(1/2,0)=y(1/2,1)=1$ ขณะที่ระบบ homogeneous Dirichlet–Neumann บังคับให้เป็นค่าตรงข้าม จึงไม่มีคำตอบ classical/finite-energy ที่มี trace ตามทุกเงื่อนไขสำหรับเวลาทั้งหมด เฉลยภาพขยาย $\\cos2\\pi t$ ด้วยความถี่คี่เฉพาะช่วงเวลาหนึ่ง แล้วนำไปใช้ทุก $t$ ซึ่งไม่รักษาขอบเขตที่กำหนด</p><h4>4. กรณีตัวอย่างเมื่อผู้สอนแก้ข้อมูล</h4><p>หากแก้เฉพาะข้อมูลด้านขวาเป็น $y(1/2,t)=\\cos\\pi t$ จะมี $$y(x,t)=\\sin\\pi x\\cos\\pi t,$$ ซึ่งผ่าน PDE, $y(0,t)=0$, $y_x(1/2,t)=0$ และ $y_t(x,0)=0$ ครบ สูตรนี้เป็นเพียงกรณีแก้โจทย์ ไม่ใช่คำตอบของข้อมูลเดิม ต้องสอบถามผู้สอนก่อนเปลี่ยนความถี่</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "needs_clarification",
+    "reviewedBodySHA256": "5bce44cced86db426f9f02f21fe2a646fa6828cd3b2b55cf8f9575606efb3f81"
+  },
+  {
+    "questionId": "ee201-t09-q023",
+    "sourceMediaId": "4b90b5e878739c5139fc2fefeaa7aae1b1e3082122605b389105aafda7c9a30c",
+    "questionMediaId": "b5470574da352538bc913d9ad13c2613074f34ac979a826a6137738bf9707362",
+    "bodyHtml": "<h4>1. รวมทั้งสามข้อด้วยความยาว L</h4><p>ทุกข้อเป็น $z_t=z_{xx}$, $z(0,t)=z(L,t)=0$ และ $z(x,0)=x^2(x-L)$ โดย $L=2,3,4$ ตาม (a),(b),(c) โหมดคือ $\\sin(n\\pi x/L)e^{-n^2\\pi^2t/L^2}$</p><h4>2. คำนวณสัมประสิทธิ์ทั่วไป</h4><p>$$B_n=\\frac2L\\int_0^Lx^2(x-L)\\sin\\frac{n\\pi x}L\\,dx=\\frac{4L^3}{n^3\\pi^3}[1+2(-1)^n].$$ สังเกตว่าโหมดคู่ไม่เป็นศูนย์ และตัวประกอบสเกลเป็น $L^3$</p><h4>3. คำตอบทุกข้อย่อย</h4><p>$$\\begin{aligned}(a)\\quad z(x,t)&=\\frac{32}{\\pi^3}\\sum_{n\\ge1}\\frac{1+2(-1)^n}{n^3}e^{-n^2\\pi^2t/4}\\sin\\frac{n\\pi x}{2},\\\\(b)\\quad z(x,t)&=\\frac{108}{\\pi^3}\\sum_{n\\ge1}\\frac{1+2(-1)^n}{n^3}e^{-n^2\\pi^2t/9}\\sin\\frac{n\\pi x}{3},\\\\(c)\\quad z(x,t)&=\\frac{256}{\\pi^3}\\sum_{n\\ge1}\\frac{1+2(-1)^n}{n^3}e^{-n^2\\pi^2t/16}\\sin\\frac{n\\pi x}{4}.\\end{aligned}$$</p><h4>4. ตรวจ</h4><p>แต่ละพจน์ผ่าน PDE และปลายศูนย์ทั้งสามความยาว ที่ $t=0$ Fourier coefficients คืนรูปพหุนาม $x^2(x-L)$ และเมื่อ $t\\to\\infty$ คำตอบเป็นศูนย์ ระวังเครื่องหมายของ $x-L$ ซึ่งทำให้รูปเริ่มต้นไม่เป็นบวกในช่วงเปิด</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "3ff01417df9dd49e52df2a6c796eb7cdb7892b79093cb5a13e0efee1409f9c1c"
+  },
+  {
+    "questionId": "ee201-t09-q024",
+    "sourceMediaId": "eef606419a7b2f7401a5dfc77b47a044b29162e36462541a18f477eb162ea07c",
+    "questionMediaId": "9cd382a0adc66406a37d818018e0ace360efbedf77bc0e4513a2655bfae6e81a",
+    "bodyHtml": "<h4>1. รูปคำตอบของคลื่น</h4><p>$y_{xx}=y_{tt}$ ให้ $c=1$ บน $0<x<\\pi$ เขียน $y=\\sum[A_n\\cos nt+B_n\\sin nt]\\sin nx$ จาก $y_t(x,0)=0$ ได้ $B_n=0$</p><h4>2. ขยายการกระจัดเริ่มต้นเป็น sine series</h4><p>$$A_n=\\frac2\\pi\\int_0^\\pi(1-\\cos2x)\\sin nx\\,dx.$$ ใช้ product-to-sum แล้วได้ $$A_n=\\begin{cases}-\\dfrac{16}{\\pi n(n^2-4)},&n\\text{ คี่},\\\\0,&n\\text{ คู่}.\\end{cases}$$ สำหรับ $n=2$ คำนวณอินทิกรัลโดยตรงได้ศูนย์ ไม่ใช้สูตรเศษส่วนที่มีตัวส่วนศูนย์</p><h4>3. คำตอบ</h4><p>$$y(x,t)=-\\frac{16}{\\pi}\\sum_{m=1}^{\\infty}\\frac{\\sin((2m-1)x)\\cos((2m-1)t)}{(2m-3)(2m-1)(2m+1)}.$$</p><h4>4. ตรวจ</h4><p>ทุกพจน์ผ่าน wave equation และปลายตรึง ที่ $t=0$ sine series คืน $1-\\cos2x$ ในช่วงและที่ปลาย ส่วนความเร็วเริ่มต้นศูนย์ โหมดแรกมีสัมประสิทธิ์ $16/(3\\pi)>0$ ซึ่งใช้ตรวจเครื่องหมายรวมของคำตอบได้</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "4d6df1da681571ace4e886ec9547b84ae0e4b683d9b6ff77f0d5acf61a423856"
+  },
+  {
+    "questionId": "ee201-t09-q025",
+    "sourceMediaId": "8ec4410c8c15c3cacb98e010e6eedfd9dbdd2db0f3d92623822fc726cf803fab",
+    "questionMediaId": "730be6c16e73b293e085cfe3d066055b418371b45b2e0d62d5fdc0b7aa1ccea0",
+    "bodyHtml": "<h4>1. อ่านค่าความเร็วคลื่น</h4><p>$z_{xx}=z_{tt}/4$ เท่ากับ $z_{tt}=4z_{xx}$ ดังนั้น $c=2$ บน $0<x<\\pi$ มีความถี่ $2n$</p><h4>2. ลดรูปข้อมูลเริ่มต้น</h4><p>$$\\sin^2x\\sin2x=\\frac12\\sin2x-\\frac14\\sin4x.$$ จากความเร็วเริ่มต้นศูนย์ พจน์เวลาเป็น cosine ทั้งหมด จึงมีเฉพาะ $A_2=1/2,A_4=-1/4$</p><h4>3. คำตอบ</h4><p>$$z(x,t)=\\frac12\\sin2x\\cos4t-\\frac14\\sin4x\\cos8t.$$</p><h4>4. ตรวจ</h4><p>แต่ละโหมดผ่าน $z_{tt}-4z_{xx}=0$ และขอบเขตปลายตรึง ที่ $t=0$ คืน $\\sin^2x\\sin2x$ และอนุพันธ์เวลาเป็นศูนย์ ระวังอ่าน PDE กลับด้านแล้วใช้ $c=1/2$</p>",
+    "previousBodySHA256": [],
+    "reviewStatus": "ai_checked",
+    "reviewedBodySHA256": "8c2892946897e9144d7131e50371ef5c37b639745e773994cbd67e5d9df84229"
+  }
+]

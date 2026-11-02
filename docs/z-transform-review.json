@@ -1,0 +1,2792 @@
+{
+  "reviewedAt": "2026-11-02T10:33:24.603679+00:00",
+  "reviewer": "AI-assisted mathematical audit",
+  "humanReviewed": false,
+  "questionCount": 27,
+  "symbolicCheckCount": 422,
+  "katexFormulaCount": 374,
+  "verificationScript": "scripts/verify_z_transform.py",
+  "verificationScriptSHA256": "15a340bbc6aff51f08023afaee013c553bcc378f4797e11b686b3506f9077220",
+  "limitations": [
+    "Original images and mathematical checks were transcribed by AI; this is not instructor certification.",
+    "Symbolic recurrence identities establish all-n residuals where specified; Laurent checks verify the listed finite coefficients.",
+    "The script verifies mathematical expressions transcribed independently; it does not parse arbitrary HTML math. Content hashes bind this reviewed version."
+  ],
+  "items": [
+    {
+      "questionId": "ee201-t08-q001",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "c5a16beafb1063cb71dfbe733140b3bb4b129225ffe50136b99c20355caa5884",
+      "questionMediaId": "75ca75b5c0ca3948a6e0b3cfdc73f767106dbc1b84278431e6ba1d28200d58a2",
+      "sourceMediaId": "0a7e826e46580d1b7c8403ba785ac491ff3d443c39d871d30ee51f173d672829",
+      "checks": [
+        {
+          "question": 1,
+          "check": "n^3 transform",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "transformed equation",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 1,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q002",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "3c00c989b056d730e7a7dbe442e118df2b84e462e3a6c06a057cdd62e8bfe37c",
+      "questionMediaId": "761e84d44078b70a470f9162df5ade68ce19d67edcbde7de59b1685065918526",
+      "sourceMediaId": "21165524603a8f7c75429a8c5ee945f558d746438e75c1fc6fccdc125ba01176",
+      "checks": [
+        {
+          "question": 2,
+          "check": "n^3+n^2 transform",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "initial n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "transformed equation",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 2,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q003",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "92272815c57ffa9d1690325885a15df71b55c3de8f2fbd63ff42cf0e475e0155",
+      "questionMediaId": "4be5f5356f1dd013fd2785e4a0cef005a8ebe0714f023c5c66e9b0a550f743a0",
+      "sourceMediaId": "cde3ed6ee20da3e976ca799f600cc8552fc778860abc253f91420a1458d01f77",
+      "checks": [
+        {
+          "question": 3,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "initial n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "original n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "original n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "transformed equation",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 3,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q004",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "25ef3099cb2ede5f5d04f2ebeaaf1e54ebf848638ce63b799705884e1df4fb9f",
+      "questionMediaId": "34fb4cede20b5b787bfa60db3bce530b56cb654c0c89096150c80129f354d70e",
+      "sourceMediaId": "4260cc88c51d4582cca734bb731d50dc3cd05e056b1e76976c42a9a0f358d0f9",
+      "checks": [
+        {
+          "question": 4,
+          "check": "exact original integral n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "exact original integral n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "exact original integral n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "exact original integral n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "exact original integral n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "exact original integral n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "exact original integral n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "exact original integral n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "exact original integral n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "exact original integral n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "exact original integral n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "exact original integral n=11",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "exact original integral n=12",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "trigonometric recurrence",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 4,
+          "check": "A=-2 polynomial identity",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q005",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "b2f5729ccecae3a3b6fd4f3dd30f1cd8a3254567acbfd164b8ffec27f48a3651",
+      "questionMediaId": "9b93aaa5c3851f324bd4eb36aafff471a8a50fa19dc3b3738b84527c1dd863ae",
+      "sourceMediaId": "76b465d00462d6f2f9a4f78d6a127031d69a6492f1aabbe9d23ebbe0d9dcbfdf",
+      "checks": [
+        {
+          "question": 5,
+          "check": "a system residual",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "b system residual",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "a0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "b0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "first transformed equation",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "second transformed equation",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 5,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q006",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "2f1937de00226a0b205fa16cb1c94b7b8b56e69f17002b87a507b10e9a41fc2f",
+      "questionMediaId": "d428cf30f209043332e46d4f618095be0a1cdd30be4dc2c0be6fe73fabca6fa7",
+      "sourceMediaId": "6a7d049b88198fb114d45b1a8785e8f055df64c424bc6d519fce2deb7fcec8f7",
+      "checks": [
+        {
+          "question": 6,
+          "check": "real geometric sum",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 6,
+          "check": "x=0",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q007",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "c8b2294bb5416cf5078e0db194b0c20d874e998997cbf6cd01f23b824dfc83a1",
+      "questionMediaId": "68289dc24ff14fce9625982e1b79ad7c64f5b30efd45b253f8e0ae5a936de65f",
+      "sourceMediaId": "bcd1ac85f84e8a70a2fc6279ca8cb29b48bc77c593b9330339d37181a6e9d8cc",
+      "checks": [
+        {
+          "question": 7,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "initial n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "transformed equation",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 7,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q008",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "cdaff9c0b43f1172195c4df0d49678e7ba943a56608919addbc22abaff9e4411",
+      "questionMediaId": "ed0b070ccd429431737df9dfb3f4b118b8b8cd84fd633e5fd3ab003ed786e4c0",
+      "sourceMediaId": "fdff99335fad9e289111fd62641f01b574589b133a3b590675b36cedcbd94337",
+      "checks": [
+        {
+          "question": 8,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 8,
+          "check": "partial fractions",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q009",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "5d2faadd9183dca31c40e5cf363bbb964a8ebc82b115fe9c876bf6289f218505",
+      "questionMediaId": "7ffca3fc9ceb6330b235c0014003e1668f6cdb37df85bbf349e16706666cd8b3",
+      "sourceMediaId": "106e1747a795d4eb39279f31c3170d13d6026a33d5eabc1370eaaac082b4d8d5",
+      "checks": [
+        {
+          "question": 9,
+          "check": "derivative rule",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 9,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q010",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "ed9610497e1a3be64486d11aff62bf8376ca460f9f9a228b7bc41886341a12c5",
+      "questionMediaId": "e67011fd153898e4cc403ff3ce496b39595a4f8496437c779ea3dc9b82a2f835",
+      "sourceMediaId": "a5e027ef027c547a4519b47fb9896d3a1f3b57494d85ad91c6eb394fd0bae161",
+      "checks": [
+        {
+          "question": 10,
+          "check": "second derivative rule",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 10,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q011",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "0dc72e0edc5d0322511a10bf1f89067cf17fc9ac5077a281a8cbdd5b52bf121f",
+      "questionMediaId": "14b89e806f8bd57d9bd451d7c76c26869aaf9e15111667f18adf8b41ee95e26b",
+      "sourceMediaId": "852426e9581b79355078005892ade2fc34431ccd0b36264397420f01bb32802c",
+      "checks": [
+        {
+          "question": 11,
+          "check": "transformed equation",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "original recurrence n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "original recurrence n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "original recurrence n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "original recurrence n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "original recurrence n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "original recurrence n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "original recurrence n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "original recurrence n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "original recurrence n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "original recurrence n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "original recurrence n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "original recurrence n=11",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 11,
+          "check": "initial n=1",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q012",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "f9b4f6e101e586561097911c50bc7ff655953c712405eeb72e9b683ffe6d3d46",
+      "questionMediaId": "0edcf1f031dbe7c0d148a8bcf7ba3c3a5484fe34eec6019f58004b7069d763ab",
+      "sourceMediaId": "fd9e06bb7033cc0264ebbe40d96ce8391efb5927f427b7b82911fa5ec09a4ecf",
+      "checks": [
+        {
+          "question": 12,
+          "check": "factorial generating function",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 12,
+          "check": "real exponential sum",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q013",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "0dc72e0edc5d0322511a10bf1f89067cf17fc9ac5077a281a8cbdd5b52bf121f",
+      "questionMediaId": "4ddb1fbfe6e4c51e6c9347ca2f11b0a1556e5eac3aa3fb0f33c8ed2923cdbc2b",
+      "sourceMediaId": "d26aa260c2fc42fa662ca25f9fadef5849edf255f1a314b89d3f4e6673b06738",
+      "checks": [
+        {
+          "question": 13,
+          "check": "transformed equation",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "original recurrence n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "original recurrence n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "original recurrence n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "original recurrence n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "original recurrence n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "original recurrence n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "original recurrence n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "original recurrence n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "original recurrence n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "original recurrence n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "original recurrence n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "original recurrence n=11",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 13,
+          "check": "initial n=1",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q014",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "0b31c75b8ee40a53ec917702b8b4ee3d099c6ab9ac6d6b7d8b4c585121f16bc5",
+      "questionMediaId": "8cef1cb11e04f66cb898c37977e8a173fee6d7cd7df4f4e96fefb6667b0eea8e",
+      "sourceMediaId": "c06be11f42830496f19319724ba53e925c18599df42d68714622b5879ba6ddd6",
+      "checks": [
+        {
+          "question": 14,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "initial n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "trigonometric forcing identity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 14,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q015",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "8bd7a431b34d3003ec4cb39af1ca2774c0281cf5a1dfdb782a2d0e87ed9143c8",
+      "questionMediaId": "3d11dc463a9d97fe21ff24b16874a2f32ca98dad596fcb5cc0b3df7ecf4698db",
+      "sourceMediaId": "2e237d0fcb28f2637045f0bf3b76e22c0b9d4c6ea955b770a71f2c3315291092",
+      "checks": [
+        {
+          "question": 15,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "initial n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "initial n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "initial n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 15,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q016",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "d41c0419d917868109eba923d896917ab0014877488d0e878e837084909df2c2",
+      "questionMediaId": "57ff1b21efcedbdd6b2fee03f28a64fb401b61a7733f0a05695be04cc5e494d7",
+      "sourceMediaId": "3482e82f4837bd9add2c5781a16db3beebdc00ef0fd063083e533359a8c33ec7",
+      "checks": [
+        {
+          "question": 16,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "initial n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 16,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q017",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "a083836488c9f3fbd6bb2c4bf825d2aa7ca66ed0406468a0223c440e292960ed",
+      "questionMediaId": "c5557f62b9b1badea3b52b374c69c6208c08a89f39ee5584989474d1e597f7e4",
+      "sourceMediaId": "bbcc0b978153a83411a8a5bc67dc18df72a089403c04cb62e8210dc51b1bd4b4",
+      "checks": [
+        {
+          "question": 17,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "initial n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "initial n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 17,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q018",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "885628df13765414de7b8b0c9653deec0938e54ef81a1bea888ed13473cb0079",
+      "questionMediaId": "c41822f26571e66556a46250c9914e88f491dd29451382eae23ab198ce904935",
+      "sourceMediaId": "498c612ce2feb2cd32ccabf75a88a478141a3adc1daddb2a44ca88b802a65139",
+      "checks": [
+        {
+          "question": 18,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "initial n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "initial n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 18,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q019",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "adda2495731f43512c28616117237df8de36ee8623e45c1c971ea7741e4bfbd4",
+      "questionMediaId": "dfc2ff41a83cfc3cd2bc2563de2368e8ad7133a4fdf24e9808eea346936384a6",
+      "sourceMediaId": "5c5a51d040e586796161fd851316abc6245c4db5764a39cb1088bee936541fd2",
+      "checks": [
+        {
+          "question": 19,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "g4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 19,
+          "check": "h5",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q020",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "68a0564aeb35c00707e29fd63d2487b9d3b0e68de3ad099a5cc1e7a8e34391bb",
+      "questionMediaId": "60a1268bebf128ba5db7016f3f2496e8c20fa851bace8babca3e3f723833951f",
+      "sourceMediaId": "21ee8aac077ba5443451f9fb5d6b17c61817a6f82ffde561ec7b169894074bcd",
+      "checks": [
+        {
+          "question": 20,
+          "check": "a recurrence n>=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "a initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "a original equation n=0, y[-1]=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "b recurrence n>=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "b initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "b original equation n=0, y[-1]=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "c recurrence n>=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "c initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "c original equation n=0, y[-1]=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "d recurrence n>=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "d initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "d original equation n=0, y[-1]=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 20,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q021",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "18aa42a1542923c0430e77919e87002fcee28edf452b96b43a95fd80dd8583d7",
+      "questionMediaId": "a1afc2db6b125783b46a89d174bbc952c0045d14221955a0326ae242cc99eccc",
+      "sourceMediaId": "a8843510fc89e55fd16dc9a29bccfc8f3c9e938275391f8bfba6f4162dbea57d",
+      "checks": [
+        {
+          "question": 21,
+          "check": "g2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "g4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "g5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "inverse derivative pair",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 21,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q022",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "499db59e05559eaa11d929a23828a55b93fdb71ea210ee9dc19596ddad661ac3",
+      "questionMediaId": "9f30a6bedbd4a4aac6cdcd66f46db1ab6943534b8572afed6954e001a87189b7",
+      "sourceMediaId": "3fe48687de8ff8314d34f742788dc73de8db5bec2a1a9060e7c3a6baca23cb51",
+      "checks": [
+        {
+          "question": 22,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "initial n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "initial n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 22,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q023",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "af46d2a73f7ef8c507293a80b39b70f64f3a7cf78f03d2b3370a278ff25e7f1f",
+      "questionMediaId": "4d7a2fe35b98f249212010ab717f8959fa4389247aac8ea0e45c6cee86389f6c",
+      "sourceMediaId": "58f3c49c422d8151e1fa669a90f57a888276d012b09c1ed504940e50ac886475",
+      "checks": [
+        {
+          "question": 23,
+          "check": "factorization",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 23,
+          "check": "particular gain",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q024",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "c5cff50388246e10739fa6cd39878f9030cd672bc58838eee53ed0194208968b",
+      "questionMediaId": "f15019cf1543806dd8a09c53cb7945ccdf8e113a8a61d07dd0d1f587acd725aa",
+      "sourceMediaId": "787ede5a700c4946fc374b86b6b560c3716587047f58860b7c19753a1aca89ee",
+      "checks": [
+        {
+          "question": 24,
+          "check": "D^2-D+1 identity",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "Laurent coefficient n=6",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "Laurent coefficient n=7",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "Laurent coefficient n=8",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "Laurent coefficient n=9",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "Laurent coefficient n=10",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 24,
+          "check": "Laurent coefficient n=11",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q025",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "e38ff9eb2d4434bb5ed3eb01c5bb2bd5e833a268313eeb49cf9545aae907b2aa",
+      "questionMediaId": "51c5f01ed38794dc976d84ba6e62647b1dc6084b3cec253390f94365ad533015",
+      "sourceMediaId": "50fd5c013af99841baab3af9512054c42844666175665c0c746a9c725df67891",
+      "checks": [
+        {
+          "question": 25,
+          "check": "a=3, b=2, resonance derivative",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 25,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 25,
+          "check": "a=2, b=3, resonance derivative",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 25,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 25,
+          "check": "a=2, b=4, resonance derivative",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 25,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q026",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "2bacd1d8a01f45b911f2deedc9fa81394798258d3937604dacdfca6af20d458a",
+      "questionMediaId": "3d8e2a0548df91853370a376448187f5e34d981ca739f1b196776efc98da3fd0",
+      "sourceMediaId": "5389f8524d37378d89c46e14abcd57a2034ceaf06bdfc16b1ffdf074ee468283",
+      "checks": [
+        {
+          "question": 26,
+          "check": "original centered recurrence",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 26,
+          "check": "symbolic recurrence (all n)",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    },
+    {
+      "questionId": "ee201-t08-q027",
+      "reviewStatus": "ai_checked",
+      "bodySHA256": "97469ebd1e181072fc074c8ce71f0674428eb98fe68e150d6c5462f00fcd93cc",
+      "questionMediaId": "97242d95b7c35f8754b3c3a56659dab3e93bd5cddb4e2fe01e11850a15847ce9",
+      "sourceMediaId": "7d2bc83c75e8577c200688a684c41a29f0d35c304c8d85bb71ac07ac227da3cd",
+      "checks": [
+        {
+          "question": 27,
+          "check": "k=1/2, root plus",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=1/2, root minus",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=1/2, initial 0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=1/2, initial 1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=1/2, partial fractions",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=3/2, root plus",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=3/2, root minus",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=3/2, initial 0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=3/2, initial 1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=3/2, partial fractions",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=5/2, root plus",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=5/2, root minus",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=5/2, initial 0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=5/2, initial 1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=5/2, partial fractions",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=7/2, root plus",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=7/2, root minus",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=7/2, initial 0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=7/2, initial 1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "k=7/2, partial fractions",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=0",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=1",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=2",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=3",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=4",
+          "passed": true,
+          "residual": "0"
+        },
+        {
+          "question": 27,
+          "check": "Laurent coefficient n=5",
+          "passed": true,
+          "residual": "0"
+        }
+      ]
+    }
+  ]
+}
