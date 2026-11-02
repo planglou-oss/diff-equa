@@ -4,6 +4,9 @@ React + TypeScript frontend และ Go backend สำหรับคลัง�
 
 ## เปิดเป็นเว็บบน Vercel (ไม่มี chatbot)
 
+**เว็บใช้งานจริง:** https://diff-equa.vercel.app (เปิดได้โดยไม่ต้องล็อกอิน)
+
+
 เพิ่มโหมด static สำหรับเปิดผ่านลิงก์ได้โดยไม่รัน Go, ไม่ใช้ SQLite บน host และไม่ต้องใส่ API key โดยยังใช้ธีมเดิม มีโจทย์ 427 ข้อ รูปและเฉลยล่าสุด ค้นหา/เรียงปี สุ่มชุดฝึก จับเวลา ตรวจตัวเลือก และบันทึกความคืบหน้าในเบราว์เซอร์
 
 Push โค้ดรวม `frontend/public/study/` ขึ้น GitHub แล้ว Import repository ใน Vercel ตั้ง **Root Directory เป็น root ของ repo (`.`)** และ Framework Preset **Other** ใช้ค่าจาก `vercel.json`:

@@ -152,3 +152,11 @@
 - Chrome headless เปิด static production build โดยไม่มี Go ภายใต้ CSP จาก vercel.json ผ่าน: deep link, year sort, tags, full LaTeX, โน้ต/สถานะ/รายการโปรดหลัง reload, ดาวน์โหลด local report, ตรวจคำตอบ, ทำ practice ต่อหลัง reload/จบและแสดงคะแนน, formulas และมือถือ 390x844 ไม่มี page errors/HTTP errors/API requests หรือหน้าล้นแนวนอน
 - ภาพ QA: docs/vercel-static-preview.png และ docs/vercel-static-mobile.png; คู่มือ deploy/export อยู่ใน docs/VERCEL.md
 - ยังไม่ได้ publish ขึ้น Vercel หรือ push GitHub ในงานนี้ ต้องนำโค้ดรวม public snapshot ขึ้น repo แล้ว Import โดยตั้ง Root Directory เป็น root ของ repo
+## Production Vercel deployment
+
+- เผยแพร่ https://diff-equa.vercel.app สำเร็จ สถานะ READY / production จาก source commit 1ec2a16; build ประมาณ 19.4 วินาทีด้วย Node.js 24.x
+- ใช้ Vercel plugin อัปโหลด source โดยตรง เนื่องจากบัญชี Vercel ยังไม่มี GitHub Login Connection; build helper โหลดรูปจาก commit ที่ระบุและตรวจ SHA-256 ทั้ง 854 รูป ก่อน bundle จึงไม่มีการโหลดภาพจาก GitHub ระหว่างใช้งานจริง
+- ตั้ง Standard Protection ให้ลิงก์ production หลักเปิดได้โดยไม่ล็อกอิน ส่วน generated deployment URLs และ previews ยังได้รับการป้องกัน
+- ตรวจ production ด้วย unauthenticated Chrome ครบ flow เดิมทั้งคอม/มือถือ ไม่มี browser errors, HTTP errors หรือ API requests; ตรวจ served snapshot hash ตรง manifest ครบ 427 ข้อและปิด chatbot
+- Runtime error/fatal scan ช่วง 10 นาทีไม่พบ logs; ไม่มี drains และยังไม่มี continuous external monitoring (เป็นเว็บ static)
+- รายละเอียด project/deployment IDs วิธีอัปเดตและข้อจำกัด Git auto-deploy อยู่ใน docs/DEPLOYMENT.md; ภาพ docs/vercel-production-preview.png และ docs/vercel-production-mobile.png
