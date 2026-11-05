@@ -1249,3 +1249,10 @@ h2 {
 .choice-feedback.correct { background: #edf6eb; border-color: #4b8054; }
 .choice-feedback .aib { background: transparent; }
 .choice-score { font-weight: 700; color: #39633d; font-size: 1.15rem; }
+
+.summary-reader { margin-top: 14px; }
+.summary-page { margin: 18px 0; }
+.summary-page figcaption { font-size: 13px; color: var(--mu); margin-bottom: 6px; }
+.summary-scroll { overflow-x: auto; background: white; border: 1px solid var(--bd); border-radius: 8px; }
+.summary-scroll:focus-visible { outline: 3px solid #8dc63f; outline-offset: 2px; }
+.summary-scroll img { display: block; width: 100%; min-width: 760px; height: auto; }

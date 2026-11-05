@@ -10,6 +10,7 @@ import { study, useStudy } from "./store";
 export function FormulaPage() {
   const [params, setParams] = useSearchParams();
   const [search, setSearch] = useState("");
+  const [summary, setSummary] = useState<"fourier" | "laplace">("fourier");
   const result = useQuery({
     queryKey: ["guides"],
     queryFn: ({ signal }) => api<SolutionGuide>("/guides", { signal }),
@@ -33,22 +34,28 @@ export function FormulaPage() {
     <main className="page-wrap">
       <section className="formula-section" aria-labelledby="formula-summaries-heading">
         <h2 id="formula-summaries-heading">รวมสรุปสูตร</h2>
-        <p className="info">เอกสารสรุปสูตรต้นฉบับ เปิดอ่านหรือดาวน์โหลดเก็บไว้ทบทวนได้</p>
-        <div className="formula-grid">
-          {[
-            { title: "Fourier Integral Table", description: "ตารางสูตร Fourier Integral", href: "/formula-summaries/fourier-integral-table.pdf" },
-            { title: "Laplace Properties Table", description: "ตารางสมบัติของ Laplace Transform", href: "/formula-summaries/laplace-properties-table.pdf" },
-          ].map((document) => (
-            <article className="formula-card" key={document.href}>
-              <h3>{document.title}</h3>
-              <p>{document.description} · PDF 2 หน้า</p>
-              <div className="tool-actions">
-                <a className="chip" href={document.href} target="_blank" rel="noreferrer">เปิดอ่าน PDF ↗</a>
-                <a href={document.href} download>ดาวน์โหลด PDF</a>
-              </div>
-            </article>
-          ))}
+        <p className="info">เลือกหัวข้อเพื่ออ่านตารางสูตรจากเอกสารต้นฉบับบนหน้านี้</p>
+        <div className="type-filters" role="group" aria-label="เลือกสรุปสูตร">
+          <button type="button" className={`chip ${summary === "fourier" ? "on" : ""}`} aria-pressed={summary === "fourier"} onClick={() => setSummary("fourier")}>
+            Fourier Transform
+          </button>
+          <button type="button" className={`chip ${summary === "laplace" ? "on" : ""}`} aria-pressed={summary === "laplace"} onClick={() => setSummary("laplace")}>
+            Laplace Transform
+          </button>
         </div>
+        <article className="formula-card summary-reader" aria-labelledby="summary-title">
+          <h3 id="summary-title">{summary === "fourier" ? "Fourier Transform" : "Laplace Transform"}</h3>
+          <p>ตารางสูตรจากเอกสารต้นฉบับ · บนหน้าจอเล็กเลื่อนตารางไปทางซ้ายหรือขวาได้</p>
+          {[1, 2].map((page) => (
+            <figure className="summary-page" key={`${summary}-${page}`}>
+              <figcaption>หน้า {page} · {page === 1 ? "นิยามและสมบัติ" : "ตารางแปลงฟังก์ชัน"}</figcaption>
+              <div className="summary-scroll" role="region" aria-label={`ตาราง ${summary === "fourier" ? "Fourier" : "Laplace"} หน้า ${page} เลื่อนซ้ายขวาได้`} tabIndex={0}>
+                <img src={`/formula-summaries/${summary}-${page}.png`} alt={`ตารางสูตร ${summary === "fourier" ? "Fourier" : "Laplace"} หน้า ${page}: ${page === 1 ? "นิยามและสมบัติ" : "การแปลงฟังก์ชันที่พบบ่อย"}`} loading="lazy" />
+              </div>
+            </figure>
+          ))}
+          <a href={`/formula-summaries/${summary === "fourier" ? "fourier-integral" : "laplace-properties"}-table.pdf`} download>ดาวน์โหลดเอกสารต้นฉบับ PDF</a>
+        </article>
       </section>
       <h2>สารบัญสูตรและแนวทางตรวจคำตอบ</h2>
       <p className="info">
