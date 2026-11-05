@@ -6,11 +6,12 @@ import type { Catalog, Question, SolutionGuide } from "../../lib/api";
 import { ErrorNotice, MathHTML } from "../../components/Content";
 import { defaultRecord, statusLabels } from "./model";
 import { study, useStudy } from "./store";
+import { formulaSummaries } from "./formulaSummaries";
 
 export function FormulaPage() {
   const [params, setParams] = useSearchParams();
   const [search, setSearch] = useState("");
-  const [summary, setSummary] = useState<"fourier" | "laplace">("fourier");
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const result = useQuery({
     queryKey: ["guides"],
     queryFn: ({ signal }) => api<SolutionGuide>("/guides", { signal }),
@@ -34,28 +35,33 @@ export function FormulaPage() {
     <main className="page-wrap">
       <section className="formula-section" aria-labelledby="formula-summaries-heading">
         <h2 id="formula-summaries-heading">รวมสรุปสูตร</h2>
-        <p className="info">เลือกหัวข้อเพื่ออ่านตารางสูตรจากเอกสารต้นฉบับบนหน้านี้</p>
-        <div className="type-filters" role="group" aria-label="เลือกสรุปสูตร">
-          <button type="button" className={`chip ${summary === "fourier" ? "on" : ""}`} aria-pressed={summary === "fourier"} onClick={() => setSummary("fourier")}>
-            Fourier Transform
-          </button>
-          <button type="button" className={`chip ${summary === "laplace" ? "on" : ""}`} aria-pressed={summary === "laplace"} onClick={() => setSummary("laplace")}>
-            Laplace Transform
-          </button>
-        </div>
-        <article className="formula-card summary-reader" aria-labelledby="summary-title">
-          <h3 id="summary-title">{summary === "fourier" ? "Fourier Transform" : "Laplace Transform"}</h3>
-          <p>ตารางสูตรจากเอกสารต้นฉบับ · บนหน้าจอเล็กเลื่อนตารางไปทางซ้ายหรือขวาได้</p>
-          {[1, 2].map((page) => (
-            <figure className="summary-page" key={`${summary}-${page}`}>
-              <figcaption>หน้า {page} · {page === 1 ? "นิยามและสมบัติ" : "ตารางแปลงฟังก์ชัน"}</figcaption>
-              <div className="summary-scroll" role="region" aria-label={`ตาราง ${summary === "fourier" ? "Fourier" : "Laplace"} หน้า ${page} เลื่อนซ้ายขวาได้`} tabIndex={0}>
-                <img src={`/formula-summaries/${summary}-${page}.png`} alt={`ตารางสูตร ${summary === "fourier" ? "Fourier" : "Laplace"} หน้า ${page}: ${page === 1 ? "นิยามและสมบัติ" : "การแปลงฟังก์ชันที่พบบ่อย"}`} loading="lazy" />
+        <p className="info">สูตรจากเอกสารสรุป แสดงหัวข้อละ 3 สูตรก่อน กดดูทั้งหมดเพื่ออ่านที่เหลือ</p>
+        <p className="info">ปรับสัญลักษณ์บางจุดที่คลาดเคลื่อนในเอกสารให้สอดคล้องกับนิยาม สามารถดาวน์โหลดต้นฉบับไว้เปรียบเทียบได้</p>
+        {formulaSummaries.map((group) => {
+          const isExpanded = !!expanded[group.id];
+          const visible = isExpanded ? group.formulas : group.formulas.slice(0, 3);
+          return (
+            <section className="formula-section" key={group.id} aria-labelledby={`${group.id}-heading`}>
+              <h2 id={`${group.id}-heading`}>{group.title}</h2>
+              <p className="info">{group.description}</p>
+              <div className="formula-grid" id={`${group.id}-formulas`}>
+                {visible.map((formula) => (
+                  <article className="formula-card" key={formula.title}>
+                    <h3>{formula.title}</h3>
+                    <MathHTML html={`<p>$$${formula.latex}$$</p>`} />
+                    {formula.note && <p>{formula.note}</p>}
+                  </article>
+                ))}
               </div>
-            </figure>
-          ))}
-          <a href={`/formula-summaries/${summary === "fourier" ? "fourier-integral" : "laplace-properties"}-table.pdf`} download>ดาวน์โหลดเอกสารต้นฉบับ PDF</a>
-        </article>
+              <div className="tool-actions summary-actions">
+                <button type="button" className="chip" aria-expanded={isExpanded} aria-controls={`${group.id}-formulas`} onClick={() => setExpanded((current) => ({ ...current, [group.id]: !isExpanded }))}>
+                  {isExpanded ? "แสดงน้อยลง" : `ดูทั้งหมด (${group.formulas.length} สูตร)`}
+                </button>
+                <a href={group.source} download>ดาวน์โหลดเอกสารต้นฉบับ PDF</a>
+              </div>
+            </section>
+          );
+        })}
       </section>
       <h2>สารบัญสูตรและแนวทางตรวจคำตอบ</h2>
       <p className="info">
