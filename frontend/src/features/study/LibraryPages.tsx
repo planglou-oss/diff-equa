@@ -31,6 +31,25 @@ export function FormulaPage() {
   );
   return (
     <main className="page-wrap">
+      <section className="formula-section" aria-labelledby="formula-summaries-heading">
+        <h2 id="formula-summaries-heading">รวมสรุปสูตร</h2>
+        <p className="info">เอกสารสรุปสูตรต้นฉบับ เปิดอ่านหรือดาวน์โหลดเก็บไว้ทบทวนได้</p>
+        <div className="formula-grid">
+          {[
+            { title: "Fourier Integral Table", description: "ตารางสูตร Fourier Integral", href: "/formula-summaries/fourier-integral-table.pdf" },
+            { title: "Laplace Properties Table", description: "ตารางสมบัติของ Laplace Transform", href: "/formula-summaries/laplace-properties-table.pdf" },
+          ].map((document) => (
+            <article className="formula-card" key={document.href}>
+              <h3>{document.title}</h3>
+              <p>{document.description} · PDF 2 หน้า</p>
+              <div className="tool-actions">
+                <a className="chip" href={document.href} target="_blank" rel="noreferrer">เปิดอ่าน PDF ↗</a>
+                <a href={document.href} download>ดาวน์โหลด PDF</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
       <h2>สารบัญสูตรและแนวทางตรวจคำตอบ</h2>
       <p className="info">
         สูตรสรุปตามหัวข้อ · คำใบ้ทีละระดับอยู่ใต้การ์ดโจทย์ ·

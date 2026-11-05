@@ -83,7 +83,7 @@ export function Header({ catalog }: { catalog?: Catalog }) {
           {[
             [saved.lastList.url, "คลังข้อสอบ", "/questions"],
             ["/practice", "ฝึกทำข้อสอบ", "/practice"],
-            ["/formulas", "สูตรและคำใบ้", "/formulas"],
+            ["/formulas", "รวมสรุปสูตร", "/formulas"],
             ["/progress", "ความคืบหน้า", "/progress"],
           ].map(([to, label, path]) => (
             <Link
