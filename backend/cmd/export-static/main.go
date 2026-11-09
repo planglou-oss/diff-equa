@@ -20,7 +20,50 @@ import (
 	"strings"
 )
 
+func sourceHashes(source string) (map[string]string, error) {
+	hashes := make(map[string]string)
+	add := func(name, path string) error {
+		raw, err := os.ReadFile(path)
+		if err != nil {
+			return err
+		}
+		hash := sha256.Sum256([]byte(strings.ReplaceAll(string(raw), "\r\n", "\n")))
+		hashes[name] = hex.EncodeToString(hash[:])
+		return nil
+	}
+	if err := add("exam201_solutions.html", source); err != nil {
+		return nil, err
+	}
+	for _, name := range []string{"go.mod", "go.sum"} {
+		if err := add("backend/"+name, name); err != nil {
+			return nil, err
+		}
+	}
+	for _, dir := range []string{"cmd/export-static", "internal"} {
+		err := filepath.WalkDir(dir, func(path string, entry os.DirEntry, err error) error {
+			if err != nil {
+				return err
+			}
+			if entry.IsDir() || strings.HasSuffix(path, "_test.go") {
+				return nil
+			}
+			if ext := filepath.Ext(path); ext != ".go" && ext != ".json" {
+				return nil
+			}
+			return add("backend/"+filepath.ToSlash(path), path)
+		})
+		if err != nil {
+			return nil, err
+		}
+	}
+	return hashes, nil
+}
+
 func run(source, output string) error {
+	hashes, err := sourceHashes(source)
+	if err != nil {
+		return err
+	}
 	temp, err := os.MkdirTemp("", "eemath-static-")
 	if err != nil {
 		return err
@@ -165,7 +208,7 @@ func run(source, output string) error {
 	if err = copyFile(filepath.Join(temp, "mascot.png"), filepath.Join(output, "mascot.png")); err != nil {
 		return err
 	}
-	metadata, _ := json.MarshalIndent(map[string]any{"schemaVersion": 1, "sha256": hex.EncodeToString(hash[:]), "questions": len(questions), "media": len(media), "choiceQuestions": len(choices)}, "", "  ")
+	metadata, _ := json.MarshalIndent(map[string]any{"schemaVersion": 1, "sha256": hex.EncodeToString(hash[:]), "questions": len(questions), "media": len(media), "choiceQuestions": len(choices), "sourceHashes": hashes}, "", "  ")
 	if err = os.WriteFile(filepath.Join(output, "manifest.json"), append(metadata, '\n'), 0644); err != nil {
 		return err
 	}

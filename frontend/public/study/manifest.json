@@ -3,5 +3,27 @@
   "media": 854,
   "questions": 427,
   "schemaVersion": 1,
-  "sha256": "0077c9870c3e19076f8e842a379f10c96a622e230358f86b56773494b95d245d"
+  "sha256": "0077c9870c3e19076f8e842a379f10c96a622e230358f86b56773494b95d245d",
+  "sourceHashes": {
+    "backend/cmd/export-static/main.go": "bae1d789b6c35aa1dff353895da2ad08b30780c755c03bb4250c34dc98ae4a9e",
+    "backend/go.mod": "be665a3a6bf346a014de464eadf6b9bc9cbcec53ced97f3a35ff04ec37552b46",
+    "backend/go.sum": "7fbcf8309a8a2b2e92a37c6928e485a2309850549841872aa2c5b4848a7c85ea",
+    "backend/internal/ai/errors.go": "c53b50f187125ead66b119d75e075f99b323f15c4a3078425988f9657a45df26",
+    "backend/internal/ai/gemini.go": "6fe2bbf7322bed863c5354d25adbc1eafb5393347bf6b0a9ecb60dd86c65fe1a",
+    "backend/internal/httpapi/choices.go": "d019518dd9ed55c0bebf9c971e6be88dd0f6f0728d4fc067574a4cc9eab5fdc7",
+    "backend/internal/httpapi/server.go": "0da30c6de8e17cd03301145e398b45ab3b8e08c716940302b821e4867435b8d9",
+    "backend/internal/httpapi/study.go": "8dc1f9b1b7f0caac2796dd486562b356ab91e3693789cb475edde4dee29847e0",
+    "backend/internal/httpapi/tutor.go": "ac73a7f562bf73af731486b895a2ba159ee548906478037133be0e413d5df28d",
+    "backend/internal/legacy/import.go": "c8ff496f7cd7e17be4113b2c11d77bc6f731769b7a20183586386bc0bc0054fa",
+    "backend/internal/questiontext/text.go": "5c263cf386bb122e5cea763a407dabab987cafeb797ed941c78f70e7ed2199bc",
+    "backend/internal/storage/storage.go": "8bb5d39c208a75ab3a9fba3e699041d4eb787405f2c8c9968edfbd53c356c056",
+    "backend/internal/studycontent/bvp_explanations.json": "d77c03ca563a2f27cb333e9bd457ba0955c94c0558f92c79ae3f74b547bf11a8",
+    "backend/internal/studycontent/choices.go": "c0175070e9ca2b666e8a8fa420898329c8f4c8be1b0c8dbbb100abf3fb074b90",
+    "backend/internal/studycontent/choices.json": "cfe978159f789abb2402084569407efffc9f409462b60cce1587dbd68e6ee1b1",
+    "backend/internal/studycontent/explanations.go": "fc6dc621dd4ca12531367032525d9478e594979586efd118ce2c44afdb36b4ce",
+    "backend/internal/studycontent/guides.go": "330f9111e5b64a4596dc3f194b0ee01d867de565a486adb1be77c77c5f7a3823",
+    "backend/internal/studycontent/laplace_explanations.json": "85202d3f35d401b136a49162f363eac35d41c3abed1048be9e7194ef205e12cb",
+    "backend/internal/studycontent/z_transform_explanations.json": "deba8d6c4342c5058dd4550c560799cc4fdd6509a39de737ece81c0370f8840e",
+    "exam201_solutions.html": "b7e115eb35d857b2558776f03824db1100980c9475671979cad08529bd0d9733"
+  }
 }

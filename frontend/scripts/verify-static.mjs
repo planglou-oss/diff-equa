@@ -1,10 +1,29 @@
-import {readFile,stat} from 'node:fs/promises';
+import {readFile,readdir,stat} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const root = new URL('../public/study/',import.meta.url);
 const bytes = await readFile(new URL('data.json',root));
 const data = JSON.parse(bytes);
 const manifest = JSON.parse(await readFile(new URL('manifest.json',root),'utf8'));
 function check(ok,message){if(!ok)throw new Error(message);}
+const repo = new URL('../../', import.meta.url);
+const inputs = ['exam201_solutions.html', 'backend/go.mod', 'backend/go.sum'];
+async function collectSources(directory) {
+  for (const entry of await readdir(new URL(directory + '/', repo), { withFileTypes: true })) {
+    const path = directory + '/' + entry.name;
+    if (entry.isDirectory()) await collectSources(path);
+    else if (/\.(go|json)$/.test(entry.name) && !entry.name.endsWith('_test.go')) inputs.push(path);
+  }
+}
+await collectSources('backend/cmd/export-static');
+await collectSources('backend/internal');
+const stale = 'Run go run ./cmd/export-static from backend/ and commit the regenerated snapshot.';
+const recorded = manifest.sourceHashes ?? {};
+check(Object.keys(recorded).length === inputs.length, 'Static snapshot source list changed. ' + stale);
+for (const path of inputs) {
+  const source = await readFile(new URL(path, repo), 'utf8');
+  const digest = createHash('sha256').update(source.replace(/\r\n/g, '\n')).digest('hex');
+  check(recorded[path] === digest, 'Static snapshot is out of date for ' + path + '. ' + stale);
+}
 check(createHash('sha256').update(bytes).digest('hex')===manifest.sha256,'Static snapshot hash mismatch. Run the Go export-static command again.');
 check(data.schemaVersion===1 && data.questions.length===427 && manifest.questions===427,'Expected all 427 questions');
 check(data.catalog.aiAvailable===false,'Chat must be disabled in public data');

@@ -24,6 +24,22 @@ import {
   QuestionImage,
 } from "../../components/Content";
 
+function readSessionValue(key: string) {
+  try {
+    return sessionStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeSessionValue(key: string, value: string) {
+  try {
+    sessionStorage.setItem(key, value);
+  } catch {
+    // The page remains usable without session storage.
+  }
+}
+
 type Props = { catalog: Catalog; onAsk?: AskTutor };
 export function Header({ catalog }: { catalog?: Catalog }) {
   const saved = useStudy();
@@ -188,7 +204,7 @@ export function QuestionList({ catalog, onAsk }: Props) {
     let restoring = true;
     const url = location.pathname + location.search;
     const y = Number(
-      sessionStorage.getItem(key) ??
+      readSessionValue(key) ??
         (saved.lastList.url === url ? saved.lastList.y : 0),
     );
     let lastY = y,
@@ -203,7 +219,7 @@ export function QuestionList({ catalog, onAsk }: Props) {
     const save = () => {
       if (!restoring) {
         lastY = window.scrollY;
-        sessionStorage.setItem(key, String(lastY));
+        writeSessionValue(key, String(lastY));
         if (Date.now() - lastSaved > 800) {
           lastSaved = Date.now();
           study.list(url, lastY);
@@ -368,18 +384,18 @@ export function QuestionCard({
     () =>
       !locked &&
       (saved.views[q.id]?.original ??
-        sessionStorage.getItem("original:" + q.id) === "1"),
+        readSessionValue("original:" + q.id) === "1"),
   );
   const [explanation, setExplanation] = useState(
     () =>
       !locked &&
       (saved.views[q.id]?.explanation ??
-        sessionStorage.getItem("explanation:" + q.id) === "1"),
+        readSessionValue("explanation:" + q.id) === "1"),
   );
   useEffect(() => {
     if (!locked) {
-      sessionStorage.setItem("original:" + q.id, original ? "1" : "0");
-      sessionStorage.setItem("explanation:" + q.id, explanation ? "1" : "0");
+      writeSessionValue("original:" + q.id, original ? "1" : "0");
+      writeSessionValue("explanation:" + q.id, explanation ? "1" : "0");
     }
   }, [q.id, original, explanation, locked]);
   const location = useLocation();
