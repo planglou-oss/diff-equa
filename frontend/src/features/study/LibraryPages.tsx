@@ -109,7 +109,9 @@ export function FormulaPage() {
   const matches = (...parts: (string | undefined)[]) =>
     parts.join(" ").toLowerCase().includes(text);
   const matchesTopic = (id: number) => !topic || Number(topic) === id;
-  const allGuides = result.data?.items ?? [];
+  const allGuides = [...(result.data?.items ?? [])].sort(
+    (a, b) => a.topicId - b.topicId,
+  );
   const summaries = formulaSummaries
     .filter((group) => matchesTopic(group.topicId))
     .map((group) => {
@@ -166,6 +168,51 @@ export function FormulaPage() {
       ),
   );
 
+  const sections = [
+    ...summaries.map(({ group, guide, categories }) => ({
+      topicId: group.topicId,
+      content: (
+        <section
+          className="formula-section"
+          key={group.id}
+          aria-labelledby={group.id + "-heading"}
+        >
+          <h2 id={group.id + "-heading"}>
+            {group.topicId}. {group.title}
+          </h2>
+          <p className="info">{group.description}</p>
+          {categories.map((category) => (
+            <SummaryCategory
+              key={category.key}
+              id={group.id + "-" + category.key}
+              title={category.title}
+              formulas={category.formulas}
+              searching={!!text}
+            />
+          ))}
+          <div className="tool-actions summary-actions">
+            <a href={group.source} download>
+              ดาวน์โหลดเอกสารต้นฉบับ PDF
+            </a>
+          </div>
+          {guide && <GuideChecks guide={guide} />}
+        </section>
+      ),
+    })),
+    ...guides.map((guide) => ({
+      topicId: guide.topicId,
+      content: (
+        <section className="formula-section" key={guide.topicId}>
+          <h2>
+            {guide.topicId}. {guide.title}
+          </h2>
+          <FormulaCards formulas={guide.formulas} />
+          <GuideChecks guide={guide} />
+        </section>
+      ),
+    })),
+  ].sort((a, b) => a.topicId - b.topicId);
+
   return (
     <main className="page-wrap">
       <h2>รวมสรุปสูตร</h2>
@@ -200,51 +247,14 @@ export function FormulaPage() {
           />
         </label>
       </div>
-      {summaries.map(({ group, guide, categories }) => (
-        <section
-          className="formula-section"
-          key={group.id}
-          aria-labelledby={group.id + "-heading"}
-        >
-          <h2 id={group.id + "-heading"}>{group.title}</h2>
-          <p className="info">{group.description}</p>
-          {categories.map((category) => (
-            <SummaryCategory
-              key={category.key}
-              id={group.id + "-" + category.key}
-              title={category.title}
-              formulas={category.formulas}
-              searching={!!text}
-            />
-          ))}
-          <div className="tool-actions summary-actions">
-            <a href={group.source} download>
-              ดาวน์โหลดเอกสารต้นฉบับ PDF
-            </a>
-          </div>
-          {guide && <GuideChecks guide={guide} />}
-        </section>
-      ))}
-      {result.isPending ? (
-        <p role="status">กำลังโหลดสูตร…</p>
-      ) : result.error ? (
+      {result.isPending && <p role="status">กำลังโหลดสูตร…</p>}
+      {result.error && (
         <ErrorNotice error={result.error} retry={() => result.refetch()} />
-      ) : (
-        <>
-          {!summaries.length && !guides.length && (
-            <div className="empty">ไม่พบสูตรที่ตรงคำค้น</div>
-          )}
-          {guides.map((guide) => (
-            <section className="formula-section" key={guide.topicId}>
-              <h2>
-                {guide.topicId}. {guide.title}
-              </h2>
-              <FormulaCards formulas={guide.formulas} />
-              <GuideChecks guide={guide} />
-            </section>
-          ))}
-        </>
       )}
+      {result.isSuccess && !sections.length && (
+        <div className="empty">ไม่พบสูตรที่ตรงคำค้น</div>
+      )}
+      {sections.map((section) => section.content)}
       <div className="notice">
         การอ่านสูตรและเฉลยที่เก็บไว้ไม่ใช้โควตา AI · แชต AI
         ต้องเชื่อมต่ออินเทอร์เน็ตและตั้งค่า key ที่เซิร์ฟเวอร์
