@@ -6,81 +6,187 @@ import type { Catalog, Question, SolutionGuide } from "../../lib/api";
 import { ErrorNotice, MathHTML } from "../../components/Content";
 import { defaultRecord, statusLabels } from "./model";
 import { study, useStudy } from "./store";
-import { formulaSummaries } from "./formulaSummaries";
+import { formulaSummaries, type SummaryFormula } from "./formulaSummaries";
+
+type Guide = SolutionGuide["items"][number];
+
+function GuideChecks({ guide }: { guide: Guide }) {
+  return (
+    <>
+      <details className="guide-checks">
+        <summary>จุดที่มักพลาดและวิธีตรวจคำตอบ</summary>
+        <ul>
+          {guide.mistakes.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <ol>
+          {guide.checks.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ol>
+      </details>
+      <div className="tool-actions">
+        <Link className="chip" to={"/questions?topicId=" + guide.topicId}>
+          ฝึกจากโจทย์หัวข้อนี้
+        </Link>
+        <a href={guide.source} target="_blank" rel="noreferrer">
+          อ่านเนื้อหาอ้างอิง MIT OCW ↗
+        </a>
+      </div>
+    </>
+  );
+}
+
+function FormulaCards({
+  formulas,
+  id,
+}: {
+  formulas: readonly SummaryFormula[];
+  id?: string;
+}) {
+  return (
+    <div className="formula-grid" id={id}>
+      {formulas.map((formula) => (
+        <article className="formula-card" key={formula.title}>
+          <h3>{formula.title}</h3>
+          <MathHTML html={"<p>$$" + formula.latex + "$$</p>"} />
+          {formula.note && <p>{formula.note}</p>}
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function SummaryCategory({
+  id,
+  title,
+  formulas,
+  searching,
+}: {
+  id: string;
+  title: string;
+  formulas: SummaryFormula[];
+  searching: boolean;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const showAll = expanded || searching;
+  return (
+    <section className="formula-category" aria-labelledby={id + "-heading"}>
+      <h3 id={id + "-heading"}>{title}</h3>
+      <FormulaCards
+        id={id}
+        formulas={showAll ? formulas : formulas.slice(0, 3)}
+      />
+      {!searching && formulas.length > 3 && (
+        <div className="tool-actions summary-actions">
+          <button
+            type="button"
+            className="chip"
+            aria-expanded={expanded}
+            aria-controls={id}
+            onClick={() => setExpanded((current) => !current)}
+          >
+            {expanded
+              ? "แสดงน้อยลง"
+              : "ดูทั้งหมด (" + formulas.length + " สูตร)"}
+          </button>
+        </div>
+      )}
+    </section>
+  );
+}
 
 export function FormulaPage() {
   const [params, setParams] = useSearchParams();
   const [search, setSearch] = useState("");
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const result = useQuery({
     queryKey: ["guides"],
     queryFn: ({ signal }) => api<SolutionGuide>("/guides", { signal }),
   });
   const topic = params.get("topicId") ?? "";
   const text = search.trim().toLowerCase();
-  const guides = result.data?.items.filter(
-    (g) =>
-      (!topic || g.topicId === Number(topic)) &&
-      (!text ||
-        [
-          g.title,
-          ...g.tags,
-          ...g.formulas.flatMap((f) => [f.title, f.note, f.latex]),
-        ]
-          .join(" ")
-          .toLowerCase()
-          .includes(text)),
+  const matches = (...parts: (string | undefined)[]) =>
+    parts.join(" ").toLowerCase().includes(text);
+  const matchesTopic = (id: number) => !topic || Number(topic) === id;
+  const allGuides = result.data?.items ?? [];
+  const summaries = formulaSummaries
+    .filter((group) => matchesTopic(group.topicId))
+    .map((group) => {
+      const guide = allGuides.find((item) => item.topicId === group.topicId);
+      const properties =
+        group.id === "laplace" && guide
+          ? [
+              ...group.properties,
+              ...guide.formulas.filter(
+                (formula) => formula.title === "อนุพันธ์ (unilateral)",
+              ),
+            ]
+          : group.properties;
+      const category = (
+        key: string,
+        title: string,
+        formulas: SummaryFormula[],
+      ) => ({
+        key,
+        title,
+        formulas: matches(
+          group.title,
+          group.description,
+          title,
+          ...(guide?.tags ?? []),
+        )
+          ? formulas
+          : formulas.filter((formula) =>
+              matches(formula.title, formula.note, formula.latex),
+            ),
+      });
+      return {
+        group,
+        guide,
+        categories: [
+          category("basic", "ผลแปลงพื้นฐาน", group.basic),
+          category("properties", "Properties", properties),
+        ].filter((item) => item.formulas.length > 0),
+      };
+    })
+    .filter(({ categories }) => categories.length > 0);
+  const guides = allGuides.filter(
+    (guide) =>
+      matchesTopic(guide.topicId) &&
+      !formulaSummaries.some((group) => group.topicId === guide.topicId) &&
+      matches(
+        guide.title,
+        ...guide.tags,
+        ...guide.formulas.flatMap((formula) => [
+          formula.title,
+          formula.note,
+          formula.latex,
+        ]),
+      ),
   );
+
   return (
     <main className="page-wrap">
-      <section className="formula-section" aria-labelledby="formula-summaries-heading">
-        <h2 id="formula-summaries-heading">รวมสรุปสูตร</h2>
-        <p className="info">สูตรจากเอกสารสรุป แสดงหัวข้อละ 3 สูตรก่อน กดดูทั้งหมดเพื่ออ่านที่เหลือ</p>
-        <p className="info">ปรับสัญลักษณ์บางจุดที่คลาดเคลื่อนในเอกสารให้สอดคล้องกับนิยาม สามารถดาวน์โหลดต้นฉบับไว้เปรียบเทียบได้</p>
-        {formulaSummaries.map((group) => {
-          const isExpanded = !!expanded[group.id];
-          const visible = isExpanded ? group.formulas : group.formulas.slice(0, 3);
-          return (
-            <section className="formula-section" key={group.id} aria-labelledby={`${group.id}-heading`}>
-              <h2 id={`${group.id}-heading`}>{group.title}</h2>
-              <p className="info">{group.description}</p>
-              <div className="formula-grid" id={`${group.id}-formulas`}>
-                {visible.map((formula) => (
-                  <article className="formula-card" key={formula.title}>
-                    <h3>{formula.title}</h3>
-                    <MathHTML html={`<p>$$${formula.latex}$$</p>`} />
-                    {formula.note && <p>{formula.note}</p>}
-                  </article>
-                ))}
-              </div>
-              <div className="tool-actions summary-actions">
-                <button type="button" className="chip" aria-expanded={isExpanded} aria-controls={`${group.id}-formulas`} onClick={() => setExpanded((current) => ({ ...current, [group.id]: !isExpanded }))}>
-                  {isExpanded ? "แสดงน้อยลง" : `ดูทั้งหมด (${group.formulas.length} สูตร)`}
-                </button>
-                <a href={group.source} download>ดาวน์โหลดเอกสารต้นฉบับ PDF</a>
-              </div>
-            </section>
-          );
-        })}
-      </section>
-      <h2>สารบัญสูตรและแนวทางตรวจคำตอบ</h2>
+      <h2>รวมสรุปสูตร</h2>
       <p className="info">
-        สูตรสรุปตามหัวข้อ · คำใบ้ทีละระดับอยู่ใต้การ์ดโจทย์ ·
-        ตรวจเงื่อนไขของสูตรก่อนใช้
+        สูตรสรุปตามหัวข้อ · คำใบ้ทีละระดับอยู่ใต้การ์ดโจทย์
       </p>
       <div className="library-filters">
         <label>
           หัวข้อ
           <select
             value={topic}
-            onChange={(e) =>
-              setParams(e.target.value ? { topicId: e.target.value } : {})
+            onChange={(event) =>
+              setParams(
+                event.target.value ? { topicId: event.target.value } : {},
+              )
             }
           >
             <option value="">ทุกหัวข้อ</option>
-            {result.data?.items.map((g) => (
-              <option key={g.topicId} value={g.topicId}>
-                {g.title}
+            {allGuides.map((guide) => (
+              <option key={guide.topicId} value={guide.topicId}>
+                {guide.title}
               </option>
             ))}
           </select>
@@ -89,53 +195,52 @@ export function FormulaPage() {
           ค้นหาสูตร
           <input
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(event) => setSearch(event.target.value)}
             placeholder="เช่น Laplace, ลาปลาซ, exact…"
           />
         </label>
       </div>
+      {summaries.map(({ group, guide, categories }) => (
+        <section
+          className="formula-section"
+          key={group.id}
+          aria-labelledby={group.id + "-heading"}
+        >
+          <h2 id={group.id + "-heading"}>{group.title}</h2>
+          <p className="info">{group.description}</p>
+          {categories.map((category) => (
+            <SummaryCategory
+              key={category.key}
+              id={group.id + "-" + category.key}
+              title={category.title}
+              formulas={category.formulas}
+              searching={!!text}
+            />
+          ))}
+          <div className="tool-actions summary-actions">
+            <a href={group.source} download>
+              ดาวน์โหลดเอกสารต้นฉบับ PDF
+            </a>
+          </div>
+          {guide && <GuideChecks guide={guide} />}
+        </section>
+      ))}
       {result.isPending ? (
         <p role="status">กำลังโหลดสูตร…</p>
       ) : result.error ? (
         <ErrorNotice error={result.error} retry={() => result.refetch()} />
       ) : (
         <>
-          {!guides?.length && <div className="empty">ไม่พบสูตรที่ตรงคำค้น</div>}
-          {guides?.map((g) => (
-            <section className="formula-section" key={g.topicId}>
+          {!summaries.length && !guides.length && (
+            <div className="empty">ไม่พบสูตรที่ตรงคำค้น</div>
+          )}
+          {guides.map((guide) => (
+            <section className="formula-section" key={guide.topicId}>
               <h2>
-                {g.topicId}. {g.title}
+                {guide.topicId}. {guide.title}
               </h2>
-              <div className="formula-grid">
-                {g.formulas.map((f) => (
-                  <article className="formula-card" key={f.title}>
-                    <h3>{f.title}</h3>
-                    <MathHTML html={`<p>$$${f.latex}$$</p>`} />
-                    <p>{f.note}</p>
-                  </article>
-                ))}
-              </div>
-              <details className="guide-checks">
-                <summary>จุดที่มักพลาดและวิธีตรวจคำตอบ</summary>
-                <ul>
-                  {g.mistakes.map((s) => (
-                    <li key={s}>{s}</li>
-                  ))}
-                </ul>
-                <ol>
-                  {g.checks.map((s) => (
-                    <li key={s}>{s}</li>
-                  ))}
-                </ol>
-              </details>
-              <div className="tool-actions">
-                <Link className="chip" to={"/questions?topicId=" + g.topicId}>
-                  ฝึกจากโจทย์หัวข้อนี้
-                </Link>
-                <a href={g.source} target="_blank" rel="noreferrer">
-                  อ่านเนื้อหาอ้างอิง MIT OCW ↗
-                </a>
-              </div>
+              <FormulaCards formulas={guide.formulas} />
+              <GuideChecks guide={guide} />
             </section>
           ))}
         </>
