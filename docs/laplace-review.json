@@ -13,9 +13,9 @@
       "questionId": "ee201-t07-q001",
       "questionMediaId": "fe90361b174a6c195955c0bebcdc87c2881e96194ce64dcf4fc0a4ac4fb57a6f",
       "sourceMediaId": "e1ca040de140f3434cdfadced685bcf11698bdea2e99dfe98b261d4595261e19",
-      "bodySHA256": "d4e16a59ee089fd450c3ecae99ee89e2d8c003284b16971970d637746410be32",
+      "bodySHA256": "d510c2f4aebe02106296c70dd293391dfe606f56bed888557d3964da1746a614",
       "reviewStatus": "ai_checked",
-      "correction": "Clarified arccot domain and coefficient matching",
+      "correction": "Expanded solution, including repeated pole coefficient and arctangent branch",
       "checks": [
         {
           "check": "division by t / frequency shift derivative",
