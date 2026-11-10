@@ -270,6 +270,7 @@ export function QuestionList({ catalog, onAsk }: Props) {
               <option value="">ตามหัวข้อและเลขข้อ</option>
               <option value="year_asc">ปีน้อย → มาก</option>
               <option value="year_desc">ปีมาก → น้อย</option>
+              <option value="number_desc">เลขข้อมาก → น้อย</option>
             </select>
           </label>
           <button

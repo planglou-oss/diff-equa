@@ -1253,3 +1253,32 @@ h2 {
 .summary-actions { margin-top: 12px; }
 
 .formula-category { margin: 16px 0; }
+
+.step-explanation .solution-step .aib {
+  font-size: 1.125rem;
+  line-height: 1.85;
+}
+.step-explanation .solution-step h4 {
+  margin: 0 0 0.65rem;
+  color: #3c3789;
+  font-size: 1.2rem;
+  line-height: 1.45;
+}
+.step-explanation .solution-step p {
+  margin: 0.6rem 0;
+}
+.step-explanation .solution-step li + li {
+  margin-top: 0.45rem;
+}
+.step-explanation .solution-en {
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+.step-explanation .solution-step .ans {
+  border-inline-start: 4px solid #cc6a46;
+  padding: 0.35rem 0.8rem;
+}
+.step-explanation .step-counter {
+  font-size: 0.875rem;
+}

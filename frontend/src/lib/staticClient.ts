@@ -87,7 +87,7 @@ export function dispatchStatic(
     const query = (params.get("q") ?? "").trim().toLowerCase();
     if ([...query].length > 200) invalid("คำค้นยาวเกิน 200 ตัวอักษร");
     const sort = params.get("sort") || "default";
-    if (!["default", "year_asc", "year_desc"].includes(sort))
+    if (!["default", "year_asc", "year_desc", "number_desc"].includes(sort))
       invalid("รูปแบบเรียงลำดับไม่ถูกต้อง");
     const items = data.questions.filter(
       (q) =>
@@ -106,6 +106,7 @@ export function dispatchStatic(
           : sort === "year_desc"
             ? b.year - a.year
             : 0) ||
+        (sort === "number_desc" ? b.displayNumber - a.displayNumber : 0) ||
         a.topicId - b.topicId ||
         a.displayNumber - b.displayNumber ||
         a.id.localeCompare(b.id),

@@ -282,6 +282,8 @@ func (s *Server) questions(w http.ResponseWriter, r *http.Request) {
 		order = "q.year ASC," + order
 	case "year_desc":
 		order = "q.year DESC," + order
+	case "number_desc":
+		order = "q.display_number DESC,q.topic_id,q.id"
 	default:
 		fail(w, r, 400, "INVALID_SORT", "รูปแบบเรียงลำดับไม่ถูกต้อง")
 		return

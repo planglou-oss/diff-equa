@@ -10,14 +10,19 @@ const data=JSON.parse(await readFile(new URL('../public/study/data.json',import.
 const request=(path,input)=>dispatchStatic(data,path,input===undefined?{}:{method:'POST',body:JSON.stringify(input)},()=>0.3);
 
 test('all questions survive sorting before pagination, including stable ties',()=>{
- for(const order of ['default','year_asc','year_desc']){
+ for(const order of ['default','year_asc','year_desc','number_desc']){
   const all=Array.from({length:5},(_,i)=>request(`/questions?sort=${order}&pageSize=100&page=${i+1}`).items).flat();
   assert.equal(all.length,427);assert.equal(new Set(all.map(q=>q.id)).size,427);
   for(let i=1;i<all.length;i++){
    const a=all[i-1],b=all[i];
    if(order==='year_asc')assert.ok(a.year<=b.year);
    if(order==='year_desc')assert.ok(a.year>=b.year);
-   if(order==='default'||a.year===b.year)assert.ok(a.topicId<b.topicId||(a.topicId===b.topicId&&a.displayNumber<=b.displayNumber));
+   if(order==='number_desc'){
+    assert.ok(a.displayNumber>=b.displayNumber);
+    if(a.displayNumber===b.displayNumber)assert.ok(a.topicId<b.topicId||(a.topicId===b.topicId&&a.id.localeCompare(b.id)<=0));
+   }else if(order==='default'||a.year===b.year){
+    assert.ok(a.topicId<b.topicId||(a.topicId===b.topicId&&a.displayNumber<=b.displayNumber));
+   }
   }
  }
 });

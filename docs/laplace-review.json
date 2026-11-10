@@ -13,9 +13,9 @@
       "questionId": "ee201-t07-q001",
       "questionMediaId": "fe90361b174a6c195955c0bebcdc87c2881e96194ce64dcf4fc0a4ac4fb57a6f",
       "sourceMediaId": "e1ca040de140f3434cdfadced685bcf11698bdea2e99dfe98b261d4595261e19",
-      "bodySHA256": "d510c2f4aebe02106296c70dd293391dfe606f56bed888557d3964da1746a614",
+      "bodySHA256": "202ff5aeca611f5a46611d1425d9ad968c887ae0d2bfac3c11e6e4a92d2ceeb7",
       "reviewStatus": "ai_checked",
-      "correction": "Expanded solution, including repeated pole coefficient and arctangent branch",
+      "correction": "Expanded solution, including repeated pole coefficient and arctangent branch; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "division by t / frequency shift derivative",
@@ -31,9 +31,9 @@
       "questionId": "ee201-t07-q002",
       "questionMediaId": "0b6198c64b6bc6e58a03a2d70fa4cfe153a3f38f8d590dcdcd50e527bac3811e",
       "sourceMediaId": "54352403d563fce4e8bad49425f1db398aec79866024bb13cced9010300c1881",
-      "bodySHA256": "1178542ad83c53cf1984135f157aa0346b151114fd0e20749707b475d7c7a685",
+      "bodySHA256": "327073aa961ba2b6b5da4497b272a0931726b913db581c336b66f21df42a0ed0",
       "reviewStatus": "ai_checked",
-      "correction": "Expanded derivation and verification based on the original question",
+      "correction": "Expanded derivation and verification based on the original question; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a forward transform",
@@ -53,9 +53,9 @@
       "questionId": "ee201-t07-q003",
       "questionMediaId": "305aea34d88c77d6a19663ada92bdbcc7d24e89a0caaaf29919e09a7bd3c0845",
       "sourceMediaId": "d6749fc379943a9eb9706affaa0498dd1991e10373d26d5c0ec2a6642d1686eb",
-      "bodySHA256": "5fd00baf96cb1b834766693796c36fa30035f143ff597d72955baf25215d5c5e",
+      "bodySHA256": "5f6d3a12c3e782641d453672028743fdcc908b917cec22f039d5c5cbb41babc1",
       "reviewStatus": "ai_checked",
-      "correction": "Clarified coefficient matching; Added derivation and intermediate steps",
+      "correction": "Clarified coefficient matching; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a homogeneous ODE",
@@ -91,9 +91,9 @@
       "questionId": "ee201-t07-q004",
       "questionMediaId": "3e3b70fc99e62f21bd9406d1be3bf437fc1618dc396e71613bbbe3e3b3019dd5",
       "sourceMediaId": "840637072642724296c2b9fd84142a8c6a7d8c1e8c45221f48b6e7ba76df8985",
-      "bodySHA256": "ec96434c3aaf23189f373c6df124ed495af8a5d9612f1738489dffe430345c66",
+      "bodySHA256": "523f82cf0358aade99f8b68123b117a586b21fa2cc4078a5f4926357f7d6e501",
       "reviewStatus": "ai_checked",
-      "correction": "Expanded derivation and verification based on the original question",
+      "correction": "Expanded derivation and verification based on the original question; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "homogeneous ODE",
@@ -125,9 +125,9 @@
       "questionId": "ee201-t07-q005",
       "questionMediaId": "2ec999099a12275f4f7b1b25533c3db1c75ff13c31fc6b9b95dbc69565f608fa",
       "sourceMediaId": "64efeeda14754a753a64c5f9c20920e894384bb0065708d3143301aee94f57ec",
-      "bodySHA256": "7d3ca514f1233e2f73ca29c7fc5909246e83366bfd0f93f451b1fb92f648c8fc",
+      "bodySHA256": "e8843587caaa27643054370b01bdaa9acd89d9cfc6353b4d271f9c08c3e58a8c",
       "reviewStatus": "ai_checked",
-      "correction": "Clarified coefficient matching; Added derivation and intermediate steps",
+      "correction": "Clarified coefficient matching; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a integrated sine-over-t derivative",
@@ -143,9 +143,9 @@
       "questionId": "ee201-t07-q006",
       "questionMediaId": "8aad97071fc7927e3d8c0e1ea98c5cffe03996868f5246963f4b6a10bc42aa8c",
       "sourceMediaId": "19af7ca8a8b43e113a7eafd5e84fbe92d844bada483251933c4b9f82cb31d9e6",
-      "bodySHA256": "ec74be4bec29ae38c2e2a86de311a2aa933d3432f0e4db470ace1b32d2f61ac3",
+      "bodySHA256": "2a4f7b45feced7868569c04a85cea925ac3f26c83b69de759dfecb780ad4acfb",
       "reviewStatus": "ai_checked",
-      "correction": "Expanded derivation and verification based on the original question",
+      "correction": "Expanded derivation and verification based on the original question; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "graph windows",
@@ -157,9 +157,9 @@
       "questionId": "ee201-t07-q007",
       "questionMediaId": "5e30492111d267e9a4c9632ced85a91df6944cebe4269553f73d4ba485753aa9",
       "sourceMediaId": "6a8a1e59de31aa4cf4ca6881565cf7c05c320ea2c31e4996367a46e168834faa",
-      "bodySHA256": "d27feac5b9871afe57578a940b9222d4241cf6bf8e7f135c19381b73dae266aa",
+      "bodySHA256": "71bb6b4f018e80771f4df68eb781ecf57dae504a5757a1a29ba9234d9d3c39eb",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -171,9 +171,9 @@
       "questionId": "ee201-t07-q008",
       "questionMediaId": "85216df7ccd2cad908445af18bfd514b02232e351147e237186d571ae3cfc65c",
       "sourceMediaId": "f0fc8a66de81febb95e7355a26c09d2d2edad95a33f7e762f412d5855902baf0",
-      "bodySHA256": "ddc8da1b44204b4acc0286116c8d3947921f8fdf51ceb4922461462a55f7b43c",
+      "bodySHA256": "4fa628e33b2e313b5ae482a3d37582337c81e69bb381bff86e05b9239eeb5397",
       "reviewStatus": "ai_checked",
-      "correction": "Expanded derivation and verification based on the original question",
+      "correction": "Expanded derivation and verification based on the original question; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "graph windows",
@@ -185,9 +185,9 @@
       "questionId": "ee201-t07-q009",
       "questionMediaId": "367eb02677d100f247ea3924e59860f4882d8d1c2b6869cca2d3ccf620fc05b4",
       "sourceMediaId": "ee4d917191ad31df0075fe00129a3b5c3e4a508160067acf9244aa61893a44cf",
-      "bodySHA256": "57a47f969564b2744301bc4d2325e9a9fc5ef2cff0214c0ca87e1e69585aaee0",
+      "bodySHA256": "e2a48adef2d2a73c71af6703c3a0178be31f7daa862ce20adf03efa31bdeeb39",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -199,9 +199,9 @@
       "questionId": "ee201-t07-q010",
       "questionMediaId": "e0dbfc06e4a25402591f2f7d320c797bb7c6927c3b274e6bb4f5916b387f0bbe",
       "sourceMediaId": "3c2c1a061eecbe33ee96ee9b7cb0340920bc17047a35e3aa9560a403f2b49711",
-      "bodySHA256": "5b4a9ef1f957b554c75bfe614e037c00987b8e3b0092a0cd8e69793ef61ef90a",
+      "bodySHA256": "d7f151dc948ee4f805f8e2d81fa83254b0c8c8db535e5148a45a7d6b177e7cb7",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "periodic transform",
@@ -217,9 +217,9 @@
       "questionId": "ee201-t07-q011",
       "questionMediaId": "ffd882440161652e2c8da5cfa14b22e404133429289b8b730851a4fdff701615",
       "sourceMediaId": "8ab78bdaf621d88205db22e897af162400804c3a1f8ce216abacd06b0648348b",
-      "bodySHA256": "4182e30186d603a05e96c79b392cce26c6d32f6f0fec38ba6bf57832fdb59b3a",
+      "bodySHA256": "89070fefa5897f0d0ca64df4b19a0f5abe04059250fc1f446efd05c97c3e4721",
       "reviewStatus": "ai_checked",
-      "correction": "Corrected sign of t exp(-t) cos(t); Added derivation and intermediate steps",
+      "correction": "Corrected sign of t exp(-t) cos(t); Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -247,9 +247,9 @@
       "questionId": "ee201-t07-q012",
       "questionMediaId": "7af11b1e6fbf330b4eed0f6f52b0384895aedfa2a57593a6b1ca4c8b6ac9272b",
       "sourceMediaId": "c78a79f4e62f28039dfb2fa91bb70ad5836331800c3070c1da999b02cc7fee4c",
-      "bodySHA256": "84d16ae7fe2feb169da3ad665ae2b35be772d30de762b1b47f8f3043d24a939b",
+      "bodySHA256": "63590fbdae85568889aa03769a61df53562cbc49786f8fbe95753891a64df450",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a ODE",
@@ -273,9 +273,9 @@
       "questionId": "ee201-t07-q013",
       "questionMediaId": "05226616822d39990d2345b278064f3b98084a6c55fae09d7169a41b45a760a6",
       "sourceMediaId": "6a3aab0cda3ae58482887db128714c4931381fea91ae25db3c6abc80feee8ee1",
-      "bodySHA256": "11a7a624238f3e9c48ad352b1d797bc2d8dc3842f57bea2ab1c6098602c4dd0e",
+      "bodySHA256": "858a42a3e80d83836a502ce90a2702392cb06fceead82392b076718d9fad21ce",
       "reviewStatus": "ai_checked",
-      "correction": "Added arbitrary normalization constant; Added derivation and intermediate steps",
+      "correction": "Added arbitrary normalization constant; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "Laguerre n=1 ODE",
@@ -347,9 +347,9 @@
       "questionId": "ee201-t07-q014",
       "questionMediaId": "14c341fd46332051354c04087ee0f1e2d726d9cea2e827316d732d9ce6dee215",
       "sourceMediaId": "853f579905a71f791591401671fff272f5409040d82d6f1f8a6deaefca9d3afc",
-      "bodySHA256": "e9886eb49f03474c26296e1806d8a06b96531bd08917e2642cfda71515c9e5f6",
+      "bodySHA256": "ff1ad24cfda96689b41f8a28eb118e241317de08cc65ae6f7a76d83d466f3c53",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -361,9 +361,9 @@
       "questionId": "ee201-t07-q015",
       "questionMediaId": "0dfb3288e068b2d367aa2c92724ab376f72f042382e9f0a78dbbd2e7954a384b",
       "sourceMediaId": "4217ddf604c65770bfc33ba6bdd397619c52265d7361f110e7eb2e4301fbad13",
-      "bodySHA256": "680b87557d407ec5cb49c0dfd68b925f2562d5faffb47db950df2e84a4884a8c",
+      "bodySHA256": "3113a73259e2fac08f8bcbca1414d110a5c03609c0070aa6e50bfd5991c5cc4f",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a delayed transform",
@@ -379,9 +379,9 @@
       "questionId": "ee201-t07-q016",
       "questionMediaId": "4e3cb1a5f871b882786c90560682d1e303d25307fb09a6ac4154df8d86f6729f",
       "sourceMediaId": "e63741e16bc7018dea6a302d5130c114933fde3d608b814a5e8892a1cbce03f2",
-      "bodySHA256": "c27422f0685485dcef8bcddac209aa0596a1b107600dea781ecc0ca8fba35939",
+      "bodySHA256": "ec4e9937e0e6f2884f06285c32e5fb8664c2dd1641f6fdc6e49e3796cd70d6cc",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "system equation 1",
@@ -409,9 +409,9 @@
       "questionId": "ee201-t07-q017",
       "questionMediaId": "4e17719b57f7c08d25d7ea8274ce88402087be94a9997da13af6fe6c7edf8d49",
       "sourceMediaId": "6423c26630700174395dbd2b824609d777483c82bc0a2739ef79439d70de41b4",
-      "bodySHA256": "f1b68306819a3e19fab9d346d007cf5a5991a2433cc5ec6e37537a860879beea",
+      "bodySHA256": "57b48877eb31130892f1f7f5d8677624be7fb1dbc254bf49f5edab5b6ae77629",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a forward transform",
@@ -427,9 +427,9 @@
       "questionId": "ee201-t07-q018",
       "questionMediaId": "c431fbfbf5e7466ad513b816d1f08ccbdb269ce81e2c06c5eeb7bad9e17a821d",
       "sourceMediaId": "58b0c0e11ae778b1943bf08bcfabe65e512ee673547225d40daf61cb059766a0",
-      "bodySHA256": "1ab73654272aadbd56dc8aa42abe80614e8af1df8a2457efff11a4e884bb39bb",
+      "bodySHA256": "b5ee437b687a0ec3d7627f30790486832bfa0deb3d68471cf978693b2e1c594b",
       "reviewStatus": "ai_checked",
-      "correction": "Removed incorrect accusation about -7/36; Added derivation and intermediate steps",
+      "correction": "Removed incorrect accusation about -7/36; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "shift kernel forward transform",
@@ -457,9 +457,9 @@
       "questionId": "ee201-t07-q019",
       "questionMediaId": "ae55598cd5ff84ee41d4000d4956172ed054f1f0da927202af961933cd827057",
       "sourceMediaId": "49854662d514e79092766fdad0282e9dbaa687f9e42c7e5e97d1c353fdc3e107",
-      "bodySHA256": "64f7f6914289333c3e0b802493b974f024436f032c077c81a9418e88d4172b45",
+      "bodySHA256": "685b93693af9579f87bc81d08e262e53cfba7293627c09e9abdb0181566824c8",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "pulse step response ODE",
@@ -479,9 +479,9 @@
       "questionId": "ee201-t07-q020",
       "questionMediaId": "167b85476498ef695b64d56d3596e96f5ae12136f02358c55a8d651d17c8e236",
       "sourceMediaId": "c18b50eb23639462b61f4d480170383267fabf56034abf6ff2ab643140d9e283",
-      "bodySHA256": "bdc21711c7ecff8a39debdf0607d6e06b38da3f8d8d933ef3e56d92280a3d8ff",
+      "bodySHA256": "3fb96f048ad37af6669b23c22b8bfc11c6c91740705277ebcda5c71d4b04ad59",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "convolution step response forward transform",
@@ -493,9 +493,9 @@
       "questionId": "ee201-t07-q021",
       "questionMediaId": "39dfd2c55dcde488110a70c12b4ccd167244101dfed879bb60c2b05f75626340",
       "sourceMediaId": "678eec5a0509fc8dffe69c9e918126e7c3bde9dca96cc82fe4c840c6a4ca5ff5",
-      "bodySHA256": "b05760956aa7f304f4f4679435b98545992b258f8e75f35e368a7e749eb5897e",
+      "bodySHA256": "8f90196ef27e23dea4a005213156f18b338af6b80b64187fa145abc9ca66a564",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "absolute cosine periodic",
@@ -507,9 +507,9 @@
       "questionId": "ee201-t07-q022",
       "questionMediaId": "267fec4b7efac4e81bf5e5f0643f5835516f77af4676f8362aebc86f2e0f6548",
       "sourceMediaId": "dd8bb0d64da64e3ed92911682429cb5b72f1cc6652e76f11e618a4c2a1ad3726",
-      "bodySHA256": "55d61170509ec683cc21ddbe44039c914a3dddd5fcf9c4a60feff7b0185506b5",
+      "bodySHA256": "89fa64b50ab1675eb40b9425c749391fcf6e2903eb291a5d0cede7f6fbfbdf69",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -521,9 +521,9 @@
       "questionId": "ee201-t07-q023",
       "questionMediaId": "dab5f049a2415c60c29ece7dda7b444afed671e35d92e638e49db09cbd2600b8",
       "sourceMediaId": "16a8793186d30527ad8828135dcbafcd0bca8873864a6022a317f9b1e38362f0",
-      "bodySHA256": "07a68f410c6ffcb62086477e9432ae12cff22d4e0df67e75c8b430283533af5e",
+      "bodySHA256": "ebc6ff5c31691021709c343e35fbf6c4c9d61cd9ac3aa0fabfe9606c74a75546",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a sine-over-t derivative",
@@ -539,9 +539,9 @@
       "questionId": "ee201-t07-q024",
       "questionMediaId": "c26b24e809147a05b382a4d2f810f4d1286dfa0ae25f5d771d356c3f626f2c44",
       "sourceMediaId": "71de799ea63bf536b5c15ef7d0b417dd50e7b9a025ec43aeeea946c2361cc9e3",
-      "bodySHA256": "51ee9fdb9c467d07771cf3effc94a288386bb5c47d28286e9cfbd16c165746c7",
+      "bodySHA256": "02e100739b20b4eda492ef674d5c05f2d26315d42a52fb7e9015adcd6f2fc520",
       "reviewStatus": "ai_checked",
-      "correction": "Added missing homogeneous constant because no IC are specified; Added derivation and intermediate steps",
+      "correction": "Added missing homogeneous constant because no IC are specified; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "forced ramp kernel forward transform",
@@ -565,9 +565,9 @@
       "questionId": "ee201-t07-q025",
       "questionMediaId": "14291df10a83afbd31f297f5749de2329030067a9ccb504477ec30c70ac60076",
       "sourceMediaId": "933996c7d1c31735103332fa161433fcd2253bbf1d7c8256702103bfbfd07eb4",
-      "bodySHA256": "12ca7283d1a6e7b7e9f96f0d7849848a9211d8905a951fa922f4022fcd9989e7",
+      "bodySHA256": "a9b37e541c8e5c1b2a428329856654628014b3f9785ed685627f10bf864d6498",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a forcing window",
@@ -591,9 +591,9 @@
       "questionId": "ee201-t07-q026",
       "questionMediaId": "686c41230172826efeeea9061e4d32146d03bc5f39607e47f1f32bd566f350de",
       "sourceMediaId": "205f20e5c2c9f33f819544346b00003cb0e084afd164672d3044e8996035ac35",
-      "bodySHA256": "e715ce48e5cf90947030074d715878f8bee534668ddd9557664c96fa8d9e4fee",
+      "bodySHA256": "35ca5517e08041992b5846249f5a876b0349ee57d5a12aaddbb4767324fe1978",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a forcing window",
@@ -625,9 +625,9 @@
       "questionId": "ee201-t07-q027",
       "questionMediaId": "5c3390f02e38bce4494090faf498c43bfeb1b62a8d867f6895cbb4eab516499e",
       "sourceMediaId": "f24d7fe8e37699b0a52aa13b35b42e57a8e57b966dbdae8839be7e629b61fc00",
-      "bodySHA256": "34592ee010112fd35764fc88d54ef39b9d20b88bbb95ffa2af42230d2f5800a7",
+      "bodySHA256": "af2f26c14ba367c151d266122f516df8df960a67854ca3ec702d2a4220135f24",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a log derivative",
@@ -643,9 +643,9 @@
       "questionId": "ee201-t07-q028",
       "questionMediaId": "e3ce50f1a8b33004c439019256d8c46c0744ded1a00a8fb4ef23ad2ba864d5ee",
       "sourceMediaId": "355b8f033d0f5c162697368007bcfa80d7ba0b9255cd353df23f3a4d15177718",
-      "bodySHA256": "342cba867b40ac6529da8dd7b97424b9e03315a15dff729997442058f1c1c527",
+      "bodySHA256": "784bb479ff487a451b98239c1973c379b3d5142fe1f611bd51551aa31fdee326",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "convolution ODE",
@@ -657,9 +657,9 @@
       "questionId": "ee201-t07-q029",
       "questionMediaId": "6f45fd86b77c91b2cf6c51447629e28e59dea32048e3f839ac22f40faab6016d",
       "sourceMediaId": "ff7a364c003e2505fce6a079d27d055966803ec699c88d2fa008077e42d4bd87",
-      "bodySHA256": "1330851e406a1202aedf85ac968052eaf677ec3d8d80c0403d3314f296d7cbd6",
+      "bodySHA256": "54c9d524dd98a8e894c1a7d9fca2d5bbb7fc3ba4fc992cda1b440e6efd79eeb9",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "t multiplication",
@@ -675,9 +675,9 @@
       "questionId": "ee201-t07-q030",
       "questionMediaId": "b0dcc4fff5cd9be7803d40e707dbff231d5827d26d93443914350f8569a0f647",
       "sourceMediaId": "29af3315363eeff675381704e212bfe4270a0d1e02b006109127da8a104d7cff",
-      "bodySHA256": "14b8af17e7113873f03d6ff677b1501e5ecc87fb1cf08ca30d9ffbbe969876e4",
+      "bodySHA256": "b3995af44c47cfe493ade3e514a329c8b181c0e42af7158f5b8a75a644c5e98d",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -689,9 +689,9 @@
       "questionId": "ee201-t07-q031",
       "questionMediaId": "cba850b95a10a96f7db1fc933460fcdd74640eff0a0aa65997a498c729705fc2",
       "sourceMediaId": "39f35ef2d708ff4a1145aa20e5c0066d91c019fbdd0eab5e93150c410b7933f9",
-      "bodySHA256": "745cbf67b3cd360e78a093e53943df182212188764e861539541c60d30cb28ed",
+      "bodySHA256": "ce0514c4f35cc194afa455023558b79fb5d242d5625f9a6c40c5d156d35707eb",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a window transform",
@@ -707,9 +707,9 @@
       "questionId": "ee201-t07-q032",
       "questionMediaId": "dc7c4886f76965dce758b68c2b248750d8cb7f77f9b3418c64300b32ebee26b9",
       "sourceMediaId": "48bcf07c8309dcd238d2e4231c7f0e4eeea9a1b4617973cac7aa0e5f232b8170",
-      "bodySHA256": "75b6d2761e8bf34afe15ba50288e011ee173bc77611cdae768d277f429ac5e00",
+      "bodySHA256": "5a951a32de91b40868a5ac39a1cab715e1492750e56dbb652b655435d7369f8d",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "integral ODE",
@@ -725,9 +725,9 @@
       "questionId": "ee201-t07-q033",
       "questionMediaId": "6fceff10df1681be228bc97ba848dee9441a7014b69af5c2f1332ce05aae9322",
       "sourceMediaId": "5a7272815fcb8dd1e18134d7e4fdb057cffa2fc2c659dcf19354f738baf8f911",
-      "bodySHA256": "65e00a0eb3c0d3172b78293d6150ffe4e551058c6d29401b5746da461ad28814",
+      "bodySHA256": "9c8d69c71abb5826233975b77ad1721064abe679a132c0e3eb236c9b05c8db73",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "log derivative",
@@ -743,9 +743,9 @@
       "questionId": "ee201-t07-q034",
       "questionMediaId": "176c889bf4321e454cbbcef5b45e463ddf416278e873a7eee8477bb505503179",
       "sourceMediaId": "c655875c5fec7dbaac47cb7d531fe213a5a6bb471032b1f1064bea16cf54b77c",
-      "bodySHA256": "313b606f6650f1b762b031fe5fb46ec74843b8ff66a55bd6165962a0b7bb74a5",
+      "bodySHA256": "8dc12668512e08ba61689ec1c63d97e4825030179043ea614c0814af1063061a",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -757,9 +757,9 @@
       "questionId": "ee201-t07-q035",
       "questionMediaId": "3cf9cb4e58fa08d03bf9831e6d0c81800494c663facb9fcd9f0485ec0402fb58",
       "sourceMediaId": "db0b8f0abb110b92b5b33b55ed01f68967020112a51b38a43370b3122b140a34",
-      "bodySHA256": "340cf6c71221a178865bd520c42c9094f7992cccff8f784aed7f5dd617750c64",
+      "bodySHA256": "b3148a22bac532e17e05f9a48e6ebd37dcc96b30492a239773f6357d1c5e3c21",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -771,9 +771,9 @@
       "questionId": "ee201-t07-q036",
       "questionMediaId": "e2ebbabd7e3b3dee3259131a4d60459f1a90b39facf97779c85dc9b2bd5e76b8",
       "sourceMediaId": "f97d4d8935aed7fa8fd28638b0b0460c6b653d16630e22423de9db664ae8c4f2",
-      "bodySHA256": "9aac2a99129fc51a6e6e6d3f0e7f1f2474768da0b7a6d8c42d06eab8ac9a0604",
+      "bodySHA256": "d78d686bcfb463a63329ffd35a8ed0cf6ed858421bdd82edcfd89407fed5052a",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "shifted response",
@@ -797,9 +797,9 @@
       "questionId": "ee201-t07-q037",
       "questionMediaId": "85aef3be0471f8dc19107c45e98f03068a623e5785da4a2a3db132c8c7ec067a",
       "sourceMediaId": "d994ff25eb95e43b7d9010a24328e04ff379d8154fb730bf69bd8d02ef82d0e3",
-      "bodySHA256": "77a5c3598a2c8641515072a62b9fb428f30ca34d08c1d4d0a11624f347fe9beb",
+      "bodySHA256": "4c47a0a5e6e2957e7f1429dd01e7d21cfa4bf21a60546117afca16eac8fedba5",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "piecewise input",
@@ -815,9 +815,9 @@
       "questionId": "ee201-t07-q038",
       "questionMediaId": "d693c3cbb287a957b0ea3b34c693e74bf2b3c754ca3a6f2200390cf064a7ab86",
       "sourceMediaId": "b6e3f54caba8605c0d8ccb72e76c4bcb60a32d55e42773732abe2bf125ca4575",
-      "bodySHA256": "5a4a3ad1a29804c6fcc7dc643f326bb1f40c8cd4a6e5cd615ba701002c5c573c",
+      "bodySHA256": "d7839392846b8587efcbb73db4d904049006e32fb3b2b3b4c8d18fff80535b75",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "solution ODE",
@@ -837,9 +837,9 @@
       "questionId": "ee201-t07-q039",
       "questionMediaId": "e2e6a11feb46e5bed6a11aed8651df61274642cc00cb123940262d94d73c6a4c",
       "sourceMediaId": "d8035ac87e1df12916e8d908967f5efd16cac7a0f0afbbb4ac9ff82ac120c659",
-      "bodySHA256": "01e316680b71b5aa333da2b891c39482b5c8c52ec5f4a6cc8d26ff5703eb16bc",
+      "bodySHA256": "fad48e3d5e369a338dd56525edee4a6add75493b0d0169088507aeb480fbc2b7",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "product to sum",
@@ -859,9 +859,9 @@
       "questionId": "ee201-t07-q040",
       "questionMediaId": "c84ef5a09beb637fcb182dd90133e447040276c751d0bf4a51d0112d8a7a23ac",
       "sourceMediaId": "b4d737ea450849202e50ba890026c703b7bf7faec354252d1db4592d94f994d1",
-      "bodySHA256": "d3f610aa65ba624d9c772da8dcafd0c3bebbc531c18ecb8363a023fe39951d90",
+      "bodySHA256": "c08bcf1332852c5053146102660749202e22f2da6a3308dc5590fede69399ec8",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -873,9 +873,9 @@
       "questionId": "ee201-t07-q041",
       "questionMediaId": "a31cdbf4eddff9643e282132db658ad3b6f4c302604cfa13fb5d40232394ae54",
       "sourceMediaId": "34b6ea3f2ee71eedc5c726bb38b64e32b000321c7c256f773c5712c69eb46da6",
-      "bodySHA256": "2123c3ff90a965e83dfca5458b14cea786f165f5d2a6dca84cf1a23905f73e6a",
+      "bodySHA256": "d951d0a46ca0ca4b895e5c688ceed595ee04a3621e491f07d6b754ec78a6b89a",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "first shift",
@@ -891,9 +891,9 @@
       "questionId": "ee201-t07-q042",
       "questionMediaId": "b04cfbf90685ad6b35e64fe256f586a6db4293b87ff7143a3825f19564aa6a5a",
       "sourceMediaId": "de981ceae66c05c9531ce36f1678d9bbea20305e4d465c13e7122f6ca8af6eea",
-      "bodySHA256": "dcee0eb3f0b6c9c47c57ca10392bd6d78bf1feaa7f6001d9009b436485b5aaee",
+      "bodySHA256": "b40821d745a864c7f2babc0adc19f11829f2ae9e326fa2018d5f8ed5245565f9",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "shifted response",
@@ -917,9 +917,9 @@
       "questionId": "ee201-t07-q043",
       "questionMediaId": "370c08aa332ff6b42ce176752a7dfa7a4cacdb8195294e4cdc6eb359dcff29c7",
       "sourceMediaId": "c121c6a46f017b4b51704085eff1aeb2ce0aeca530440c021c377fe70c8bf4f4",
-      "bodySHA256": "ca1ec85981eb858315d15f3ec75f1eac5bc4bf5167904c9e1abcee278eceef11",
+      "bodySHA256": "08cd4fd2d2c926ea9dfac51a2e0a31fd36d07a3a53b98bf5db21ed88527d2ecf",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "convolution forward transform",
@@ -931,9 +931,9 @@
       "questionId": "ee201-t07-q044",
       "questionMediaId": "b83567f5d01549705d5eba0b7ef3367c535a6debc512cc363c2868165726a925",
       "sourceMediaId": "87d48d4b86eba13c6932306830f3ebd403ccbd4f797856a22caaf5c58f8340e5",
-      "bodySHA256": "14fdf3f7cbb41120baa75d5e3515916fbf446df98d5fc346ac05fb0a18eb2ac5",
+      "bodySHA256": "7676427264cec0b4c74d0b80262bb39d63eb48cb4ed8f2b4ed6999d6ed6c1df3",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "triple angle simplification",
@@ -949,9 +949,9 @@
       "questionId": "ee201-t07-q045",
       "questionMediaId": "d8307150c245f5106f7b06d7c71f6cac5b20c221d53f9ea87358e2f664e2135e",
       "sourceMediaId": "d5e69d31fe05cda382c6fe7cb56b3f24897884a39c53621f51b350c144a392c0",
-      "bodySHA256": "7629833cd3e7aec64e49254e69aa0ebca7d80faf3e9c2f3053f3c962c507a259",
+      "bodySHA256": "70b0cccb06a705fe89537a7704623d81be57a41ae29405a4fd62087ea2d10b39",
       "reviewStatus": "ai_checked",
-      "correction": "Stated time-domain assumptions and piecewise form; Added derivation and intermediate steps",
+      "correction": "Stated time-domain assumptions and piecewise form; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "general switched kernel ODE",
@@ -979,9 +979,9 @@
       "questionId": "ee201-t07-q046",
       "questionMediaId": "7a3a37ea89d6ac7d86ede044f1d0022988e5e08eeca8ab7527139f4129eb5cb2",
       "sourceMediaId": "2076af690b15f4f819a3f414d068b0a2c8bcbe546a7592e58fa0254e405ebacf",
-      "bodySHA256": "ffdb0be007d4c1dcc5a880c52f53b9929c7b29c12e66aa8a5f3af5686e7386a6",
+      "bodySHA256": "0f9df964a3260014567a2bf5453ef69199519891151cf56505bd928b39679d5d",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "convolution ramp kernel forward transform",
@@ -993,9 +993,9 @@
       "questionId": "ee201-t07-q047",
       "questionMediaId": "387b1138e44124cad7fc7c9500d2a703d58f7b4b7966c5278ec4a230a0664340",
       "sourceMediaId": "977b45e8093fe8b42c7be111758736f21bcff6ee72d8a2f297f4104e9ba74360",
-      "bodySHA256": "72a1b316c13622253ecc47425cdec5b93a807638274078be3d396add45d8844e",
+      "bodySHA256": "03ed75b3f0499450d2816bc626032bd50371c6270b629f64ea4644824451ffec",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "step kernel ODE",
@@ -1027,9 +1027,9 @@
       "questionId": "ee201-t07-q048",
       "questionMediaId": "7c0389985a3a3ffd648baed0646e79db513bf43e5cc33df84fa8dfec6ba4e4f2",
       "sourceMediaId": "cbb9372d42a0879cea6c6e0139926434e6ebe821aca8929f93318e90fdff9df0",
-      "bodySHA256": "b6d9ceee93b5710d23d66fa3c61f1a6d7f51a7cb3d34ad430e25abd1fd09a8fb",
+      "bodySHA256": "8d453a24d63bb95d68d44fd6d33af4693f6c51e84414d2b299309798973fe8ac",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a forcing window",
@@ -1057,9 +1057,9 @@
       "questionId": "ee201-t07-q049",
       "questionMediaId": "8f06196d408bd99a1b03e887b9c89c1ae33d035fe0eb2083ab3d91078ec6888a",
       "sourceMediaId": "8b74b128832fb2e7fa18fbb6aa3a0fdb0ca9c7951765464395241b425032e7db",
-      "bodySHA256": "d94eb5c67ae5c385da5956539e5143ced2ca259f8a151f66092412ba3fa74692",
+      "bodySHA256": "cda8e7af964f3b37511ff9af03075c31422f6330ef42ff66bb919896ecab7136",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "convolution ramp kernel forward transform",
@@ -1075,9 +1075,9 @@
       "questionId": "ee201-t07-q050",
       "questionMediaId": "d6f2ef664ad29a8958b2d64b5acb47a1957a678ff74656c34303674ebc333475",
       "sourceMediaId": "ed167cd33879bde87b95bdcd085c85d9733864b35ac7c52be71e2bfaa67c29c0",
-      "bodySHA256": "04a33b885aa21e1593e23522996ffa5121f3bc03450cee995f4c1607f4ac977f",
+      "bodySHA256": "ff0421ba7e0cd6c4520606c48a7a972eb48f4c2f5256c9842fef5e999cff4a36",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "convolution expansion",
@@ -1105,9 +1105,9 @@
       "questionId": "ee201-t07-q051",
       "questionMediaId": "422a4be17a753978e96dbb718f20bcfb0249d4b3608965df8fd82fd7b8fc78ea",
       "sourceMediaId": "12c7d657a8a0db16520786ffec446684d31e7e89173ad4df9158e9d515bf5348",
-      "bodySHA256": "837f2c50432d1d978153544cde5e8f912f196bdf5595532ae7ae65f2bf634bdd",
+      "bodySHA256": "827bcd67d2bb92deccc14e0ec78a72136d600b46b6dc500ecfc1457c32e76fae",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "homogeneous ODE",
@@ -1135,9 +1135,9 @@
       "questionId": "ee201-t07-q052",
       "questionMediaId": "aed1266f29715325c20a6bb005d64df60743d097b686972e49d5cecc32ae7c1a",
       "sourceMediaId": "bcf5e8c538cc64e407477807739648ae81db269113bea4f6dbe1e3407f4cbd5c",
-      "bodySHA256": "40f3b2fcffe9035581c5a0dfdf033abde4b887f2918e0959ea0e691dbe65f423",
+      "bodySHA256": "8eb7d9c14f7e8303186fac03b798b38fc18b48a4612801dd9f082bb5940e432d",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "part a=1 forward transform",
@@ -1153,9 +1153,9 @@
       "questionId": "ee201-t07-q053",
       "questionMediaId": "d4ce604da9f2e85eb7963ed313409a90b536c4e04bac9955b85954251087ff81",
       "sourceMediaId": "c85ebb4aaba56886fb974b5e91f720cbec6fca97086f77fd8f38f2a7c7a4b2f8",
-      "bodySHA256": "fc7d5c5e7f1660a33463d743038b1e8a7605bef337364c9b43f67515f36cb99a",
+      "bodySHA256": "1628ba84234ae37788d57d8abc09eff958cc128c6ff793a5fabc7fa046ca31b5",
       "reviewStatus": "ai_checked",
-      "correction": "Added requested explicit piecewise answers; Added derivation and intermediate steps",
+      "correction": "Added requested explicit piecewise answers; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "part 1 resonance ODE",
@@ -1211,9 +1211,9 @@
       "questionId": "ee201-t07-q054",
       "questionMediaId": "756577428ed2dcd77ba4ae5953f6ac957124ede1068c59083e5861c967495ce9",
       "sourceMediaId": "bc2ed61345a92dce75b376392df5a3151acce64aaabef7320094d9ba9a3e9086",
-      "bodySHA256": "914f1acf3873f37aa9e4cfd9c3ffafc2ffbded82fd6233668cb51bc03d447966",
+      "bodySHA256": "859f703f8cf6ba993cb9881516b29e0c28c5e0d1682563c256faedb7260a1a89",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "shift polynomial",
@@ -1229,9 +1229,9 @@
       "questionId": "ee201-t07-q055",
       "questionMediaId": "948a2aa4e2dd06f4645d7e856f5af31ae0c3acde4e869fce2b2fbc75da6ce4df",
       "sourceMediaId": "ac56d61567bc73720dc5c22d4c6e0f62395f775aba5f2aaac6e8021f4b10c4aa",
-      "bodySHA256": "4d2645a2f85d0cf1e2ffbeedaf40bb4224a5b787eeced7068ea2c3520e2b4a07",
+      "bodySHA256": "f5a1e629fc33ad8cdc57ce602e9cfae69b014b86ae509ec8cf73787dcf4f5421",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "system first",
@@ -1255,9 +1255,9 @@
       "questionId": "ee201-t07-q056",
       "questionMediaId": "caf356afc4ee2112d81dd59d09f916b7e53ec496e0779e0cb9796b2f21564327",
       "sourceMediaId": "b609630dd94b242090964964462773021304a8b09ee872741f770bf46e9e0599",
-      "bodySHA256": "9dba8866a071e89ac97fac504e37b3e14731d421e8cbe693635ed7f90bac0965",
+      "bodySHA256": "2d35ccb6156e9f52831160a9bfe11ba2c0626be944e96fd00c85d8c3e961723a",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "triangle a=1 m=2",
@@ -1281,9 +1281,9 @@
       "questionId": "ee201-t07-q057",
       "questionMediaId": "2bca7544367c99589786f5d710d18079dccdc6f3cd327f853ad1894326513945",
       "sourceMediaId": "0e932e80ae02526bc2bd8f5caf3b34bcf9030a9fd1eff302d75a28ac05859392",
-      "bodySHA256": "2397ac70d764f29745be110379f58747df3776b98266c8db459b53760d50ec73",
+      "bodySHA256": "10497417dae64410a7bb470484eedad7f43caea15eff800009a846505455742b",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "omega 2 ODE",
@@ -1315,9 +1315,9 @@
       "questionId": "ee201-t07-q058",
       "questionMediaId": "a177b5dc7fe0c5c1ea14d0a9ecd9aeb31113412ee7ca9dd1b80af6b52321199f",
       "sourceMediaId": "50954e05772a95c59bf95256d7563685b24407fe51355b110bc37817d3cf5985",
-      "bodySHA256": "e8321f23844d899793bd441a91554cdf9bba4d3b189b612d653c8bc6fad8996c",
+      "bodySHA256": "d18558d724865c2a0104b99ef13fe54a40387ad1a596c1dcddfcd8965054880b",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "response kernel",
@@ -1349,9 +1349,9 @@
       "questionId": "ee201-t07-q059",
       "questionMediaId": "f508a075c9208bafd607c5749573659ed5841bc5ac80787feef61568a0c690c6",
       "sourceMediaId": "eaa0602bf2759cd0d23f4c19a3276b74c9bff91f35665baa4c55653a795b1d74",
-      "bodySHA256": "284facfdc0b0afb6ef20ce43b4af9fd3588680c7dd3811733c6e4df9f6f99424",
+      "bodySHA256": "db486dc22de0f9a0242e56e1a4569f3a11e70df3bea0bc4aee92232751d7ee02",
       "reviewStatus": "ai_checked",
-      "correction": "Corrected inherited 2003 sign error; Added derivation and intermediate steps",
+      "correction": "Corrected inherited 2003 sign error; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "near-zero derivative 0",
@@ -1379,9 +1379,9 @@
       "questionId": "ee201-t07-q060",
       "questionMediaId": "cbc70c7650d10794002cb2bd36cdf994f7c2f0bcd043d35be5b7f7ccfff2cde7",
       "sourceMediaId": "982e430a4df7fdfda95d1f83b27c8b7c4749e2bacc23802e30a573d213f8badf",
-      "bodySHA256": "f2f522655b3f0eb6a984b38adcfc291eab8f6378bfea2caf68fe83e1dab59520",
+      "bodySHA256": "b84b20fa6fa4e396a6db21a58544f4cf6d6c3cf2c326618ff87e809202447c81",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "triangle a=1 m=3",
@@ -1413,9 +1413,9 @@
       "questionId": "ee201-t07-q061",
       "questionMediaId": "78a89c2efb668c1f6a8bf1f61c45ff3f95043c1f9649de173142adf20f81f7b2",
       "sourceMediaId": "206abf2c578d1631440dfc86b235ae909511bfe6a62d3ba5dbabbac91d6540f4",
-      "bodySHA256": "08e0182d10214dd3ba0c6e86f5120ec028dcbfc832c787e4709b997c6bbdf298",
+      "bodySHA256": "45cc8a15d7ff222816c494116b51be27834dd9b2bb7567009ca63293f9821e46",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "omega 2 ODE",
@@ -1459,9 +1459,9 @@
       "questionId": "ee201-t07-q062",
       "questionMediaId": "0d090381506ce79ed5d35f4cfb90577b7a33465b42862c111916666062d88b9d",
       "sourceMediaId": "d12f5063fca6c9e208ef1b6621f9dc198f888815bd7a55010c0966159bf9dda2",
-      "bodySHA256": "07eb771b659a1a6b6c4c388e95b61c422c8e7e1a2b51ab7e312261d352873261",
+      "bodySHA256": "faca1f25ac776653c2c8b3727027f16c36ab22e16122799c32cdbe3cc7a8b84f",
       "reviewStatus": "ai_checked",
-      "correction": "Corrected inherited 2003 sign error; Added derivation and intermediate steps",
+      "correction": "Corrected inherited 2003 sign error; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "near-zero derivative 0",
@@ -1489,9 +1489,9 @@
       "questionId": "ee201-t07-q063",
       "questionMediaId": "b1e93100a87a7b94e3e1db3a30d27659e41eaff622518f08dcf76062ce3bb294",
       "sourceMediaId": "39f46403b346032b0a88c4f91c5fbf15f2c27f6e50ecebef77ac17b9ab54d906",
-      "bodySHA256": "a136fcad8cd9ccbfaa5077d9671f2dde9c402ede110848efa00905313320c939",
+      "bodySHA256": "89dfdef9319365d2eceac4bbbb00513e5a71e451f00baefa4a423ba595a0d341",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "initial a=2 ODE",
@@ -1571,9 +1571,9 @@
       "questionId": "ee201-t07-q064",
       "questionMediaId": "a042128fa19a63d5b0d289547c54c45440f25d557bffc1a696b3df54aa5d0c42",
       "sourceMediaId": "0030125db2cbec4ed20778399d88179a3aa7bb1cff0394799615b47d809fe735",
-      "bodySHA256": "182fe97d7869c4241b5ca0ddde6042f062e80cd526315ec46c59e9c328b690bd",
+      "bodySHA256": "69512eaa2d315ff67ae494a53610cf6eefbbf1976982a4ad498abf36ca7a1ee9",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "part 1 product to sum",
@@ -1597,9 +1597,9 @@
       "questionId": "ee201-t07-q065",
       "questionMediaId": "dd4e742f7c232bab6420703c15bfc5c7897f93f8c5e6fa0c015fe2e1d6feb43e",
       "sourceMediaId": "b98e76c332c54898d92f94c4b4fe66d20d8bd667177a67a642cb2e8491b92942",
-      "bodySHA256": "2f74ba02f4f0dc021fffe1d835ab091b15aef01cd5b3f6102d98b9ca567e5e6f",
+      "bodySHA256": "00ec8c8cda88a0d17b156afd6fe5b34916196b0e52ecc7dd36d731abacd387a0",
       "reviewStatus": "needs_clarification",
-      "correction": "Flagged inconsistent original IC; conditional solutions clearly separated; Added derivation and intermediate steps",
+      "correction": "Flagged inconsistent original IC; conditional solutions clearly separated; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a initial-data contradiction",
@@ -1655,9 +1655,9 @@
       "questionId": "ee201-t07-q066",
       "questionMediaId": "8fcaacdab34feeec7f67ddb6b5cc0ea885be71b25b9e856fe626abf8d07eebbc",
       "sourceMediaId": "6ee1317980e95a70a3aa1c565df911a1cf46d44d222ee7acd51ae3464b2e5cee",
-      "bodySHA256": "3f8c8912db8c4f532246f33c2f4b14672ade013a167fe59e2dab2213462fc756",
+      "bodySHA256": "33733d6dc54f6e2ca00d4fe4e6f027784a18a9e28063ef287f24226ec482fbad",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "initial ODE",
@@ -1689,9 +1689,9 @@
       "questionId": "ee201-t07-q067",
       "questionMediaId": "8a0fbfdff86780e52fb6b0217a7fc40f080d5855671c3f60559719dded77cfad",
       "sourceMediaId": "dc00fc18c66d01156b0892220835442d5bf5442d4b44f2ea117e86afef3d82d8",
-      "bodySHA256": "6bdad1e41d6b88c579bc3dafe5bdcd54f321c020015155ca9a21ca2ca64542ba",
+      "bodySHA256": "52b4958ba4bbd2c0fbce4f5c5c0275d44a25121c0ef4b827d26def3c409fc1ea",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -1703,9 +1703,9 @@
       "questionId": "ee201-t07-q068",
       "questionMediaId": "a0e6d39c3b884241ac53633da846320b3c8935829bf6b0885060b104a68088e2",
       "sourceMediaId": "e0465f476d74e4c69a0236007e76019b1c04322b4e98604ecbbc69e2715c64eb",
-      "bodySHA256": "b8e0af78eebd3a1e339765a92e42bd2536c5bb89d00eebea5f4667bbd43da70e",
+      "bodySHA256": "b1588ea5f5c176beb139c41e48292fccb23b7552e61319243e04e2c0f1173092",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a time-shift sign",
@@ -1745,9 +1745,9 @@
       "questionId": "ee201-t07-q069",
       "questionMediaId": "e12e7d69daa34924777c78011beaddfe196c25aeca9389cea9b48bbb84a1a393",
       "sourceMediaId": "642b1bbc276c27481002f32e7763285bd631a4ab9b1598e0292fc36496ec7cfc",
-      "bodySHA256": "6f0d706f3338aa4a67e0588392198bc6959429db69a48f8daef694166b975c35",
+      "bodySHA256": "0c592f0344fe8d2d1388e15d8e6625527ae3e257776aea47853466fa8fff00a9",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "a=2 initial ODE",
@@ -1851,9 +1851,9 @@
       "questionId": "ee201-t07-q070",
       "questionMediaId": "85f05348ba4f8192868102f8328e33f3eb770c754f83ec1d34cf8715e6f71b47",
       "sourceMediaId": "f7460e9a988120222ed23a4bb3e22a21abedb9deab147cceea8545672e75fb3a",
-      "bodySHA256": "f62690ab3f76eae9644bed165f364a3a2f1a5418e63fdf2c0b76d8d6948955d4",
+      "bodySHA256": "139a4133b5a3088a5c66dd693e0c88e89ab083daba92f3c6148411dc8ab09ff0",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
       "checks": [
         {
           "check": "parameter 1 forward transform",
@@ -1877,9 +1877,9 @@
       "questionId": "ee201-t07-q071",
       "questionMediaId": "753b98e0d7f0cf0362feb7a6b551f2eacf62231b01b345a4e53469fea971dd64",
       "sourceMediaId": "7e2fa2b78a36610752c97541aad5dd86aa40abf25f071c3ef3dfb3508ab7463d",
-      "bodySHA256": "fe50544358f7c083b2a412c09352a457de3901e38e5c32c212fe3cfae1c34b63",
+      "bodySHA256": "338eec0d48ceb049d312e016dd90a41b3170ffcc3ab348733e89cf6c19a4caf4",
       "reviewStatus": "ai_checked",
-      "correction": "Corrected placement of x/2 multiplying cosine in every final interval; Added derivation and intermediate steps",
+      "correction": "Corrected placement of x/2 multiplying cosine in every final interval; Added derivation and intermediate steps; Reorganized question 71(a) into the requested worked-solution format",
       "checks": [
         {
           "check": "omega 2 initial ODE",
