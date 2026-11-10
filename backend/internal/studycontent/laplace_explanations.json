@@ -14,13 +14,13 @@
   {
     "questionId": "ee201-t07-q002",
     "sourceMediaId": "54352403d563fce4e8bad49425f1db398aec79866024bb13cced9010300c1881",
-    "bodyHtml": "<p>แปลงลาปลาซทั้งสองข้างด้วย $y(0)=y'(0)=0$: $\\ (s^2+3s+2)Y=X(s)$ และ $s^2+3s+2=(s+1)(s+2)$</p>\n<h4>(a) $x(t)=t\\,u(t)$ ⇒ $X=1/s^2$</h4><p>$Y=\\dfrac1{s^2(s+1)(s+2)}=\\dfrac{A}{s}+\\dfrac{1/2}{s^2}+\\dfrac1{s+1}-\\dfrac{1/4}{s+2}$ โดย $B=\\tfrac12$ (ปิด $s^2$ แล้วแทน $s=0$), $C=1$, $D=-\\tfrac14$ และ $A+C+D=0\\Rightarrow A=-\\tfrac34$</p><div class=\"ans\">$$y(t)=\\left(-\\tfrac34+\\tfrac t2+e^{-t}-\\tfrac14e^{-2t}\\right)u(t)$$</div>\n<h4>(b) $x(t)=\\sin t\\,[u(t)-u(t-\\pi)]$</h4><p>เพราะ $\\sin t=-\\sin(t-\\pi)$ จึงได้ $x=\\sin t\\,u(t)+\\sin(t-\\pi)u(t-\\pi)$ ⇒ $X=\\dfrac{1+e^{-\\pi s}}{s^2+1}$</p>\n<p>ให้ $F(s)=\\dfrac1{(s+1)(s+2)(s^2+1)}=\\dfrac{1/2}{s+1}-\\dfrac{1/5}{s+2}+\\dfrac1{10}\\cdot\\dfrac{-3s+1}{s^2+1}$ (เช็ก: ที่ $s=-1$ ได้ $\\tfrac12$, ที่ $s=-2$ ได้ $-\\tfrac15$)</p>\n<p>$f(t)=\\tfrac12e^{-t}-\\tfrac15e^{-2t}-\\tfrac3{10}\\cos t+\\tfrac1{10}\\sin t$ และ $Y=(1+e^{-\\pi s})F(s)$</p><div class=\"ans\">$$y(t)=f(t)\\,u(t)+f(t-\\pi)\\,u(t-\\pi)$$</div>\n<p><b>หมายเหตุ:</b> เฉลยต้นฉบับเขียน $e^{\\pi s}$ และเครื่องหมายลบหน้าพจน์ที่สอง ซึ่งน่าจะพิมพ์ผิด ตรวจได้ว่าเมื่อ $t>\\pi$ ส่วน $\\cos t,\\sin t$ ของสองพจน์ต้องหักล้างกัน (เพราะ $x(t)=0$) ซึ่งจะเป็นจริงก็ต่อเมื่อเครื่องหมายเป็น <b>บวก</b></p>",
+    "bodyHtml": "<h4>แปลงสมการและใส่เงื่อนไขเริ่มต้น</h4><p>ให้ $Y=\\mathcal L\\{y\\}$ และ $X=\\mathcal L\\{x\\}$ เมื่อ $y(0)=y'(0)=0$ จะได้ $\\mathcal L\\{y''\\}=s^2Y$ และ $\\mathcal L\\{y'\\}=sY$ ดังนั้น</p><p>$$ (s^2+3s+2)Y=X,\\qquad Y=\\frac X{(s+1)(s+2)}.$$</p>\n<h4>(a) แรงบังคับ ramp</h4><p>เมื่อ $x(t)=t$ สำหรับ $t\\ge0$ มี $X=1/s^2$ จึงต้องแยก</p><p>$$Y=\\frac1{s^2(s+1)(s+2)}=\\frac A s+\\frac B{s^2}+\\frac C{s+1}+\\frac D{s+2}.$$</p><p>คูณด้วยตัวส่วนร่วมแล้วแทน $s=0,-1,-2$ ตามลำดับ ได้ $B=1/2,C=1,D=-1/4$ และเทียบพจน์กำลังสามได้ $A+C+D=0$ จึง $A=-3/4$ แปลงกลับทีละพจน์</p><div class=\"ans\">$$y_a(t)=-\\frac34+\\frac t2+e^{-t}-\\frac14e^{-2t},\\quad t\\ge0.$$</div>\n<h4>(b) แรงบังคับ sine ที่หยุดเมื่อ $t=\\pi$</h4><p>เขียน $x(t)=\\sin t\\,u(t)-\\sin t\\,u(t-\\pi)$ แต่เนื่องจาก $\\sin t=-\\sin(t-\\pi)$ พจน์หลังจึงกลายเป็น $+\\sin(t-\\pi)u(t-\\pi)$ และ</p><p>$$X(s)=\\frac{1+e^{-\\pi s}}{s^2+1},\\qquad Y=(1+e^{-\\pi s})G(s),\\quad G=\\frac1{(s+1)(s+2)(s^2+1)}.$$</p><p>แยก $G=A/(s+1)+B/(s+2)+(Cs+D)/(s^2+1)$ แทน $s=-1,-2$ ได้ $A=1/2,B=-1/5$ แล้วเทียบสัมประสิทธิ์ได้ $C=-3/10,D=1/10$ จึงให้</p><p>$$g(t)=\\frac12e^{-t}-\\frac15e^{-2t}-\\frac3{10}\\cos t+\\frac1{10}\\sin t.$$</p><p>ใช้สมบัติเลื่อนเวลา $\\mathcal L^{-1}\\{e^{-as}G(s)\\}=u(t-a)g(t-a)$</p><div class=\"ans\">$$y_b(t)=g(t)+u(t-\\pi)g(t-\\pi),\\quad t\\ge0.$$</div><p><b>ตรวจ:</b> $y_a(0)=y_a'(0)=0$ และ $g(0)=g'(0)=0$ จึงตรงเงื่อนไขเริ่มต้น สำหรับ (b) เครื่องหมายบวกเกิดจาก $\\sin(t-\\pi)=-\\sin t$</p>",
     "questionMediaId": "0b6198c64b6bc6e58a03a2d70fa4cfe153a3f38f8d590dcdcd50e527bac3811e",
     "previousBodySHA256": [
       "dc3092f752a5eb8c3a4aae912c8e7015c0b552d0b3bc41844fbc39c3cba4391a"
     ],
     "reviewStatus": "ai_checked",
-    "reviewedBodySHA256": "dc3092f752a5eb8c3a4aae912c8e7015c0b552d0b3bc41844fbc39c3cba4391a"
+    "reviewedBodySHA256": "1178542ad83c53cf1984135f157aa0346b151114fd0e20749707b475d7c7a685"
   },
   {
     "questionId": "ee201-t07-q003",
@@ -36,13 +36,13 @@
   {
     "questionId": "ee201-t07-q004",
     "sourceMediaId": "840637072642724296c2b9fd84142a8c6a7d8c1e8c45221f48b6e7ba76df8985",
-    "bodyHtml": "<h4>1) แปลงลาปลาซ</h4><p>$[s^2Y-c_1s-c_2]+3[sY-c_1]+2Y=\\dfrac{1-e^{-s}}s$ ⇒ $Y=\\dfrac{c_1s+3c_1+c_2}{(s+1)(s+2)}+\\dfrac{1-e^{-s}}{s(s+1)(s+2)}$</p>\n<h4>2) Partial fraction</h4><p>$\\dfrac{c_1s+3c_1+c_2}{(s+1)(s+2)}=\\dfrac{2c_1+c_2}{s+1}-\\dfrac{c_1+c_2}{s+2}$ (แทน $s=-1$ และ $s=-2$)</p>\n<p>$\\dfrac1{s(s+1)(s+2)}=\\dfrac{1/2}s-\\dfrac1{s+1}+\\dfrac{1/2}{s+2}\\ \\Rightarrow\\ h(t)=\\tfrac12-e^{-t}+\\tfrac12e^{-2t}$</p>\n<h4>3) ย้อนกลับ</h4><div class=\"ans\">$$y(t)=(2c_1+c_2)e^{-t}-(c_1+c_2)e^{-2t}+h(t)\\,u(t)-h(t-1)\\,u(t-1)$$</div>",
+    "bodyHtml": "<h4>1. แปลงสมการพร้อมค่าเริ่มต้น</h4><p>ให้ $Y=\\mathcal L\\{y\\}$ ใช้ $\\mathcal L\\{y''\\}=s^2Y-sc_1-c_2$ และ $\\mathcal L\\{y'\\}=sY-c_1$ ส่วนแรงบังคับมีผลแปลง $(1-e^{-s})/s$ จึงได้</p><p>$$[s^2Y-sc_1-c_2]+3[sY-c_1]+2Y=\\frac{1-e^{-s}}s.$$</p><p>ย้ายเทอมค่าเริ่มต้นและแยกตัวประกอบ</p><p>$$Y=\\frac{(s+3)c_1+c_2}{(s+1)(s+2)}+(1-e^{-s})\\frac1{s(s+1)(s+2)}.$$</p><h4>2. แยกเศษส่วน</h4><p>เขียนส่วนแรกเป็น $\\dfrac{2c_1+c_2}{s+1}-\\dfrac{c_1+c_2}{s+2}$ โดยแทน $s=-1,-2$ หลังคูณตัวส่วนร่วม สำหรับส่วนแรงบังคับ</p><p>$$\\frac1{s(s+1)(s+2)}=\\frac{1/2}{s}-\\frac1{s+1}+\\frac{1/2}{s+2}.$$</p><p>ให้ $g(t)=\\tfrac12-e^{-t}+\\tfrac12e^{-2t}$ ใช้กฎเลื่อนเวลา $e^{-s}G(s)\\leftrightarrow u(t-1)g(t-1)$</p><div class=\"ans\">$$y(t)=(2c_1+c_2)e^{-t}-(c_1+c_2)e^{-2t}+g(t)-u(t-1)g(t-1),\\quad t\\ge0.$$</div><p><b>ตรวจ:</b> $g(0)=g'(0)=0$ ส่วนคำตอบอิสระให้ $y(0)=c_1$ และ $y'(0)=c_2$ ตามโจทย์</p>",
     "questionMediaId": "3e3b70fc99e62f21bd9406d1be3bf437fc1618dc396e71613bbbe3e3b3019dd5",
     "previousBodySHA256": [
       "9daf542ebfcb476e2d2b1c2f4bd2cebbe4c022b35a036e389829133cbc9e16d2"
     ],
     "reviewStatus": "ai_checked",
-    "reviewedBodySHA256": "9daf542ebfcb476e2d2b1c2f4bd2cebbe4c022b35a036e389829133cbc9e16d2"
+    "reviewedBodySHA256": "ec96434c3aaf23189f373c6df124ed495af8a5d9612f1738489dffe430345c66"
   },
   {
     "questionId": "ee201-t07-q005",
@@ -58,13 +58,13 @@
   {
     "questionId": "ee201-t07-q006",
     "sourceMediaId": "19af7ca8a8b43e113a7eafd5e84fbe92d844bada483251933c4b9f82cb31d9e6",
-    "bodyHtml": "<h4>1) หลักการและจัดรูป</h4><p>เขียนรูป trapezoid เป็น ramp: $f=t\\,u(t)-(t-1)u(t-1)-(t-2)u(t-2)+(t-3)u(t-3)$</p><h4>2) คำตอบ</h4><p>$F(s)=(1-e^{-s}-e^{-2s}+e^{-3s})/s^2$</p><h4>3) ตรวจและจุดที่ควรระวัง</h4><p>ตรวจความชัน 1,0,−1,0 และ f=0 หลัง t=3 โดยรวม ramp ทั้งสี่พจน์</p>",
+    "bodyHtml": "<h4>1. อ่านความชันจากกราฟ</h4><p>กราฟเพิ่มจาก 0 ถึง 1 ในช่วง $0<t<1$ คงที่ที่ 1 ระหว่าง 1 ถึง 2 และลดลงถึงศูนย์ที่ $t=3$ ความชันจึงเป็น $1,0,-1,0$ ตามลำดับ</p><p>ใช้ ramp $(t-a)u(t-a)$ เปลี่ยนความชันทีละจุด โดยที่ $t=1,2,3$ ความชันเปลี่ยนไป $-1,-1,+1$ จึงเขียนได้</p><p>$$f(t)=t\\,u(t)-(t-1)u(t-1)-(t-2)u(t-2)+(t-3)u(t-3).$$</p><h4>2. แปลงแต่ละ ramp</h4><p>จาก $\\mathcal L\\{t\\}=1/s^2$ และสมบัติเลื่อนเวลา ได้ $\\mathcal L\\{(t-a)u(t-a)\\}=e^{-as}/s^2$ จึงได้</p><div class=\"ans\">$$F(s)=\\frac{1-e^{-s}-e^{-2s}+e^{-3s}}{s^2}.$$</div><p><b>ตรวจ:</b> แทน $1<t<2$ จะได้ $t-(t-1)=1$ และเมื่อ $t>3$ พจน์ทั้งหมดรวมกันเป็นศูนย์ ตรงกราฟ</p>",
     "questionMediaId": "8aad97071fc7927e3d8c0e1ea98c5cffe03996868f5246963f4b6a10bc42aa8c",
     "previousBodySHA256": [
       "0cc8c6ea8c994fe90cc634a1830e9a63f71a3aba86d3eff03671aeba831e1141"
     ],
     "reviewStatus": "ai_checked",
-    "reviewedBodySHA256": "0cc8c6ea8c994fe90cc634a1830e9a63f71a3aba86d3eff03671aeba831e1141"
+    "reviewedBodySHA256": "ec74be4bec29ae38c2e2a86de311a2aa933d3432f0e4db470ace1b32d2f61ac3"
   },
   {
     "questionId": "ee201-t07-q007",
@@ -80,13 +80,13 @@
   {
     "questionId": "ee201-t07-q008",
     "sourceMediaId": "f0fc8a66de81febb95e7355a26c09d2d2edad95a33f7e762f412d5855902baf0",
-    "bodyHtml": "<h4>1) หลักการและจัดรูป</h4><p>แยกสัญญาณ trapezoid เป็นผลรวม ramp: $f=t\\,u(t)-(t-2)u(t-2)-2(t-3)u(t-3)+2(t-4)u(t-4)$</p><h4>2) คำตอบ</h4><p>$F(s)=(1-e^{-2s}-2e^{-3s}+2e^{-4s})/s^2$</p><h4>3) ตรวจและจุดที่ควรระวัง</h4><p>ตรวจความชันแต่ละช่วง: 1,0,−2,0 และค่าต่อเนื่องที่ 2,3,4</p>",
+    "bodyHtml": "<h4>1. เขียนกราฟด้วย ramp</h4><p>กราฟขึ้นจาก $(0,0)$ ถึง $(2,2)$ จากนั้นคงที่ถึง $t=3$ แล้วลดลงถึงศูนย์ที่ $t=4$ ความชันในแต่ละช่วงคือ $1,0,-2,0$ การเปลี่ยนความชันที่ $t=2,3,4$ จึงเป็น $-1,-2,+2$</p><p>$$f(t)=t\\,u(t)-(t-2)u(t-2)-2(t-3)u(t-3)+2(t-4)u(t-4).$$</p><h4>2. ใช้สมบัติเลื่อนเวลา</h4><p>เพราะ $\\mathcal L\\{t\\}=1/s^2$ จึงมี $\\mathcal L\\{(t-a)u(t-a)\\}=e^{-as}/s^2$ แปลงทุกพจน์และรวมตัวส่วนได้</p><div class=\"ans\">$$F(s)=\\frac{1-e^{-2s}-2e^{-3s}+2e^{-4s}}{s^2}.$$</div><p><b>ตรวจ:</b> เมื่อ $2<t<3$ ได้ $f=2$ และเมื่อ $3<t<4$ ได้ $f=8-2t$ ซึ่งลดจาก 2 เป็น 0 ตามกราฟ</p>",
     "questionMediaId": "85216df7ccd2cad908445af18bfd514b02232e351147e237186d571ae3cfc65c",
     "previousBodySHA256": [
       "505df2b6b29cd7c2ead600d12e7617615b98e60b54f300c6fa34e855b9dba213"
     ],
     "reviewStatus": "ai_checked",
-    "reviewedBodySHA256": "505df2b6b29cd7c2ead600d12e7617615b98e60b54f300c6fa34e855b9dba213"
+    "reviewedBodySHA256": "ddc8da1b44204b4acc0286116c8d3947921f8fdf51ceb4922461462a55f7b43c"
   },
   {
     "questionId": "ee201-t07-q009",
