@@ -1282,3 +1282,30 @@ h2 {
 .step-explanation .step-counter {
   font-size: 0.875rem;
 }
+
+.step-explanation .solution-step {
+  margin: 14px 12px;
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  background: #fffdf9;
+}
+.step-explanation .solution-step .aib {
+  max-width: 54rem;
+  margin-inline: auto;
+  padding: 20px;
+}
+.step-explanation .solution-step p {
+  margin-block: 0.85rem;
+}
+.step-explanation .solution-step ol,
+.step-explanation .solution-step ul {
+  padding-inline-start: 1.5rem;
+}
+.step-explanation .solution-step h4 {
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid #e8e4f5;
+}
+@media (max-width: 600px) {
+  .step-explanation .solution-step { margin-inline: 8px; }
+  .step-explanation .solution-step .aib { padding: 14px; }
+}

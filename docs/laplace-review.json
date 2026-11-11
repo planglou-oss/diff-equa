@@ -13,9 +13,9 @@
       "questionId": "ee201-t07-q001",
       "questionMediaId": "fe90361b174a6c195955c0bebcdc87c2881e96194ce64dcf4fc0a4ac4fb57a6f",
       "sourceMediaId": "e1ca040de140f3434cdfadced685bcf11698bdea2e99dfe98b261d4595261e19",
-      "bodySHA256": "202ff5aeca611f5a46611d1425d9ad968c887ae0d2bfac3c11e6e4a92d2ceeb7",
+      "bodySHA256": "c24da9669163d09faf68a32922a1570f4cb562ce1c70c442d26e31976524ff24",
       "reviewStatus": "ai_checked",
-      "correction": "Expanded solution, including repeated pole coefficient and arctangent branch; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Expanded solution, including repeated pole coefficient and arctangent branch; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "division by t / frequency shift derivative",
@@ -31,9 +31,9 @@
       "questionId": "ee201-t07-q002",
       "questionMediaId": "0b6198c64b6bc6e58a03a2d70fa4cfe153a3f38f8d590dcdcd50e527bac3811e",
       "sourceMediaId": "54352403d563fce4e8bad49425f1db398aec79866024bb13cced9010300c1881",
-      "bodySHA256": "327073aa961ba2b6b5da4497b272a0931726b913db581c336b66f21df42a0ed0",
+      "bodySHA256": "46791357c3cca9caa00fdb443a68c2090a4c3ad7d206cdb28c7c56fb56b73849",
       "reviewStatus": "ai_checked",
-      "correction": "Expanded derivation and verification based on the original question; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Expanded derivation and verification based on the original question; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a forward transform",
@@ -53,9 +53,9 @@
       "questionId": "ee201-t07-q003",
       "questionMediaId": "305aea34d88c77d6a19663ada92bdbcc7d24e89a0caaaf29919e09a7bd3c0845",
       "sourceMediaId": "d6749fc379943a9eb9706affaa0498dd1991e10373d26d5c0ec2a6642d1686eb",
-      "bodySHA256": "5f6d3a12c3e782641d453672028743fdcc908b917cec22f039d5c5cbb41babc1",
+      "bodySHA256": "5350bea50a22dbe68c90a7a26704d6bc217ee2d5fdcdf171b89db1dd915bee3a",
       "reviewStatus": "ai_checked",
-      "correction": "Clarified coefficient matching; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Clarified coefficient matching; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a homogeneous ODE",
@@ -91,9 +91,9 @@
       "questionId": "ee201-t07-q004",
       "questionMediaId": "3e3b70fc99e62f21bd9406d1be3bf437fc1618dc396e71613bbbe3e3b3019dd5",
       "sourceMediaId": "840637072642724296c2b9fd84142a8c6a7d8c1e8c45221f48b6e7ba76df8985",
-      "bodySHA256": "523f82cf0358aade99f8b68123b117a586b21fa2cc4078a5f4926357f7d6e501",
+      "bodySHA256": "9a23aaa1551b4a44f38ded95a3850233ec7c3cb7b22dcf3762de95a64409b905",
       "reviewStatus": "ai_checked",
-      "correction": "Expanded derivation and verification based on the original question; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Expanded derivation and verification based on the original question; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "homogeneous ODE",
@@ -125,9 +125,9 @@
       "questionId": "ee201-t07-q005",
       "questionMediaId": "2ec999099a12275f4f7b1b25533c3db1c75ff13c31fc6b9b95dbc69565f608fa",
       "sourceMediaId": "64efeeda14754a753a64c5f9c20920e894384bb0065708d3143301aee94f57ec",
-      "bodySHA256": "e8843587caaa27643054370b01bdaa9acd89d9cfc6353b4d271f9c08c3e58a8c",
+      "bodySHA256": "d8b5e896e03f1e793f3a786725d12697e6cdf1c960d67e6940a66865e86e51e2",
       "reviewStatus": "ai_checked",
-      "correction": "Clarified coefficient matching; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Clarified coefficient matching; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a integrated sine-over-t derivative",
@@ -143,9 +143,9 @@
       "questionId": "ee201-t07-q006",
       "questionMediaId": "8aad97071fc7927e3d8c0e1ea98c5cffe03996868f5246963f4b6a10bc42aa8c",
       "sourceMediaId": "19af7ca8a8b43e113a7eafd5e84fbe92d844bada483251933c4b9f82cb31d9e6",
-      "bodySHA256": "2a4f7b45feced7868569c04a85cea925ac3f26c83b69de759dfecb780ad4acfb",
+      "bodySHA256": "7bc2942ad2cde65f47f57c447465c4a1047c9d8a78975b3b5457af0cd21393dd",
       "reviewStatus": "ai_checked",
-      "correction": "Expanded derivation and verification based on the original question; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Expanded derivation and verification based on the original question; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "graph windows",
@@ -157,9 +157,9 @@
       "questionId": "ee201-t07-q007",
       "questionMediaId": "5e30492111d267e9a4c9632ced85a91df6944cebe4269553f73d4ba485753aa9",
       "sourceMediaId": "6a8a1e59de31aa4cf4ca6881565cf7c05c320ea2c31e4996367a46e168834faa",
-      "bodySHA256": "71bb6b4f018e80771f4df68eb781ecf57dae504a5757a1a29ba9234d9d3c39eb",
+      "bodySHA256": "766bcd3182731190214d8033c67693a152eda390ac85c72465ee492639328151",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -171,9 +171,9 @@
       "questionId": "ee201-t07-q008",
       "questionMediaId": "85216df7ccd2cad908445af18bfd514b02232e351147e237186d571ae3cfc65c",
       "sourceMediaId": "f0fc8a66de81febb95e7355a26c09d2d2edad95a33f7e762f412d5855902baf0",
-      "bodySHA256": "4fa628e33b2e313b5ae482a3d37582337c81e69bb381bff86e05b9239eeb5397",
+      "bodySHA256": "e6f43639893a65048dc13cfaf2e9c46e5342fc19abbeaf020099603b75ea7399",
       "reviewStatus": "ai_checked",
-      "correction": "Expanded derivation and verification based on the original question; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Expanded derivation and verification based on the original question; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "graph windows",
@@ -185,9 +185,9 @@
       "questionId": "ee201-t07-q009",
       "questionMediaId": "367eb02677d100f247ea3924e59860f4882d8d1c2b6869cca2d3ccf620fc05b4",
       "sourceMediaId": "ee4d917191ad31df0075fe00129a3b5c3e4a508160067acf9244aa61893a44cf",
-      "bodySHA256": "e2a48adef2d2a73c71af6703c3a0178be31f7daa862ce20adf03efa31bdeeb39",
+      "bodySHA256": "d8a43c2e7e2f19b4e70be57dc91af3f6841cea578438934c47fa3aa2e3893593",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -199,9 +199,9 @@
       "questionId": "ee201-t07-q010",
       "questionMediaId": "e0dbfc06e4a25402591f2f7d320c797bb7c6927c3b274e6bb4f5916b387f0bbe",
       "sourceMediaId": "3c2c1a061eecbe33ee96ee9b7cb0340920bc17047a35e3aa9560a403f2b49711",
-      "bodySHA256": "d7f151dc948ee4f805f8e2d81fa83254b0c8c8db535e5148a45a7d6b177e7cb7",
+      "bodySHA256": "5d6fff4d8fe1725366538d2b84148a3bbf46fd05d23abe1f0d11fdad63b8a8e4",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "periodic transform",
@@ -217,9 +217,9 @@
       "questionId": "ee201-t07-q011",
       "questionMediaId": "ffd882440161652e2c8da5cfa14b22e404133429289b8b730851a4fdff701615",
       "sourceMediaId": "8ab78bdaf621d88205db22e897af162400804c3a1f8ce216abacd06b0648348b",
-      "bodySHA256": "89070fefa5897f0d0ca64df4b19a0f5abe04059250fc1f446efd05c97c3e4721",
+      "bodySHA256": "a4113caf207c8fce33e98ceffbd338a93276688d071b9b61f213dc9c6c898fe6",
       "reviewStatus": "ai_checked",
-      "correction": "Corrected sign of t exp(-t) cos(t); Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Corrected sign of t exp(-t) cos(t); Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -247,9 +247,9 @@
       "questionId": "ee201-t07-q012",
       "questionMediaId": "7af11b1e6fbf330b4eed0f6f52b0384895aedfa2a57593a6b1ca4c8b6ac9272b",
       "sourceMediaId": "c78a79f4e62f28039dfb2fa91bb70ad5836331800c3070c1da999b02cc7fee4c",
-      "bodySHA256": "63590fbdae85568889aa03769a61df53562cbc49786f8fbe95753891a64df450",
+      "bodySHA256": "d35b3ebf3801d579edbc8d3cd37623c0cd278713b980501030decc4ac2338466",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a ODE",
@@ -273,9 +273,9 @@
       "questionId": "ee201-t07-q013",
       "questionMediaId": "05226616822d39990d2345b278064f3b98084a6c55fae09d7169a41b45a760a6",
       "sourceMediaId": "6a3aab0cda3ae58482887db128714c4931381fea91ae25db3c6abc80feee8ee1",
-      "bodySHA256": "858a42a3e80d83836a502ce90a2702392cb06fceead82392b076718d9fad21ce",
+      "bodySHA256": "3cca384cbe84af8a891056129dd3240e6e5f8cdbe864f3fc973482b28e2b51e1",
       "reviewStatus": "ai_checked",
-      "correction": "Added arbitrary normalization constant; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added arbitrary normalization constant; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "Laguerre n=1 ODE",
@@ -347,9 +347,9 @@
       "questionId": "ee201-t07-q014",
       "questionMediaId": "14c341fd46332051354c04087ee0f1e2d726d9cea2e827316d732d9ce6dee215",
       "sourceMediaId": "853f579905a71f791591401671fff272f5409040d82d6f1f8a6deaefca9d3afc",
-      "bodySHA256": "ff1ad24cfda96689b41f8a28eb118e241317de08cc65ae6f7a76d83d466f3c53",
+      "bodySHA256": "53cd54693597ea2505afe63664d7d61cc3eee7bd09e48f9677c314b6084d5d03",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -361,9 +361,9 @@
       "questionId": "ee201-t07-q015",
       "questionMediaId": "0dfb3288e068b2d367aa2c92724ab376f72f042382e9f0a78dbbd2e7954a384b",
       "sourceMediaId": "4217ddf604c65770bfc33ba6bdd397619c52265d7361f110e7eb2e4301fbad13",
-      "bodySHA256": "3113a73259e2fac08f8bcbca1414d110a5c03609c0070aa6e50bfd5991c5cc4f",
+      "bodySHA256": "f614655a9d37be28a539c811bd3ed7888c8a53300c0659b5199245e5b7b21439",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a delayed transform",
@@ -379,9 +379,9 @@
       "questionId": "ee201-t07-q016",
       "questionMediaId": "4e3cb1a5f871b882786c90560682d1e303d25307fb09a6ac4154df8d86f6729f",
       "sourceMediaId": "e63741e16bc7018dea6a302d5130c114933fde3d608b814a5e8892a1cbce03f2",
-      "bodySHA256": "ec4e9937e0e6f2884f06285c32e5fb8664c2dd1641f6fdc6e49e3796cd70d6cc",
+      "bodySHA256": "e68dc23807e01532168c3e07037f8f72c63e1c9dfa19016da946463aa886b0bb",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "system equation 1",
@@ -409,9 +409,9 @@
       "questionId": "ee201-t07-q017",
       "questionMediaId": "4e17719b57f7c08d25d7ea8274ce88402087be94a9997da13af6fe6c7edf8d49",
       "sourceMediaId": "6423c26630700174395dbd2b824609d777483c82bc0a2739ef79439d70de41b4",
-      "bodySHA256": "57b48877eb31130892f1f7f5d8677624be7fb1dbc254bf49f5edab5b6ae77629",
+      "bodySHA256": "09243ad8ec295f2ad2e56e412de5a052fb2073b4631c2275b9e63ef87019f2b1",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a forward transform",
@@ -427,9 +427,9 @@
       "questionId": "ee201-t07-q018",
       "questionMediaId": "c431fbfbf5e7466ad513b816d1f08ccbdb269ce81e2c06c5eeb7bad9e17a821d",
       "sourceMediaId": "58b0c0e11ae778b1943bf08bcfabe65e512ee673547225d40daf61cb059766a0",
-      "bodySHA256": "b5ee437b687a0ec3d7627f30790486832bfa0deb3d68471cf978693b2e1c594b",
+      "bodySHA256": "efa440ea29937dc0673d2ac484b71a5298470fc5f277bf2e4e958c6f6f2017d0",
       "reviewStatus": "ai_checked",
-      "correction": "Removed incorrect accusation about -7/36; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Removed incorrect accusation about -7/36; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "shift kernel forward transform",
@@ -457,9 +457,9 @@
       "questionId": "ee201-t07-q019",
       "questionMediaId": "ae55598cd5ff84ee41d4000d4956172ed054f1f0da927202af961933cd827057",
       "sourceMediaId": "49854662d514e79092766fdad0282e9dbaa687f9e42c7e5e97d1c353fdc3e107",
-      "bodySHA256": "685b93693af9579f87bc81d08e262e53cfba7293627c09e9abdb0181566824c8",
+      "bodySHA256": "643dc748d71f8b5c5f311f943a8d85e5fffbf6a3e2dc7ca5d43c4f296c454374",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "pulse step response ODE",
@@ -479,9 +479,9 @@
       "questionId": "ee201-t07-q020",
       "questionMediaId": "167b85476498ef695b64d56d3596e96f5ae12136f02358c55a8d651d17c8e236",
       "sourceMediaId": "c18b50eb23639462b61f4d480170383267fabf56034abf6ff2ab643140d9e283",
-      "bodySHA256": "3fb96f048ad37af6669b23c22b8bfc11c6c91740705277ebcda5c71d4b04ad59",
+      "bodySHA256": "bb5303d7a2988f90e1e18e184a6a19020f60421b8fce629896e28778f713b006",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "convolution step response forward transform",
@@ -493,9 +493,9 @@
       "questionId": "ee201-t07-q021",
       "questionMediaId": "39dfd2c55dcde488110a70c12b4ccd167244101dfed879bb60c2b05f75626340",
       "sourceMediaId": "678eec5a0509fc8dffe69c9e918126e7c3bde9dca96cc82fe4c840c6a4ca5ff5",
-      "bodySHA256": "8f90196ef27e23dea4a005213156f18b338af6b80b64187fa145abc9ca66a564",
+      "bodySHA256": "a69d62d0ce83d0e6b4f746233fb6e3cb62bcef98fae52e9f9a9d386d2c6c280c",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "absolute cosine periodic",
@@ -507,9 +507,9 @@
       "questionId": "ee201-t07-q022",
       "questionMediaId": "267fec4b7efac4e81bf5e5f0643f5835516f77af4676f8362aebc86f2e0f6548",
       "sourceMediaId": "dd8bb0d64da64e3ed92911682429cb5b72f1cc6652e76f11e618a4c2a1ad3726",
-      "bodySHA256": "89fa64b50ab1675eb40b9425c749391fcf6e2903eb291a5d0cede7f6fbfbdf69",
+      "bodySHA256": "dd9293d798584a7dfb056b6543f72c77d0af9ce08b8559191dee5fc9d8edd1c5",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -521,9 +521,9 @@
       "questionId": "ee201-t07-q023",
       "questionMediaId": "dab5f049a2415c60c29ece7dda7b444afed671e35d92e638e49db09cbd2600b8",
       "sourceMediaId": "16a8793186d30527ad8828135dcbafcd0bca8873864a6022a317f9b1e38362f0",
-      "bodySHA256": "ebc6ff5c31691021709c343e35fbf6c4c9d61cd9ac3aa0fabfe9606c74a75546",
+      "bodySHA256": "03df14415ee7765e09b85cae99ce3bd47152760683c91de221f36b3b8376353f",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a sine-over-t derivative",
@@ -539,9 +539,9 @@
       "questionId": "ee201-t07-q024",
       "questionMediaId": "c26b24e809147a05b382a4d2f810f4d1286dfa0ae25f5d771d356c3f626f2c44",
       "sourceMediaId": "71de799ea63bf536b5c15ef7d0b417dd50e7b9a025ec43aeeea946c2361cc9e3",
-      "bodySHA256": "02e100739b20b4eda492ef674d5c05f2d26315d42a52fb7e9015adcd6f2fc520",
+      "bodySHA256": "638c20f3a44b4567e69620b3656fbc34abedaa69b900f8c0536de85573a55615",
       "reviewStatus": "ai_checked",
-      "correction": "Added missing homogeneous constant because no IC are specified; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added missing homogeneous constant because no IC are specified; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "forced ramp kernel forward transform",
@@ -565,9 +565,9 @@
       "questionId": "ee201-t07-q025",
       "questionMediaId": "14291df10a83afbd31f297f5749de2329030067a9ccb504477ec30c70ac60076",
       "sourceMediaId": "933996c7d1c31735103332fa161433fcd2253bbf1d7c8256702103bfbfd07eb4",
-      "bodySHA256": "a9b37e541c8e5c1b2a428329856654628014b3f9785ed685627f10bf864d6498",
+      "bodySHA256": "54e5a051bbf2c9c32033867cb6a8851f2c8616fe67ef89e6eb427209d40f7fd1",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a forcing window",
@@ -591,9 +591,9 @@
       "questionId": "ee201-t07-q026",
       "questionMediaId": "686c41230172826efeeea9061e4d32146d03bc5f39607e47f1f32bd566f350de",
       "sourceMediaId": "205f20e5c2c9f33f819544346b00003cb0e084afd164672d3044e8996035ac35",
-      "bodySHA256": "35ca5517e08041992b5846249f5a876b0349ee57d5a12aaddbb4767324fe1978",
+      "bodySHA256": "07d61a161895490d1ed356776c61816ee18ce987051190b1b628234c5e7b34e5",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a forcing window",
@@ -625,9 +625,9 @@
       "questionId": "ee201-t07-q027",
       "questionMediaId": "5c3390f02e38bce4494090faf498c43bfeb1b62a8d867f6895cbb4eab516499e",
       "sourceMediaId": "f24d7fe8e37699b0a52aa13b35b42e57a8e57b966dbdae8839be7e629b61fc00",
-      "bodySHA256": "af2f26c14ba367c151d266122f516df8df960a67854ca3ec702d2a4220135f24",
+      "bodySHA256": "5ff5a5387b51f68aa17a56472fa5cb029d64392b24f835def8805a6790006847",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a log derivative",
@@ -643,9 +643,9 @@
       "questionId": "ee201-t07-q028",
       "questionMediaId": "e3ce50f1a8b33004c439019256d8c46c0744ded1a00a8fb4ef23ad2ba864d5ee",
       "sourceMediaId": "355b8f033d0f5c162697368007bcfa80d7ba0b9255cd353df23f3a4d15177718",
-      "bodySHA256": "784bb479ff487a451b98239c1973c379b3d5142fe1f611bd51551aa31fdee326",
+      "bodySHA256": "40b3280ecd1830c1c1d10dc4f771964cc9c8790768f1bbeea6fd4c0c339bc0c8",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "convolution ODE",
@@ -657,9 +657,9 @@
       "questionId": "ee201-t07-q029",
       "questionMediaId": "6f45fd86b77c91b2cf6c51447629e28e59dea32048e3f839ac22f40faab6016d",
       "sourceMediaId": "ff7a364c003e2505fce6a079d27d055966803ec699c88d2fa008077e42d4bd87",
-      "bodySHA256": "54c9d524dd98a8e894c1a7d9fca2d5bbb7fc3ba4fc992cda1b440e6efd79eeb9",
+      "bodySHA256": "4f1c669ca6796987cfc8b65bfd8ee9db476bf6b1956c394f3402b0840cc19705",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "t multiplication",
@@ -675,9 +675,9 @@
       "questionId": "ee201-t07-q030",
       "questionMediaId": "b0dcc4fff5cd9be7803d40e707dbff231d5827d26d93443914350f8569a0f647",
       "sourceMediaId": "29af3315363eeff675381704e212bfe4270a0d1e02b006109127da8a104d7cff",
-      "bodySHA256": "b3995af44c47cfe493ade3e514a329c8b181c0e42af7158f5b8a75a644c5e98d",
+      "bodySHA256": "651a8432e1bb76abb10d0d115e312b3066ad01dc1b39c207906a29f94d8bd5fd",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -689,9 +689,9 @@
       "questionId": "ee201-t07-q031",
       "questionMediaId": "cba850b95a10a96f7db1fc933460fcdd74640eff0a0aa65997a498c729705fc2",
       "sourceMediaId": "39f35ef2d708ff4a1145aa20e5c0066d91c019fbdd0eab5e93150c410b7933f9",
-      "bodySHA256": "ce0514c4f35cc194afa455023558b79fb5d242d5625f9a6c40c5d156d35707eb",
+      "bodySHA256": "944dba56b13d563bbb4270f771d6549240b000c0a7458ebedf3a798a87afe9f4",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a window transform",
@@ -707,9 +707,9 @@
       "questionId": "ee201-t07-q032",
       "questionMediaId": "dc7c4886f76965dce758b68c2b248750d8cb7f77f9b3418c64300b32ebee26b9",
       "sourceMediaId": "48bcf07c8309dcd238d2e4231c7f0e4eeea9a1b4617973cac7aa0e5f232b8170",
-      "bodySHA256": "5a951a32de91b40868a5ac39a1cab715e1492750e56dbb652b655435d7369f8d",
+      "bodySHA256": "3b2ed9b64719a17bd507f08fd965b12fab55ee826fc70d0823cc48f79c6dce7c",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "integral ODE",
@@ -725,9 +725,9 @@
       "questionId": "ee201-t07-q033",
       "questionMediaId": "6fceff10df1681be228bc97ba848dee9441a7014b69af5c2f1332ce05aae9322",
       "sourceMediaId": "5a7272815fcb8dd1e18134d7e4fdb057cffa2fc2c659dcf19354f738baf8f911",
-      "bodySHA256": "9c8d69c71abb5826233975b77ad1721064abe679a132c0e3eb236c9b05c8db73",
+      "bodySHA256": "3108358c6122a44ed435941722963fec8633cd66fef247b24a88c916b1789d50",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "log derivative",
@@ -743,9 +743,9 @@
       "questionId": "ee201-t07-q034",
       "questionMediaId": "176c889bf4321e454cbbcef5b45e463ddf416278e873a7eee8477bb505503179",
       "sourceMediaId": "c655875c5fec7dbaac47cb7d531fe213a5a6bb471032b1f1064bea16cf54b77c",
-      "bodySHA256": "8dc12668512e08ba61689ec1c63d97e4825030179043ea614c0814af1063061a",
+      "bodySHA256": "04159e74faff2b887159a412e0d954e942bded801563d59eb283fca6ec178e82",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -757,9 +757,9 @@
       "questionId": "ee201-t07-q035",
       "questionMediaId": "3cf9cb4e58fa08d03bf9831e6d0c81800494c663facb9fcd9f0485ec0402fb58",
       "sourceMediaId": "db0b8f0abb110b92b5b33b55ed01f68967020112a51b38a43370b3122b140a34",
-      "bodySHA256": "b3148a22bac532e17e05f9a48e6ebd37dcc96b30492a239773f6357d1c5e3c21",
+      "bodySHA256": "967269c7aca6bee36a6571a2e2d058e5152c76c3db24493faeed5ba004869909",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -771,9 +771,9 @@
       "questionId": "ee201-t07-q036",
       "questionMediaId": "e2ebbabd7e3b3dee3259131a4d60459f1a90b39facf97779c85dc9b2bd5e76b8",
       "sourceMediaId": "f97d4d8935aed7fa8fd28638b0b0460c6b653d16630e22423de9db664ae8c4f2",
-      "bodySHA256": "d78d686bcfb463a63329ffd35a8ed0cf6ed858421bdd82edcfd89407fed5052a",
+      "bodySHA256": "537b7361e32627131f2658bb305f3fa85d1f0e6327a493438bb29be6f9d88d4b",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "shifted response",
@@ -797,9 +797,9 @@
       "questionId": "ee201-t07-q037",
       "questionMediaId": "85aef3be0471f8dc19107c45e98f03068a623e5785da4a2a3db132c8c7ec067a",
       "sourceMediaId": "d994ff25eb95e43b7d9010a24328e04ff379d8154fb730bf69bd8d02ef82d0e3",
-      "bodySHA256": "4c47a0a5e6e2957e7f1429dd01e7d21cfa4bf21a60546117afca16eac8fedba5",
+      "bodySHA256": "50232ccea27dc9a6131edfdf22c7731666b275cf898b21923440481296f076da",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "piecewise input",
@@ -815,9 +815,9 @@
       "questionId": "ee201-t07-q038",
       "questionMediaId": "d693c3cbb287a957b0ea3b34c693e74bf2b3c754ca3a6f2200390cf064a7ab86",
       "sourceMediaId": "b6e3f54caba8605c0d8ccb72e76c4bcb60a32d55e42773732abe2bf125ca4575",
-      "bodySHA256": "d7839392846b8587efcbb73db4d904049006e32fb3b2b3b4c8d18fff80535b75",
+      "bodySHA256": "0c1ee2e632aea4a8fdfdfea4681ff89f247ab7594507c191e01eeb39b8019883",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "solution ODE",
@@ -837,9 +837,9 @@
       "questionId": "ee201-t07-q039",
       "questionMediaId": "e2e6a11feb46e5bed6a11aed8651df61274642cc00cb123940262d94d73c6a4c",
       "sourceMediaId": "d8035ac87e1df12916e8d908967f5efd16cac7a0f0afbbb4ac9ff82ac120c659",
-      "bodySHA256": "fad48e3d5e369a338dd56525edee4a6add75493b0d0169088507aeb480fbc2b7",
+      "bodySHA256": "b61cfdcde2e1576396630420615ea3af9832d3c4aecd0391cc00645b8ea63a2e",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "product to sum",
@@ -859,9 +859,9 @@
       "questionId": "ee201-t07-q040",
       "questionMediaId": "c84ef5a09beb637fcb182dd90133e447040276c751d0bf4a51d0112d8a7a23ac",
       "sourceMediaId": "b4d737ea450849202e50ba890026c703b7bf7faec354252d1db4592d94f994d1",
-      "bodySHA256": "c08bcf1332852c5053146102660749202e22f2da6a3308dc5590fede69399ec8",
+      "bodySHA256": "4392570f33c687090178f5aa52ac70a674118e9acb603723b8c8f814bdc69551",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -873,9 +873,9 @@
       "questionId": "ee201-t07-q041",
       "questionMediaId": "a31cdbf4eddff9643e282132db658ad3b6f4c302604cfa13fb5d40232394ae54",
       "sourceMediaId": "34b6ea3f2ee71eedc5c726bb38b64e32b000321c7c256f773c5712c69eb46da6",
-      "bodySHA256": "d951d0a46ca0ca4b895e5c688ceed595ee04a3621e491f07d6b754ec78a6b89a",
+      "bodySHA256": "e9f47d72e71cf82307de2ffcfd698074884413ceb3310f223c2da67f2a1da0e6",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "first shift",
@@ -891,9 +891,9 @@
       "questionId": "ee201-t07-q042",
       "questionMediaId": "b04cfbf90685ad6b35e64fe256f586a6db4293b87ff7143a3825f19564aa6a5a",
       "sourceMediaId": "de981ceae66c05c9531ce36f1678d9bbea20305e4d465c13e7122f6ca8af6eea",
-      "bodySHA256": "b40821d745a864c7f2babc0adc19f11829f2ae9e326fa2018d5f8ed5245565f9",
+      "bodySHA256": "0607e3c69a1978adf04900cd1f61992f70a81e083719ceff3efa1f03fe4c17f6",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "shifted response",
@@ -917,9 +917,9 @@
       "questionId": "ee201-t07-q043",
       "questionMediaId": "370c08aa332ff6b42ce176752a7dfa7a4cacdb8195294e4cdc6eb359dcff29c7",
       "sourceMediaId": "c121c6a46f017b4b51704085eff1aeb2ce0aeca530440c021c377fe70c8bf4f4",
-      "bodySHA256": "08cd4fd2d2c926ea9dfac51a2e0a31fd36d07a3a53b98bf5db21ed88527d2ecf",
+      "bodySHA256": "c7d31f96f2d34d1c6b7cc39ea83712fc926bdf09585733caf6aaa0dc112ddfd6",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "convolution forward transform",
@@ -931,9 +931,9 @@
       "questionId": "ee201-t07-q044",
       "questionMediaId": "b83567f5d01549705d5eba0b7ef3367c535a6debc512cc363c2868165726a925",
       "sourceMediaId": "87d48d4b86eba13c6932306830f3ebd403ccbd4f797856a22caaf5c58f8340e5",
-      "bodySHA256": "7676427264cec0b4c74d0b80262bb39d63eb48cb4ed8f2b4ed6999d6ed6c1df3",
+      "bodySHA256": "1277e91f2b3f49ba2a31c323dc152c8c69e4fd632e9121a735df86c1126e7a19",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "triple angle simplification",
@@ -949,9 +949,9 @@
       "questionId": "ee201-t07-q045",
       "questionMediaId": "d8307150c245f5106f7b06d7c71f6cac5b20c221d53f9ea87358e2f664e2135e",
       "sourceMediaId": "d5e69d31fe05cda382c6fe7cb56b3f24897884a39c53621f51b350c144a392c0",
-      "bodySHA256": "70b0cccb06a705fe89537a7704623d81be57a41ae29405a4fd62087ea2d10b39",
+      "bodySHA256": "4bc904b033fbda60a99b126bb91b8f1c22fd1059d37b745b6e10f32107cf1c1c",
       "reviewStatus": "ai_checked",
-      "correction": "Stated time-domain assumptions and piecewise form; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Stated time-domain assumptions and piecewise form; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "general switched kernel ODE",
@@ -979,9 +979,9 @@
       "questionId": "ee201-t07-q046",
       "questionMediaId": "7a3a37ea89d6ac7d86ede044f1d0022988e5e08eeca8ab7527139f4129eb5cb2",
       "sourceMediaId": "2076af690b15f4f819a3f414d068b0a2c8bcbe546a7592e58fa0254e405ebacf",
-      "bodySHA256": "0f9df964a3260014567a2bf5453ef69199519891151cf56505bd928b39679d5d",
+      "bodySHA256": "fd1f8b309803b818fe30e65cd0b14b5e4bc9885c2cc588b6fd94a4e40130042a",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "convolution ramp kernel forward transform",
@@ -993,9 +993,9 @@
       "questionId": "ee201-t07-q047",
       "questionMediaId": "387b1138e44124cad7fc7c9500d2a703d58f7b4b7966c5278ec4a230a0664340",
       "sourceMediaId": "977b45e8093fe8b42c7be111758736f21bcff6ee72d8a2f297f4104e9ba74360",
-      "bodySHA256": "03ed75b3f0499450d2816bc626032bd50371c6270b629f64ea4644824451ffec",
+      "bodySHA256": "3ffb63e2e560e96b35f18db44d68e53b868d86ca70ccf5bbab21228c2f2fa459",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "step kernel ODE",
@@ -1027,9 +1027,9 @@
       "questionId": "ee201-t07-q048",
       "questionMediaId": "7c0389985a3a3ffd648baed0646e79db513bf43e5cc33df84fa8dfec6ba4e4f2",
       "sourceMediaId": "cbb9372d42a0879cea6c6e0139926434e6ebe821aca8929f93318e90fdff9df0",
-      "bodySHA256": "8d453a24d63bb95d68d44fd6d33af4693f6c51e84414d2b299309798973fe8ac",
+      "bodySHA256": "d85f77f104da75d6bfdfae6be3854668c5c79d7740930d61cf1850080b8c520b",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a forcing window",
@@ -1057,9 +1057,9 @@
       "questionId": "ee201-t07-q049",
       "questionMediaId": "8f06196d408bd99a1b03e887b9c89c1ae33d035fe0eb2083ab3d91078ec6888a",
       "sourceMediaId": "8b74b128832fb2e7fa18fbb6aa3a0fdb0ca9c7951765464395241b425032e7db",
-      "bodySHA256": "cda8e7af964f3b37511ff9af03075c31422f6330ef42ff66bb919896ecab7136",
+      "bodySHA256": "12e27f5b00155b3ece8b4be7385d0ce84b8bfd9258d20789b964c6960164df57",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "convolution ramp kernel forward transform",
@@ -1075,9 +1075,9 @@
       "questionId": "ee201-t07-q050",
       "questionMediaId": "d6f2ef664ad29a8958b2d64b5acb47a1957a678ff74656c34303674ebc333475",
       "sourceMediaId": "ed167cd33879bde87b95bdcd085c85d9733864b35ac7c52be71e2bfaa67c29c0",
-      "bodySHA256": "ff0421ba7e0cd6c4520606c48a7a972eb48f4c2f5256c9842fef5e999cff4a36",
+      "bodySHA256": "d427d185b4be11edd768d9ffd23f9b6a19c41ec053e7568e9ba277a3f88da044",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "convolution expansion",
@@ -1105,9 +1105,9 @@
       "questionId": "ee201-t07-q051",
       "questionMediaId": "422a4be17a753978e96dbb718f20bcfb0249d4b3608965df8fd82fd7b8fc78ea",
       "sourceMediaId": "12c7d657a8a0db16520786ffec446684d31e7e89173ad4df9158e9d515bf5348",
-      "bodySHA256": "827bcd67d2bb92deccc14e0ec78a72136d600b46b6dc500ecfc1457c32e76fae",
+      "bodySHA256": "3417f97fbab6548fa857320e6ea011e334f45b293d4146a438aa350db9b96006",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "homogeneous ODE",
@@ -1135,9 +1135,9 @@
       "questionId": "ee201-t07-q052",
       "questionMediaId": "aed1266f29715325c20a6bb005d64df60743d097b686972e49d5cecc32ae7c1a",
       "sourceMediaId": "bcf5e8c538cc64e407477807739648ae81db269113bea4f6dbe1e3407f4cbd5c",
-      "bodySHA256": "8eb7d9c14f7e8303186fac03b798b38fc18b48a4612801dd9f082bb5940e432d",
+      "bodySHA256": "3b580dcebea052a208165b890308cfa83f060bb5a4dd794a7f356a375b9caa0d",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "part a=1 forward transform",
@@ -1153,9 +1153,9 @@
       "questionId": "ee201-t07-q053",
       "questionMediaId": "d4ce604da9f2e85eb7963ed313409a90b536c4e04bac9955b85954251087ff81",
       "sourceMediaId": "c85ebb4aaba56886fb974b5e91f720cbec6fca97086f77fd8f38f2a7c7a4b2f8",
-      "bodySHA256": "1628ba84234ae37788d57d8abc09eff958cc128c6ff793a5fabc7fa046ca31b5",
+      "bodySHA256": "c8917e43acc303961553c3f8d0814549a138c464713b707e2c32badc5d79d5cc",
       "reviewStatus": "ai_checked",
-      "correction": "Added requested explicit piecewise answers; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added requested explicit piecewise answers; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "part 1 resonance ODE",
@@ -1211,9 +1211,9 @@
       "questionId": "ee201-t07-q054",
       "questionMediaId": "756577428ed2dcd77ba4ae5953f6ac957124ede1068c59083e5861c967495ce9",
       "sourceMediaId": "bc2ed61345a92dce75b376392df5a3151acce64aaabef7320094d9ba9a3e9086",
-      "bodySHA256": "859f703f8cf6ba993cb9881516b29e0c28c5e0d1682563c256faedb7260a1a89",
+      "bodySHA256": "77262432dcadeb58f5bb5df62eb026320ec5165419c82c703896a9f77771dfbf",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "shift polynomial",
@@ -1229,9 +1229,9 @@
       "questionId": "ee201-t07-q055",
       "questionMediaId": "948a2aa4e2dd06f4645d7e856f5af31ae0c3acde4e869fce2b2fbc75da6ce4df",
       "sourceMediaId": "ac56d61567bc73720dc5c22d4c6e0f62395f775aba5f2aaac6e8021f4b10c4aa",
-      "bodySHA256": "f5a1e629fc33ad8cdc57ce602e9cfae69b014b86ae509ec8cf73787dcf4f5421",
+      "bodySHA256": "2d9b37aa217844619951a2272b10306dad60147b81f03d8155d33216e3c26500",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "system first",
@@ -1255,9 +1255,9 @@
       "questionId": "ee201-t07-q056",
       "questionMediaId": "caf356afc4ee2112d81dd59d09f916b7e53ec496e0779e0cb9796b2f21564327",
       "sourceMediaId": "b609630dd94b242090964964462773021304a8b09ee872741f770bf46e9e0599",
-      "bodySHA256": "2d35ccb6156e9f52831160a9bfe11ba2c0626be944e96fd00c85d8c3e961723a",
+      "bodySHA256": "a2204a70fcadef9e12dd93f4899d33f37d9bc25ce5ecbdcdde8fbf854196ef90",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "triangle a=1 m=2",
@@ -1281,9 +1281,9 @@
       "questionId": "ee201-t07-q057",
       "questionMediaId": "2bca7544367c99589786f5d710d18079dccdc6f3cd327f853ad1894326513945",
       "sourceMediaId": "0e932e80ae02526bc2bd8f5caf3b34bcf9030a9fd1eff302d75a28ac05859392",
-      "bodySHA256": "10497417dae64410a7bb470484eedad7f43caea15eff800009a846505455742b",
+      "bodySHA256": "38e0d6b9c31375317e91772d42720423c01c67237d621b78ec6f4892f1427679",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "omega 2 ODE",
@@ -1315,9 +1315,9 @@
       "questionId": "ee201-t07-q058",
       "questionMediaId": "a177b5dc7fe0c5c1ea14d0a9ecd9aeb31113412ee7ca9dd1b80af6b52321199f",
       "sourceMediaId": "50954e05772a95c59bf95256d7563685b24407fe51355b110bc37817d3cf5985",
-      "bodySHA256": "d18558d724865c2a0104b99ef13fe54a40387ad1a596c1dcddfcd8965054880b",
+      "bodySHA256": "3b7593e877ef9e056125390df7309f2b0eeb2ebf08709d4b5e0732529ca66dc9",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "response kernel",
@@ -1349,9 +1349,9 @@
       "questionId": "ee201-t07-q059",
       "questionMediaId": "f508a075c9208bafd607c5749573659ed5841bc5ac80787feef61568a0c690c6",
       "sourceMediaId": "eaa0602bf2759cd0d23f4c19a3276b74c9bff91f35665baa4c55653a795b1d74",
-      "bodySHA256": "db486dc22de0f9a0242e56e1a4569f3a11e70df3bea0bc4aee92232751d7ee02",
+      "bodySHA256": "647befaf2b605220066ae402b2eb1eab8256ad6863e1a7aa39c5a4cd5bf28766",
       "reviewStatus": "ai_checked",
-      "correction": "Corrected inherited 2003 sign error; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Corrected inherited 2003 sign error; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "near-zero derivative 0",
@@ -1379,9 +1379,9 @@
       "questionId": "ee201-t07-q060",
       "questionMediaId": "cbc70c7650d10794002cb2bd36cdf994f7c2f0bcd043d35be5b7f7ccfff2cde7",
       "sourceMediaId": "982e430a4df7fdfda95d1f83b27c8b7c4749e2bacc23802e30a573d213f8badf",
-      "bodySHA256": "b84b20fa6fa4e396a6db21a58544f4cf6d6c3cf2c326618ff87e809202447c81",
+      "bodySHA256": "342a9e134151c636607bc8b065160ba997d4c182e87f8c335ec1313715984e3f",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "triangle a=1 m=3",
@@ -1413,9 +1413,9 @@
       "questionId": "ee201-t07-q061",
       "questionMediaId": "78a89c2efb668c1f6a8bf1f61c45ff3f95043c1f9649de173142adf20f81f7b2",
       "sourceMediaId": "206abf2c578d1631440dfc86b235ae909511bfe6a62d3ba5dbabbac91d6540f4",
-      "bodySHA256": "45cc8a15d7ff222816c494116b51be27834dd9b2bb7567009ca63293f9821e46",
+      "bodySHA256": "83b3ca58a8db6cb9b3095e15ec0bd4d4d39f8d9e39e77a67b1bdc3fae59b70ee",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "omega 2 ODE",
@@ -1459,9 +1459,9 @@
       "questionId": "ee201-t07-q062",
       "questionMediaId": "0d090381506ce79ed5d35f4cfb90577b7a33465b42862c111916666062d88b9d",
       "sourceMediaId": "d12f5063fca6c9e208ef1b6621f9dc198f888815bd7a55010c0966159bf9dda2",
-      "bodySHA256": "faca1f25ac776653c2c8b3727027f16c36ab22e16122799c32cdbe3cc7a8b84f",
+      "bodySHA256": "6938be4f1de5fd1948385e87e8bec2c1fd49c71697cfd14e0ef9fcd6a2f239d2",
       "reviewStatus": "ai_checked",
-      "correction": "Corrected inherited 2003 sign error; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Corrected inherited 2003 sign error; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "near-zero derivative 0",
@@ -1489,9 +1489,9 @@
       "questionId": "ee201-t07-q063",
       "questionMediaId": "b1e93100a87a7b94e3e1db3a30d27659e41eaff622518f08dcf76062ce3bb294",
       "sourceMediaId": "39f46403b346032b0a88c4f91c5fbf15f2c27f6e50ecebef77ac17b9ab54d906",
-      "bodySHA256": "89dfdef9319365d2eceac4bbbb00513e5a71e451f00baefa4a423ba595a0d341",
+      "bodySHA256": "959e0b2726c5f304aeb54e88e79e1ef5bc3b3766a1404cd1581945e903ff0c67",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "initial a=2 ODE",
@@ -1571,9 +1571,9 @@
       "questionId": "ee201-t07-q064",
       "questionMediaId": "a042128fa19a63d5b0d289547c54c45440f25d557bffc1a696b3df54aa5d0c42",
       "sourceMediaId": "0030125db2cbec4ed20778399d88179a3aa7bb1cff0394799615b47d809fe735",
-      "bodySHA256": "69512eaa2d315ff67ae494a53610cf6eefbbf1976982a4ad498abf36ca7a1ee9",
+      "bodySHA256": "53853705652b45dd0da51ccb0874b8db1c2b99db5b5cebadb39445923fc207d6",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "part 1 product to sum",
@@ -1597,9 +1597,9 @@
       "questionId": "ee201-t07-q065",
       "questionMediaId": "dd4e742f7c232bab6420703c15bfc5c7897f93f8c5e6fa0c015fe2e1d6feb43e",
       "sourceMediaId": "b98e76c332c54898d92f94c4b4fe66d20d8bd667177a67a642cb2e8491b92942",
-      "bodySHA256": "00ec8c8cda88a0d17b156afd6fe5b34916196b0e52ecc7dd36d731abacd387a0",
+      "bodySHA256": "f083da1fff1af82465254823bdde52efbca304afef7ebce2c44c76de6bf46f96",
       "reviewStatus": "needs_clarification",
-      "correction": "Flagged inconsistent original IC; conditional solutions clearly separated; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Flagged inconsistent original IC; conditional solutions clearly separated; Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a initial-data contradiction",
@@ -1655,9 +1655,9 @@
       "questionId": "ee201-t07-q066",
       "questionMediaId": "8fcaacdab34feeec7f67ddb6b5cc0ea885be71b25b9e856fe626abf8d07eebbc",
       "sourceMediaId": "6ee1317980e95a70a3aa1c565df911a1cf46d44d222ee7acd51ae3464b2e5cee",
-      "bodySHA256": "33733d6dc54f6e2ca00d4fe4e6f027784a18a9e28063ef287f24226ec482fbad",
+      "bodySHA256": "01f7b43be0f594e5d74d05ae0614803f08d739b8d49cb26deea51369e6e3283e",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "initial ODE",
@@ -1689,9 +1689,9 @@
       "questionId": "ee201-t07-q067",
       "questionMediaId": "8a0fbfdff86780e52fb6b0217a7fc40f080d5855671c3f60559719dded77cfad",
       "sourceMediaId": "dc00fc18c66d01156b0892220835442d5bf5442d4b44f2ea117e86afef3d82d8",
-      "bodySHA256": "52b4958ba4bbd2c0fbce4f5c5c0275d44a25121c0ef4b827d26def3c409fc1ea",
+      "bodySHA256": "ab68d1574475b5f0a09143c2d3a675e99cdf4bcd328868d98043f37ab2d470af",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "inverse forward transform",
@@ -1703,9 +1703,9 @@
       "questionId": "ee201-t07-q068",
       "questionMediaId": "a0e6d39c3b884241ac53633da846320b3c8935829bf6b0885060b104a68088e2",
       "sourceMediaId": "e0465f476d74e4c69a0236007e76019b1c04322b4e98604ecbbc69e2715c64eb",
-      "bodySHA256": "b1588ea5f5c176beb139c41e48292fccb23b7552e61319243e04e2c0f1173092",
+      "bodySHA256": "a28e8ec9dd952d80e1854b6f07e8cf15c59e458449d0bb2d3cfa3a5a24c059d6",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a time-shift sign",
@@ -1745,9 +1745,9 @@
       "questionId": "ee201-t07-q069",
       "questionMediaId": "e12e7d69daa34924777c78011beaddfe196c25aeca9389cea9b48bbb84a1a393",
       "sourceMediaId": "642b1bbc276c27481002f32e7763285bd631a4ab9b1598e0292fc36496ec7cfc",
-      "bodySHA256": "0c592f0344fe8d2d1388e15d8e6625527ae3e257776aea47853466fa8fff00a9",
+      "bodySHA256": "14ac6523f883880748b2375bbd55be2faceb27d34cda2187cc9ecdf8e4765d65",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "a=2 initial ODE",
@@ -1851,9 +1851,9 @@
       "questionId": "ee201-t07-q070",
       "questionMediaId": "85f05348ba4f8192868102f8328e33f3eb770c754f83ec1d34cf8715e6f71b47",
       "sourceMediaId": "f7460e9a988120222ed23a4bb3e22a21abedb9deab147cceea8545672e75fb3a",
-      "bodySHA256": "139a4133b5a3088a5c66dd693e0c88e89ab083daba92f3c6148411dc8ab09ff0",
+      "bodySHA256": "4e86a147cf1af07b673da9f8bb0e4e7a6736b6fb5183c916eac58e3e401045ce",
       "reviewStatus": "ai_checked",
-      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes",
+      "correction": "Added derivation and intermediate steps; Organized into analysis, core idea, steps, final answer, and notes; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "parameter 1 forward transform",
@@ -1877,9 +1877,9 @@
       "questionId": "ee201-t07-q071",
       "questionMediaId": "753b98e0d7f0cf0362feb7a6b551f2eacf62231b01b345a4e53469fea971dd64",
       "sourceMediaId": "7e2fa2b78a36610752c97541aad5dd86aa40abf25f071c3ef3dfb3508ab7463d",
-      "bodySHA256": "338eec0d48ceb049d312e016dd90a41b3170ffcc3ab348733e89cf6c19a4caf4",
+      "bodySHA256": "1d22342044c445ccde1d0c69dd7f9dcdba488fd84b5057fee7b29e744bf5c137",
       "reviewStatus": "ai_checked",
-      "correction": "Corrected placement of x/2 multiplying cosine in every final interval; Added derivation and intermediate steps; Reorganized question 71(a) into the requested worked-solution format",
+      "correction": "Corrected placement of x/2 multiplying cosine in every final interval; Added derivation and intermediate steps; Reorganized question 71(a) into the requested worked-solution format; Added explanations of transform rules and separated calculation paragraphs; Added problem-specific intermediate equations and term-by-term inverses",
       "checks": [
         {
           "check": "omega 2 initial ODE",
