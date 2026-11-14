@@ -58,6 +58,11 @@ const ProgressPage = lazy(() =>
     default: m.ProgressPage,
   })),
 );
+const LaplacePage = lazy(() =>
+  import("./features/laplace/LaplacePage").then((m) => ({
+    default: m.LaplacePage,
+  })),
+);
 function App() {
   const saved = useStudy();
   const location = useLocation();
@@ -131,6 +136,7 @@ function App() {
                 }
               />
               <Route path="/formulas" element={<FormulaPage />} />
+              <Route path="/tools/laplace" element={<LaplacePage />} />
               <Route
                 path="/progress"
                 element={<ProgressPage catalog={catalog.data} />}
