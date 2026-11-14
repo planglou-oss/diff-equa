@@ -59,3 +59,39 @@ test("invalid expressions and noncausal advances produce actionable errors", () 
   for (const input of ["sin(", "t+unknown(t)", "t^"]) assert.throws(() => computeLaplace(input));
   assert.throws(() => computeInverseLaplace("e^(2*s)/s"), /เลื่อนเวลา/);
 });
+
+
+test("absolute sine uses an exact periodic transform, including shorthand and frequency shifts", () => {
+  const periodicReference = (s, b) => {
+    const T = Math.PI / b, panels = 2000, h = T / panels;
+    let integral = 0;
+    for (let i = 0; i <= panels; i++) {
+      const t = i*h, weight = i === 0 || i === panels ? 1 : i % 2 ? 4 : 2;
+      integral += weight * Math.exp(-s*t) * Math.sin(b*t);
+    }
+    return integral*h/3 / (-Math.expm1(-s*T));
+  };
+  for (const input of ["abs(sint)", "abs(sin t)", "abs(sin(t))", "|sin(t)|"]) {
+    const r = computeLaplace(input);
+    assert.equal(r.isNumericFallback, false, input);
+    const ast = parseExpression(r.plainFs, "s");
+    for (const s of [.4, 1, 3]) near(evalAt(ast, s), periodicReference(s, 1), 1e-9);
+    assert.equal(r.steps.length, 4);
+    assert.match(r.rocText, /Re\(s\) > 0/);
+  }
+  for (const [input, frequency, shift, scale] of [
+    ["abs(sin(2*t))", 2, 0, 1],
+    ["-3*abs(sin(-2*t))", 2, 0, -3],
+    ["e^(-3*t)*abs(sin(2*t))", 2, -3, 1],
+    ["2*e^(t)*abs(sin(t))", 1, 1, 2],
+    ["abs(sin(t+pi))", 1, 0, 1],
+  ]) {
+    const r = computeLaplace(input);
+    assert.equal(r.isNumericFallback, false, input);
+    const ast = parseExpression(r.plainFs, "s");
+    for (const s of [1.5, 3, 5]) near(evalAt(ast, s), scale*periodicReference(s-shift, frequency), 1e-9);
+  }
+  assert.equal(calculatorExpression("a b s (sin t)"), "abs(sin t)");
+  assert.equal(computeLaplace(calculatorExpression("a b s (sin t)")).isNumericFallback, false);
+  assert.throws(() => computeLaplace("abs(sin t^2)"), /วงเล็บ/);
+});

@@ -25,6 +25,7 @@ const examples = {
       latex: "\\left|t-3\\right|",
       expression: "abs(t-3)",
     },
+    { label: "ค่าสัมบูรณ์ไซน์", latex: "\\left|\\sin(t)\\right|", expression: "abs(sin(t))" },
     { label: "เชิงตัวเลข", latex: "\\tanh(t)", expression: "tanh(t)" },
   ],
   inverse: [

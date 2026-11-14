@@ -322,6 +322,15 @@ function tokenize(raw, varName = 't') {
         rawTokens.push({ type: 'func', value: FUNC_ALIASES[lower] });
         continue;
       }
+      // Common single-variable shorthand, e.g. sint and cost.
+      const shorthand = lower.match(/^(sin|cos|tan|sinh|cosh|tanh)([ts])$/);
+      if (shorthand && shorthand[2] === varName) {
+        rawTokens.push({ type: 'func', value: FUNC_ALIASES[shorthand[1]] });
+        rawTokens.push({ type: 'lparen', value: '(' });
+        rawTokens.push({ type: 'var', value: varName });
+        rawTokens.push({ type: 'rparen', value: ')' });
+        continue;
+      }
       // Handle shorthand like tsin(2t), se^(-2s), ss, tt
       if (lower.length > 1 && lower[0] === varName) {
         const rest = lower.slice(1);
@@ -516,6 +525,12 @@ function parseExpression(raw, varName = 't') {
     }
     if (tok.type === 'func') {
       const fnName = consume().value;
+      // MathLive serializes a bare sine argument as 'sin t'.
+      if (['sin', 'cos', 'tan', 'sinh', 'cosh', 'tanh'].includes(fnName) && peek()?.type === 'var') {
+        consume();
+        if (peek()?.type === 'op' && peek().value === '^') throw new Error('กรุณาใส่วงเล็บอาร์กิวเมนต์ เช่น sin(t^2) หรือ (sin(t))^2');
+        return { type: 'call', fn: fnName, arg: { type: 'var' } };
+      }
       if (!peek() || peek().type !== 'lparen') {
         throw new Error('ฟังก์ชัน "' + fnName + '" ต้องตามด้วยวงเล็บ เช่น ' + fnName + '(t)');
       }
@@ -1915,6 +1930,31 @@ function tryTransformSpecialAstTerm(termNode) {
     return { finalSign, tx, pl };
   }
 
+  // |sin(b*t)| has period pi/|b|. Integrate one positive half-wave
+  // and sum its exponentially weighted repetitions.
+  if (core.type === 'call' && core.fn === 'abs' && core.arg.type === 'call' && core.arg.fn === 'sin') {
+    const lin = tryLinearT(core.arg.arg);
+    if (lin && Math.abs(lin.a) > EPS && Math.abs(Math.sin(lin.b)) < EPS) {
+      const b = Math.abs(lin.a);
+      const bTex = formatNumberTex(b), bPlain = formatNumberPlain(b);
+      const period = Math.abs(b - 1) < EPS ? '\\pi' : '\\frac{\\pi}{' + bTex + '}';
+      const angle = Math.abs(b - 1) < EPS ? 't' : bTex + 't';
+      const qTex = svBare.tex;
+      const tex = '\\frac{' + bTex + '}{' + svParen.tex + '^{2}+' + formatNumberTex(b*b) + '}\\coth\\left(\\frac{\\pi\\left(' + qTex + '\\right)}{' + formatNumberTex(2*b) + '}\\right)';
+      const plain = bPlain + '/(' + svParen.plain + '^2+' + formatNumberPlain(b*b) + ')*coth(pi*(' + svBare.plain + ')/(' + formatNumberPlain(2*b) + '))';
+      const scaled = wrapScale(tex, plain);
+      return {
+        sign: scaled.finalSign, texAbs: scaled.tx, plainAbs: scaled.pl, roc: shift, termTimeTex,
+        ruleName: 'จัดรูปผลแปลงค่าสัมบูรณ์ไซน์ด้วยสูตรฟังก์ชันคาบ' + sShiftSuffix,
+        steps: [
+          { ruleName: 'หาคาบของค่าสัมบูรณ์ไซน์', stepTex: 'g(t)=|\\sin(' + angle + ')|,\\quad T=' + period + ',\\quad q=' + qTex },
+          { ruleName: 'ใช้สูตร Laplace ของฟังก์ชันคาบ โดย g(t) = sin(bt) ในครึ่งคลื่นแรก', stepTex: 'G(q)=\\frac{\\int_0^{T}e^{-qt}\\sin(' + angle + ')\\,dt}{1-e^{-qT}}' },
+          { ruleName: 'แทนขอบเขตอินทิกรัลหนึ่งคาบ', stepTex: '\\int_0^{T}e^{-qt}\\sin(' + angle + ')\\,dt=\\frac{' + bTex + '(1+e^{-qT})}{q^2+' + formatNumberTex(b*b) + '}' }
+        ]
+      };
+    }
+  }
+
   // 1. ln(a*t) or log(a*t)
   if (core.type === 'call' && (core.fn === 'ln' || core.fn === 'log')) {
     const lin = tryLinearT(core.arg);
@@ -2465,6 +2505,7 @@ function computeLaplace(rawInput) {
       transformed.push(spec);
       overallRoc = Math.max(overallRoc, spec.roc);
       const signedResTex = (spec.sign < 0 ? '-' : '') + spec.texAbs;
+      if (spec.steps) steps.push(...spec.steps);
       steps.push({
         ruleName: spec.ruleName,
         stepTex: '\\mathcal{L}\\left\\{' + spec.termTimeTex + '\\right\\} = ' + signedResTex
