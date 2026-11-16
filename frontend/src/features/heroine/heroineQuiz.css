@@ -1,0 +1,180 @@
+.heroine-dialog {
+  width: min(440px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: 1px solid #edcfaa;
+  border-radius: 22px;
+  background: #fffdf8;
+  color: #3a2a22;
+  box-shadow: 0 24px 90px #57351345;
+  overflow: auto;
+}
+.heroine-dialog::backdrop {
+  background: #46301c70;
+  backdrop-filter: blur(4px);
+}
+.heroine-dialog-accent {
+  height: 7px;
+  background: linear-gradient(90deg, #f5a348 0%, #e47b28 64%, #91b952 64%);
+}
+.heroine-dialog-body {
+  padding: 30px;
+}
+.heroine-eyebrow {
+  color: #ae682c;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+.heroine-dialog h2 {
+  font-size: 30px;
+  margin: 10px 0 24px;
+  color: #3a2a22;
+  border: 0;
+  padding: 0;
+}
+.heroine-choices {
+  border: 0;
+  padding: 0;
+  margin: 0 0 22px;
+  display: grid;
+  gap: 9px;
+}
+.heroine-choices label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 15px;
+  border: 1px solid #eadbc5;
+  border-radius: 11px;
+  background: #fffaf2;
+  cursor: pointer;
+  font-size: 17px;
+}
+.heroine-choices label:hover {
+  background: #fff1dc;
+  border-color: #d4a16a;
+}
+.heroine-choices label.selected {
+  background: #f0f6e7;
+  border-color: #8fab57;
+  box-shadow: 0 0 0 1px #8fab57;
+}
+.heroine-choices label:focus-within {
+  outline: 3px solid #bd7c3d;
+  outline-offset: 3px;
+}
+.heroine-choices input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+}
+.heroine-option-number {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border: 1px solid #e6d4bb;
+  border-radius: 8px;
+  color: #96724d;
+  background: white;
+  font-size: 13px;
+}
+.selected .heroine-option-number {
+  border-color: #abc383;
+  background: #e6efda;
+  color: #506b2e;
+}
+.heroine-submit {
+  display: block;
+  width: 100%;
+  border: 1px solid #c56a20;
+  border-radius: 10px;
+  background: #d87929;
+  color: white;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 650;
+}
+.heroine-submit:hover {
+  background: #c56a20;
+}
+.heroine-submit:disabled {
+  opacity: 0.45;
+}
+.heroine-wrong p {
+  margin: 15px 0 30px;
+  padding: 20px;
+  border: 1px solid #efccba;
+  border-radius: 12px;
+  background: #fff0e8;
+  color: #a84f2c;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 650;
+}
+.heroine-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.heroine-beta {
+  max-width: 660px;
+  margin: 55px auto;
+  padding: 0 22px;
+  color: var(--tx);
+}
+.heroine-beta > h2 {
+  margin: 10px 0;
+  font-size: 32px;
+}
+.heroine-beta > p {
+  color: var(--mu);
+  line-height: 1.9;
+}
+.heroine-beta-card {
+  border: 1px solid var(--bd);
+  border-radius: 18px;
+  background: var(--card);
+  padding: 30px;
+  margin: 25px 0;
+}
+.heroine-beta-time {
+  color: #749347;
+  font-size: 36px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 3px;
+}
+.heroine-beta-card h3 {
+  font-size: 24px;
+  margin: 15px 0;
+}
+.heroine-beta-card p {
+  color: var(--mu);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+.heroine-beta > a {
+  color: #ac651f;
+  font-size: 13px;
+}
+@media (max-width: 500px) {
+  .heroine-dialog-body {
+    padding: 24px;
+  }
+  .heroine-dialog h2 {
+    font-size: 27px;
+  }
+  .heroine-choices label {
+    padding: 11px 14px;
+  }
+}

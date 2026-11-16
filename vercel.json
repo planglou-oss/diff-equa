@@ -11,7 +11,8 @@
     { "source": "/practice", "destination": "/index.html" },
     { "source": "/formulas", "destination": "/index.html" },
     { "source": "/progress", "destination": "/index.html" },
-    { "source": "/tools/laplace", "destination": "/index.html" }
+    { "source": "/tools/laplace", "destination": "/index.html" },
+    { "source": "/beta/heroine", "destination": "/index.html" }
   ],
   "headers": [
     {

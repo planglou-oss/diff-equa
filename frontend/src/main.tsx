@@ -26,6 +26,10 @@ import { ResumeBanner, StudyRuntime } from "./features/study/StudyTools";
 import { study, useStudy } from "./features/study/store";
 import "katex/dist/katex.min.css";
 import "./styles.css";
+import {
+  HeroineReminder,
+  HeroineQuizBeta,
+} from "./features/heroine/HeroineQuiz";
 
 const client = new QueryClient({
   defaultOptions: {
@@ -90,6 +94,7 @@ function App() {
     <>
       <Header catalog={catalog.data} />
       <StudyRuntime />
+      {location.pathname !== "/beta/heroine" && <HeroineReminder />}
       {location.pathname !== "/practice" && <ResumeBanner />}
       {catalog.isPending ? (
         <div className="empty" role="status">
@@ -136,6 +141,7 @@ function App() {
                 }
               />
               <Route path="/formulas" element={<FormulaPage />} />
+              <Route path="/beta/heroine" element={<HeroineQuizBeta />} />
               <Route path="/tools/laplace" element={<LaplacePage />} />
               <Route
                 path="/progress"

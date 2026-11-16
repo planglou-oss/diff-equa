@@ -1,0 +1,212 @@
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import "./heroineQuiz.css";
+
+const INTERVAL_MS = 2 * 60 * 60 * 1000;
+const choices = ["ichika", "nino", "miku", "yotsuba", "itsuki"] as const;
+
+function HeroineDialog({
+  onAnswer,
+  onDismiss,
+}: {
+  onAnswer: (correct: boolean) => void;
+  onDismiss: () => void;
+}) {
+  const dialog = useRef<HTMLDialogElement>(null);
+  const [selected, setSelected] = useState("");
+  const [wrong, setWrong] = useState(false);
+  useEffect(() => {
+    const node = dialog.current;
+    if (node && !node.open) node.showModal();
+    return () => {
+      if (node?.open) node.close();
+    };
+  }, []);
+  return (
+    <dialog
+      ref={dialog}
+      className="heroine-dialog"
+      aria-labelledby="heroine-title"
+      onCancel={(e) => {
+        e.preventDefault();
+        onDismiss();
+      }}
+    >
+      <div className="heroine-dialog-accent" />
+      <div className="heroine-dialog-body">
+        <span className="heroine-eyebrow">พักตอบสักข้อ</span>
+        <h2 id="heroine-title">ใครคือนางเอก</h2>
+        {wrong ? (
+          <div className="heroine-wrong">
+            <p role="alert">คุณเป็น gay</p>
+            <button
+              type="button"
+              className="heroine-submit"
+              autoFocus
+              onClick={onDismiss}
+            >
+              ปิด
+            </button>
+          </div>
+        ) : (
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (!selected) return;
+              const correct = selected === "yotsuba";
+              if (!correct) setWrong(true);
+              onAnswer(correct);
+            }}
+          >
+            <fieldset className="heroine-choices">
+              <legend className="heroine-sr-only">เลือกคำตอบหนึ่งข้อ</legend>
+              {choices.map((choice, i) => (
+                <label
+                  key={choice}
+                  className={selected === choice ? "selected" : ""}
+                >
+                  <input
+                    type="radio"
+                    name="heroine"
+                    value={choice}
+                    checked={selected === choice}
+                    onChange={() => setSelected(choice)}
+                    required
+                  />
+                  <span className="heroine-option-number">{i + 1}</span>
+                  <span>{choice}</span>
+                </label>
+              ))}
+            </fieldset>
+            <button
+              type="submit"
+              className="heroine-submit"
+              disabled={!selected}
+            >
+              ตอบ
+            </button>
+          </form>
+        )}
+      </div>
+    </dialog>
+  );
+}
+
+export function HeroineReminder() {
+  const [open, setOpen] = useState(false);
+  const progress = useRef(0);
+  const openRef = useRef(false);
+  const resetRef = useRef(() => {});
+  useEffect(() => {
+    const active = () =>
+      document.visibilityState === "visible" &&
+      document.hasFocus() &&
+      !openRef.current;
+    let previousTime = performance.now();
+    let running = active();
+    const tick = () => {
+      const now = performance.now();
+      // A suspended browser or a sleeping computer must not add the entire gap.
+      const delta = running
+        ? Math.min(5000, Math.max(0, now - previousTime))
+        : 0;
+      previousTime = now;
+      progress.current = Math.min(INTERVAL_MS, progress.current + delta);
+      running = active();
+      if (progress.current >= INTERVAL_MS && running) {
+        openRef.current = true;
+        running = false;
+        setOpen(true);
+      }
+    };
+    const onActivityChange = () => tick();
+    const onPageHide = () => {
+      progress.current = 0;
+      openRef.current = false;
+      running = false;
+      previousTime = performance.now();
+      setOpen(false);
+    };
+    const onPageShow = () => {
+      previousTime = performance.now();
+      running = active();
+    };
+    resetRef.current = () => {
+      progress.current = 0;
+      openRef.current = false;
+      previousTime = performance.now();
+      running = active();
+      setOpen(false);
+    };
+    tick();
+    const timer = setInterval(tick, 1000);
+    window.addEventListener("focus", onActivityChange);
+    window.addEventListener("blur", onActivityChange);
+    window.addEventListener("pagehide", onPageHide);
+    window.addEventListener("pageshow", onPageShow);
+    document.addEventListener("visibilitychange", onActivityChange);
+    return () => {
+      tick();
+      clearInterval(timer);
+      window.removeEventListener("focus", onActivityChange);
+      window.removeEventListener("blur", onActivityChange);
+      window.removeEventListener("pagehide", onPageHide);
+      window.removeEventListener("pageshow", onPageShow);
+      document.removeEventListener("visibilitychange", onActivityChange);
+    };
+  }, []);
+  if (!open) return null;
+  return (
+    <HeroineDialog
+      onAnswer={(correct) => {
+        if (correct) resetRef.current();
+      }}
+      onDismiss={() => resetRef.current()}
+    />
+  );
+}
+
+export function HeroineQuizBeta() {
+  const [open, setOpen] = useState(true);
+  const [attempt, setAttempt] = useState(0);
+  return (
+    <main className="heroine-beta">
+      <span className="heroine-eyebrow">BETA PREVIEW</span>
+      <h2>คำถามพักระหว่างเรียน</h2>
+      <p>
+        คำถามจะขึ้นเมื่อสะสมเวลาเปิดหน้าเว็บนี้ครบ 2 ชั่วโมง
+        สลับแท็บจะหยุดนับชั่วคราว ปิดเว็บหรือรีเฟรชจะเริ่มนับใหม่
+        หน้านี้เปิดให้ลองทันที
+      </p>
+      <div className="heroine-beta-card">
+        <span className="heroine-beta-time">02:00:00</span>
+        <h3>ใครคือนางเอก</h3>
+        <p>
+          ตอบถูก หน้าคำถามจะปิดทันที
+          <br />
+          ตอบผิด จะแสดงข้อความที่กำหนด
+        </p>
+        <button
+          type="button"
+          className="heroine-submit"
+          onClick={() => {
+            setAttempt((n) => n + 1);
+            setOpen(true);
+          }}
+        >
+          ทดลองอีกครั้ง
+        </button>
+      </div>
+      <Link to="/questions">กลับคลังข้อสอบ →</Link>
+      {open && (
+        <HeroineDialog
+          key={attempt}
+          onAnswer={(correct) => {
+            if (correct) setOpen(false);
+          }}
+          onDismiss={() => setOpen(false)}
+        />
+      )}
+    </main>
+  );
+}
