@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./heroineQuiz.css";
 
 const INTERVAL_MS = 2 * 60 * 60 * 1000;
+const JUMPSCARE_IMAGE = "/images/yotsuba-jumpscare.png";
 const choices = ["ichika", "nino", "miku", "yotsuba", "itsuki"] as const;
 
 function HeroineDialog({
@@ -15,6 +16,16 @@ function HeroineDialog({
   const dialog = useRef<HTMLDialogElement>(null);
   const [selected, setSelected] = useState("");
   const [wrong, setWrong] = useState(false);
+  const [correct, setCorrect] = useState(false);
+  useEffect(() => {
+    const image = new Image();
+    image.src = JUMPSCARE_IMAGE;
+  }, []);
+  useEffect(() => {
+    if (!correct) return;
+    const timer = window.setTimeout(onDismiss, 3000);
+    return () => window.clearTimeout(timer);
+  }, [correct, onDismiss]);
   useEffect(() => {
     const node = dialog.current;
     if (node && !node.open) node.showModal();
@@ -25,69 +36,89 @@ function HeroineDialog({
   return (
     <dialog
       ref={dialog}
-      className="heroine-dialog"
-      aria-labelledby="heroine-title"
+      className={
+        correct ? "heroine-dialog heroine-jumpscare" : "heroine-dialog"
+      }
+      aria-labelledby={correct ? undefined : "heroine-title"}
+      aria-label={correct ? "Yotsuba — ตอบถูก" : undefined}
       onCancel={(e) => {
         e.preventDefault();
         onDismiss();
       }}
     >
-      <div className="heroine-dialog-accent" />
-      <div className="heroine-dialog-body">
-        <span className="heroine-eyebrow">พักตอบสักข้อ</span>
-        <h2 id="heroine-title">ใครคือนางเอก</h2>
-        {wrong ? (
-          <div className="heroine-wrong">
-            <p role="alert">คุณเป็น gay</p>
-            <button
-              type="button"
-              className="heroine-submit"
-              autoFocus
-              onClick={onDismiss}
-            >
-              ปิด
-            </button>
-          </div>
-        ) : (
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              if (!selected) return;
-              const correct = selected === "yotsuba";
-              if (!correct) setWrong(true);
-              onAnswer(correct);
-            }}
-          >
-            <fieldset className="heroine-choices">
-              <legend className="heroine-sr-only">เลือกคำตอบหนึ่งข้อ</legend>
-              {choices.map((choice, i) => (
-                <label
-                  key={choice}
-                  className={selected === choice ? "selected" : ""}
+      {correct ? (
+        <div className="heroine-jumpscare-stage">
+          <img
+            src={JUMPSCARE_IMAGE}
+            alt="Yotsuba"
+            className="heroine-jumpscare-image"
+          />
+        </div>
+      ) : (
+        <>
+          <div className="heroine-dialog-accent" />
+          <div className="heroine-dialog-body">
+            <span className="heroine-eyebrow">พักตอบสักข้อ</span>
+            <h2 id="heroine-title">ใครคือนางเอก</h2>
+            {wrong ? (
+              <div className="heroine-wrong">
+                <p role="alert">คุณเป็น gay</p>
+                <button
+                  type="button"
+                  className="heroine-submit"
+                  autoFocus
+                  onClick={onDismiss}
                 >
-                  <input
-                    type="radio"
-                    name="heroine"
-                    value={choice}
-                    checked={selected === choice}
-                    onChange={() => setSelected(choice)}
-                    required
-                  />
-                  <span className="heroine-option-number">{i + 1}</span>
-                  <span>{choice}</span>
-                </label>
-              ))}
-            </fieldset>
-            <button
-              type="submit"
-              className="heroine-submit"
-              disabled={!selected}
-            >
-              ตอบ
-            </button>
-          </form>
-        )}
-      </div>
+                  ปิด
+                </button>
+              </div>
+            ) : (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (!selected) return;
+                  const correct = selected === "yotsuba";
+                  if (correct) setCorrect(true);
+                  else {
+                    setWrong(true);
+                    onAnswer(false);
+                  }
+                }}
+              >
+                <fieldset className="heroine-choices">
+                  <legend className="heroine-sr-only">
+                    เลือกคำตอบหนึ่งข้อ
+                  </legend>
+                  {choices.map((choice, i) => (
+                    <label
+                      key={choice}
+                      className={selected === choice ? "selected" : ""}
+                    >
+                      <input
+                        type="radio"
+                        name="heroine"
+                        value={choice}
+                        checked={selected === choice}
+                        onChange={() => setSelected(choice)}
+                        required
+                      />
+                      <span className="heroine-option-number">{i + 1}</span>
+                      <span>{choice}</span>
+                    </label>
+                  ))}
+                </fieldset>
+                <button
+                  type="submit"
+                  className="heroine-submit"
+                  disabled={!selected}
+                >
+                  ตอบ
+                </button>
+              </form>
+            )}
+          </div>
+        </>
+      )}
     </dialog>
   );
 }
@@ -182,7 +213,7 @@ export function HeroineQuizBeta() {
         <span className="heroine-beta-time">02:00:00</span>
         <h3>ใครคือนางเอก</h3>
         <p>
-          ตอบถูก หน้าคำถามจะปิดทันที
+          ตอบถูก รูป Yotsuba จะเด้งขึ้นเต็มหน้าจอ แล้วปิดเองใน 3 วินาที
           <br />
           ตอบผิด จะแสดงข้อความที่กำหนด
         </p>
