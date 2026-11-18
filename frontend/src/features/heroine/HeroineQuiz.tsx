@@ -129,24 +129,23 @@ export function HeroineReminder() {
   const openRef = useRef(false);
   const resetRef = useRef(() => {});
   useEffect(() => {
-    const active = () =>
-      document.visibilityState === "visible" &&
-      document.hasFocus() &&
-      !openRef.current;
-    let previousTime = performance.now();
-    let running = active();
+    const canShow = () => document.visibilityState === "visible";
+    let previousTime = Date.now();
+    let running = true;
     const tick = () => {
-      const now = performance.now();
-      // A suspended browser or a sleeping computer must not add the entire gap.
-      const delta = running
-        ? Math.min(5000, Math.max(0, now - previousTime))
-        : 0;
+      const now = Date.now();
+      // Background tabs may throttle timers; count the full elapsed time.
+      const delta =
+        running && !openRef.current ? Math.max(0, now - previousTime) : 0;
       previousTime = now;
       progress.current = Math.min(INTERVAL_MS, progress.current + delta);
-      running = active();
-      if (progress.current >= INTERVAL_MS && running) {
+      if (
+        progress.current >= INTERVAL_MS &&
+        running &&
+        !openRef.current &&
+        canShow()
+      ) {
         openRef.current = true;
-        running = false;
         setOpen(true);
       }
     };
@@ -155,18 +154,18 @@ export function HeroineReminder() {
       progress.current = 0;
       openRef.current = false;
       running = false;
-      previousTime = performance.now();
+      previousTime = Date.now();
       setOpen(false);
     };
     const onPageShow = () => {
-      previousTime = performance.now();
-      running = active();
+      previousTime = Date.now();
+      running = true;
     };
     resetRef.current = () => {
       progress.current = 0;
       openRef.current = false;
-      previousTime = performance.now();
-      running = active();
+      previousTime = Date.now();
+      running = true;
       setOpen(false);
     };
     tick();
@@ -206,8 +205,8 @@ export function HeroineQuizBeta() {
       <h2>คำถามพักระหว่างเรียน</h2>
       <p>
         คำถามจะขึ้นเมื่อสะสมเวลาเปิดหน้าเว็บนี้ครบ 2 ชั่วโมง
-        สลับแท็บจะหยุดนับชั่วคราว ปิดเว็บหรือรีเฟรชจะเริ่มนับใหม่
-        หน้านี้เปิดให้ลองทันที
+        สลับแท็บหรือย่อหน้าต่างยังนับเวลาต่อ หากครบเวลาจะถามเมื่อกลับมาที่เว็บ
+        ปิดเว็บหรือรีเฟรชจะเริ่มนับใหม่ หน้านี้เปิดให้ลองทันที
       </p>
       <div className="heroine-beta-card">
         <span className="heroine-beta-time">02:00:00</span>
