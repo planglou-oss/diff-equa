@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./heroineQuiz.css";
 
-const INTERVAL_MS = 2 * 60 * 60 * 1000;
+const INTERVAL_MS = 6 * 60 * 60 * 1000;
 const JUMPSCARE_IMAGE = "/images/yotsuba-jumpscare.png";
 const choices = ["ichika", "nino", "miku", "yotsuba", "itsuki"] as const;
 
@@ -204,12 +204,12 @@ export function HeroineQuizBeta() {
       <span className="heroine-eyebrow">BETA PREVIEW</span>
       <h2>คำถามพักระหว่างเรียน</h2>
       <p>
-        คำถามจะขึ้นเมื่อสะสมเวลาเปิดหน้าเว็บนี้ครบ 2 ชั่วโมง
+        คำถามจะขึ้นเมื่อสะสมเวลาเปิดหน้าเว็บนี้ครบ 6 ชั่วโมง
         สลับแท็บหรือย่อหน้าต่างยังนับเวลาต่อ หากครบเวลาจะถามเมื่อกลับมาที่เว็บ
         ปิดเว็บหรือรีเฟรชจะเริ่มนับใหม่ หน้านี้เปิดให้ลองทันที
       </p>
       <div className="heroine-beta-card">
-        <span className="heroine-beta-time">02:00:00</span>
+        <span className="heroine-beta-time">06:00:00</span>
         <h3>ใครคือนางเอก</h3>
         <p>
           ตอบถูก รูป Yotsuba จะเด้งขึ้นเต็มหน้าจอ แล้วปิดเองใน 3 วินาที

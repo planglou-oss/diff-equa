@@ -1,3 +1,5 @@
+import { finalPeriodLabel } from "./finalExams";
+import { FinalExamSetup } from "./FinalExamSetup";
 import { useQuery } from "@tanstack/react-query";
 import { ChoiceAnswer } from "./ChoiceAnswer";
 import type { ChoiceScore } from "./choiceModel";
@@ -24,6 +26,8 @@ export function PracticePage({
   const s = useStudy();
   const p = s.practice;
   const [newSet, setNewSet] = useState(false);
+  const [mode, setMode] = useState<"random" | "final">("random");
+  const isFinal = p?.finalYear !== undefined;
   const [topic, setTopic] = useState("");
   const [count, setCount] = useState(5);
   const [minutes, setMinutes] = useState(30);
@@ -52,143 +56,175 @@ export function PracticePage({
           })),
         }),
       }),
-    enabled: !!p && p.finishedAt !== null,
+    enabled: !!p && p.finishedAt !== null && !isFinal,
   });
   if (!p || newSet)
     return (
       <main className="page-wrap">
-        <h2>ฝึกทำข้อสอบ ✿</h2>
-        <p className="info">
-          เลือกหัวข้อและจำนวนข้อ ระบบจะสุ่มข้อไม่ซ้ำกัน
-          พร้อมซ่อนเฉลยและคำใบ้จนจบชุดฝึก เลือกตอบ 4 ตัวเลือก
-          และตรวจจากเฉลยต้นฉบับ
-        </p>
-        <form
-          className="setup-card"
-          onSubmit={async (e) => {
-            e.preventDefault();
-            setBusy(true);
-            setError(null);
-            setNotice("");
-            try {
-              const includeIds = favorites
-                ? Object.entries(s.records)
-                    .filter(([, r]) => r.favorite)
-                    .map(([id]) => id)
-                : undefined;
-              const excludeIds = weak
-                ? Object.entries(s.records)
-                    .filter(([, r]) => r.status === "understood")
-                    .map(([id]) => id)
-                : [];
-              const result = await api<{
-                items: Question[];
-                available: number;
-              }>("/practice/sets", {
-                method: "POST",
-                body: JSON.stringify({
-                  topicId: Number(topic),
-                  mode: "choice",
-                  count,
-                  includeIds,
-                  excludeIds,
-                }),
-              });
-              if (!result.items.length) {
-                setNotice(
-                  "ไม่พบข้อที่ตรงกับตัวเลือก ลองเปลี่ยนหัวข้อหรือปิดตัวกรองรายการโปรด",
-                );
-                return;
-              }
-              study.start(result.items, minutes);
-              setNewSet(false);
-              if (result.items.length < count)
-                setNotice(
-                  `มีข้อที่ตรงเงื่อนไข ${result.items.length} ข้อ จึงจัดชุดฝึกตามจำนวนที่มี`,
-                );
-            } catch (e) {
-              setError(e);
-            } finally {
-              setBusy(false);
-            }
-          }}
-        >
-          <p className="notice">
-            ชุดฝึกเลือกเฉพาะข้อที่เตรียม 4 ตัวเลือกโดยเทียบเฉลยต้นฉบับแล้ว
-            ข้ออื่นยังอ่านทบทวนได้ในคลังโจทย์
-          </p>
-          <label>
-            หัวข้อ
-            <select value={topic} onChange={(e) => setTopic(e.target.value)}>
-              <option value="">ทุกหัวข้อ</option>
-              {catalog.topics
-                .filter((t) => t.totalCount > 0)
-                .map((t) => (
-                  <option key={t.id} value={t.id}>
-                    {t.name}
-                  </option>
-                ))}
-            </select>
-          </label>
-          <div className="setup-row">
-            <label>
-              จำนวนข้อ
-              <input
-                type="number"
-                min={1}
-                max={50}
-                required
-                value={count}
-                onChange={(e) => setCount(Number(e.target.value))}
-              />
-            </label>
-            <label>
-              เวลา (นาที)
-              <input
-                type="number"
-                min={1}
-                max={180}
-                required
-                value={minutes}
-                onChange={(e) => setMinutes(Number(e.target.value))}
-              />
-            </label>
-          </div>
-          <label className="check-row">
-            <input
-              type="checkbox"
-              checked={weak}
-              onChange={(e) => setWeak(e.target.checked)}
-            />
-            สุ่มเฉพาะข้อที่ยังไม่ทำหรือกำลังทบทวน
-          </label>
-          <label className="check-row">
-            <input
-              type="checkbox"
-              checked={favorites}
-              onChange={(e) => setFavorites(e.target.checked)}
-            />
-            เฉพาะข้อที่เก็บไว้ทบทวน ★
-          </label>
-          <p className="info">
-            เวลาจะเดินต่อเมื่อเปลี่ยนหน้าหรือปิดเบราว์เซอร์
-            คำตอบและชุดฝึกบันทึกไว้ในเครื่องนี้
-          </p>
-          <button className="primary-button" disabled={busy}>
-            {busy ? "กำลังสุ่ม…" : "เริ่มทำข้อสอบ"}
+        <h2>ฝึกทำข้อสอบ</h2>
+        <div className="tool-actions" role="group" aria-label="รูปแบบการฝึก">
+          <button
+            className={"chip " + (mode === "random" ? "on" : "")}
+            aria-pressed={mode === "random"}
+            onClick={() => setMode("random")}
+          >
+            สุ่มโจทย์ตามหัวข้อ
           </button>
-          {p && (
-            <button
-              type="button"
-              className="chip"
-              onClick={() => setNewSet(false)}
+          <button
+            className={"chip " + (mode === "final" ? "on" : "")}
+            aria-pressed={mode === "final"}
+            onClick={() => setMode("final")}
+          >
+            จำลอง Final ตามปีและเดือน
+          </button>
+        </div>
+        {mode === "final" ? (
+          <FinalExamSetup
+            onStart={(questions, minutes, year, month) => {
+              study.start(questions, minutes, year, month);
+              setNewSet(false);
+              setNotice("");
+            }}
+            onBack={p ? () => setNewSet(false) : undefined}
+          />
+        ) : (
+          <>
+            <p className="info">
+              เลือกหัวข้อและจำนวนข้อ ระบบจะสุ่มข้อไม่ซ้ำกัน
+              พร้อมซ่อนเฉลยและคำใบ้จนจบชุดฝึก เลือกตอบ 4 ตัวเลือก
+              และตรวจจากเฉลยต้นฉบับ
+            </p>
+            <form
+              className="setup-card"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                setBusy(true);
+                setError(null);
+                setNotice("");
+                try {
+                  const includeIds = favorites
+                    ? Object.entries(s.records)
+                        .filter(([, r]) => r.favorite)
+                        .map(([id]) => id)
+                    : undefined;
+                  const excludeIds = weak
+                    ? Object.entries(s.records)
+                        .filter(([, r]) => r.status === "understood")
+                        .map(([id]) => id)
+                    : [];
+                  const result = await api<{
+                    items: Question[];
+                    available: number;
+                  }>("/practice/sets", {
+                    method: "POST",
+                    body: JSON.stringify({
+                      topicId: Number(topic),
+                      mode: "choice",
+                      count,
+                      includeIds,
+                      excludeIds,
+                    }),
+                  });
+                  if (!result.items.length) {
+                    setNotice(
+                      "ไม่พบข้อที่ตรงกับตัวเลือก ลองเปลี่ยนหัวข้อหรือปิดตัวกรองรายการโปรด",
+                    );
+                    return;
+                  }
+                  study.start(result.items, minutes);
+                  setNewSet(false);
+                  if (result.items.length < count)
+                    setNotice(
+                      `มีข้อที่ตรงเงื่อนไข ${result.items.length} ข้อ จึงจัดชุดฝึกตามจำนวนที่มี`,
+                    );
+                } catch (e) {
+                  setError(e);
+                } finally {
+                  setBusy(false);
+                }
+              }}
             >
-              กลับชุดก่อนหน้า
-            </button>
-          )}
-          {notice && <p role="status">{notice}</p>}
-          {error !== null && <ErrorNotice error={error} />}
-        </form>
+              <p className="notice">
+                ชุดฝึกเลือกเฉพาะข้อที่เตรียม 4 ตัวเลือกโดยเทียบเฉลยต้นฉบับแล้ว
+                ข้ออื่นยังอ่านทบทวนได้ในคลังโจทย์
+              </p>
+              <label>
+                หัวข้อ
+                <select
+                  value={topic}
+                  onChange={(e) => setTopic(e.target.value)}
+                >
+                  <option value="">ทุกหัวข้อ</option>
+                  {catalog.topics
+                    .filter((t) => t.totalCount > 0)
+                    .map((t) => (
+                      <option key={t.id} value={t.id}>
+                        {t.name}
+                      </option>
+                    ))}
+                </select>
+              </label>
+              <div className="setup-row">
+                <label>
+                  จำนวนข้อ
+                  <input
+                    type="number"
+                    min={1}
+                    max={50}
+                    required
+                    value={count}
+                    onChange={(e) => setCount(Number(e.target.value))}
+                  />
+                </label>
+                <label>
+                  เวลา (นาที)
+                  <input
+                    type="number"
+                    min={1}
+                    max={180}
+                    required
+                    value={minutes}
+                    onChange={(e) => setMinutes(Number(e.target.value))}
+                  />
+                </label>
+              </div>
+              <label className="check-row">
+                <input
+                  type="checkbox"
+                  checked={weak}
+                  onChange={(e) => setWeak(e.target.checked)}
+                />
+                สุ่มเฉพาะข้อที่ยังไม่ทำหรือกำลังทบทวน
+              </label>
+              <label className="check-row">
+                <input
+                  type="checkbox"
+                  checked={favorites}
+                  onChange={(e) => setFavorites(e.target.checked)}
+                />
+                เฉพาะข้อที่เก็บไว้ทบทวน ★
+              </label>
+              <p className="info">
+                เวลาจะเดินต่อเมื่อเปลี่ยนหน้าหรือปิดเบราว์เซอร์
+                คำตอบและชุดฝึกบันทึกไว้ในเครื่องนี้
+              </p>
+              <button className="primary-button" disabled={busy}>
+                {busy ? "กำลังสุ่ม…" : "เริ่มทำข้อสอบ"}
+              </button>
+              {p && (
+                <button
+                  type="button"
+                  className="chip"
+                  onClick={() => setNewSet(false)}
+                >
+                  กลับชุดก่อนหน้า
+                </button>
+              )}
+              {notice && <p role="status">{notice}</p>}
+              {error !== null && <ErrorNotice error={error} />}
+            </form>
+          </>
+        )}
       </main>
     );
   const locked = p.finishedAt === null;
@@ -200,10 +236,18 @@ export function PracticePage({
     <main className="page-wrap practice-page">
       <div className="practice-heading">
         <div>
-          <h2>{locked ? "โหมดฝึกทำข้อสอบ" : "ทบทวนชุดฝึก"}</h2>
+          <h2>
+            {isFinal
+              ? (locked ? "จำลอง Final " : "ทบทวน Final ") +
+                finalPeriodLabel(p.finalYear!, p.finalMonth)
+              : locked
+                ? "โหมดฝึกทำข้อสอบ"
+                : "ทบทวนชุดฝึก"}
+          </h2>
           <p className="info">
-            ข้อ {p.index + 1} / {p.questions.length} · บันทึกคำตอบแล้ว{" "}
-            {answered} ข้อ
+            ข้อ {p.index + 1} / {p.questions.length} ·{" "}
+            {isFinal ? "ทำเครื่องหมายว่าทำแล้ว" : "บันทึกคำตอบแล้ว"} {answered}{" "}
+            ข้อ
           </p>
         </div>
         <div
@@ -229,30 +273,44 @@ export function PracticePage({
             ✿
           </b>
           <p>
-            มีคำตอบที่บันทึก {answered}/{p.questions.length} ข้อ
+            {isFinal ? "ทำเครื่องหมายว่าทำแล้ว" : "มีคำตอบที่บันทึก"} {answered}
+            /{p.questions.length} ข้อ
             เปิดเฉลยด้านล่างแล้วประเมินความเข้าใจของตัวเองได้
           </p>
-          <small>
-            ตรวจเทียบตัวเลือกกับเฉลยต้นฉบับที่จัดเตรียมไว้ ไม่เรียก AI
-          </small>
-          {score.isPending ? (
-            <p role="status">กำลังตรวจคำตอบจากเฉลย…</p>
-          ) : score.error ? (
-            <ErrorNotice error={score.error} retry={() => score.refetch()} />
-          ) : (
-            score.data && (
-              <p className="choice-score" role="status">
-                คะแนน {score.data.correct}/
-                {score.data.total - score.data.ungraded} · ผิด{" "}
-                {score.data.wrong} · ไม่ตอบ {score.data.unanswered}
-                {score.data.ungraded > 0 &&
-                  ` · ตรวจไม่ได้ ${score.data.ungraded} ข้อ (คำตอบเก่าหรือยังไม่มีเฉลยแบบเลือกตอบ)`}
-              </p>
-            )
+          {!isFinal && (
+            <>
+              <small>
+                ตรวจเทียบตัวเลือกกับเฉลยต้นฉบับที่จัดเตรียมไว้ ไม่เรียก AI
+              </small>
+              {score.isPending ? (
+                <p role="status">กำลังตรวจคำตอบจากเฉลย…</p>
+              ) : score.error ? (
+                <ErrorNotice
+                  error={score.error}
+                  retry={() => score.refetch()}
+                />
+              ) : (
+                score.data && (
+                  <p className="choice-score" role="status">
+                    คะแนน {score.data.correct}/
+                    {score.data.total - score.data.ungraded} · ผิด{" "}
+                    {score.data.wrong} · ไม่ตอบ {score.data.unanswered}
+                    {score.data.ungraded > 0 &&
+                      ` · ตรวจไม่ได้ ${score.data.ungraded} ข้อ (คำตอบเก่าหรือยังไม่มีเฉลยแบบเลือกตอบ)`}
+                  </p>
+                )
+              )}
+            </>
+          )}
+          {isFinal && (
+            <p className="info">
+              ทำบนกระดาษและเทียบกับเฉลยต้นฉบับด้วยตนเอง
+              จำนวนข้อที่ทำแล้วไม่ใช่คะแนน
+            </p>
           )}
           <div className="tool-actions">
             <button className="chip" onClick={() => setNewSet(true)}>
-              สุ่มชุดใหม่
+              เลือกชุดใหม่
             </button>
             <Link className="chip" to="/progress">
               ดูความคืบหน้า
@@ -287,17 +345,36 @@ export function PracticePage({
         hideAnswer
       />
       <div className="practice-answer">
-        <ChoiceAnswer
-          key={p.id + q.id}
-          questionId={q.id}
-          answer={p.answers[q.id] ?? ""}
-          locked={locked}
-          readOnly={!locked}
-          onChange={(answer) =>
-            study.practice({ answers: { ...p.answers, [q.id]: answer } })
-          }
-          result={score.data?.items.find((item) => item.questionId === q.id)}
-        />
+        {isFinal ? (
+          <label className="check-row">
+            <input
+              type="checkbox"
+              checked={Boolean(p.answers[q.id])}
+              disabled={!locked}
+              onChange={(e) =>
+                study.practice({
+                  answers: {
+                    ...p.answers,
+                    [q.id]: e.target.checked ? "done" : "",
+                  },
+                })
+              }
+            />
+            ทำข้อนี้บนกระดาษแล้ว
+          </label>
+        ) : (
+          <ChoiceAnswer
+            key={p.id + q.id}
+            questionId={q.id}
+            answer={p.answers[q.id] ?? ""}
+            locked={locked}
+            readOnly={!locked}
+            onChange={(answer) =>
+              study.practice({ answers: { ...p.answers, [q.id]: answer } })
+            }
+            result={score.data?.items.find((item) => item.questionId === q.id)}
+          />
+        )}
       </div>
       <div className="practice-bottom">
         <button
@@ -316,7 +393,7 @@ export function PracticePage({
         </button>
         {locked && (
           <button className="primary-button" onClick={() => study.finish()}>
-            จบชุดฝึกและเปิดเฉลย
+            {isFinal ? "ส่งข้อสอบและเปิดเฉลย" : "จบชุดฝึกและเปิดเฉลย"}
           </button>
         )}
       </div>

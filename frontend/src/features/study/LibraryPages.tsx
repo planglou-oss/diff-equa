@@ -1,3 +1,4 @@
+import { finalPeriodLabel } from "./finalExams";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useSearchParams } from "react-router-dom";
@@ -391,8 +392,12 @@ export function ProgressPage({ catalog }: { catalog: Catalog }) {
           {s.history.map((p) => (
             <div className="history-row" key={p.id}>
               <span>
+                {p.finalYear !== undefined && (
+                  <>Final {finalPeriodLabel(p.finalYear, p.finalMonth)} · </>
+                )}
                 {new Date(p.finishedAt!).toLocaleString("th-TH")} ·{" "}
-                {p.questions.length} ข้อ · มีคำตอบ{" "}
+                {p.questions.length} ข้อ ·{" "}
+                {p.finalYear !== undefined ? "ทำแล้ว" : "มีคำตอบ"}{" "}
                 {Object.values(p.answers).filter((a) => a.trim()).length} ข้อ
               </span>
               {s.practice?.finishedAt === null ? (

@@ -110,11 +110,18 @@ export const study = {
       },
     }));
   },
-  start(questions: Question[], minutes: number) {
+  start(
+    questions: Question[],
+    minutes: number,
+    finalYear?: number,
+    finalMonth?: number,
+  ) {
     update((s) => ({
       ...s,
       practice: {
         id: crypto.randomUUID(),
+        ...(finalYear === undefined ? {} : { finalYear }),
+        ...(finalMonth === undefined ? {} : { finalMonth }),
         questions,
         answers: {},
         index: 0,

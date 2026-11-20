@@ -15,6 +15,8 @@ export type RecordState = {
   updatedAt: number;
 };
 export type Practice = {
+  finalYear?: number;
+  finalMonth?: number;
   id: string;
   questions: Question[];
   answers: Record<string, string>;
@@ -38,6 +40,8 @@ export type StudyData = {
   >;
   practice: Practice | null;
   history: Practice[];
+  completedFinalYears: number[];
+  completedFinalPapers: string[];
   lastList: { url: string; y: number };
   resumeQuestion: { id: string; title: string } | null;
 };
@@ -55,6 +59,8 @@ export const emptyStudy = (): StudyData => ({
   views: {},
   practice: null,
   history: [],
+  completedFinalYears: [],
+  completedFinalPapers: [],
   lastList: { url: "/questions", y: 0 },
   resumeQuestion: null,
 });
@@ -77,7 +83,7 @@ function readPractice(v: unknown): Practice | null {
     typeof v.id !== "string" ||
     !Array.isArray(v.questions) ||
     v.questions.length < 1 ||
-    v.questions.length > 50 ||
+    v.questions.length > (v.finalYear === undefined ? 50 : 500) ||
     !finite(v.startedAt) ||
     v.startedAt <= 0 ||
     !finite(v.durationSeconds) ||
@@ -111,6 +117,22 @@ function readPractice(v: unknown): Practice | null {
     new Set(questions.map((q) => q.id)).size !== questions.length
   )
     return null;
+  if (
+    v.finalYear !== undefined &&
+    (!finite(v.finalYear) ||
+      !Number.isInteger(v.finalYear) ||
+      questions.some((q) => q.examType !== "Final" || q.year !== v.finalYear))
+  )
+    return null;
+  if (
+    v.finalMonth !== undefined &&
+    (v.finalYear === undefined ||
+      !finite(v.finalMonth) ||
+      !Number.isInteger(v.finalMonth) ||
+      v.finalMonth < 0 ||
+      v.finalMonth > 12)
+  )
+    return null;
   const answers: Record<string, string> = {};
   if (object(v.answers))
     for (const q of questions) {
@@ -119,6 +141,10 @@ function readPractice(v: unknown): Practice | null {
     }
   return {
     id: v.id,
+    ...(v.finalYear === undefined ? {} : { finalYear: v.finalYear as number }),
+    ...(v.finalMonth === undefined
+      ? {}
+      : { finalMonth: v.finalMonth as number }),
     questions,
     answers,
     index: finite(v.index)
@@ -180,6 +206,39 @@ export function parseStudy(raw: string | null): StudyData {
       .map(readPractice)
       .filter((p): p is Practice => p !== null && p.finishedAt !== null)
       .slice(0, 10);
+  const completed = Array.isArray(input.completedFinalYears)
+    ? input.completedFinalYears.filter(
+        (year): year is number =>
+          finite(year) && Number.isInteger(year) && year > 0 && year <= 9999,
+      )
+    : [];
+  for (const attempt of [
+    ...out.history,
+    ...(out.practice ? [out.practice] : []),
+  ]) {
+    if (attempt.finishedAt !== null && attempt.finalYear !== undefined)
+      completed.push(attempt.finalYear);
+  }
+  out.completedFinalYears = [...new Set(completed)].sort((a, b) => b - a);
+  const completedPapers = Array.isArray(input.completedFinalPapers)
+    ? input.completedFinalPapers.filter(
+        (key): key is string =>
+          typeof key === "string" &&
+          /^[1-9]\d{0,3}:(?:[0-9]|1[0-2])$/.test(key),
+      )
+    : [];
+  for (const attempt of [
+    ...out.history,
+    ...(out.practice ? [out.practice] : []),
+  ]) {
+    if (
+      attempt.finishedAt !== null &&
+      attempt.finalYear !== undefined &&
+      attempt.finalMonth !== undefined
+    )
+      completedPapers.push(attempt.finalYear + ":" + attempt.finalMonth);
+  }
+  out.completedFinalPapers = [...new Set(completedPapers)].sort();
   if (object(input.lastList))
     out.lastList = {
       url: safeListURL(input.lastList.url),
@@ -222,6 +281,21 @@ export function finishPractice(data: StudyData, now = Date.now()): StudyData {
   return {
     ...data,
     practice: done,
+    completedFinalPapers:
+      done.finalYear === undefined || done.finalMonth === undefined
+        ? data.completedFinalPapers
+        : [
+            ...new Set([
+              ...data.completedFinalPapers,
+              done.finalYear + ":" + done.finalMonth,
+            ]),
+          ].sort(),
+    completedFinalYears:
+      done.finalYear === undefined
+        ? data.completedFinalYears
+        : [...new Set([...data.completedFinalYears, done.finalYear])].sort(
+            (a, b) => b - a,
+          ),
     history: [done, ...data.history.filter((p) => p.id !== done.id)].slice(
       0,
       10,
